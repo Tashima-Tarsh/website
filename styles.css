@@ -1293,3 +1293,42 @@ h3 {
   .share-follow { grid-template-columns: 1fr; }
   .share-actions { justify-content: flex-start; }
 }
+
+.promise-list {
+  display: grid;
+  gap: 12px;
+  padding: 0;
+  margin: 20px 0 0;
+  list-style: none;
+}
+.promise-list li {
+  display: grid;
+  grid-template-columns: 42px minmax(0, 1fr);
+  gap: 12px;
+  align-items: start;
+  padding: 12px 0;
+  border-top: 1px solid rgba(126,31,31,.14);
+  color: var(--ink);
+}
+.promise-list li:first-child { border-top: 0; }
+.promise-list span {
+  display: inline-grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border: 1px solid rgba(126,31,31,.28);
+  border-radius: 999px;
+  background: #fffdf8;
+  color: var(--red);
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: .05em;
+}
+.promise-list strong {
+  color: #2e2923;
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+.promise-list li::before { content: none !important; }
+

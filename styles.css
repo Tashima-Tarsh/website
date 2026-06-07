@@ -1,4 +1,4 @@
-:root {
+﻿:root {
   --ivory: #ffffff;
   --paper: #ffffff;
   --paper-2: #f7f7f4;
@@ -1274,4 +1274,22 @@ h3 {
   .social-links { max-width: 330px; margin: 0 auto; gap: 5px; }
   .social-icon { width: 24px; height: 24px; font-size: 9px; }
   .case-line { grid-template-columns: 1fr; gap: 4px; }
+}
+
+.share-follow {
+  display: grid;
+  grid-template-columns: minmax(0, .9fr) minmax(320px, .8fr);
+  gap: 24px;
+  align-items: center;
+  border-top: 1px solid rgba(126,31,31,.16);
+  border-bottom: 1px solid rgba(126,31,31,.16);
+  background: rgba(255,255,255,.72);
+}
+.share-follow h2 { font-size: clamp(28px, 4vw, 46px); }
+.share-follow p { margin-top: 10px; color: var(--muted); }
+.share-actions { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 10px; }
+.share-actions button { cursor: pointer; font-family: inherit; }
+@media (max-width: 760px) {
+  .share-follow { grid-template-columns: 1fr; }
+  .share-actions { justify-content: flex-start; }
 }

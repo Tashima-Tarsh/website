@@ -1,4 +1,4 @@
-const navToggle = document.querySelector("[data-menu-toggle]");
+﻿const navToggle = document.querySelector("[data-menu-toggle]");
 const navLinks = document.querySelector("[data-nav-links]");
 
 if (navToggle && navLinks) {
@@ -158,7 +158,7 @@ function renderPublications(items) {
           <img src="${escapeHtml(item.image)}" alt="${escapeHtml(item.title)}" loading="lazy" decoding="async">
         </a>
         <div class="publication-body">
-          <span class="publication-meta">${escapeHtml(item.source)} · ${escapeHtml(date)}</span>
+          <span class="publication-meta">${escapeHtml(item.source)} Â· ${escapeHtml(date)}</span>
           <h3><a href="${escapeHtml(item.link)}" target="_blank" rel="noopener">${escapeHtml(item.title)}</a></h3>
           <p>${escapeHtml(item.summary)}</p>
         </div>
@@ -182,7 +182,7 @@ function renderMediaCoverage(items) {
         <img data-media-image="${index}" src="${escapeHtml(image)}" alt="${escapeHtml(item.outlet + ': ' + item.headline)}" loading="lazy" decoding="async">
       </a>
       <div class="media-body">
-        <span class="media-outlet">${escapeHtml(item.outlet)} · ${escapeHtml(item.source_type || 'Coverage')}</span>
+        <span class="media-outlet">${escapeHtml(item.outlet)} Â· ${escapeHtml(item.source_type || 'Coverage')}</span>
         <h3><a href="${escapeHtml(item.url)}" target="_blank" rel="noopener">${escapeHtml(item.headline)}</a></h3>
         <p>${escapeHtml(item.summary || '')}</p>
         <div class="media-actions">
@@ -404,3 +404,22 @@ async function loadPublications() {
 
 loadPublications();
 loadMediaCoverage();
+
+document.querySelectorAll('[data-share-x], [data-share-linkedin]').forEach((link) => {
+  const url = encodeURIComponent(window.location.href);
+  if (link.hasAttribute('data-share-x')) link.href = `https://x.com/intent/tweet?url=${url}&text=${encodeURIComponent(document.title)}`;
+  if (link.hasAttribute('data-share-linkedin')) link.href = `https://www.linkedin.com/shareArticle?mini=true&url=${url}&title=${encodeURIComponent(document.title)}`;
+});
+
+document.querySelectorAll('[data-copy-link]').forEach((button) => {
+  button.addEventListener('click', async () => {
+    try {
+      await navigator.clipboard.writeText(window.location.href);
+      button.textContent = 'Link copied';
+      setTimeout(() => { button.textContent = 'Copy link'; }, 1800);
+    } catch (_) {
+      button.textContent = 'Copy failed';
+      setTimeout(() => { button.textContent = 'Copy link'; }, 1800);
+    }
+  });
+});

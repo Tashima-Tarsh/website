@@ -1150,35 +1150,50 @@ h3 {
 }
 
 .social-icon {
-  display: inline-grid;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   place-items: center;
   width: 34px;
   height: 34px;
-  border: 1px solid rgba(126,31,31,.2);
+  border: 1px solid transparent;
   border-radius: 999px;
-  background: rgba(255,255,255,.72);
-  color: var(--red);
+  background: var(--social-bg, var(--red));
+  color: #fff;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 0;
   line-height: 0;
-  box-shadow: 0 10px 24px rgba(255,255,255,.66), 0 8px 18px rgba(52,38,22,.045);
+  box-shadow: 0 10px 24px rgba(255,255,255,.66), 0 8px 18px rgba(52,38,22,.08);
   transition: transform .18s ease, background .18s ease, border-color .18s ease, color .18s ease;
 }
 
-.social-icon svg {
-  width: 17px;
-  height: 17px;
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 1.9;
-  stroke-linecap: round;
-  stroke-linejoin: round;
+.social-icon span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1.4em;
+  line-height: 1;
 }
 
 .social-icon:hover {
-  background: var(--red);
-  border-color: var(--red);
+  background: var(--social-bg, var(--red));
+  border-color: rgba(36,33,31,.14);
   color: #fffdf8;
   transform: translateY(-1px);
 }
+
+.social-x { --social-bg: #1d9bf0; }
+.social-linkedin { --social-bg: #0a66c2; }
+.social-substack { --social-bg: #ff6719; }
+.social-medium { --social-bg: #00ab6c; }
+.social-github { --social-bg: #6e5494; }
+.social-instagram { --social-bg: linear-gradient(135deg, #f58529 0%, #dd2a7b 45%, #8134af 72%, #515bd4 100%); }
+.social-facebook { --social-bg: #1877f2; font-family: Arial, sans-serif; font-size: 16px; }
+.social-reddit { --social-bg: #ff4500; }
+.social-quora { --social-bg: #b92b27; }
+.social-whatsapp { --social-bg: #25d366; color: #083b20; }
+.social-orcid { --social-bg: #a6ce39; color: #1b3518; }
 
 .footer-legal {
   max-width: 980px;
@@ -1284,7 +1299,8 @@ h3 {
   }
   .social-links { max-width: 330px; margin: 0 auto; gap: 5px; }
   .social-icon { width: 28px; height: 28px; }
-  .social-icon svg { width: 14px; height: 14px; }
+  .social-icon { font-size: 8px; }
+  .social-facebook { font-size: 14px; }
   .case-line { grid-template-columns: 1fr; gap: 4px; }
 }
 

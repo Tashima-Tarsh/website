@@ -372,7 +372,7 @@ async function resolveMediaImage(url) {
 async function loadMediaCoverage() {
   if (!mediaGrid) return;
   try {
-    const response = await fetch("media-coverage.json");
+    const response = await fetch("media-coverage.json?v=20260607c", { cache: "no-store" });
     if (!response.ok) throw new Error("media");
     renderMediaCoverage(await response.json());
   } catch (_) {

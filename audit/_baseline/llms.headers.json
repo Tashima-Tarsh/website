@@ -1,0 +1,27 @@
+﻿{
+    "url":  "https://thenitishkr.in/llms.txt",
+    "status":  200,
+    "finalUrl":  "https://thenitishkr.in/llms.txt",
+    "headers":  {
+                    "alt-svc":  "h3=\":443\"; ma=86400",
+                    "Server":  "cloudflare",
+                    "x-content-type-options":  "nosniff",
+                    "permissions-policy":  "camera=(), microphone=(), geolocation=(), interest-cohort=()",
+                    "Content-Length":  "900",
+                    "Speculation-Rules":  "\"/cdn-cgi/speculation\"",
+                    "ETag":  "\"e6714c286e5d75902b756c2b90428058\"",
+                    "Content-Type":  "text/plain; charset=utf-8",
+                    "Cache-Control":  "public, max-age=300, must-revalidate",
+                    "CF-RAY":  "a081a10a2e1ea02a-SIN",
+                    "Nel":  "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+                    "cf-cache-status":  "DYNAMIC",
+                    "referrer-policy":  "strict-origin-when-cross-origin",
+                    "Connection":  "keep-alive",
+                    "Server-Timing":  "cfCacheStatus;desc=\"DYNAMIC\",cfEdge;dur=4,cfOrigin;dur=187",
+                    "x-robots-tag":  "index, follow",
+                    "Date":  "Sun, 07 Jun 2026 18:13:09 GMT",
+                    "Report-To":  "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=VkEGqZD8%2FbFZ68fQdHAEi99%2FuNXj5JHuzKHNcbxuQEzwTweqyRvx63amYB9wA74y1ALbGhw0vq51fv34gpu6Gd%2Fsb588SvUFomnfCl8klqrpsIbxXQ4DDVOi1BlCRe%2F1tQ%3D%3D\"}]}",
+                    "Access-Control-Allow-Origin":  "*",
+                    "x-frame-options":  "SAMEORIGIN"
+                }
+}

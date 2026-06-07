@@ -1,0 +1,208 @@
+﻿﻿<!doctype html>
+<html lang="en-IN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nitish Kumar (thenitishkr) | National Cyber Security Scholar</title>
+  <meta name="description" content="Official website of Nitish Kumar (thenitishkr), National Cyber Security Scholar, independent researcher, author, and inventor of DISHA, documenting constitutional accountability, cyber forensics, public records, and digital governance in India.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://thenitishkr.in/">
+  <meta property="og:title" content="Nitish Kumar (thenitishkr) | National Cyber Security Scholar">
+  <meta property="og:description" content="Official website of Nitish Kumar (thenitishkr), National Cyber Security Scholar, independent researcher, author, and inventor of DISHA, documenting constitutional accountability, cyber forensics, public records, and digital governance in India.">
+  <meta property="og:image" content="https://thenitishkr.in/assets/images/governance-record.png?v=20260607b">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Nitish Kumar (thenitishkr) | National Cyber Security Scholar">
+  <meta name="twitter:description" content="Official website of Nitish Kumar (thenitishkr), National Cyber Security Scholar, independent researcher, author, and inventor of DISHA, documenting constitutional accountability, cyber forensics, public records, and digital governance in India.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Libre+Franklin:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="canonical" href="https://thenitishkr.in/">
+  <meta name="twitter:image" content="https://thenitishkr.in/assets/images/disha-intelligence-architecture.png">
+
+  <link rel="stylesheet" href="styles.css">
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","name":"thenitishkr.in","url":"https://thenitishkr.in/","description":"Independent public-interest research archive on constitutional accountability, cyber forensics, public records, artificial intelligence, cybersecurity, and digital governance in India.","inLanguage":"en-IN"},{"@type":"Person","name":"Nitish Kumar","alternateName":"thenitishkr","url":"https://thenitishkr.in/","jobTitle":"Researcher, author, National Cyber Security Scholar, and inventor of DISHA","sameAs":["https://x.com/thenitishkr","https://www.linkedin.com/in/thenitishkr","https://thenitishkr.substack.com","https://medium.com/@thenitishkr","https://github.com/thenitishkr","https://www.instagram.com/thenitishkr","https://www.facebook.com/thenitishkr","https://www.reddit.com/user/Ok-File-6559/","https://www.quora.com/profile/Nitish-Kumar-11545","https://orcid.org/0009-0004-6840-4463"]},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://thenitishkr.in/"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Who is Nitish Kumar (thenitishkr)?","acceptedAnswer":{"@type":"Answer","text":"Nitish Kumar (thenitishkr) is an independent researcher and author working at the intersection of constitutional law, cyber forensics, public records, artificial intelligence, cybersecurity, and digital governance in India. He is not the politician of the same name."}},{"@type":"Question","name":"How should records be read?","acceptedAnswer":{"@type":"Answer","text":"The archive separates verified records, documented allegations, research analysis, and public commentary so readers can judge each item by source and context."}}]}]}</script>
+  <script id="publication-schema" type="application/ld+json">{"@context":"https://schema.org","@type":"ItemList","name":"thenitishkr Substack and Medium publications","itemListElement":[]}</script>
+  <script id="media-schema" type="application/ld+json">{"@context":"https://schema.org","@type":"ItemList","name":"thenitishkr media coverage archive","itemListElement":[]}</script>
+  <script id="site-audit-schema" type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://thenitishkr.in/#website","name":"Nitish Kumar (thenitishkr)","url":"https://thenitishkr.in","inLanguage":"en-IN","publisher":{"@id":"https://thenitishkr.in/#person"},"potentialAction":{"@type":"SearchAction","target":"https://thenitishkr.in/?q={search_term_string}","query-input":"required name=search_term_string"}},{"@type":"Person","@id":"https://thenitishkr.in/#person","name":"Nitish Kumar","alternateName":"thenitishkr","url":"https://thenitishkr.in","image":"https://thenitishkr.in/assets/images/nitish-kumar-thenitishkr.jpg?v=20260607b","jobTitle":"National Cyber Security Scholar; Independent Researcher and Author","nationality":"IN","award":"National Cyber Security Scholar (NSD), Certificate ID 00112 (2022)","knowsAbout":["Cyber forensics","Constitutional law","Digital governance","Digital Constitutional Personhood","DISHA Intelligence Architecture","Article 12","Artificial intelligence","Cybersecurity","Public records"],"alumniOf":{"name":"Rashtriya Raksha University (NSD / RRU-ISAC)","@type":"Organization"},"sameAs":["https://orcid.org/0009-0004-6840-4463","https://x.com/thenitishkr","https://www.linkedin.com/in/thenitishkr","https://thenitishkr.substack.com","https://medium.com/@thenitishkr","https://github.com/thenitishkr","https://www.instagram.com/thenitishkr","https://www.facebook.com/thenitishkr","https://www.quora.com/profile/Nitish-Kumar-11545","https://www.reddit.com/user/Ok-File-6559/"],"disambiguatingDescription":"Independent cyber-security researcher, author, and inventor of DISHA; distinct from Nitish Kumar the Bihar politician."},{"@type":"WebSite","@id":"https://thenitishkr.in/#webpage","name":"Nitish Kumar (thenitishkr) | National Cyber Security Scholar","description":"Official website of Nitish Kumar (thenitishkr), National Cyber Security Scholar, independent researcher, author, and inventor of DISHA, documenting constitutional accountability, cyber forensics, public records, and digital governance in India.","url":"https://thenitishkr.in/","inLanguage":"en-IN","datePublished":"2026-06-07","dateModified":"2026-06-07","isPartOf":{"@id":"https://thenitishkr.in/#website"},"about":{"@id":"https://thenitishkr.in/#person"},"author":{"@id":"https://thenitishkr.in/#person"},"publisher":{"@id":"https://thenitishkr.in/#person"}},{"@type":"BreadcrumbList","@id":"https://thenitishkr.in/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://thenitishkr.in"}]},{"@type":"FAQPage","@id":"https://thenitishkr.in/#faq","mainEntity":[{"@type":"Question","name":"Who is Nitish Kumar (thenitishkr)?","acceptedAnswer":{"@type":"Answer","text":"Nitish Kumar (thenitishkr) is an independent researcher, author, National Cyber Security Scholar, and inventor of DISHA. He is not the politician of the same name."}},{"@type":"Question","name":"What is thenitishkr.in?","acceptedAnswer":{"@type":"Answer","text":"thenitishkr.in is an independent public-interest research archive documenting constitutional accountability, digital governance, cyber forensics, public records, DISHA intelligence architecture, books, media references, and citizen evidence records in India."}}]}]}</script>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav" aria-label="Primary navigation">
+      <a class="brand" href="index">THENITISHKR<span>INDIA | RESEARCH - EVIDENCE - INTELLIGENCE</span></a>
+      <button class="menu-button" type="button" aria-label="Open menu" aria-expanded="false" data-menu-toggle><span></span><span></span><span></span></button>
+      <div class="nav-links" data-nav-links><a href="article-12">Article 12</a><a href="digital-constitutional-personhood">Digital Constitutional Personhood</a><a href="disha">DISHA</a><a href="intelligence">Intelligence</a><a href="media">Media</a><a href="books">Books</a><a href="about">About</a></div>
+      <a class="nav-cta" href="intelligence">Read the Archive</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="section hero">
+      <div class="reveal">
+        <h1>A public-interest research archive for digital governance and constitutional accountability.</h1>
+        <div class="hero-actions">
+          <a class="button" href="intelligence">Read the Archive</a>
+          <a class="button secondary" href="article-12">Start with Article 12</a>
+        </div>
+      </div>
+      <figure class="hero-panel no-caption reveal">
+        <picture>
+          <source srcset="assets/documentary.webp" type="image/webp">
+          <img src="../assets/images/governance-record.png?v=20260607b" alt="Documentary archive visual representing public governance records and evidence files" width="900" height="650" loading="eager" decoding="async">
+        </picture>
+      </figure>
+    </section>
+
+    <section class="fact-strip" aria-label="Archive categories">
+      <div class="section">
+        <div class="fact"><strong>Verified records</strong><span>Source documents, public records, citations, and file evidence.</span></div>
+        <div class="fact"><strong>Documented allegations</strong><span>Claims presented with documentary context, not as final findings.</span></div>
+        <div class="fact"><strong>Research analysis</strong><span>Constitutional, cyber, and governance interpretation.</span></div>
+        <div class="fact"><strong>Public commentary</strong><span>Editorial notes and essays separated from records.</span></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head reveal">
+        <div>
+          <p class="eyebrow">Publications</p>
+          <h2>Substack and Medium archive</h2>
+        </div>
+      </div>
+      <div class="publication-grid" data-publication-grid data-archive-mode="compact">
+        <div class="publication-status">Loading Substack and Medium publications...</div>
+      </div>
+    </section>
+
+    <section class="section split">
+      <figure class="document-frame reveal">
+        <picture>
+          <source srcset="assets/portrait.webp" type="image/webp">
+          <img src="../assets/images/nitish-kumar-thenitishkr.jpg?v=20260607b" alt="Portrait of Nitish Kumar, also known as thenitishkr" loading="lazy" decoding="async" width="936" height="936">
+        </picture>
+        <figcaption>Nitish Kumar (thenitishkr) - researcher, author, and inventor of DISHA.</figcaption>
+      </figure>
+      <div class="reveal">
+        <p class="eyebrow">Human archive</p>
+        <h2>Nitish Kumar (thenitishkr)</h2>
+        <p class="lead">Nitish Kumar (thenitishkr) is an independent researcher and author working at the intersection of constitutional law, cyber forensics, public records, artificial intelligence, cybersecurity, and digital governance in India.</p>
+        <p>This website refers to Nitish Kumar (thenitishkr), researcher, author, National Cyber Security Scholar, and inventor of DISHA. He is not the politician of the same name.</p>
+        <div class="actions">
+          <a class="button" href="about">About</a>
+          <a class="button secondary" href="intelligence">Open Intelligence</a>
+        </div>
+      </div>
+    </section>
+
+                        <section class="section">
+      <div class="section-head reveal">
+        <div>
+          <p class="eyebrow">Media coverage</p>
+          <h2>Media coverage archive</h2>
+        </div>
+      </div>
+      <div class="media-coverage-grid" data-media-grid data-archive-mode="compact">
+        <div class="archive-featured">
+        <article class="media-card reveal is-visible">
+          <a href="https://www.ptinews.com/story/national/sc-asks-meity-to-examine-pil-seeking-recovery-or-destruction-of-stolen-personal-data-of-citizens/3681804" target="_blank" rel="noopener">
+            <img src="https://www.ptinews.com/assets/images/logo.jpeg" alt="PTI: SC asks MeitY to examine PIL seeking recovery or destruction of stolen personal data of citizens" loading="lazy" decoding="async">
+          </a>
+          <div class="media-body">
+            <span class="media-outlet">PTI | PTI syndication</span>
+            <h3><a href="https://www.ptinews.com/story/national/sc-asks-meity-to-examine-pil-seeking-recovery-or-destruction-of-stolen-personal-data-of-citizens/3681804" target="_blank" rel="noopener">SC asks MeitY to examine PIL seeking recovery or destruction of stolen personal data of citizens</a></h3>
+            <p>PTI report on Supreme Court asking MeitY to examine the PIL/representation concerning stolen personal data of citizens.</p>
+            <div class="media-actions"><a href="https://www.ptinews.com/story/national/sc-asks-meity-to-examine-pil-seeking-recovery-or-destruction-of-stolen-personal-data-of-citizens/3681804" target="_blank" rel="noopener">Source</a><a href="https://www.ptinews.com/story/national/sc-asks-meity-to-examine-pil-seeking-recovery-or-destruction-of-stolen-personal-data-of-citizens/3681804" target="_blank" rel="noopener">Archive</a></div>
+          </div>
+        </article>        <article class="media-card reveal is-visible">
+          <a href="https://m.economictimes.com/news/india/sc-asks-meity-to-examine-pil-seeking-recovery-or-destruction-of-stolen-personal-data-of-citizens/articleshow/131194292.cms" target="_blank" rel="noopener">
+            <img src="https://img.etimg.com/thumb/msid-131194712,width-1200,height-630,imgsize-122990,overlay-economictimes/articleshow.jpg" alt="Economic Times: SC asks MeitY to examine PIL seeking recovery or destruction of stolen personal data of citizens" loading="lazy" decoding="async">
+          </a>
+          <div class="media-body">
+            <span class="media-outlet">Economic Times | PTI syndication</span>
+            <h3><a href="https://m.economictimes.com/news/india/sc-asks-meity-to-examine-pil-seeking-recovery-or-destruction-of-stolen-personal-data-of-citizens/articleshow/131194292.cms" target="_blank" rel="noopener">SC asks MeitY to examine PIL seeking recovery or destruction of stolen personal data of citizens</a></h3>
+            <p>Economic Times carried the PTI report on the Supreme Court direction to MeitY regarding stolen personal data.</p>
+            <div class="media-actions"><a href="https://m.economictimes.com/news/india/sc-asks-meity-to-examine-pil-seeking-recovery-or-destruction-of-stolen-personal-data-of-citizens/articleshow/131194292.cms" target="_blank" rel="noopener">Source</a><a href="https://m.economictimes.com/news/india/sc-asks-meity-to-examine-pil-seeking-recovery-or-destruction-of-stolen-personal-data-of-citizens/articleshow/131194292.cms" target="_blank" rel="noopener">Archive</a></div>
+          </div>
+        </article>        <article class="media-card reveal is-visible">
+          <a href="https://www.tribuneindia.com/news/india/examine-pil-on-stolen-data-of-citizens-supreme-court-directs-ministry-of-electronics-and-it/" target="_blank" rel="noopener">
+            <img src="https://www.tribuneindia.com/sortd-service/imaginary/v22-01/jpg/large/high?url=dGhldHJpYnVuZS1zb3J0ZC1wcm8tcHJvZC1zb3J0ZC9tZWRpYWVkYzZlODgwLTUzYzMtMTFmMS05NWQzLWFiMTg3NjE5Y2M0NS5qcGc=" alt="The Tribune: Examine PIL on stolen data of citizens, Supreme Court directs Ministry of Electronics and IT" loading="lazy" decoding="async">
+          </a>
+          <div class="media-body">
+            <span class="media-outlet">The Tribune | PTI syndication</span>
+            <h3><a href="https://www.tribuneindia.com/news/india/examine-pil-on-stolen-data-of-citizens-supreme-court-directs-ministry-of-electronics-and-it/" target="_blank" rel="noopener">Examine PIL on stolen data of citizens, Supreme Court directs Ministry of Electronics and IT</a></h3>
+            <p>The Tribune coverage of the Supreme Court direction to examine the PIL on stolen citizen data.</p>
+            <div class="media-actions"><a href="https://www.tribuneindia.com/news/india/examine-pil-on-stolen-data-of-citizens-supreme-court-directs-ministry-of-electronics-and-it/" target="_blank" rel="noopener">Source</a><a href="https://www.tribuneindia.com/news/india/examine-pil-on-stolen-data-of-citizens-supreme-court-directs-ministry-of-electronics-and-it/" target="_blank" rel="noopener">Archive</a></div>
+          </div>
+        </article>        <article class="media-card reveal is-visible">
+          <a href="https://www.newsdrum.in/national/sc-asks-meity-to-examine-pil-seeking-recovery-or-destruction-of-stolen-personal-data-of-citizens-11850558" target="_blank" rel="noopener">
+            <img src="https://img-cdn.publive.online/fit-in/1200x675/newsdrum-in/media/media_files/2025/12/16/sci-image-supreme-court-of-india-2025-12-16-11-41-31.jpg" alt="NewsDrum: SC asks MeitY to examine PIL seeking recovery or destruction of stolen personal data of citizens" loading="lazy" decoding="async">
+          </a>
+          <div class="media-body">
+            <span class="media-outlet">NewsDrum | PTI syndication</span>
+            <h3><a href="https://www.newsdrum.in/national/sc-asks-meity-to-examine-pil-seeking-recovery-or-destruction-of-stolen-personal-data-of-citizens-11850558" target="_blank" rel="noopener">SC asks MeitY to examine PIL seeking recovery or destruction of stolen personal data of citizens</a></h3>
+            <p>NewsDrum carried the PTI report on W.P.(Crl.) No. 163/2026 and the MeitY examination direction.</p>
+            <div class="media-actions"><a href="https://www.newsdrum.in/national/sc-asks-meity-to-examine-pil-seeking-recovery-or-destruction-of-stolen-personal-data-of-citizens-11850558" target="_blank" rel="noopener">Source</a><a href="https://www.newsdrum.in/national/sc-asks-meity-to-examine-pil-seeking-recovery-or-destruction-of-stolen-personal-data-of-citizens-11850558" target="_blank" rel="noopener">Archive</a></div>
+          </div>
+        </article>        </div>
+      </div>
+    </section>
+  </main>
+  <section class="section share-follow" aria-label="Share and follow">
+    <div>
+      <p class="eyebrow">Share / follow</p>
+      <h2>Keep this record discoverable.</h2>
+      <p>Share the page, cite the source path, or follow the public archive for new records and research updates.</p>
+    </div>
+    <div class="share-actions">
+      <a class="button secondary" data-share-x href="https://x.com/intent/tweet?url=https://thenitishkr.in/" target="_blank" rel="noopener">Share on X</a>
+      <a class="button secondary" data-share-linkedin href="https://www.linkedin.com/shareArticle?mini=true&url=https://thenitishkr.in/" target="_blank" rel="noopener">Share on LinkedIn</a>
+      <button class="button secondary" type="button" data-copy-link>Copy link</button>
+      <a class="button" href="https://thenitishkr.substack.com" target="_blank" rel="noopener">Get record updates</a>
+    </div>
+  </section>
+  <footer class="site-footer">
+    <div class="section">
+      <div>
+        <div class="footer-logo">THENITISHKR</div>
+        <p class="footer-kicker">INDIA | RESEARCH - EVIDENCE - INTELLIGENCE</p>
+        <p class="muted" style="margin-top:18px">&copy; 2026 Nitish Kumar (thenitishkr). All Rights Reserved.</p>
+      </div>
+      <div class="footer-links" aria-label="Footer navigation">
+        <a href="article-12">Article 12</a>
+        <a href="digital-constitutional-personhood">Digital Constitutional Personhood</a>
+        <a href="disha">DISHA</a>
+        <a href="intelligence">Intelligence</a>
+        <a href="books">Books</a>
+        <a href="about">About</a>
+        <a href="feed.xml">RSS Feed</a>
+        <a href="sitemap.xml">Sitemap</a>
+        <a href="terms">T&C</a>
+        <a href="privacy-policy">Privacy</a>
+      </div>
+      <div class="social-links" aria-label="Social links">
+        <a class="social-icon" href="https://x.com/thenitishkr" aria-label="X / Twitter">X</a>
+        <a class="social-icon" href="https://www.linkedin.com/in/thenitishkr" aria-label="LinkedIn">in</a>
+        <a class="social-icon" href="https://thenitishkr.substack.com" aria-label="Substack">S</a>
+        <a class="social-icon" href="https://medium.com/@thenitishkr" aria-label="Medium">M</a>
+        <a class="social-icon" href="https://github.com/thenitishkr" aria-label="GitHub">GH</a>
+        <a class="social-icon" href="https://www.instagram.com/thenitishkr" aria-label="Instagram">IG</a>
+        <a class="social-icon" href="https://www.facebook.com/thenitishkr" aria-label="Facebook">f</a>
+        <a class="social-icon" href="https://www.reddit.com/user/Ok-File-6559/" aria-label="Reddit">R</a>
+        <a class="social-icon" href="https://www.quora.com/profile/Nitish-Kumar-11545" aria-label="Quora">Q</a>
+        <a class="social-icon" href="https://orcid.org/0009-0004-6840-4463" aria-label="ORCID">iD</a>
+      </div>
+      <div class="footer-note">
+        <p><strong>Not for sale / non-commercial public-interest project</strong> &middot; Successor: Diksha Sharma</p>
+        <p class="footer-legal">Independent public-interest research archive documenting constitutional accountability, digital governance, citizen rights, data protection, public administration, legal submissions, public records, research publications, media references, court-related documentation, and government documentary material in India. Content may include verified records, documented allegations, research analysis, opinions, and adjudicated findings, which readers should evaluate within their respective legal, factual, and documentary contexts.</p>
+      </div>
+    </div>
+  </footer>
+  <script src="script.js?v=20260607d" defer></script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" data-cf-beacon='{"version":"2024.11.0","token":"20466c8fcebf463c83127fe74b027d57","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a081a105fbe6a02a',t:'MTc4MDg1NTk4OA=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
+
+
+
+
+

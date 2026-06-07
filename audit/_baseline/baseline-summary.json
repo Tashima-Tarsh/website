@@ -1,0 +1,65 @@
+﻿[
+    {
+        "name":  "home",
+        "url":  "https://thenitishkr.in/",
+        "status":  200,
+        "finalUrl":  "https://thenitishkr.in/",
+        "bytes":  23426
+    },
+    {
+        "name":  "robots",
+        "url":  "https://thenitishkr.in/robots.txt",
+        "status":  200,
+        "finalUrl":  "https://thenitishkr.in/robots.txt",
+        "bytes":  377
+    },
+    {
+        "name":  "sitemap",
+        "url":  "https://thenitishkr.in/sitemap.xml",
+        "status":  200,
+        "finalUrl":  "https://thenitishkr.in/sitemap.xml",
+        "bytes":  3737
+    },
+    {
+        "name":  "llms",
+        "url":  "https://thenitishkr.in/llms.txt",
+        "status":  200,
+        "finalUrl":  "https://thenitishkr.in/llms.txt",
+        "bytes":  900
+    },
+    {
+        "name":  "intelligence",
+        "url":  "https://thenitishkr.in/intelligence",
+        "status":  200,
+        "finalUrl":  "https://thenitishkr.in/intelligence",
+        "bytes":  36997
+    },
+    {
+        "name":  "case-02-follow-data",
+        "url":  "https://thenitishkr.in/intelligence-meity-digital-governance",
+        "status":  200,
+        "finalUrl":  "https://thenitishkr.in/intelligence-meity-digital-governance",
+        "bytes":  29077
+    },
+    {
+        "name":  "article-12",
+        "url":  "https://thenitishkr.in/article-12",
+        "status":  200,
+        "finalUrl":  "https://thenitishkr.in/article-12",
+        "bytes":  28710
+    },
+    {
+        "name":  "disha",
+        "url":  "https://thenitishkr.in/disha",
+        "status":  200,
+        "finalUrl":  "https://thenitishkr.in/disha",
+        "bytes":  22666
+    },
+    {
+        "name":  "about",
+        "url":  "https://thenitishkr.in/about",
+        "status":  200,
+        "finalUrl":  "https://thenitishkr.in/about",
+        "bytes":  32919
+    }
+]

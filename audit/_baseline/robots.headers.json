@@ -1,0 +1,25 @@
+﻿{
+    "url":  "https://thenitishkr.in/robots.txt",
+    "status":  200,
+    "finalUrl":  "https://thenitishkr.in/robots.txt",
+    "headers":  {
+                    "Accept-Ranges":  "bytes",
+                    "Content-Type":  "text/plain; charset=utf-8",
+                    "x-content-type-options":  "nosniff",
+                    "Cache-Control":  "public, max-age=14400, must-revalidate",
+                    "Content-Length":  "377",
+                    "Speculation-Rules":  "\"/cdn-cgi/speculation\"",
+                    "alt-svc":  "h3=\":443\"; ma=86400",
+                    "Server":  "cloudflare",
+                    "CF-RAY":  "a081a107ecc6a02a-SIN",
+                    "Nel":  "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+                    "cf-cache-status":  "REVALIDATED",
+                    "referrer-policy":  "strict-origin-when-cross-origin",
+                    "Connection":  "keep-alive",
+                    "Server-Timing":  "cfCacheStatus;desc=\"REVALIDATED\",cfEdge;dur=13,cfOrigin;dur=18",
+                    "Date":  "Sun, 07 Jun 2026 18:13:08 GMT",
+                    "Report-To":  "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=Emp%2FyMpW9s78z1nG2Ulxd4kHkrG7v0ePcp8hHtb2%2BEZ7F0x527HGAsBAB7yfSaef9S1q3MIHzAZD%2FrD4%2FcxL6qfJ8zZe36KBqwyG%2BvI10p7N2dBq2yBGdCNAL6h9X9BMcMGOCZrdsVnjWDS04w%3D%3D\"}]}",
+                    "Access-Control-Allow-Origin":  "*",
+                    "ETag":  "\"8d54bb8b1eaa62a8b12d35b236ed781a\""
+                }
+}

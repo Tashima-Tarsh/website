@@ -1,0 +1,26 @@
+﻿{
+    "url":  "https://thenitishkr.in/disha",
+    "status":  200,
+    "finalUrl":  "https://thenitishkr.in/disha",
+    "headers":  {
+                    "alt-svc":  "h3=\":443\"; ma=86400",
+                    "Server":  "cloudflare",
+                    "x-content-type-options":  "nosniff",
+                    "permissions-policy":  "camera=(), microphone=(), geolocation=(), interest-cohort=()",
+                    "Speculation-Rules":  "\"/cdn-cgi/speculation\"",
+                    "Content-Type":  "text/html; charset=utf-8",
+                    "Cache-Control":  "public, max-age=300, must-revalidate",
+                    "x-robots-tag":  "index, follow",
+                    "CF-RAY":  "a081a115dc1ea02a-SIN",
+                    "Nel":  "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+                    "cf-cache-status":  "DYNAMIC",
+                    "referrer-policy":  "strict-origin-when-cross-origin",
+                    "Connection":  "keep-alive",
+                    "Server-Timing":  "cfCacheStatus;desc=\"DYNAMIC\",cfEdge;dur=4,cfOrigin;dur=184",
+                    "Transfer-Encoding":  "chunked",
+                    "Date":  "Sun, 07 Jun 2026 18:13:10 GMT",
+                    "Report-To":  "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=0v0kymiL773m%2Fqd9e0VVEgaiM7C1pUIP5A6EE0EfUYNJWHEgAREs%2FzGYSahGcSMW%2F2E43PEaB0oGBeefB8GDqJLbBsCLk0vBYzBoNqkt9qlUe%2BRbH3ZBhh2JlHSCMm6gDA%3D%3D\"}]}",
+                    "Access-Control-Allow-Origin":  "*",
+                    "x-frame-options":  "SAMEORIGIN"
+                }
+}

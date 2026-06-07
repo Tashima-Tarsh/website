@@ -1,0 +1,72 @@
+[
+    {
+        "url":  "https://thenitishkr.in/",
+        "status":  200,
+        "contentType":  "text/html; charset=utf-8",
+        "cache":  "public, max-age=300, must-revalidate",
+        "hsts":  null,
+        "xcto":  "nosniff",
+        "frame":  "SAMEORIGIN",
+        "length":  23426
+    },
+    {
+        "url":  "https://thenitishkr.in/intelligence",
+        "status":  200,
+        "contentType":  "text/html; charset=utf-8",
+        "cache":  "public, max-age=300, must-revalidate",
+        "hsts":  null,
+        "xcto":  "nosniff",
+        "frame":  "SAMEORIGIN",
+        "length":  36997
+    },
+    {
+        "url":  "https://thenitishkr.in/intelligence-meity-digital-governance",
+        "status":  200,
+        "contentType":  "text/html; charset=utf-8",
+        "cache":  "public, max-age=300, must-revalidate",
+        "hsts":  null,
+        "xcto":  "nosniff",
+        "frame":  "SAMEORIGIN",
+        "length":  29077
+    },
+    {
+        "url":  "https://thenitishkr.in/sitemap.xml",
+        "status":  200,
+        "contentType":  "application/xml",
+        "cache":  "public, max-age=300, must-revalidate",
+        "hsts":  null,
+        "xcto":  "nosniff",
+        "frame":  "SAMEORIGIN",
+        "length":  3737
+    },
+    {
+        "url":  "https://thenitishkr.in/robots.txt",
+        "status":  200,
+        "contentType":  "text/plain; charset=utf-8",
+        "cache":  "public, max-age=14400, must-revalidate",
+        "hsts":  null,
+        "xcto":  "nosniff",
+        "frame":  null,
+        "length":  377
+    },
+    {
+        "url":  "https://thenitishkr.in/llms.txt",
+        "status":  200,
+        "contentType":  "text/plain; charset=utf-8",
+        "cache":  "public, max-age=300, must-revalidate",
+        "hsts":  null,
+        "xcto":  "nosniff",
+        "frame":  "SAMEORIGIN",
+        "length":  900
+    },
+    {
+        "url":  "https://thenitishkr.in/indexnow-key.txt",
+        "status":  200,
+        "contentType":  "text/plain; charset=utf-8",
+        "cache":  "public, max-age=300, must-revalidate",
+        "hsts":  null,
+        "xcto":  "nosniff",
+        "frame":  "SAMEORIGIN",
+        "length":  34
+    }
+]

@@ -166,9 +166,9 @@
       transition: transform .55s ease;
       transform-style: preserve-3d;
     }
-    .case-card:hover .case-card-inner,
-    .case-card:focus-visible .case-card-inner,
-    .case-card.is-flipped .case-card-inner {
+    .case-card:not(.case-card--locked):hover .case-card-inner,
+    .case-card:not(.case-card--locked):focus-visible .case-card-inner,
+    .case-card:not(.case-card--locked).is-flipped .case-card-inner {
       transform: rotateY(180deg);
     }
     .case-face {
@@ -201,6 +201,7 @@
       flex-direction: column;
       flex: 1;
       gap: 12px;
+      min-width: 0;
     }
     .case-number {
       color: var(--intel-red);
@@ -210,14 +211,16 @@
       text-transform: uppercase;
     }
     .case-card h3 {
-      font-size: clamp(20px, 2vw, 24px);
+      font-size: clamp(18px, 1.65vw, 23px);
       line-height: 1.12;
-      min-height: 58px;
+      min-height: 0;
+      overflow-wrap: anywhere;
     }
     .case-summary {
       color: var(--muted);
       font-size: 14px;
       line-height: 1.55;
+      overflow-wrap: anywhere;
     }
     .case-tags {
       display: flex;
@@ -236,6 +239,7 @@
       font-weight: 900;
       letter-spacing: .08em;
       text-transform: uppercase;
+      overflow-wrap: anywhere;
     }
     .case-open {
       margin-top: auto;
@@ -251,6 +255,41 @@
       font-weight: 900;
       letter-spacing: .08em;
       text-transform: uppercase;
+    }
+    .case-badge,
+    .case-live-banner {
+      display: inline-flex;
+      align-items: center;
+      width: max-content;
+      max-width: 100%;
+      border-radius: 999px;
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: .08em;
+      line-height: 1.2;
+      text-transform: uppercase;
+      overflow-wrap: anywhere;
+    }
+    .case-badge {
+      padding: 6px 9px;
+      color: #fff;
+      background: var(--intel-red);
+    }
+    .case-live-banner {
+      margin-top: auto;
+      padding: 9px 11px;
+      color: var(--intel-red);
+      background: #fff4e7;
+      border: 1px solid rgba(139,17,17,.24);
+    }
+    .case-card--locked {
+      cursor: default;
+    }
+    .case-card--locked .case-card-inner {
+      transform: none !important;
+    }
+    .case-card--locked .case-front {
+      border-top-color: var(--intel-gold);
     }
     .intel-method-grid {
       display: grid;
@@ -332,28 +371,29 @@
     <section class="section" id="case-files">
       <div class="section-head reveal">
         <div><p class="eyebrow">Thirteen case files</p><h2>Evidence board for institutional responsibility.</h2></div>
-        <p>Each card opens a dedicated evidence page with case summary, responsible authority, constitutional issue, fund or cost issue, evidence status, and source links.</p>
+        <p>Cases 01, 02, 04, and 12 are live Breaking Exposure files. The remaining case files are scheduled and will open when their evidence pages are complete.</p>
       </div>
       <div class="case-board-count reveal" aria-label="Case file count">
         <span>13 case files</span>
-        <span>13 evidence pages</span>
+        <span>4 live evidence pages</span>
+        <span>9 scheduled files</span>
         <span>Official record trail</span>
         <span>Legal-safe wording</span>
       </div>
       <div class="case-board">
-        <a class="case-card reveal" href="intelligence-ndma-disaster-governance"><span class="case-card-inner"><span class="case-face case-front"><span class="case-face-content"><span class="case-number">Case 01</span><h3>NDMA / Disaster Governance</h3><p class="case-summary"><strong>The Empty Vault.</strong> disaster-fund governance failure, missing utilisation certificates, SDRF/NDRF accountability, citizen-life valuation concern, and statutory responsibility.</p><span class="case-tags"><span>Article 12</span><span>NDMA</span><span>Citizen Impact</span></span></span></span><span class="case-face case-back"><span class="case-face-content"><span class="case-number">Open Evidence Page</span><h3>NDMA / Disaster Governance</h3><p class="case-summary">View responsible authority, constitutional issue, negligence pattern, evidence status, source files, and official record trail.</p><span class="case-open">Open Case -></span></span></span></span></a>
-        <a class="case-card reveal" href="intelligence-meity-digital-governance"><span class="case-card-inner"><span class="case-face case-front"><span class="case-face-content"><span class="case-number">Case 02</span><h3>Follow the Data</h3><p class="case-summary"><strong>India under critical surveillance.</strong> Digital dacoity, data-forensic failure, Article 12, citizen not found, and MeitY accountability from 2015-2026.</p><span class="case-tags"><span>Data</span><span>MeitY</span><span>Article 12</span></span></span></span><span class="case-face case-back"><span class="case-face-content"><span class="case-number">Open Evidence Page</span><h3>MeitY / Digital Governance</h3><p class="case-summary">View W.P. (Crl.) No. 163/2026, root-cause PDFs, accused/absconder profile, interim questions, and source-linked data trail.</p><span class="case-open">Open Case -></span></span></span></span></a>
-        <a class="case-card reveal" href="intelligence-niti-aayog-certification-funds"><span class="case-card-inner"><span class="case-face case-front"><span class="case-face-content"><span class="case-number">Case 03</span><h3>NITI Aayog / Certification & Funds</h3><p class="case-summary">Alleged false certification, fund misuse concern, and public-record contamination.</p><span class="case-tags"><span>Certification</span><span>Funds</span><span>Audit</span></span></span></span><span class="case-face case-back"><span class="case-face-content"><span class="case-number">Open Evidence Page</span><h3>NITI Aayog / Certification & Funds</h3><p class="case-summary">View responsible authority, constitutional issue, negligence pattern, evidence status, source files, and official record trail.</p><span class="case-open">Open Case -></span></span></span></span></a>
-        <a class="case-card reveal" href="intelligence-odf-false-justification"><span class="case-card-inner"><span class="case-face case-front"><span class="case-face-content"><span class="case-number">Case 04</span><h3>ODF / False Justification</h3><p class="case-summary"><strong>The Sanitation Mirage.</strong> ODF 100 percent claims, missing drainage, flood-WASH risk, ground-record mismatch, and compliance-verification demand.</p><span class="case-tags"><span>ODF</span><span>Record</span><span>Scheme</span></span></span></span><span class="case-face case-back"><span class="case-face-content"><span class="case-number">Open Evidence Page</span><h3>ODF / False Justification</h3><p class="case-summary">View responsible authority, constitutional issue, negligence pattern, evidence status, source files, and official record trail.</p><span class="case-open">Open Case -></span></span></span></span></a>
-        <a class="case-card reveal" href="intelligence-rti-missing-answers"><span class="case-card-inner"><span class="case-face case-front"><span class="case-face-content"><span class="case-number">Case 05</span><h3>RTI / Missing Answers</h3><p class="case-summary">Information denied, delayed, avoided, or answered without substance.</p><span class="case-tags"><span>RTI</span><span>Disclosure</span><span>Record</span></span></span></span><span class="case-face case-back"><span class="case-face-content"><span class="case-number">Open Evidence Page</span><h3>RTI / Missing Answers</h3><p class="case-summary">View responsible authority, constitutional issue, negligence pattern, evidence status, source files, and official record trail.</p><span class="case-open">Open Case -></span></span></span></span></a>
-        <a class="case-card reveal" href="intelligence-cpgrams-closure-without-relief"><span class="case-card-inner"><span class="case-face case-front"><span class="case-face-content"><span class="case-number">Case 06</span><h3>CPGRAMS / Closure Without Relief</h3><p class="case-summary">Grievance closed, forwarded, redirected, or disposed without remedy.</p><span class="case-tags"><span>CPGRAMS</span><span>Grievance</span><span>Relief</span></span></span></span><span class="case-face case-back"><span class="case-face-content"><span class="case-number">Open Evidence Page</span><h3>CPGRAMS / Closure Without Relief</h3><p class="case-summary">View responsible authority, constitutional issue, negligence pattern, evidence status, source files, and official record trail.</p><span class="case-open">Open Case -></span></span></span></span></a>
-        <a class="case-card reveal" href="intelligence-pmo-grievance"><span class="case-card-inner"><span class="case-face case-front"><span class="case-face-content"><span class="case-number">Case 07</span><h3>PMO Grievance / Forwarding Without Remedy</h3><p class="case-summary">PMO grievance trail, administrative forwarding, and absence of final relief.</p><span class="case-tags"><span>PMO</span><span>Forwarding</span><span>No Relief</span></span></span></span><span class="case-face case-back"><span class="case-face-content"><span class="case-number">Open Evidence Page</span><h3>PMO Grievance / Forwarding Without Remedy</h3><p class="case-summary">View responsible authority, constitutional issue, negligence pattern, evidence status, source files, and official record trail.</p><span class="case-open">Open Case -></span></span></span></span></a>
-        <a class="case-card reveal" href="intelligence-letters-emails"><span class="case-card-inner"><span class="case-face case-front"><span class="case-face-content"><span class="case-number">Case 08</span><h3>Letters and Emails / Official Communication Trail</h3><p class="case-summary">Official notices, emails, replies, reminders, silence, and proof of knowledge.</p><span class="case-tags"><span>Letters</span><span>Emails</span><span>Notice</span></span></span></span><span class="case-face case-back"><span class="case-face-content"><span class="case-number">Open Evidence Page</span><h3>Letters and Emails / Official Communication Trail</h3><p class="case-summary">View responsible authority, constitutional issue, negligence pattern, evidence status, source files, and official record trail.</p><span class="case-open">Open Case -></span></span></span></span></a>
-        <a class="case-card reveal" href="intelligence-district-jamui-bihar"><span class="case-card-inner"><span class="case-face case-front"><span class="case-face-content"><span class="case-number">Case 09</span><h3>District Jamui, Bihar / Local Administrative Record</h3><p class="case-summary">District-level negligence, local record issue, officer responsibility, and field contradiction.</p><span class="case-tags"><span>Jamui</span><span>Bihar</span><span>District</span></span></span></span><span class="case-face case-back"><span class="case-face-content"><span class="case-number">Open Evidence Page</span><h3>District Jamui, Bihar / Local Administrative Record</h3><p class="case-summary">View responsible authority, constitutional issue, negligence pattern, evidence status, source files, and official record trail.</p><span class="case-open">Open Case -></span></span></span></span></a>
-        <a class="case-card reveal" href="intelligence-himachal-pradesh-scam"><span class="case-card-inner"><span class="case-face case-front"><span class="case-face-content"><span class="case-number">Case 10</span><h3>Himachal Pradesh Scam / State-Level Failure Pattern</h3><p class="case-summary">State-level scam pattern, certification issue, fund concern, and administrative silence.</p><span class="case-tags"><span>Himachal</span><span>Scam</span><span>State</span></span></span></span><span class="case-face case-back"><span class="case-face-content"><span class="case-number">Open Evidence Page</span><h3>Himachal Pradesh Scam / State-Level Failure Pattern</h3><p class="case-summary">View responsible authority, constitutional issue, negligence pattern, evidence status, source files, and official record trail.</p><span class="case-open">Open Case -></span></span></span></span></a>
-        <a class="case-card reveal" href="intelligence-bihar-minister-constitutional-question"><span class="case-card-inner"><span class="case-face case-front"><span class="case-face-content"><span class="case-number">Case 11</span><h3>Bihar Minister / Constitutional Question</h3><p class="case-summary">Ministerial conduct, public-office accountability, misuse-of-authority concern, and oath responsibility.</p><span class="case-tags"><span>Bihar</span><span>Minister</span><span>Constitution</span></span></span></span><span class="case-face case-back"><span class="case-face-content"><span class="case-number">Open Evidence Page</span><h3>Bihar Minister / Constitutional Question</h3><p class="case-summary">View responsible authority, constitutional issue, negligence pattern, evidence status, source files, and official record trail.</p><span class="case-open">Open Case -></span></span></span></span></a>
-        <a class="case-card reveal" href="intelligence-sir-constitutional-scam"><span class="case-card-inner"><span class="case-face case-front"><span class="case-face-content"><span class="case-number">Case 12</span><h3>SIR / Constitutional Process</h3><p class="case-summary"><strong>SIR was necessary. The process was unconstitutional.</strong> Bihar case study on voter burden, migration, State records, Article 12, and electoral due process.</p><span class="case-tags"><span>SIR</span><span>Due Process</span><span>Article 12</span></span></span></span><span class="case-face case-back"><span class="case-face-content"><span class="case-number">Open Evidence Page</span><h3>SIR / Constitutional Process</h3><p class="case-summary">View the Article 12 argument, burden-reversal concern, migration reality, institutional chain, due-process issue, and argued conclusion.</p><span class="case-open">Open Case -></span></span></span></span></a>
-        <a class="case-card reveal" href="intelligence-national-audit-financial-investigation"><span class="case-card-inner"><span class="case-face case-front"><span class="case-face-content"><span class="case-number">Case 13</span><h3>National Audit / Financial Investigation</h3><p class="case-summary">Tax allocation, money received, money used, money unexplained, and public-money accountability.</p><span class="case-tags"><span>National Audit</span><span>Money Trail</span><span>Funds</span></span></span></span><span class="case-face case-back"><span class="case-face-content"><span class="case-number">Open Evidence Page</span><h3>National Audit / Financial Investigation</h3><p class="case-summary">View responsible authority, constitutional issue, negligence pattern, evidence status, source files, and official record trail.</p><span class="case-open">Open Case -></span></span></span></span></a>
+        <a class="case-card reveal" href="intelligence-ndma-disaster-governance"><span class="case-card-inner"><span class="case-face case-front"><span class="case-face-content"><span class="case-badge">Breaking Exposure</span><span class="case-number">Case 01</span><h3>NDMA / Disaster Governance</h3><p class="case-summary"><strong>The Empty Vault.</strong> Disaster-fund governance failure, missing utilisation certificates, SDRF/NDRF accountability, citizen-life valuation concern, and statutory responsibility.</p><span class="case-tags"><span>Article 12</span><span>NDMA</span><span>Citizen Impact</span></span></span></span><span class="case-face case-back"><span class="case-face-content"><span class="case-number">Open Evidence Page</span><h3>NDMA / Disaster Governance</h3><p class="case-summary">View responsible authority, constitutional issue, negligence pattern, evidence status, source files, and official record trail.</p><span class="case-open">Open Case</span></span></span></span></a>
+        <a class="case-card reveal" href="intelligence-meity-digital-governance"><span class="case-card-inner"><span class="case-face case-front"><span class="case-face-content"><span class="case-badge">Breaking Exposure</span><span class="case-number">Case 02</span><h3>Follow the Data</h3><p class="case-summary"><strong>India under critical surveillance.</strong> Digital dacoity, data-forensic failure, Article 12, citizen not found, and MeitY accountability from 2015-2026.</p><span class="case-tags"><span>Data</span><span>MeitY</span><span>Article 12</span></span></span></span><span class="case-face case-back"><span class="case-face-content"><span class="case-number">Open Evidence Page</span><h3>MeitY / Digital Governance</h3><p class="case-summary">View W.P. (Crl.) No. 163/2026, root-cause PDFs, accused or absconder profile, interim questions, and source-linked data trail.</p><span class="case-open">Open Case</span></span></span></span></a>
+        <div class="case-card case-card--locked reveal" aria-disabled="true"><span class="case-card-inner"><span class="case-face case-front"><span class="case-face-content"><span class="case-number">Case 03</span><h3>NITI Aayog / Certification & Funds</h3><p class="case-summary">Alleged false certification, fund misuse concern, and public-record contamination.</p><span class="case-tags"><span>Certification</span><span>Funds</span><span>Audit</span></span><span class="case-live-banner">Live on 14th June 2026 at 5AM</span></span></span></span></div>
+        <a class="case-card reveal" href="intelligence-odf-false-justification"><span class="case-card-inner"><span class="case-face case-front"><span class="case-face-content"><span class="case-badge">Breaking Exposure</span><span class="case-number">Case 04</span><h3>ODF / False Justification</h3><p class="case-summary"><strong>The Sanitation Mirage.</strong> ODF 100 percent claims, missing drainage, flood-WASH risk, ground-record mismatch, and compliance-verification demand.</p><span class="case-tags"><span>ODF</span><span>Record</span><span>Scheme</span></span></span></span><span class="case-face case-back"><span class="case-face-content"><span class="case-number">Open Evidence Page</span><h3>ODF / False Justification</h3><p class="case-summary">View responsible authority, constitutional issue, negligence pattern, evidence status, source files, and official record trail.</p><span class="case-open">Open Case</span></span></span></span></a>
+        <div class="case-card case-card--locked reveal" aria-disabled="true"><span class="case-card-inner"><span class="case-face case-front"><span class="case-face-content"><span class="case-number">Case 05</span><h3>RTI / Missing Answers</h3><p class="case-summary">Information denied, delayed, avoided, or answered without substance.</p><span class="case-tags"><span>RTI</span><span>Disclosure</span><span>Record</span></span><span class="case-live-banner">Live on 14th June 2026 at 5AM</span></span></span></span></div>
+        <div class="case-card case-card--locked reveal" aria-disabled="true"><span class="case-card-inner"><span class="case-face case-front"><span class="case-face-content"><span class="case-number">Case 06</span><h3>CPGRAMS / Closure Without Relief</h3><p class="case-summary">Grievance closed, forwarded, redirected, or disposed without remedy.</p><span class="case-tags"><span>CPGRAMS</span><span>Grievance</span><span>Relief</span></span><span class="case-live-banner">Live on 14th June 2026 at 5AM</span></span></span></span></div>
+        <div class="case-card case-card--locked reveal" aria-disabled="true"><span class="case-card-inner"><span class="case-face case-front"><span class="case-face-content"><span class="case-number">Case 07</span><h3>PMO Grievance / Forwarding Without Remedy</h3><p class="case-summary">PMO grievance trail, administrative forwarding, and absence of final relief.</p><span class="case-tags"><span>PMO</span><span>Forwarding</span><span>No Relief</span></span><span class="case-live-banner">Live on 14th June 2026 at 5AM</span></span></span></span></div>
+        <div class="case-card case-card--locked reveal" aria-disabled="true"><span class="case-card-inner"><span class="case-face case-front"><span class="case-face-content"><span class="case-number">Case 08</span><h3>Letters and Emails / Official Communication Trail</h3><p class="case-summary">Official notices, emails, replies, reminders, silence, and proof of knowledge.</p><span class="case-tags"><span>Letters</span><span>Emails</span><span>Notice</span></span><span class="case-live-banner">Live on 14th June 2026 at 5AM</span></span></span></span></div>
+        <div class="case-card case-card--locked reveal" aria-disabled="true"><span class="case-card-inner"><span class="case-face case-front"><span class="case-face-content"><span class="case-number">Case 09</span><h3>District Jamui, Bihar / Local Administrative Record</h3><p class="case-summary">District-level negligence, local record issue, officer responsibility, and field contradiction.</p><span class="case-tags"><span>Jamui</span><span>Bihar</span><span>District</span></span><span class="case-live-banner">Live on 14th June 2026 at 5AM</span></span></span></span></div>
+        <div class="case-card case-card--locked reveal" aria-disabled="true"><span class="case-card-inner"><span class="case-face case-front"><span class="case-face-content"><span class="case-number">Case 10</span><h3>Himachal Pradesh Scam / State-Level Failure Pattern</h3><p class="case-summary">State-level scam pattern, certification issue, fund concern, and administrative silence.</p><span class="case-tags"><span>Himachal</span><span>Scam</span><span>State</span></span><span class="case-live-banner">Live on 14th June 2026 at 5AM</span></span></span></span></div>
+        <div class="case-card case-card--locked reveal" aria-disabled="true"><span class="case-card-inner"><span class="case-face case-front"><span class="case-face-content"><span class="case-number">Case 11</span><h3>Bihar Minister / Constitutional Question</h3><p class="case-summary">Ministerial conduct, public-office accountability, misuse-of-authority concern, and oath responsibility.</p><span class="case-tags"><span>Bihar</span><span>Minister</span><span>Constitution</span></span><span class="case-live-banner">Live on 14th June 2026 at 5AM</span></span></span></span></div>
+        <a class="case-card reveal" href="intelligence-sir-constitutional-scam"><span class="case-card-inner"><span class="case-face case-front"><span class="case-face-content"><span class="case-badge">Breaking Exposure</span><span class="case-number">Case 12</span><h3>SIR / Constitutional Process</h3><p class="case-summary"><strong>SIR was necessary. The process was unconstitutional.</strong> Bihar case study on voter burden, migration, State records, Article 12, and electoral due process.</p><span class="case-tags"><span>SIR</span><span>Due Process</span><span>Article 12</span></span></span></span><span class="case-face case-back"><span class="case-face-content"><span class="case-number">Open Evidence Page</span><h3>SIR / Constitutional Process</h3><p class="case-summary">View the Article 12 argument, burden-reversal concern, migration reality, institutional chain, due-process issue, and argued conclusion.</p><span class="case-open">Open Case</span></span></span></span></a>
+        <div class="case-card case-card--locked reveal" aria-disabled="true"><span class="case-card-inner"><span class="case-face case-front"><span class="case-face-content"><span class="case-number">Case 13</span><h3>National Audit / Financial Investigation</h3><p class="case-summary">Tax allocation, money received, money used, money unexplained, and public-money accountability.</p><span class="case-tags"><span>National Audit</span><span>Money Trail</span><span>Funds</span></span><span class="case-live-banner">Live on 14th June 2026 at 5AM</span></span></span></span></div>
       </div>
     </section>
 
@@ -394,6 +434,10 @@
   <script>
     document.querySelectorAll(".case-card").forEach((card) => {
       card.addEventListener("click", (event) => {
+        if (card.classList.contains("case-card--locked")) {
+          event.preventDefault();
+          return;
+        }
         const canHover = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
         if (canHover) return;
         if (!card.classList.contains("is-flipped")) {

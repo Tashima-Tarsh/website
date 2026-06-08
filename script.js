@@ -1,4 +1,4 @@
-﻿const navToggle = document.querySelector("[data-menu-toggle]");
+const navToggle = document.querySelector("[data-menu-toggle]");
 const navLinks = document.querySelector("[data-nav-links]");
 
 if (navToggle && navLinks) {
@@ -78,7 +78,7 @@ function normalizeItem(item, source) {
     link: item.link || item.guid || "#",
     date: item.pubDate ? new Date(item.pubDate) : null,
     summary: textFromHtml(content).slice(0, 180),
-    image: optimizeImageUrl(item.thumbnail || item.enclosure?.link || firstImageFromHtml(content) || "assets/record.webp")
+    image: optimizeImageUrl(item.thumbnail || item.enclosure?.link || firstImageFromHtml(content) || "/assets/record.webp")
   };
 }
 
@@ -149,69 +149,6 @@ async function loadFeed(feed) {
   }
 
   return [];
-}
-
-function renderPublications(items) {
-  if (!publicationGrid) return;
-  if (!items.length) {
-    publicationGrid.innerHTML = '<div class="publication-status">Unable to load live publications right now. Substack and Medium feeds remain linked from the footer.</div>';
-    return;
-  }
-
-  publicationGrid.innerHTML = items.map((item) => {
-    const date = item.date && !Number.isNaN(item.date.valueOf())
-      ? item.date.toLocaleDateString("en-IN", { day: "numeric", month: "short", year: "numeric" })
-      : "Latest";
-    return `
-      <article class="publication-card reveal is-visible">
-        <a href="${item.link}" target="_blank" rel="noopener">
-          <img src="${escapeHtml(item.image)}" alt="${escapeHtml(item.title)}" loading="lazy" decoding="async">
-        </a>
-        <div class="publication-body">
-          <span class="publication-meta">${escapeHtml(item.source)} Â· ${escapeHtml(date)}</span>
-          <h3><a href="${escapeHtml(item.link)}" target="_blank" rel="noopener">${escapeHtml(item.title)}</a></h3>
-          <p>${escapeHtml(item.summary)}</p>
-        </div>
-      </article>
-    `;
-  }).join("");
-}
-
-function renderMediaCoverage(items) {
-  if (!mediaGrid) return;
-  if (!items.length) {
-    mediaGrid.innerHTML = '<div class="publication-status">No media coverage items found.</div>';
-    return;
-  }
-
-  mediaGrid.innerHTML = items.map((item, index) => {
-    const image = optimizeImageUrl(item.remote_image || item.thumbnail || "assets/court.webp");
-    return `
-    <article class="media-card reveal is-visible">
-      <a href="${escapeHtml(item.url)}" target="_blank" rel="noopener">
-        <img data-media-image="${index}" src="${escapeHtml(image)}" alt="${escapeHtml(item.outlet + ': ' + item.headline)}" loading="lazy" decoding="async">
-      </a>
-      <div class="media-body">
-        <span class="media-outlet">${escapeHtml(item.outlet)} Â· ${escapeHtml(item.source_type || 'Coverage')}</span>
-        <h3><a href="${escapeHtml(item.url)}" target="_blank" rel="noopener">${escapeHtml(item.headline)}</a></h3>
-        <p>${escapeHtml(item.summary || '')}</p>
-        <div class="media-actions">
-          <a href="${escapeHtml(item.url)}" target="_blank" rel="noopener">Source</a>
-          <a href="${escapeHtml(item.archive_url || item.url)}" target="_blank" rel="noopener">Archive</a>
-        </div>
-      </div>
-    </article>
-  `;
-  }).join("");
-
-  items.forEach((item, index) => {
-    if (item.remote_image) return;
-    resolveMediaImage(item.url).then((image) => {
-      if (!image) return;
-      const element = mediaGrid.querySelector(`[data-media-image="${index}"]`);
-      if (element) element.src = optimizeImageUrl(image);
-    });
-  });
 }
 
 function renderPagedArchive(container, items, renderCard, options = {}) {
@@ -312,7 +249,7 @@ function renderMediaCoverage(items) {
   }
 
   const renderCard = (item, index) => {
-    const image = optimizeImageUrl(item.remote_image || item.thumbnail || "assets/court.webp");
+    const image = optimizeImageUrl(item.remote_image || item.thumbnail || "/assets/court.webp");
     return `
       <article class="media-card reveal is-visible">
         <a href="${escapeHtml(item.url)}" target="_blank" rel="noopener">
@@ -382,7 +319,7 @@ async function resolveMediaImage(url) {
 async function loadMediaCoverage() {
   if (!mediaGrid) return;
   try {
-    const response = await fetch("media-coverage.json?v=20260607c", { cache: "no-store" });
+    const response = await fetch("/media-coverage.json?v=20260609media", { cache: "no-store" });
     if (!response.ok) throw new Error("media");
     renderMediaCoverage(await response.json());
   } catch (_) {

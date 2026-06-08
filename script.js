@@ -60,6 +60,16 @@ function metaImageFromHtml(value, baseUrl) {
   return "";
 }
 
+function optimizeImageUrl(url) {
+  const value = String(url || "");
+  if (!value) return value;
+  return value
+    .replace(/width-1200,height-630/g, "width-640,height-360")
+    .replace(/fit-in\/1200x675/g, "fit-in/640x360")
+    .replace(/\/jpg\/large\/high/g, "/jpg/medium/high")
+    .replace(/w=1200/g, "w=640");
+}
+
 function normalizeItem(item, source) {
   const content = item.content || item.description || "";
   return {
@@ -68,7 +78,7 @@ function normalizeItem(item, source) {
     link: item.link || item.guid || "#",
     date: item.pubDate ? new Date(item.pubDate) : null,
     summary: textFromHtml(content).slice(0, 180),
-    image: item.thumbnail || item.enclosure?.link || firstImageFromHtml(content) || "assets/record.webp"
+    image: optimizeImageUrl(item.thumbnail || item.enclosure?.link || firstImageFromHtml(content) || "assets/record.webp")
   };
 }
 
@@ -175,7 +185,7 @@ function renderMediaCoverage(items) {
   }
 
   mediaGrid.innerHTML = items.map((item, index) => {
-    const image = item.remote_image || item.thumbnail || "assets/court.webp";
+    const image = optimizeImageUrl(item.remote_image || item.thumbnail || "assets/court.webp");
     return `
     <article class="media-card reveal is-visible">
       <a href="${escapeHtml(item.url)}" target="_blank" rel="noopener">
@@ -199,7 +209,7 @@ function renderMediaCoverage(items) {
     resolveMediaImage(item.url).then((image) => {
       if (!image) return;
       const element = mediaGrid.querySelector(`[data-media-image="${index}"]`);
-      if (element) element.src = image;
+      if (element) element.src = optimizeImageUrl(image);
     });
   });
 }
@@ -267,7 +277,7 @@ function renderPublications(items) {
     return `
       <article class="publication-card reveal is-visible">
         <a href="${escapeHtml(item.link)}" target="_blank" rel="noopener">
-          <img src="${escapeHtml(item.image)}" alt="${escapeHtml(item.title)}" loading="${index < 4 ? 'eager' : 'lazy'}" decoding="async">
+          <img src="${escapeHtml(item.image)}" alt="${escapeHtml(item.title)}" loading="lazy" decoding="async" width="640" height="360" sizes="(max-width: 760px) 92vw, (max-width: 1100px) 45vw, 320px" fetchpriority="low">
         </a>
         <div class="publication-body">
           <span class="publication-meta">${escapeHtml(item.source)} | ${escapeHtml(date)}</span>
@@ -302,11 +312,11 @@ function renderMediaCoverage(items) {
   }
 
   const renderCard = (item, index) => {
-    const image = item.remote_image || item.thumbnail || "assets/court.webp";
+    const image = optimizeImageUrl(item.remote_image || item.thumbnail || "assets/court.webp");
     return `
       <article class="media-card reveal is-visible">
         <a href="${escapeHtml(item.url)}" target="_blank" rel="noopener">
-          <img data-media-image="${index}" src="${escapeHtml(image)}" alt="${escapeHtml(item.outlet + ': ' + item.headline)}" loading="${index < 4 ? 'eager' : 'lazy'}" decoding="async">
+          <img data-media-image="${index}" src="${escapeHtml(image)}" alt="${escapeHtml(item.outlet + ': ' + item.headline)}" loading="lazy" decoding="async" width="640" height="360" sizes="(max-width: 760px) 92vw, (max-width: 1100px) 45vw, 320px" fetchpriority="low">
         </a>
         <div class="media-body">
           <span class="media-outlet">${escapeHtml(item.outlet)} | ${escapeHtml(item.source_type || 'Coverage')}</span>
@@ -328,7 +338,7 @@ function renderMediaCoverage(items) {
       resolveMediaImage(item.url).then((image) => {
         if (!image) return;
         const element = mediaGrid.querySelector(`[data-media-image="${imageIndex}"]`);
-        if (element) element.src = image;
+        if (element) element.src = optimizeImageUrl(image);
       });
     });
   };
@@ -344,7 +354,7 @@ function renderMediaCoverage(items) {
     "@type": "NewsArticle",
     headline: item.headline,
     url: item.url,
-    image: item.remote_image || item.thumbnail || undefined,
+    image: optimizeImageUrl(item.remote_image || item.thumbnail || undefined),
     datePublished: item.published_date,
     description: item.summary,
     publisher: { "@type": "Organization", name: item.outlet },
@@ -402,8 +412,28 @@ async function loadPublications() {
   }
 }
 
-loadPublications();
-loadMediaCoverage();
+function loadWhenNearViewport(element, callback) {
+  if (!element) return;
+  let started = false;
+  const start = () => {
+    if (started) return;
+    started = true;
+    callback();
+  };
+  if (!("IntersectionObserver" in window)) {
+    start();
+    return;
+  }
+  const loader = new IntersectionObserver((entries) => {
+    if (!entries.some((entry) => entry.isIntersecting)) return;
+    loader.disconnect();
+    start();
+  }, { rootMargin: "600px 0px" });
+  loader.observe(element);
+}
+
+loadWhenNearViewport(publicationGrid, loadPublications);
+loadWhenNearViewport(mediaGrid, loadMediaCoverage);
 
 document.querySelectorAll('[data-share-x], [data-share-linkedin]').forEach((link) => {
   const url = encodeURIComponent(window.location.href);

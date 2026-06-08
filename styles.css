@@ -1760,3 +1760,18 @@ h3 {
   }
 }
 
+
+.publication-noscript {
+  display: grid;
+  gap: 10px;
+}
+
+.publication-noscript a {
+  color: var(--red);
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.publication-noscript a:hover {
+  text-decoration: underline;
+}

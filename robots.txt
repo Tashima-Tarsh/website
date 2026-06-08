@@ -69,6 +69,7 @@ Allow: /
 # ---- Sitemaps ----
 Sitemap: https://thenitishkr.in/sitemap.xml
 Sitemap: https://thenitishkr.in/news-sitemap.xml
+Sitemap: https://thenitishkr.in/feed.xml
 
 # ---- IndexNow ----
 # Key file must be live at: https://thenitishkr.in/a0151dcfc802e79c4c6818a68dfd9fef.txt

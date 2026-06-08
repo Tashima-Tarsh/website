@@ -6,10 +6,13 @@
   X-Frame-Options: SAMEORIGIN
   Permissions-Policy: camera=(), microphone=(), geolocation=(), interest-cohort=()
   X-Robots-Tag: index, follow
-  Cache-Control: public, max-age=300, must-revalidate
+  Cache-Control: no-cache, no-store, must-revalidate
 
 /*.html
-  Cache-Control: public, max-age=300, must-revalidate
+  Cache-Control: no-cache, no-store, must-revalidate
+
+/*
+  Cache-Control: no-cache, no-store, must-revalidate
 
 
 /assets/images/*

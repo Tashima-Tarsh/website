@@ -435,21 +435,200 @@ function loadWhenNearViewport(element, callback) {
 loadWhenNearViewport(publicationGrid, loadPublications);
 loadWhenNearViewport(mediaGrid, loadMediaCoverage);
 
+const RELATED_RECORDS = {
+  "intelligence-ndma-disaster-governance": [
+    ["Case 03", "NITI Aayog / Certification & Funds", "intelligence-niti-aayog-certification-funds"],
+    ["Case 04", "ODF / False Justification", "intelligence-odf-false-justification"],
+    ["Framework", "Article 12 accountability", "article-12"]
+  ],
+  "intelligence-meity-digital-governance": [
+    ["Framework", "Digital Constitutional Personhood", "digital-constitutional-personhood"],
+    ["Case 12", "SIR / Constitutional Scam Allegation", "intelligence-sir-constitutional-scam"],
+    ["Archive", "DISHA Intelligence Archive", "intelligence"]
+  ],
+  "intelligence-niti-aayog-certification-funds": [
+    ["Case 04", "ODF / False Justification", "intelligence-odf-false-justification"],
+    ["Case 01", "NDMA / Disaster Governance", "intelligence-ndma-disaster-governance"],
+    ["Framework", "Article 12 accountability", "article-12"]
+  ],
+  "intelligence-odf-false-justification": [
+    ["Case 03", "NITI Aayog / Certification & Funds", "intelligence-niti-aayog-certification-funds"],
+    ["Case 01", "NDMA / Disaster Governance", "intelligence-ndma-disaster-governance"],
+    ["Archive", "DISHA Intelligence Archive", "intelligence"]
+  ],
+  "intelligence-sir-constitutional-scam": [
+    ["Case 02", "MeitY / Digital Governance", "intelligence-meity-digital-governance"],
+    ["Framework", "Digital Constitutional Personhood", "digital-constitutional-personhood"],
+    ["Framework", "Article 12 accountability", "article-12"]
+  ]
+};
+
+const DEFAULT_RELATED = [
+  ["Archive", "DISHA Intelligence Archive", "intelligence"],
+  ["Framework", "Article 12 accountability", "article-12"],
+  ["System", "DISHA Intelligence Architecture", "disha"]
+];
+
+function canonicalUrl() {
+  const canonical = document.querySelector('link[rel="canonical"]');
+  if (canonical && canonical.href) return canonical.href;
+  return window.location.href.replace(/\/index\.html$/, "/").replace(/\.html($|[?#])/, "$1");
+}
+
+function pageTitle() {
+  const ogTitle = document.querySelector('meta[property="og:title"]');
+  return (ogTitle && ogTitle.content) || document.title.replace(/\s*\|\s*thenitishkr.*$/i, "");
+}
+
+function currentSlug() {
+  const path = window.location.pathname.replace(/\/$/, "");
+  const slug = path.split("/").pop() || "index";
+  return slug.replace(/\.html$/, "");
+}
+
+function htmlToId(text) {
+  return text.toLowerCase().replace(/&/g, " and ").replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "").slice(0, 64);
+}
+
+function readingMinutes(main) {
+  const words = (main.textContent || "").trim().split(/\s+/).filter(Boolean).length;
+  return Math.max(1, Math.ceil(words / 220));
+}
+
+function installReadingProgress() {
+  if (document.querySelector(".reading-progress")) return;
+  const progress = document.createElement("div");
+  progress.className = "reading-progress";
+  progress.setAttribute("aria-hidden", "true");
+  progress.innerHTML = "<span></span>";
+  document.body.prepend(progress);
+  const bar = progress.querySelector("span");
+  const update = () => {
+    const max = document.documentElement.scrollHeight - window.innerHeight;
+    const value = max > 0 ? Math.min(100, Math.max(0, (window.scrollY / max) * 100)) : 0;
+    bar.style.width = `${value}%`;
+  };
+  update();
+  window.addEventListener("scroll", update, { passive: true });
+  window.addEventListener("resize", update);
+}
+
+function installRecordToolkit() {
+  const main = document.querySelector("main");
+  if (!main || document.querySelector(".record-toolkit")) return;
+  const slug = currentSlug();
+  const isCase = slug.startsWith("intelligence-") && slug !== "intelligence";
+  const isRecord = isCase || main.classList.contains("case-study-page") || document.querySelector("#source-pdf, #source-documents");
+  if (!isRecord) {
+    installReadingProgress();
+    return;
+  }
+
+  installReadingProgress();
+  const headings = Array.from(main.querySelectorAll("h2, h3"))
+    .filter((heading) => heading.textContent.trim().length > 0)
+    .slice(0, 9);
+  headings.forEach((heading) => {
+    if (!heading.id) heading.id = htmlToId(heading.textContent);
+  });
+
+  const sourceTarget = document.querySelector("#source-pdf, #source-documents, [id*='source']");
+  const toolkit = document.createElement("section");
+  toolkit.className = "section record-toolkit";
+  toolkit.setAttribute("aria-label", "Record reading tools");
+  const tocLinks = headings.map((heading) => `<a href="#${heading.id}">${escapeHtml(heading.textContent.trim())}</a>`).join("");
+  toolkit.innerHTML = `
+    <div class="record-toolkit-grid">
+      <div class="record-tool-card">
+        <span class="label">Reader tools</span>
+        <strong>${readingMinutes(main)} min read</strong>
+        <p>Follow the record, verify the source path, and cite the page from its canonical address.</p>
+      </div>
+      <nav class="record-toc" aria-label="On this record">
+        <span>On this record</span>
+        ${tocLinks || '<a href="#top">Record overview</a>'}
+      </nav>
+      <div class="evidence-badges" aria-label="Evidence framing">
+        <span>Verified records</span>
+        <span>Documented allegations</span>
+        <span>Research analysis</span>
+        <span>Public commentary</span>
+      </div>
+      ${sourceTarget ? `<a class="source-jump" href="#${sourceTarget.id}">Jump to source file</a>` : ""}
+    </div>`;
+  main.insertBefore(toolkit, main.children[1] || main.firstChild);
+}
+
+function installRelatedRecords() {
+  const slug = currentSlug();
+  if (!slug.startsWith("intelligence-") || slug === "intelligence" || document.querySelector(".related-records")) return;
+  const records = RELATED_RECORDS[slug] || DEFAULT_RELATED;
+  const block = document.createElement("section");
+  block.className = "section related-records";
+  block.setAttribute("aria-label", "Related records");
+  block.innerHTML = `
+    <p class="eyebrow">Related records</p>
+    <h2>Continue the evidence path.</h2>
+    <div class="related-record-grid">
+      ${records.map(([label, title, href]) => `
+        <a class="related-record-card" href="${href}">
+          <span>${escapeHtml(label)}</span>
+          <strong>${escapeHtml(title)}</strong>
+        </a>`).join("")}
+    </div>`;
+  const share = document.querySelector(".share-follow");
+  if (share) share.parentNode.insertBefore(block, share);
+}
+
+function installTrustCitation() {
+  const slug = currentSlug();
+  const isRecord = slug.startsWith("intelligence-") && slug !== "intelligence";
+  if (!isRecord || document.querySelector(".trust-citation")) return;
+  const title = pageTitle();
+  const url = canonicalUrl();
+  const accessed = new Date().toLocaleDateString("en-IN", { year: "numeric", month: "long", day: "numeric" });
+  const citation = `Nitish Kumar (thenitishkr), "${title}", thenitishkr.in, ${url}, accessed ${accessed}.`;
+  const block = document.createElement("section");
+  block.className = "section trust-citation";
+  block.setAttribute("aria-label", "Trust and citation");
+  block.innerHTML = `
+    <div>
+      <p class="eyebrow">Trust / citation</p>
+      <h2>Cite this public-interest record.</h2>
+      <p>This record distinguishes verified source material, documented allegations, research analysis, and public commentary. It is maintained for research, documentation, journalism, and lawful public-interest review.</p>
+      <p class="citation-text">${escapeHtml(citation)}</p>
+    </div>
+    <div class="citation-actions">
+      <a class="btn ghost" href="https://orcid.org/0009-0004-6840-4463" target="_blank" rel="noopener">ORCID record</a>
+      <button class="btn" type="button" data-copy-citation="${escapeHtml(citation)}">Copy citation</button>
+    </div>`;
+  const related = document.querySelector(".related-records");
+  const share = document.querySelector(".share-follow");
+  if (share) share.parentNode.insertBefore(block, share);
+  else if (related) related.after(block);
+}
+
+installRecordToolkit();
+installRelatedRecords();
+installTrustCitation();
+
 document.querySelectorAll('[data-share-x], [data-share-linkedin]').forEach((link) => {
-  const url = encodeURIComponent(window.location.href);
-  if (link.hasAttribute('data-share-x')) link.href = `https://x.com/intent/tweet?url=${url}&text=${encodeURIComponent(document.title)}`;
-  if (link.hasAttribute('data-share-linkedin')) link.href = `https://www.linkedin.com/shareArticle?mini=true&url=${url}&title=${encodeURIComponent(document.title)}`;
+  const url = encodeURIComponent(canonicalUrl());
+  if (link.hasAttribute('data-share-x')) link.href = `https://x.com/intent/tweet?url=${url}&text=${encodeURIComponent(pageTitle())}`;
+  if (link.hasAttribute('data-share-linkedin')) link.href = `https://www.linkedin.com/shareArticle?mini=true&url=${url}&title=${encodeURIComponent(pageTitle())}`;
 });
 
-document.querySelectorAll('[data-copy-link]').forEach((button) => {
+document.querySelectorAll('[data-copy-link], [data-copy-citation]').forEach((button) => {
   button.addEventListener('click', async () => {
+    const original = button.textContent;
+    const value = button.getAttribute("data-copy-citation") || canonicalUrl();
     try {
-      await navigator.clipboard.writeText(window.location.href);
-      button.textContent = 'Link copied';
-      setTimeout(() => { button.textContent = 'Copy link'; }, 1800);
+      await navigator.clipboard.writeText(value);
+      button.textContent = button.hasAttribute("data-copy-citation") ? 'Citation copied' : 'Link copied';
+      setTimeout(() => { button.textContent = original; }, 1800);
     } catch (_) {
       button.textContent = 'Copy failed';
-      setTimeout(() => { button.textContent = 'Copy link'; }, 1800);
+      setTimeout(() => { button.textContent = original; }, 1800);
     }
   });
 });

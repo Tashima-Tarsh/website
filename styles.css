@@ -1396,3 +1396,264 @@ h3 {
 
 .promise-list li::before { content: none !important; }
 
+.case-study-layout > *,
+.case-study-hero > *,
+.case-study-stats > *,
+.case-study-section,
+.case-study-aside,
+.case-study-card,
+.case-study-note,
+.profile-dossier {
+  min-width: 0;
+}
+
+.case-study-section,
+.case-study-aside,
+.case-study-card,
+.case-study-note,
+.profile-dossier {
+  overflow-wrap: anywhere;
+}
+
+.reading-progress {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 90;
+  height: 3px;
+  background: rgba(126,31,31,.08);
+}
+
+.reading-progress span {
+  display: block;
+  width: 0;
+  height: 100%;
+  background: linear-gradient(90deg, var(--red), #bd8d3b);
+  transition: width .08s linear;
+}
+
+.record-toolkit {
+  padding-top: 18px;
+  padding-bottom: 18px;
+}
+
+.record-toolkit-grid {
+  display: grid;
+  grid-template-columns: minmax(180px, .6fr) minmax(260px, 1.25fr) minmax(260px, 1fr) auto;
+  gap: 12px;
+  align-items: stretch;
+  border: 1px solid rgba(126,31,31,.16);
+  border-radius: var(--radius);
+  background: linear-gradient(180deg, rgba(255,255,255,.92), rgba(255,252,245,.86));
+  box-shadow: 0 18px 48px rgba(42,36,29,.06);
+  padding: 12px;
+}
+
+.record-tool-card,
+.record-toc,
+.evidence-badges,
+.source-jump {
+  border: 1px solid rgba(126,31,31,.12);
+  background: rgba(255,255,255,.78);
+  border-radius: 10px;
+  padding: 14px;
+}
+
+.record-tool-card strong {
+  display: block;
+  margin-top: 4px;
+  color: var(--red);
+  font-size: 24px;
+  line-height: 1;
+}
+
+.record-tool-card p {
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.record-toc {
+  position: sticky;
+  top: 74px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-content: start;
+}
+
+.record-toc span,
+.evidence-badges::before {
+  width: 100%;
+  color: var(--red);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.record-toc a {
+  color: #332d27;
+  border: 1px solid rgba(126,31,31,.12);
+  border-radius: 999px;
+  background: #fffdf8;
+  padding: 6px 10px;
+  font-size: 12px;
+  line-height: 1.15;
+}
+
+.record-toc a:hover,
+.source-jump:hover,
+.related-record-card:hover {
+  border-color: rgba(126,31,31,.34);
+  color: var(--red);
+}
+
+.evidence-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-content: start;
+}
+
+.evidence-badges::before {
+  content: "Evidence labels";
+}
+
+.evidence-badges span {
+  border: 1px solid rgba(126,31,31,.16);
+  border-radius: 999px;
+  background: #fffdf8;
+  color: #3f3933;
+  padding: 7px 10px;
+  font-size: 11px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.source-jump {
+  display: grid;
+  place-items: center;
+  min-width: 132px;
+  color: var(--red);
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: .08em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.related-records,
+.trust-citation {
+  border-top: 1px solid rgba(126,31,31,.14);
+  border-bottom: 1px solid rgba(126,31,31,.14);
+  background: rgba(255,255,255,.72);
+}
+
+.related-records h2,
+.trust-citation h2 {
+  max-width: 760px;
+  font-size: clamp(28px, 4vw, 44px);
+}
+
+.related-record-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.related-record-card {
+  min-height: 124px;
+  border: 1px solid rgba(126,31,31,.16);
+  border-radius: var(--radius);
+  background: linear-gradient(180deg, #fff, #fffaf0);
+  padding: 18px;
+  display: grid;
+  align-content: space-between;
+  color: #302a24;
+}
+
+.related-record-card span {
+  color: var(--red);
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.related-record-card strong {
+  margin-top: 18px;
+  font-size: 18px;
+  line-height: 1.25;
+}
+
+.trust-citation {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 24px;
+  align-items: center;
+}
+
+.trust-citation p {
+  margin-top: 10px;
+  color: var(--muted);
+}
+
+.citation-text {
+  border-left: 3px solid rgba(126,31,31,.55);
+  padding-left: 14px;
+  color: #332d27 !important;
+  font-size: 14px;
+}
+
+.citation-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+.citation-actions button {
+  cursor: pointer;
+  font-family: inherit;
+}
+
+@media (max-width: 980px) {
+  .record-toolkit-grid,
+  .trust-citation {
+    grid-template-columns: 1fr;
+  }
+  .record-toc {
+    position: static;
+  }
+  .source-jump {
+    min-height: 48px;
+  }
+}
+
+@media (max-width: 760px) {
+  .record-toolkit {
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+  .record-toolkit-grid {
+    gap: 10px;
+    padding: 10px;
+  }
+  .record-toc a,
+  .evidence-badges span {
+    font-size: 10.5px;
+  }
+  .related-record-grid {
+    grid-template-columns: 1fr;
+  }
+  .trust-citation {
+    padding-top: 26px;
+    padding-bottom: 26px;
+  }
+  .citation-actions {
+    justify-content: flex-start;
+  }
+}
+

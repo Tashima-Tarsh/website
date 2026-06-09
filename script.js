@@ -21,6 +21,47 @@ document.querySelectorAll(".reveal").forEach((element) => observer.observe(eleme
 
 const publicationGrid = document.querySelector("[data-publication-grid]");
 const mediaGrid = document.querySelector("[data-media-grid]");
+const ALLOWED_PUBLICATION_URLS = new Set([
+  "https://thenitishkr.substack.com/p/we-record-everything-we-remember",
+  "https://thenitishkr.substack.com/p/india-arrested-the-operators-but",
+  "https://thenitishkr.substack.com/p/india-followed-the-money-i-followed",
+  "https://thenitishkr.medium.com/india-followed-the-money-he-followed-the-data-106c0fa40190",
+  "https://medium.com/@thenitishkr/india-followed-the-money-he-followed-the-data-106c0fa40190"
+]);
+const TRUSTED_PUBLICATIONS = [
+  {
+    source: "Substack",
+    title: "We Record Everything. We Remember Almost Nothing.",
+    link: "https://thenitishkr.substack.com/p/we-record-everything-we-remember",
+    date: new Date("2026-06-03T06:09:01+05:30"),
+    summary: "A cybersecurity researcher took the question to the Supreme Court. On 19 May 2026, the Court handed it to the government. The question is bigger than either of them.",
+    image: "https://substackcdn.com/image/fetch/$s_!1nrT!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F15cbdc89-e59d-420b-9738-0248865e73b7_1536x1024.png"
+  },
+  {
+    source: "Substack",
+    title: "India Arrested the Operators. But Did It Miss the Architecture?",
+    link: "https://thenitishkr.substack.com/p/india-arrested-the-operators-but",
+    date: new Date("2026-05-24T05:21:28+05:30"),
+    summary: "Supreme Court asked MeitY to examine a PIL raising questions about Chinese-linked cyber networks, data extraction, and India's unfinished cyber investigation.",
+    image: "https://substackcdn.com/image/fetch/$s_!TAZa!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F7349c51f-1210-405a-9be7-7c5e8e586296_1536x1024.png"
+  },
+  {
+    source: "Substack",
+    title: "India Followed the Money. I Followed the Data.",
+    link: "https://thenitishkr.substack.com/p/india-followed-the-money-i-followed",
+    date: new Date("2026-05-23T05:29:41+05:30"),
+    summary: "Supreme Court sent the cyber-security petition to MeitY. The next submission raises a bigger question about India's data-layer national security risk.",
+    image: "https://substackcdn.com/image/fetch/$s_!mWru!,w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fbe7e4f54-8ce8-46f2-affd-45410e5b3cd2_1536x1024.png"
+  },
+  {
+    source: "Medium",
+    title: "India Followed the Money. He Followed the Data.",
+    link: "https://thenitishkr.medium.com/india-followed-the-money-he-followed-the-data-106c0fa40190",
+    date: new Date("2026-06-03T00:00:00+05:30"),
+    summary: "A public-interest record on money trails, data trails, and the evidence architecture behind constitutional accountability.",
+    image: "https://cdn-images-1.medium.com/max/1024/1*IIE11lc9f6FumGfDKroiIQ.png"
+  }
+];
 
 function escapeHtml(value) {
   return String(value || "").replace(/[&<>"']/g, (char) => ({
@@ -72,14 +113,26 @@ function optimizeImageUrl(url) {
 
 function normalizeItem(item, source) {
   const content = item.content || item.description || "";
+  const remoteImage = item.thumbnail || item.enclosure?.link || firstImageFromHtml(content);
   return {
     source,
     title: textFromHtml(item.title || "Untitled"),
     link: item.link || item.guid || "#",
     date: item.pubDate ? new Date(item.pubDate) : null,
     summary: textFromHtml(content).slice(0, 180),
-    image: optimizeImageUrl(item.thumbnail || item.enclosure?.link || firstImageFromHtml(content) || "/assets/record.webp")
+    image: remoteImage ? optimizeImageUrl(remoteImage) : "/assets/record.webp"
   };
+}
+
+function canonicalPublicationUrl(url) {
+  try {
+    const parsed = new URL(url);
+    parsed.search = "";
+    parsed.hash = "";
+    return parsed.href.replace(/\/$/, "");
+  } catch (_) {
+    return String(url || "").replace(/[?#].*$/, "").replace(/\/$/, "");
+  }
 }
 
 function updateItemListSchema(id, name, items, mapper) {
@@ -129,7 +182,8 @@ async function fetchWithTimeout(url, timeout = 9000) {
 }
 
 async function loadFeed(feed) {
-  const jsonResponse = await fetchWithTimeout("https://api.rss2json.com/v1/api.json?rss_url=" + encodeURIComponent(feed.url), 12000);
+  const freshFeedUrl = feed.url + (feed.url.includes("?") ? "&" : "?") + "t=" + Date.now();
+  const jsonResponse = await fetchWithTimeout("https://api.rss2json.com/v1/api.json?rss_url=" + encodeURIComponent(freshFeedUrl), 12000);
   if (jsonResponse.ok) {
     const data = await jsonResponse.json();
     const items = (data.items || []).map((item) => normalizeItem(item, feed.source));
@@ -137,8 +191,8 @@ async function loadFeed(feed) {
   }
 
   const rawUrls = [
-    "https://api.allorigins.win/raw?url=" + encodeURIComponent(feed.url),
-    "https://api.codetabs.com/v1/proxy?quest=" + encodeURIComponent(feed.url)
+    "https://api.allorigins.win/raw?url=" + encodeURIComponent(freshFeedUrl),
+    "https://api.codetabs.com/v1/proxy?quest=" + encodeURIComponent(freshFeedUrl)
   ];
 
   for (const url of rawUrls) {
@@ -341,11 +395,19 @@ async function loadPublications() {
     const items = results
       .filter((result) => result.status === "fulfilled")
       .flatMap((result) => result.value)
+      .filter((item) => ALLOWED_PUBLICATION_URLS.has(canonicalPublicationUrl(item.link)))
       .sort((a, b) => (b.date || 0) - (a.date || 0));
 
-    renderPublications(items);
+    const approved = new Map();
+    [...items, ...TRUSTED_PUBLICATIONS].forEach((item) => {
+      const key = canonicalPublicationUrl(item.link);
+      if (!ALLOWED_PUBLICATION_URLS.has(key) || approved.has(key)) return;
+      approved.set(key, { ...item, image: optimizeImageUrl(item.image) });
+    });
+
+    renderPublications([...approved.values()].sort((a, b) => (b.date || 0) - (a.date || 0)));
   } catch (_) {
-    renderPublications([]);
+    renderPublications(TRUSTED_PUBLICATIONS.map((item) => ({ ...item, image: optimizeImageUrl(item.image) })));
   }
 }
 
@@ -369,7 +431,7 @@ function loadWhenNearViewport(element, callback) {
   loader.observe(element);
 }
 
-loadWhenNearViewport(publicationGrid, loadPublications);
+loadPublications();
 loadWhenNearViewport(mediaGrid, loadMediaCoverage);
 
 const RELATED_RECORDS = {

@@ -248,6 +248,22 @@ h3 {
   text-transform: uppercase;
 }
 
+.archive-reading-note {
+  grid-column: 1 / -1;
+  margin: 2px 0 0;
+  padding: 14px 16px;
+  border: 1px solid rgba(126,31,31,.18);
+  border-left: 4px solid var(--red);
+  border-radius: 6px;
+  background: rgba(255,255,255,.72);
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+.archive-reading-note strong {
+  color: var(--ink);
+}
+
 .grid-2, .grid-3, .grid-4 {
   display: grid;
   gap: 18px;
@@ -1774,4 +1790,126 @@ h3 {
 
 .publication-noscript a:hover {
   text-decoration: underline;
+}
+
+.evidence-status {
+  margin: 1.5rem 0;
+  padding: 1.25rem;
+  border: 1px solid currentColor;
+  border-radius: 0.75rem;
+  background: rgba(127, 127, 127, 0.06);
+}
+
+.evidence-status__title {
+  margin: 0 0 0.75rem;
+  font-size: 1rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.evidence-status dl,
+.page-version dl,
+.document-metadata {
+  display: grid;
+  grid-template-columns: minmax(10rem, 0.35fr) 1fr;
+  gap: 0.5rem 1rem;
+  margin: 0;
+}
+
+.evidence-status dt,
+.page-version dt,
+.document-metadata dt {
+  font-weight: 700;
+}
+
+.evidence-status dd,
+.page-version dd,
+.document-metadata dd {
+  margin: 0;
+}
+
+.evidence-label {
+  display: inline-block;
+  padding: 0.2rem 0.55rem;
+  border: 1px solid currentColor;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.table-wrap {
+  overflow-x: auto;
+  margin: 1.25rem 0;
+}
+
+.source-register {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.source-register caption {
+  text-align: left;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.source-register th,
+.source-register td {
+  padding: 0.75rem;
+  border: 1px solid currentColor;
+  text-align: left;
+  vertical-align: top;
+}
+
+.page-version {
+  margin: 2rem 0;
+  padding: 1.25rem;
+  border-top: 1px solid var(--line, currentColor);
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+}
+
+.skip-link:focus {
+  left: 1rem;
+  top: 1rem;
+  z-index: 9999;
+  padding: 0.75rem 1rem;
+  background: Canvas;
+  color: CanvasText;
+  border: 2px solid currentColor;
+}
+
+:focus-visible {
+  outline: 3px solid currentColor;
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .evidence-status dl,
+  .page-version dl,
+  .document-metadata {
+    grid-template-columns: 1fr;
+    gap: 0.2rem;
+  }
+
+  .evidence-status dd,
+  .page-version dd,
+  .document-metadata dd {
+    margin-bottom: 0.75rem;
+  }
 }

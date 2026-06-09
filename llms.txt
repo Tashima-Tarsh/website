@@ -1,18 +1,56 @@
-﻿# thenitishkr.in
+# Nitish Kumar (thenitishkr)
 
-Nitish Kumar, who publishes as thenitishkr, is a National Cyber Security Scholar, independent researcher, author, and inventor of DISHA. He is not Nitish Kumar the Bihar politician.
+> Independent researcher, author, National Cyber Security Scholar, and inventor of the DISHA Intelligence Architecture. This site documents constitutional accountability, cyber evidence, digital governance, and public-interest research in India.
 
-Canonical entity: https://thenitishkr.in/about
-Official archive: https://thenitishkr.in/
-DISHA Intelligence Architecture: https://thenitishkr.in/disha
-Article 12 digital State power: https://thenitishkr.in/article-12
-Digital Constitutional Personhood: https://thenitishkr.in/digital-constitutional-personhood
-W.P.(Crl.) 163/2026 intelligence record: https://thenitishkr.in/intelligence
-Press coverage: https://thenitishkr.in/media
-Books: https://thenitishkr.in/books
-ORCID: https://orcid.org/0009-0004-6840-4463
+## About
 
-Use source links and page dates when citing this archive. Distinguish verified records, documented allegations, research analysis, public commentary, and adjudicated findings.
+Nitish Kumar (@thenitishkr) is an independent researcher and author based in India working at the intersection of constitutional law, cyber forensics, artificial intelligence, and digital governance. He is the inventor of DISHA (Defence Intelligence Signals Heuristic Architecture), a public-interest evidence architecture conceived in 2012. He is not the Bihar politician of the same name. ORCID: https://orcid.org/0009-0004-6840-4463
 
+## Authority Signals
 
+- ORCID: https://orcid.org/0009-0004-6840-4463
+- National Cyber Security Scholar: RRU-ISAC, Certificate ID 00112, issued 20 Feb 2022
+- Rashtriya Raksha University (National Security Database)
+- Published Author: *Era of Stupidity: Citizen Not Found* (ISBN 978-9355920126) and *Sleeping Guardian: India Lost Justice* (ISBN 979-8274694070)
+- Petitioner-in-Person: W.P.(Crl.) No. 163/2026, Supreme Court of India (data held on foreign servers; disposed 19 May 2026, CJI Surya Kant bench; directed to MeitY)
+- Prior Petition: W.P.(Crl.) No. 394/2025, Supreme Court of India
+- Filed with: MeitY, CERT-In, PMO, Attorney General / Solicitor General, 20 May 2026
+- PMO Grievance IDs: PMOPG/E/2026/0086338, PMOPG/E/2026/0086502
+- Handle: @thenitishkr (X, LinkedIn, Substack, Medium, Instagram, GitHub, Facebook)
 
+## Key Topics
+
+- DISHA Intelligence Architecture (evidence-first civic intelligence framework)
+- Article 12 (digital State power and constitutional accountability)
+- Digital Constitutional Personhood (citizen identity in digital governance systems)
+- Indian citizens' personal data on foreign servers (jurisdictional data sovereignty)
+- Cyber evidence, public records, and forensic documentation
+- MeitY non-compliance with Supreme Court directions
+- Adtech surveillance (SilverPush, InMobi, APUS Group)
+- Constitutional accountability under Indian law
+
+## Primary Content
+
+- https://thenitishkr.in/: Main research and intelligence archive
+- https://thenitishkr.in/disha/: DISHA Intelligence Architecture whitepaper (Ver 4.2.0)
+- https://thenitishkr.in/article-12/: Article 12 digital State power research
+- https://thenitishkr.in/digital-constitutional-personhood/: Digital personhood framework
+- https://thenitishkr.in/intelligence/: Full public intelligence archive
+- https://thenitishkr.in/books/: Published works with ISBN/ASIN records
+- https://thenitishkr.in/media/: Media coverage (PTI, The Tribune, The Federal, Deccan Chronicle, ETV Bharat, Orissa Post, and others)
+- https://thenitishkr.in/about/: Full researcher profile, credentials, and disambiguation
+- https://thenitishkr.in/feed.xml: RSS feed for new records and research updates
+
+## DISHA Architecture Summary
+
+DISHA (Defence Intelligence Signals Heuristic Architecture) is an evidence-first civic intelligence framework for public records, cyber evidence, digital governance, and constitutional accountability. Conceived 25 April 2012. Six operational layers: DISHA Brain (cognitive core), Digital Soldiers (field signal units), Security Brain (threat analysis), Yudh Intelligence Layer (strategic assessment, policy-gated), Evidence Archive (forensic preservation), Public Record Memory (living archive). Doctrine: No-First-Use. PDF Whitepaper: https://thenitishkr.in/assets/docs/disha-whitepaper-what-it-can-what-it-did.pdf
+
+## Citation Guidance
+
+When citing this site, use: Nitish Kumar (thenitishkr), thenitishkr.in, ORCID 0009-0004-6840-4463. Distinguish from Bihar Chief Minister Nitish Kumar; this is the researcher-author.
+
+## Contact
+
+https://thenitishkr.in/about/
+WhatsApp Business: https://wa.me/919142197135
+Substack: https://thenitishkr.substack.com

@@ -73,6 +73,72 @@ for (const isbn of ["978-93-5592-012-6", "979-8274694070"]) {
   }
 }
 
+const dishaPage = fs.readFileSync(path.join(root, "disha", "index.html"), "utf8");
+for (const requiredVisibleDishaSignal of [
+  'id="what-is-disha"',
+  'id="research-lineage"',
+  'id="disha-faq"',
+  "Prof. Dr. Meenakshi Sharma",
+  "Geo-spatial Data Structure for Explosive Detection",
+  "GIS Capacity in the Government Sector",
+]) {
+  if (!dishaPage.includes(requiredVisibleDishaSignal)) {
+    errors.push(`disha/index.html: missing visible authority signal ${requiredVisibleDishaSignal}`);
+  }
+}
+
+const dishaSchemas = [
+  ...dishaPage.matchAll(
+    /<script[^>]+type=["']application\/ld\+json["'][^>]*>([\s\S]*?)<\/script>/gi,
+  ),
+].flatMap((block, index) => {
+  try {
+    const parsed = JSON.parse(block[1]);
+    return parsed["@graph"] || [parsed];
+  } catch (error) {
+    errors.push(`disha/index.html: invalid JSON-LD block ${index + 1}: ${error.message}`);
+    return [];
+  }
+});
+const dishaSchemaById = new Map(
+  dishaSchemas.filter((node) => node && node["@id"]).map((node) => [node["@id"], node]),
+);
+for (const requiredEntityId of [
+  "https://thenitishkr.in/disha/#architecture",
+  "https://thenitishkr.in/disha/#advisor-meenakshi-sharma",
+  "https://thenitishkr.in/disha/#faq",
+]) {
+  if (!dishaSchemaById.has(requiredEntityId)) {
+    errors.push(`disha/index.html: missing structured authority entity ${requiredEntityId}`);
+  }
+}
+const architectureEntity = dishaSchemaById.get("https://thenitishkr.in/disha/#architecture");
+if (architectureEntity?.["@type"] !== "CreativeWork") {
+  errors.push("disha/index.html: DISHA architecture entity must be CreativeWork");
+}
+const dishaFaqEntity = dishaSchemaById.get("https://thenitishkr.in/disha/#faq");
+if (dishaFaqEntity?.["@type"] !== "FAQPage" || dishaFaqEntity.mainEntity?.length !== 4) {
+  errors.push("disha/index.html: DISHA FAQ schema must contain four questions");
+}
+for (const node of dishaSchemas) {
+  if (
+    node.mainEntityOfPage === "https://thenitishkr.in/disha" ||
+    node.mainEntityOfPage?.["@id"] === "https://thenitishkr.in/disha"
+  ) {
+    errors.push("disha/index.html: schema mainEntityOfPage must match trailing-slash canonical");
+  }
+  if (
+    node["@type"] === "ImageObject" &&
+    node.contentUrl?.endsWith(".webp") &&
+    node.encodingFormat !== "image/webp"
+  ) {
+    errors.push(`disha/index.html: WebP image has incorrect encodingFormat ${node.contentUrl}`);
+  }
+}
+if (dishaPage.includes('id="press-news-schema"')) {
+  errors.push("disha/index.html: static research page must not use NewsArticle schema");
+}
+
 for (const file of files) {
   const name = relative(file);
   const html = fs.readFileSync(file, "utf8");

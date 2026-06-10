@@ -614,7 +614,7 @@ installTrustCitation();
 document.querySelectorAll('[data-share-x], [data-share-linkedin]').forEach((link) => {
   const url = encodeURIComponent(canonicalUrl());
   if (link.hasAttribute('data-share-x')) link.href = `https://x.com/intent/tweet?url=${url}&text=${encodeURIComponent(pageTitle())}`;
-  if (link.hasAttribute('data-share-linkedin')) link.href = `https://www.linkedin.com/shareArticle?mini=true&url=${url}&title=${encodeURIComponent(pageTitle())}`;
+  if (link.hasAttribute('data-share-linkedin')) link.href = `https://www.linkedin.com/sharing/share-offsite/?url=${url}`;
 });
 
 document.querySelectorAll('[data-copy-link], [data-copy-citation]').forEach((button) => {

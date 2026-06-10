@@ -44,6 +44,34 @@ function localTarget(fromFile, href) {
 
 const files = walk(root);
 const sitemap = fs.readFileSync(path.join(root, "sitemap.xml"), "utf8");
+const homepage = fs.readFileSync(path.join(root, "index.html"), "utf8");
+
+for (const authorityUrl of [
+  "https://orcid.org/0009-0004-6840-4463",
+  "https://www.wikidata.org/wiki/Q140001166",
+  "https://www.linkedin.com/in/thenitishkr",
+  "https://thenitishkr.substack.com",
+  "https://medium.com/@thenitishkr",
+  "https://www.amazon.com/author/nikukr",
+]) {
+  if (!homepage.includes(authorityUrl)) {
+    errors.push(`index.html: missing identity authority URL ${authorityUrl}`);
+  }
+}
+
+if (
+  !homepage.includes(
+    "https://www.verdictum.in/supreme-court/cyber-security-consultant-plea-destruction-stolen-personal-data-indian-citizens-1614263",
+  )
+) {
+  errors.push("index.html: missing independent Verdictum coverage reference");
+}
+
+for (const isbn of ["978-93-5592-012-6", "979-8274694070"]) {
+  if (!homepage.includes(`"isbn":"${isbn}"`)) {
+    errors.push(`index.html: missing authored book ISBN ${isbn}`);
+  }
+}
 
 for (const file of files) {
   const name = relative(file);

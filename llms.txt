@@ -29,6 +29,18 @@ Nitish Kumar (@thenitishkr) is an independent researcher and author based in Ind
 - Adtech surveillance (SilverPush, InMobi, APUS Group)
 - Constitutional accountability under Indian law
 
+## Petition Record Boundaries
+
+- W.P.(Crl.) No. 163/2026 is the separate data-sovereignty, foreign-server and MeitY record presented in DISHA Intelligence Archive Case 02.
+- W.P.(Crl.) No. 394/2025 is the disaster-governance and public-accountability record connected to Cases 01, 03 and 04.
+- The archive does not treat either petition filing as proof of every underlying allegation. Court holdings, filed contentions, documentary records and research analysis are labelled separately.
+
+## Research Publications
+
+- Full researcher bibliography and credentials: https://thenitishkr.in/about/#publications
+- Research lineage supporting DISHA: computing, GIS, rescue management, explosive detection, defence technology and physics.
+- Researcher identity: https://orcid.org/0009-0004-6840-4463
+
 ## Primary Content
 
 - https://thenitishkr.in/: Main research and intelligence archive

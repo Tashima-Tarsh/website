@@ -1,0 +1,68 @@
+name: Production release
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: production
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Validate release
+        run: npm run audit
+
+      - name: Rebuild discovery signals
+        run: npm run signals
+
+      - name: Revalidate generated signals
+        run: npm run audit
+
+      - name: Prepare production artifact
+        run: npm run release
+
+      - name: Deploy exact main commit
+        id: deploy
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy dist --project-name=${{ vars.CLOUDFLARE_PAGES_PROJECT }} --branch=main --commit-hash=${{ github.sha }}
+
+      - name: Wait for custom domain propagation
+        run: sleep 20
+
+      - name: Verify every live canonical URL
+        run: npm run verify:live
+
+      - name: Submit canonical URLs to IndexNow
+        run: npm run indexnow
+
+      - name: Publish release summary
+        run: |
+          {
+            echo "## Production release"
+            echo ""
+            echo "- Commit: \`${GITHUB_SHA}\`"
+            echo "- Cloudflare deployment: ${{ steps.deploy.outputs.deployment-url }}"
+            echo "- Canonical site: https://thenitishkr.in/"
+            echo "- Sitemap: https://thenitishkr.in/sitemap.xml"
+            echo "- IndexNow: submitted after live verification"
+            echo "- Google: discovers the release through the canonical sitemap and internal links"
+          } >> "$GITHUB_STEP_SUMMARY"

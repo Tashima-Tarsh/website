@@ -1,0 +1,72 @@
+name: Pull request preview
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+permissions:
+  contents: read
+  pull-requests: write
+
+concurrency:
+  group: preview-pr-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  preview:
+    runs-on: ubuntu-latest
+    environment: preview
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Validate site
+        run: npm run audit
+
+      - name: Prepare release
+        run: npm run release
+
+      - name: Detect Cloudflare credentials
+        id: credentials
+        env:
+          TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: |
+          if [ -n "$TOKEN" ]; then
+            echo "available=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "available=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Deploy isolated Cloudflare preview
+        if: steps.credentials.outputs.available == 'true'
+        id: deploy
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy dist --project-name=${{ vars.CLOUDFLARE_PAGES_PROJECT }} --branch=pr-${{ github.event.pull_request.number }} --commit-hash=${{ github.event.pull_request.head.sha }}
+
+      - name: Add preview link to pull request
+        if: steps.deploy.outputs.deployment-url != ''
+        uses: marocchino/sticky-pull-request-comment@v2
+        with:
+          header: cloudflare-preview
+          message: |
+            **Cloudflare preview is ready**
+
+            ${{ steps.deploy.outputs.deployment-url }}
+
+            This URL is isolated from production. Review desktop, mobile, navigation and source links here before merging.
+
+      - name: Explain missing preview credential
+        if: steps.credentials.outputs.available != 'true'
+        uses: marocchino/sticky-pull-request-comment@v2
+        with:
+          header: cloudflare-preview
+          message: |
+            **Preview deployment is waiting for one repository secret**
+
+            Add `CLOUDFLARE_API_TOKEN` in GitHub repository settings. The validation checks still run, but Cloudflare cannot create the isolated preview until that secret exists.

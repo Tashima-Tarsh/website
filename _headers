@@ -46,22 +46,22 @@
   Cache-Control: public, max-age=31536000, immutable
 
 /
-  Link: </assets/fonts/inter-latin-variable.woff2>; rel="preload"; as="font"; type="font/woff2"; crossorigin, </assets/fonts/playfair-display-latin-variable.woff2>; rel="preload"; as="font"; type="font/woff2"; crossorigin, </assets/documentary.webp>; rel="preload"; as="image"; type="image/webp"; fetchpriority="high"
+  Link: </assets/documentary.webp>; rel="preload"; as="image"; type="image/webp"; fetchpriority="high"
 
 /about/*
-  Link: </assets/fonts/inter-latin-variable.woff2>; rel="preload"; as="font"; type="font/woff2"; crossorigin, </assets/fonts/playfair-display-latin-variable.woff2>; rel="preload"; as="font"; type="font/woff2"; crossorigin, </assets/portrait.webp>; rel="preload"; as="image"; type="image/webp"; fetchpriority="high"
+  Link: </assets/portrait.webp>; rel="preload"; as="image"; type="image/webp"; fetchpriority="high"
 
 /article-12/*
-  Link: </assets/fonts/inter-latin-variable.woff2>; rel="preload"; as="font"; type="font/woff2"; crossorigin, </assets/fonts/playfair-display-latin-variable.woff2>; rel="preload"; as="font"; type="font/woff2"; crossorigin, </assets/images/article-12-infected-institutional-silence.png>; rel="preload"; as="image"; type="image/png"; fetchpriority="high"
+  Link: </assets/images/article-12-infected-institutional-silence.png>; rel="preload"; as="image"; type="image/png"; fetchpriority="high"
 
 /books/*
-  Link: </assets/fonts/inter-latin-variable.woff2>; rel="preload"; as="font"; type="font/woff2"; crossorigin, </assets/fonts/playfair-display-latin-variable.woff2>; rel="preload"; as="font"; type="font/woff2"; crossorigin, <https://m.media-amazon.com/images/I/71F7Cz-ZPqL._SL1500_.jpg>; rel="preload"; as="image"; fetchpriority="high", <https://m.media-amazon.com/images/I/81UQP4BIFAL._SL1500_.jpg>; rel="preload"; as="image"; fetchpriority="high"
+  Link: <https://m.media-amazon.com/images/I/71F7Cz-ZPqL._SL1500_.jpg>; rel="preload"; as="image"; fetchpriority="high", <https://m.media-amazon.com/images/I/81UQP4BIFAL._SL1500_.jpg>; rel="preload"; as="image"; fetchpriority="high"
 
 /digital-constitutional-personhood/*
-  Link: </assets/fonts/inter-latin-variable.woff2>; rel="preload"; as="font"; type="font/woff2"; crossorigin, </assets/fonts/playfair-display-latin-variable.woff2>; rel="preload"; as="font"; type="font/woff2"; crossorigin, </assets/images/digital-constitutional-personhood-framework.webp>; rel="preload"; as="image"; type="image/webp"; fetchpriority="high"
+  Link: </assets/images/digital-constitutional-personhood-framework.webp>; rel="preload"; as="image"; type="image/webp"; fetchpriority="high"
 
 /disha/*
-  Link: </assets/fonts/inter-latin-variable.woff2>; rel="preload"; as="font"; type="font/woff2"; crossorigin, </assets/fonts/playfair-display-latin-variable.woff2>; rel="preload"; as="font"; type="font/woff2"; crossorigin, </assets/images/disha-version-4.webp>; rel="preload"; as="image"; type="image/webp"; fetchpriority="high"
+  Link: </assets/images/disha-version-4.webp>; rel="preload"; as="image"; type="image/webp"; fetchpriority="high"
 
 /media/*
-  Link: </assets/fonts/inter-latin-variable.woff2>; rel="preload"; as="font"; type="font/woff2"; crossorigin, </assets/fonts/playfair-display-latin-variable.woff2>; rel="preload"; as="font"; type="font/woff2"; crossorigin, </assets/court.webp>; rel="preload"; as="image"; type="image/webp"; fetchpriority="high"
+  Link: </assets/court.webp>; rel="preload"; as="image"; type="image/webp"; fetchpriority="high"

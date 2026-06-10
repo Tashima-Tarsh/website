@@ -34,7 +34,7 @@ function match(html, pattern) {
 function localTarget(fromFile, href) {
   const clean = href.split(/[?#]/, 1)[0];
   if (!clean || clean.startsWith("#")) return null;
-  if (/^(https?:|mailto:|tel:|javascript:)/i.test(clean)) return null;
+  if (/^(\/\/|https?:|mailto:|tel:|javascript:)/i.test(clean)) return null;
   const base = clean.startsWith("/")
     ? path.join(root, clean.slice(1))
     : path.resolve(path.dirname(fromFile), clean);

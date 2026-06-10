@@ -55,7 +55,7 @@
   Link: </assets/images/article-12-infected-institutional-silence.png>; rel="preload"; as="image"; type="image/png"; fetchpriority="high"
 
 /books/*
-  Link: <https://m.media-amazon.com/images/I/71F7Cz-ZPqL._SL1500_.jpg>; rel="preload"; as="image"; fetchpriority="high", <https://m.media-amazon.com/images/I/81UQP4BIFAL._SL1500_.jpg>; rel="preload"; as="image"; fetchpriority="high"
+  Link: <https://m.media-amazon.com/images/I/71F7Cz-ZPqL._SL1500_.jpg>; rel="preload"; as="image"; fetchpriority="high"
 
 /digital-constitutional-personhood/*
   Link: </assets/images/digital-constitutional-personhood-framework.webp>; rel="preload"; as="image"; type="image/webp"; fetchpriority="high"

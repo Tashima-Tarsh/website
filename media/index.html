@@ -83,7 +83,7 @@
         <div class="hero-actions"><a class="button" href="#coverage">Media coverage</a><a class="button secondary" href="#press-kit">Press Kit</a></div>
       </div>
       <figure class="hero-panel reveal">
-        <picture><source srcset="/assets/court.webp" type="image/webp"><img src="../assets/images/supreme-court-meity-order.png?v=20260607b" alt="Supreme Court and MeitY public record coverage visual" width="900" height="650" loading="eager" decoding="async"></picture>
+        <picture><source srcset="/assets/court.webp" type="image/webp"><img src="../assets/images/supreme-court-meity-order.png?v=20260607b" alt="Supreme Court and MeitY public record coverage visual" width="900" height="650" loading="eager" decoding="async" fetchpriority="high"></picture>
         <figcaption class="caption">Coverage is presented with source links and archive paths so records remain traceable.</figcaption>
       </figure>
     </section>
@@ -92,8 +92,18 @@
       <div class="section-head reveal">
         <div><p class="eyebrow">Media coverage</p><h2>Coverage archive with source URLs.</h2></div>
       </div>
-      <div class="media-coverage-grid" data-media-grid>
-        <div class="publication-status">Loading media coverage...</div>
+      <div class="media-coverage-grid dynamic-archive-slot dynamic-archive-slot--coverage" data-media-grid>
+        <div class="archive-loading-grid" aria-live="polite">
+          <span class="archive-loading-label">Loading media coverage...</span>
+          <span class="archive-loading-card" aria-hidden="true"></span>
+          <span class="archive-loading-card" aria-hidden="true"></span>
+          <span class="archive-loading-card" aria-hidden="true"></span>
+          <span class="archive-loading-card" aria-hidden="true"></span>
+          <span class="archive-loading-card" aria-hidden="true"></span>
+          <span class="archive-loading-card" aria-hidden="true"></span>
+          <span class="archive-loading-card" aria-hidden="true"></span>
+          <span class="archive-loading-card" aria-hidden="true"></span>
+        </div>
       </div>
     </section>
 
@@ -101,8 +111,14 @@
       <div class="section-head reveal">
         <div><p class="eyebrow">Publications feed</p><h2>Substack and Medium records.</h2></div>
       </div>
-      <div class="publication-grid" data-publication-grid>
-        <div class="publication-status">Loading Substack and Medium publications...</div>
+      <div class="publication-grid dynamic-archive-slot" data-publication-grid>
+        <div class="archive-loading-grid" aria-live="polite">
+          <span class="archive-loading-label">Loading Substack and Medium publications...</span>
+          <span class="archive-loading-card" aria-hidden="true"></span>
+          <span class="archive-loading-card" aria-hidden="true"></span>
+          <span class="archive-loading-card" aria-hidden="true"></span>
+          <span class="archive-loading-card" aria-hidden="true"></span>
+        </div>
         <noscript>
           <div class="publication-status publication-noscript">
             <strong>Latest publication links:</strong>

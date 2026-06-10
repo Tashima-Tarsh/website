@@ -258,6 +258,7 @@ function renderPublications(items) {
   if (!publicationGrid) return;
   if (!items.length) {
     publicationGrid.innerHTML = '<div class="publication-status">Unable to load live publications right now. Substack and Medium feeds remain linked from the footer.</div>';
+    publicationGrid.classList.add("is-loaded");
     return;
   }
 
@@ -283,6 +284,7 @@ function renderPublications(items) {
     label: "Substack and Medium archive pages",
     perPage: 4
   });
+  publicationGrid.classList.add("is-loaded");
 
   updateItemListSchema("publication-schema", "thenitishkr Substack and Medium publications", items, (item) => ({
     "@type": "Article",
@@ -299,6 +301,7 @@ function renderMediaCoverage(items) {
   if (!mediaGrid) return;
   if (!items.length) {
     mediaGrid.innerHTML = '<div class="publication-status">No media coverage items found.</div>';
+    mediaGrid.classList.add("is-loaded");
     return;
   }
 
@@ -339,6 +342,7 @@ function renderMediaCoverage(items) {
     perPage: 4,
     onPageRender: resolveVisibleImages
   });
+  mediaGrid.classList.add("is-loaded");
   resolveVisibleImages(items.slice(0, 4), 0);
 
   updateItemListSchema("media-schema", "thenitishkr media coverage archive", items, (item) => ({
@@ -378,6 +382,7 @@ async function loadMediaCoverage() {
     renderMediaCoverage(await response.json());
   } catch (_) {
     mediaGrid.innerHTML = '<div class="publication-status">Unable to load media coverage.</div>';
+    mediaGrid.classList.add("is-loaded");
   }
 }
 

@@ -104,6 +104,12 @@ for (const file of files) {
   for (const image of html.matchAll(/<img\b[^>]*>/gi)) {
     const tag = image[0];
     if (!/\balt=["'][^"']*["']/i.test(tag)) errors.push(`${name}: image missing alt attribute`);
+    if (!/\bwidth=["']\d+["']/i.test(tag) || !/\bheight=["']\d+["']/i.test(tag)) {
+      errors.push(`${name}: image missing fixed width and height attributes`);
+    }
+    if (/\bloading=["']eager["']/i.test(tag) && !/\bfetchpriority=["']high["']/i.test(tag)) {
+      warnings.push(`${name}: eager image should declare fetchpriority="high"`);
+    }
     const source = match(tag, /\bsrc=["']([^"']+)["']/i);
     if (!source || /^https?:/i.test(source) || source.startsWith("data:")) continue;
     const target = localTarget(file, source);

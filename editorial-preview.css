@@ -1,4 +1,18 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap");
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400 800;
+  font-display: optional;
+  src: url("/assets/fonts/inter-latin-variable.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Playfair Display";
+  font-style: normal;
+  font-weight: 600 800;
+  font-display: optional;
+  src: url("/assets/fonts/playfair-display-latin-variable.woff2") format("woff2");
+}
 
 :root {
   --ivory: #ffffff;

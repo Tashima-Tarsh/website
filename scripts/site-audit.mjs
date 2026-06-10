@@ -73,6 +73,26 @@ for (const isbn of ["978-93-5592-012-6", "979-8274694070"]) {
   }
 }
 
+const dishaPage = fs.readFileSync(path.join(root, "disha", "index.html"), "utf8");
+for (const requiredDishaSignal of [
+  'id="what-is-disha"',
+  'id="research-lineage"',
+  'id="disha-faq"',
+  'id="disha-authority-schema"',
+  '"@id":"https://thenitishkr.in/disha/#architecture"',
+  '"@id":"https://thenitishkr.in/disha/#advisor-meenakshi-sharma"',
+  "Prof. Dr. Meenakshi Sharma",
+  "Geo-spatial Data Structure for Explosive Detection",
+  "GIS Capacity in the Government Sector",
+]) {
+  if (!dishaPage.includes(requiredDishaSignal)) {
+    errors.push(`disha/index.html: missing authority signal ${requiredDishaSignal}`);
+  }
+}
+if (dishaPage.includes('id="press-news-schema"')) {
+  errors.push("disha/index.html: static research page must not use NewsArticle schema");
+}
+
 for (const file of files) {
   const name = relative(file);
   const html = fs.readFileSync(file, "utf8");

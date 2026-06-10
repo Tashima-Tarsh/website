@@ -1,0 +1,11 @@
+{
+  "name": "thenitishkr-website",
+  "private": true,
+  "scripts": {
+    "audit": "node scripts/site-audit.mjs",
+    "signals": "node ai-feeder-engine.js",
+    "release": "node scripts/prepare-release.mjs",
+    "verify:live": "node scripts/verify-live.mjs",
+    "indexnow": "node scripts/submit-indexnow.mjs"
+  }
+}

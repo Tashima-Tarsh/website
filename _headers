@@ -1,4 +1,5 @@
 /*
+  Link: </assets/fonts/inter-latin-variable.woff2>; rel="preload"; as="font"; type="font/woff2"; crossorigin, </assets/fonts/playfair-display-latin-variable.woff2>; rel="preload"; as="font"; type="font/woff2"; crossorigin
   X-Content-Type-Options: nosniff
   Strict-Transport-Security: max-age=31536000
   Content-Security-Policy: default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'self'; img-src 'self' https: data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://analytics.ahrefs.com; connect-src 'self' https://www.google-analytics.com https://region1.google-analytics.com https://www.googletagmanager.com https://analytics.ahrefs.com https:
@@ -43,3 +44,24 @@
 
 /assets/*
   Cache-Control: public, max-age=31536000, immutable
+
+/
+  Link: </assets/documentary.webp>; rel="preload"; as="image"; type="image/webp"; fetchpriority="high"
+
+/about/*
+  Link: </assets/portrait.webp>; rel="preload"; as="image"; type="image/webp"; fetchpriority="high"
+
+/article-12/*
+  Link: </assets/images/article-12-infected-institutional-silence.png>; rel="preload"; as="image"; type="image/png"; fetchpriority="high"
+
+/books/*
+  Link: <https://m.media-amazon.com/images/I/71F7Cz-ZPqL._SL1500_.jpg>; rel="preload"; as="image"; fetchpriority="high"
+
+/digital-constitutional-personhood/*
+  Link: </assets/images/digital-constitutional-personhood-framework.webp>; rel="preload"; as="image"; type="image/webp"; fetchpriority="high"
+
+/disha/*
+  Link: </assets/images/disha-version-4.webp>; rel="preload"; as="image"; type="image/webp"; fetchpriority="high"
+
+/media/*
+  Link: </assets/court.webp>; rel="preload"; as="image"; type="image/webp"; fetchpriority="high"

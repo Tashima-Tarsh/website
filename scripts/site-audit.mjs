@@ -170,6 +170,36 @@ if (case02SourceSchemaText) {
       errors.push(
         "intelligence-meity-digital-governance/index.html: public source schema must contain eight verified records",
       );
+    } else {
+      for (const [index, listEntry] of case02SourceSchema.itemListElement.entries()) {
+        const expectedPosition = index + 1;
+        const sourceRecord = listEntry?.item;
+        if (listEntry?.["@type"] !== "ListItem") {
+          errors.push(
+            `intelligence-meity-digital-governance/index.html: source schema item ${expectedPosition} must be a ListItem`,
+          );
+        }
+        if (
+          !Number.isInteger(listEntry?.position) ||
+          listEntry.position !== expectedPosition
+        ) {
+          errors.push(
+            `intelligence-meity-digital-governance/index.html: source schema item ${expectedPosition} has an invalid position`,
+          );
+        }
+        if (
+          sourceRecord?.["@type"] !== "CreativeWork" ||
+          typeof sourceRecord.name !== "string" ||
+          !sourceRecord.name.trim() ||
+          typeof sourceRecord.description !== "string" ||
+          !sourceRecord.description.trim() ||
+          !sourceRecord.citation
+        ) {
+          errors.push(
+            `intelligence-meity-digital-governance/index.html: source schema item ${expectedPosition} is missing required record metadata`,
+          );
+        }
+      }
     }
   } catch (error) {
     errors.push(

@@ -74,7 +74,7 @@ const pages = findHtmlPages().map(file => {
     indexable: isIndexable(file, html),
     modified,
     modifiedDate: modified.slice(0, 10),
-    newsEligible: /"@type"\s*:\s*(?:"(?:Analysis)?NewsArticle"|\[[^\]]*"NewsArticle")/i.test(html)
+    newsEligible: /"@type"\s*:\s*(?:"(?:Analysis)?NewsArticle"|\[[^\]]*"(?:Analysis)?NewsArticle")/i.test(html)
   };
 }).sort((a,b) => a.url.localeCompare(b.url));
 const docs = fs.existsSync("assets/docs") ? fs.readdirSync("assets/docs").filter(f => /\.pdf$/i.test(f)).map(f => {

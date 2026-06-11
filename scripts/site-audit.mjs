@@ -344,7 +344,7 @@ for (const file of files) {
     }
   }
 
-  if (indexable && !sitemap.includes(`<loc>${canonical}</loc>`)) {
+  if (indexable && canonical && !sitemap.includes(`<loc>${canonical}</loc>`)) {
     errors.push(`${name}: canonical URL is absent from sitemap.xml`);
   }
   if (!indexable && sitemap.includes(`<loc>${canonical}</loc>`)) {

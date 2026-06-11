@@ -73,7 +73,8 @@ const pages = findHtmlPages().map(file => {
     published: datePublishedOf(html),
     indexable: isIndexable(file, html),
     modified,
-    modifiedDate: modified.slice(0, 10)
+    modifiedDate: modified.slice(0, 10),
+    newsEligible: /"@type"\s*:\s*(?:"(?:Analysis)?NewsArticle"|\[[^\]]*"(?:Analysis)?NewsArticle")/i.test(html)
   };
 }).sort((a,b) => a.url.localeCompare(b.url));
 const docs = fs.existsSync("assets/docs") ? fs.readdirSync("assets/docs").filter(f => /\.pdf$/i.test(f)).map(f => {
@@ -101,10 +102,13 @@ const feedPages = pages
   .filter(p => p.indexable && feedSlugs.has(contentPath(p)))
   .sort((a, b) => new Date(b.published || b.modified) - new Date(a.published || a.modified));
 const newsCutoff = Date.now() - (2 * 24 * 60 * 60 * 1000);
-const newsPages = feedPages.filter(p => p.published && new Date(p.published).getTime() >= newsCutoff).slice(0, 1000);
+const newsPages = pages.filter(p => p.indexable && p.newsEligible && p.published && new Date(p.published).getTime() >= newsCutoff).slice(0, 1000);
 fs.writeFileSync("news-sitemap.xml", `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">\n${newsPages.map(p => `  <url><loc>${escapeXml(p.url)}</loc><news:news><news:publication><news:name>thenitishkr</news:name><news:language>en</news:language></news:publication><news:publication_date>${p.published}</news:publication_date><news:title>${escapeXml(p.title)}</news:title></news:news></url>`).join("\n")}\n</urlset>\n`);
 const feedItems = feedPages.slice(0, 40).map(p => `<item><title>${escapeXml(p.title)}</title><link>${escapeXml(p.url)}</link><guid isPermaLink="true">${escapeXml(p.url)}</guid><pubDate>${new Date(p.published || p.modified).toUTCString()}</pubDate><description>${escapeXml("Public-interest article and evidence record from thenitishkr.in")}</description></item>`).join("\n");
-const feed = `<?xml version="1.0" encoding="UTF-8"?>\n<rss version="2.0"><channel><title>thenitishkr.in articles and evidence records</title><link>${SITE}/</link><description>Article 12, DISHA, digital constitutional personhood, and intelligence case records from thenitishkr.in.</description><lastBuildDate>${buildTime.toUTCString()}</lastBuildDate>${feedItems}</channel></rss>\n`;
+const feedLastBuild = feedPages.length
+  ? new Date(Math.max(...feedPages.map(p => new Date(p.modified).getTime())))
+  : buildTime;
+const feed = `<?xml version="1.0" encoding="UTF-8"?>\n<rss version="2.0"><channel><title>thenitishkr.in articles and evidence records</title><link>${SITE}/</link><description>Article 12, DISHA, digital constitutional personhood, and intelligence case records from thenitishkr.in.</description><lastBuildDate>${feedLastBuild.toUTCString()}</lastBuildDate>${feedItems}</channel></rss>\n`;
 fs.writeFileSync("feed.xml", feed);
 fs.writeFileSync("rss.xml", feed);
 fs.writeFileSync("indexnow-payload.json", JSON.stringify({ host: "thenitishkr.in", key: INDEXNOW_KEY, keyLocation: `${SITE}/${INDEXNOW_KEY}.txt`, urlList: pages.filter(p => p.indexable).map(p => p.url).slice(0, 1000) }, null, 2));

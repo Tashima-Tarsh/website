@@ -105,7 +105,9 @@ const newsCutoff = Date.now() - (2 * 24 * 60 * 60 * 1000);
 const newsPages = pages.filter(p => p.indexable && p.newsEligible && p.published && new Date(p.published).getTime() >= newsCutoff).slice(0, 1000);
 fs.writeFileSync("news-sitemap.xml", `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">\n${newsPages.map(p => `  <url><loc>${escapeXml(p.url)}</loc><news:news><news:publication><news:name>thenitishkr</news:name><news:language>en</news:language></news:publication><news:publication_date>${p.published}</news:publication_date><news:title>${escapeXml(p.title)}</news:title></news:news></url>`).join("\n")}\n</urlset>\n`);
 const feedItems = feedPages.slice(0, 40).map(p => `<item><title>${escapeXml(p.title)}</title><link>${escapeXml(p.url)}</link><guid isPermaLink="true">${escapeXml(p.url)}</guid><pubDate>${new Date(p.published || p.modified).toUTCString()}</pubDate><description>${escapeXml("Public-interest article and evidence record from thenitishkr.in")}</description></item>`).join("\n");
-const feedLastBuild = feedPages.length ? new Date(feedPages[0].published || feedPages[0].modified) : buildTime;
+const feedLastBuild = feedPages.length
+  ? new Date(Math.max(...feedPages.map(p => new Date(p.modified).getTime())))
+  : buildTime;
 const feed = `<?xml version="1.0" encoding="UTF-8"?>\n<rss version="2.0"><channel><title>thenitishkr.in articles and evidence records</title><link>${SITE}/</link><description>Article 12, DISHA, digital constitutional personhood, and intelligence case records from thenitishkr.in.</description><lastBuildDate>${feedLastBuild.toUTCString()}</lastBuildDate>${feedItems}</channel></rss>\n`;
 fs.writeFileSync("feed.xml", feed);
 fs.writeFileSync("rss.xml", feed);

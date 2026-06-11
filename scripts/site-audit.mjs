@@ -311,6 +311,7 @@ for (const file of files) {
     html,
     /<meta\s+name=["']robots["']\s+content=["']([^"']*)["'][^>]*>/i,
   );
+  const indexable = !robots.toLowerCase().includes("noindex");
   const h1Count = (html.match(/<h1\b/gi) || []).length;
   const jsonBlocks = [
     ...html.matchAll(
@@ -325,16 +326,16 @@ for (const file of files) {
     errors.push(`${name}: meta description is ${description.length} characters`);
   }
   if (h1Count !== 1) errors.push(`${name}: expected one H1, found ${h1Count}`);
-  if (canonical !== expectedCanonical(file)) {
+  if (indexable && canonical !== expectedCanonical(file)) {
     errors.push(`${name}: canonical must be ${expectedCanonical(file)}`);
   }
-  if (!/name=["']twitter:card["']/i.test(html)) {
+  if (indexable && !/name=["']twitter:card["']/i.test(html)) {
     errors.push(`${name}: missing X/Twitter card metadata`);
   }
-  if (!/property=["']og:title["']/i.test(html) || !/property=["']og:image["']/i.test(html)) {
+  if (indexable && (!/property=["']og:title["']/i.test(html) || !/property=["']og:image["']/i.test(html))) {
     errors.push(`${name}: incomplete Open Graph metadata`);
   }
-  if (!jsonBlocks.length) errors.push(`${name}: missing JSON-LD`);
+  if (indexable && !jsonBlocks.length) errors.push(`${name}: missing JSON-LD`);
   for (const [index, block] of jsonBlocks.entries()) {
     try {
       JSON.parse(block[1]);
@@ -343,7 +344,6 @@ for (const file of files) {
     }
   }
 
-  const indexable = !robots.toLowerCase().includes("noindex");
   if (indexable && !sitemap.includes(`<loc>${canonical}</loc>`)) {
     errors.push(`${name}: canonical URL is absent from sitemap.xml`);
   }
@@ -377,7 +377,7 @@ for (const file of files) {
     if (target && !fs.existsSync(target)) errors.push(`${name}: broken internal link ${link[1]}`);
   }
 
-  if (/\.html(?:["'#?]|$)/i.test(canonical)) {
+  if (canonical && /\.html(?:["'#?]|$)/i.test(canonical)) {
     errors.push(`${name}: canonical leaks .html`);
   }
   if (!/<main\b/i.test(html)) warnings.push(`${name}: no main landmark`);

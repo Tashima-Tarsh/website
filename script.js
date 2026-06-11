@@ -388,6 +388,7 @@ async function loadMediaCoverage() {
 
 async function loadPublications() {
   if (!publicationGrid) return;
+  if (publicationGrid.dataset.staticPublications === "true") return;
   const feeds = [
     { source: "Substack", url: "https://thenitishkr.substack.com/feed" },
     { source: "Medium", url: "https://medium.com/feed/@thenitishkr" }

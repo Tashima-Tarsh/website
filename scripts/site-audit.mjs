@@ -116,6 +116,17 @@ const architectureEntity = dishaSchemaById.get("https://thenitishkr.in/disha/#ar
 if (architectureEntity?.["@type"] !== "CreativeWork") {
   errors.push("disha/index.html: DISHA architecture entity must be CreativeWork");
 }
+if (architectureEntity?.sameAs !== "https://www.wikidata.org/wiki/Q140167664") {
+  errors.push("disha/index.html: DISHA architecture must link to Wikidata Q140167664");
+}
+if (
+  architectureEntity?.subjectOf?.["@type"] !== "Report" ||
+  architectureEntity.subjectOf.url !==
+    "https://thenitishkr.in/assets/docs/disha-whitepaper-what-it-can-what-it-did.pdf" ||
+  architectureEntity.subjectOf.author?.["@id"] !== "https://thenitishkr.in/#person"
+) {
+  errors.push("disha/index.html: DISHA architecture must identify its authored whitepaper report");
+}
 const dishaFaqEntity = dishaSchemaById.get("https://thenitishkr.in/disha/#faq");
 if (dishaFaqEntity?.["@type"] !== "FAQPage" || dishaFaqEntity.mainEntity?.length !== 4) {
   errors.push("disha/index.html: DISHA FAQ schema must contain four questions");

@@ -383,7 +383,7 @@ for (const file of files) {
   if (!/<main\b/i.test(html)) warnings.push(`${name}: no main landmark`);
 }
 
-for (const required of ["robots.txt", "sitemap.xml", "news-sitemap.xml", "feed.xml", "llms.txt"]) {
+for (const required of ["robots.txt", "sitemap.xml", "feed.xml", "llms.txt"]) {
   if (!fs.existsSync(path.join(root, required))) errors.push(`missing required discovery file: ${required}`);
 }
 

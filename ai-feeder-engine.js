@@ -108,6 +108,15 @@ if (newsPages.length) {
 } else if (fs.existsSync("news-sitemap.xml")) {
   fs.unlinkSync("news-sitemap.xml");
 }
+if (fs.existsSync("robots.txt")) {
+  const robots = read("robots.txt")
+    .replace(/\r?\nSitemap: https:\/\/thenitishkr\.in\/news-sitemap\.xml\s*/g, "\n")
+    .trimEnd();
+  fs.writeFileSync(
+    "robots.txt",
+    `${robots}${newsPages.length ? "\nSitemap: https://thenitishkr.in/news-sitemap.xml" : ""}\n`
+  );
+}
 const feedItems = feedPages.slice(0, 40).map(p => `<item><title>${escapeXml(p.title)}</title><link>${escapeXml(p.url)}</link><guid isPermaLink="true">${escapeXml(p.url)}</guid><pubDate>${new Date(p.published || p.modified).toUTCString()}</pubDate><description>${escapeXml("Public-interest article and evidence record from thenitishkr.in")}</description></item>`).join("\n");
 const feedLastBuild = feedPages.length
   ? new Date(Math.max(...feedPages.map(p => new Date(p.modified).getTime())))

@@ -31,6 +31,12 @@ function match(html, pattern) {
   return html.match(pattern)?.[1]?.trim() || "";
 }
 
+function visibleMarkup(html) {
+  return html
+    .replace(/<head\b[\s\S]*?<\/head>/i, "")
+    .replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, "");
+}
+
 function localTarget(fromFile, href) {
   const clean = href.split(/[?#]/, 1)[0];
   if (!clean || clean.startsWith("#")) return null;
@@ -45,6 +51,15 @@ function localTarget(fromFile, href) {
 const files = walk(root);
 const sitemap = fs.readFileSync(path.join(root, "sitemap.xml"), "utf8");
 const homepage = fs.readFileSync(path.join(root, "index.html"), "utf8");
+
+if (!homepage.includes('<meta name="archive-successor" content="Diksha Sharma">')) {
+  errors.push("index.html: missing non-visible archive successor metadata");
+}
+
+const aboutPage = fs.readFileSync(path.join(root, "about", "index.html"), "utf8");
+if ((aboutPage.match(/"name":"Diksha Sharma"/g) || []).length !== 2) {
+  errors.push("about/index.html: publication co-author metadata must retain two records");
+}
 
 for (const authorityUrl of [
   "https://orcid.org/0009-0004-6840-4463",
@@ -276,6 +291,13 @@ if (case02SourceSchemaText) {
 for (const file of files) {
   const name = relative(file);
   const html = fs.readFileSync(file, "utf8");
+  const visible = visibleMarkup(html);
+  if (/Diksha Sharma/i.test(visible)) {
+    errors.push(`${name}: successor or co-author name must not appear in visible content`);
+  }
+  if (/\bsuccessor\b/i.test(visible)) {
+    errors.push(`${name}: successor wording must not appear in visible content`);
+  }
   const title = match(html, /<title>([\s\S]*?)<\/title>/i);
   const description = match(
     html,

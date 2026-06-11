@@ -139,6 +139,75 @@ if (dishaPage.includes('id="press-news-schema"')) {
   errors.push("disha/index.html: static research page must not use NewsArticle schema");
 }
 
+const case02Page = fs.readFileSync(
+  path.join(root, "intelligence-meity-digital-governance", "index.html"),
+  "utf8",
+);
+for (const requiredCase02Signal of [
+  'id="public-source-matrix"',
+  'id="authority-bridge"',
+  'id="public-record-source-schema"',
+  "This submission does not assert conviction.",
+]) {
+  if (!case02Page.includes(requiredCase02Signal)) {
+    errors.push(
+      `intelligence-meity-digital-governance/index.html: missing source-matrix signal ${requiredCase02Signal}`,
+    );
+  }
+}
+const case02SourceSchemaText = match(
+  case02Page,
+  /<script\s+id=["']public-record-source-schema["'][^>]*>([\s\S]*?)<\/script>/i,
+);
+if (case02SourceSchemaText) {
+  try {
+    const case02SourceSchema = JSON.parse(case02SourceSchemaText);
+    if (
+      case02SourceSchema["@type"] !== "ItemList" ||
+      case02SourceSchema.numberOfItems !== 8 ||
+      case02SourceSchema.itemListElement?.length !== 8
+    ) {
+      errors.push(
+        "intelligence-meity-digital-governance/index.html: public source schema must contain eight verified records",
+      );
+    } else {
+      for (const [index, listEntry] of case02SourceSchema.itemListElement.entries()) {
+        const expectedPosition = index + 1;
+        const sourceRecord = listEntry?.item;
+        if (listEntry?.["@type"] !== "ListItem") {
+          errors.push(
+            `intelligence-meity-digital-governance/index.html: source schema item ${expectedPosition} must be a ListItem`,
+          );
+        }
+        if (
+          !Number.isInteger(listEntry?.position) ||
+          listEntry.position !== expectedPosition
+        ) {
+          errors.push(
+            `intelligence-meity-digital-governance/index.html: source schema item ${expectedPosition} has an invalid position`,
+          );
+        }
+        if (
+          sourceRecord?.["@type"] !== "CreativeWork" ||
+          typeof sourceRecord.name !== "string" ||
+          !sourceRecord.name.trim() ||
+          typeof sourceRecord.description !== "string" ||
+          !sourceRecord.description.trim() ||
+          !sourceRecord.citation
+        ) {
+          errors.push(
+            `intelligence-meity-digital-governance/index.html: source schema item ${expectedPosition} is missing required record metadata`,
+          );
+        }
+      }
+    }
+  } catch (error) {
+    errors.push(
+      `intelligence-meity-digital-governance/index.html: invalid public source schema: ${error.message}`,
+    );
+  }
+}
+
 for (const file of files) {
   const name = relative(file);
   const html = fs.readFileSync(file, "utf8");

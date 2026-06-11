@@ -139,6 +139,60 @@ if (dishaPage.includes('id="press-news-schema"')) {
   errors.push("disha/index.html: static research page must not use NewsArticle schema");
 }
 
+const booksPage = fs.readFileSync(path.join(root, "books", "index.html"), "utf8");
+const booksAuthoritySchemaText = match(
+  booksPage,
+  /<script\s+id=["']books-authority-schema["'][^>]*>([\s\S]*?)<\/script>/i,
+);
+if (!booksAuthoritySchemaText) {
+  errors.push("books/index.html: missing books authority schema");
+} else {
+  try {
+    const booksAuthoritySchema = JSON.parse(booksAuthoritySchemaText);
+    const booksAuthorityGraph = booksAuthoritySchema["@graph"] || [];
+    const booksById = new Map(
+      booksAuthorityGraph.filter((node) => node?.["@id"]).map((node) => [node["@id"], node]),
+    );
+    for (const [bookId, expected] of [
+      [
+        "https://thenitishkr.in/books/#era-of-stupidity",
+        {
+          name: "Era of Stupidity: Citizen Not Found",
+          isbn: "9789355920126",
+          wikidata: "https://www.wikidata.org/wiki/Q140167720",
+          amazon: "https://www.amazon.in/dp/B0H2T364NF",
+        },
+      ],
+      [
+        "https://thenitishkr.in/books/#sleeping-guardian",
+        {
+          name: "Sleeping Guardian: India Lost Justice",
+          isbn: "9798274694070",
+          wikidata: "https://www.wikidata.org/wiki/Q140167727",
+          amazon: "https://www.amazon.in/dp/B0G2KF9GK3",
+        },
+      ],
+    ]) {
+      const book = booksById.get(bookId);
+      if (
+        book?.["@type"] !== "Book" ||
+        book.name !== expected.name ||
+        book.isbn !== expected.isbn ||
+        book.author?.["@id"] !== "https://thenitishkr.in/#person" ||
+        !book.sameAs?.includes(expected.wikidata) ||
+        !book.sameAs?.includes(expected.amazon)
+      ) {
+        errors.push(`books/index.html: incomplete authority schema for ${bookId}`);
+      }
+    }
+    if (booksAuthorityGraph.some((node) => node?.["@type"] === "Person")) {
+      errors.push("books/index.html: books authority schema must reuse, not duplicate, the Person node");
+    }
+  } catch (error) {
+    errors.push(`books/index.html: invalid books authority schema: ${error.message}`);
+  }
+}
+
 const case02Page = fs.readFileSync(
   path.join(root, "intelligence-meity-digital-governance", "index.html"),
   "utf8",

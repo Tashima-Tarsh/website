@@ -5,6 +5,8 @@
   --ink: #24211d;
   --muted: #6c6258;
   --line: #d8cab5;
+  --navy: #062651;
+  --blue: #12437A;
   --red: #7e1f1f;
   --red-2: #a2352d;
   --gold: #b28a44;
@@ -46,16 +48,21 @@ p { margin: 0; }
 .nav {
   max-width: var(--max);
   margin: 0 auto;
-  min-height: 72px;
-  padding: 0 24px;
-  display: flex;
+  min-height: 104px;
+  padding: 12px 24px 14px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  grid-template-rows: auto auto;
   align-items: center;
-  justify-content: space-between;
-  gap: 18px;
+  gap: 8px 18px;
 }
 
 .brand {
   display: grid;
+  grid-column: 1 / -1;
+  grid-row: 1;
+  justify-items: center;
+  text-align: center;
   gap: 1px;
   font-family: "Cormorant Garamond", Georgia, serif;
   font-size: 24px;
@@ -75,6 +82,9 @@ p { margin: 0; }
 }
 
 .nav-links {
+  grid-column: 1 / 3;
+  grid-row: 2;
+  justify-self: start;
   display: flex;
   align-items: center;
   gap: 22px;
@@ -94,9 +104,9 @@ p { margin: 0; }
   justify-content: center;
   min-height: 42px;
   padding: 12px 18px;
-  border: 1px solid var(--red);
+  border: 1px solid var(--navy);
   border-radius: 999px;
-  background: var(--red);
+  background: var(--navy);
   color: #fffaf0;
   font-size: 12px;
   font-weight: 800;
@@ -107,10 +117,12 @@ p { margin: 0; }
 
 .button.secondary {
   background: transparent;
-  color: var(--red);
+  color: var(--navy);
 }
 
-.nav-cta:hover, .button:hover { transform: translateY(-1px); background: var(--red-2); border-color: var(--red-2); }
+.nav-cta { grid-column: 3; grid-row: 2; justify-self: end; }
+
+.nav-cta:hover, .button:hover { transform: translateY(-1px); background: var(--blue); border-color: var(--blue); }
 .button.secondary:hover { color: #fffaf0; }
 
 .menu-button {
@@ -1342,7 +1354,13 @@ h3 {
   .dynamic-archive-slot--coverage { min-block-size: 1840px; }
   .dynamic-archive-slot.is-loaded { min-block-size: 0; }
   .archive-loading-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .nav { min-height: 64px; }
+  .nav {
+    min-height: 64px;
+    padding: 0 24px;
+    grid-template-columns: 42px minmax(0, 1fr) 42px;
+    grid-template-rows: auto;
+  }
+  .brand { grid-column: 2; grid-row: 1; }
   .menu-button { display: block; }
   .nav-links {
     position: absolute;

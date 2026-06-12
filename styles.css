@@ -94,9 +94,9 @@ p { margin: 0; }
   justify-content: center;
   min-height: 42px;
   padding: 12px 18px;
-  border: 1px solid var(--red);
+  border: 1px solid var(--navy);
   border-radius: 999px;
-  background: var(--red);
+  background: var(--navy);
   color: #fffaf0;
   font-size: 12px;
   font-weight: 800;
@@ -107,10 +107,10 @@ p { margin: 0; }
 
 .button.secondary {
   background: transparent;
-  color: var(--red);
+  color: var(--navy);
 }
 
-.nav-cta:hover, .button:hover { transform: translateY(-1px); background: var(--red-2); border-color: var(--red-2); }
+.nav-cta:hover, .button:hover { transform: translateY(-1px); background: var(--blue); border-color: var(--blue); }
 .button.secondary:hover { color: #fffaf0; }
 
 .menu-button {

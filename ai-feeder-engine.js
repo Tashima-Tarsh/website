@@ -94,6 +94,7 @@ const feedSlugs = new Set([
   "disha",
   "intelligence-ndma-disaster-governance",
   "intelligence-meity-digital-governance",
+  "intelligence/citizen-not-found",
   "intelligence-niti-aayog-certification-funds",
   "intelligence-odf-false-justification",
   "intelligence-sir-constitutional-scam"

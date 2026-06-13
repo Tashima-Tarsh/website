@@ -79,7 +79,10 @@
 
   <style>
     /* About page — additional layout styles */
-    .about-hero { align-items: center; }
+    /* Tighten section padding on this dense page */
+    main > .section, main > .tone-band > .section { padding-top: 48px; padding-bottom: 48px; }
+    main > .tone-band { padding-top: 0; padding-bottom: 0; }
+    .about-hero { align-items: center; padding-top: 64px !important; padding-bottom: 64px !important; }
     .about-hero .hero-portrait { border-radius: 4px; overflow: hidden; }
     .about-hero .hero-portrait img { width: 100%; height: auto; display: block; border-radius: 4px; }
     .about-speakable-intro { font-size: 1.05rem; line-height: 1.75; }

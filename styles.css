@@ -78,6 +78,39 @@ p { margin: 0; }
 }
 .breadcrumb span[aria-current] { color: var(--ink); opacity: .7; }
 
+.evidence-key {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 16px;
+  margin-top: 36px;
+}
+.evidence-key-item {
+  border: 1px solid rgba(7,26,66,.11);
+  border-radius: var(--radius);
+  padding: 22px 20px 18px;
+  background: rgba(255,255,255,.99);
+  box-shadow: 0 2px 12px rgba(36,33,31,.05);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.ev-badge {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 3px;
+  align-self: flex-start;
+}
+.ev-official     { background: rgba(7,26,66,.08);    color: #071a42; }
+.ev-corroborated { background: rgba(29,93,65,.09);   color: #1d5d41; }
+.ev-allegation   { background: rgba(184,135,44,.12); color: #7a5800; }
+.ev-disha        { background: rgba(126,31,31,.08);  color: #7e1f1f; }
+.ev-unresolved   { background: rgba(60,60,60,.07);   color: #3f3933; }
+.evidence-key-item p { margin: 0; font-size: 14px; line-height: 1.65; color: var(--muted); }
+
 .nav {
   max-width: var(--max);
   margin: 0 auto;

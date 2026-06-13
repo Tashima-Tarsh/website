@@ -2028,3 +2028,14 @@ h3 {
   .read-next-item { max-width: 100%; }
   .read-next-item.next { text-align: left; }
 }
+
+/* homepage hero intro paragraph */
+.hero-intro { font-size: .97rem; line-height: 1.7; color: var(--muted); margin-top: 18px; max-width: 600px; }
+.hero-intro a { color: var(--navy); font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
+.hero-intro a:hover { color: var(--red); }
+
+/* related-card links */
+.related-card { display: flex; flex-direction: column; gap: 4px; padding: 16px 18px; border: 1px solid var(--line); border-radius: var(--radius); text-decoration: none; background: var(--paper); transition: border-color .18s, box-shadow .18s; }
+.related-card:hover { border-color: var(--navy); box-shadow: var(--shadow); }
+.related-card span { font-size: .7rem; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+.related-card strong { font-size: .95rem; color: var(--navy); font-weight: 800; }

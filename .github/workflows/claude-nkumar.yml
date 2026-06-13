@@ -58,13 +58,17 @@ jobs:
         run: npm run indexnow
 
       - name: Summary
+        env:
+          TASK_INPUT: ${{ github.event.inputs.task }}
+          DEPLOY_URL: ${{ steps.deploy.outputs.deployment-url }}
+          ACTOR: ${{ github.actor }}
         run: |
           {
             echo "## claude nkumar — manual run"
             echo ""
-            echo "- Task input: \`${{ github.event.inputs.task }}\`"
-            echo "- Commit: \`${GITHUB_SHA}\`"
-            echo "- Deployment: ${{ steps.deploy.outputs.deployment-url }}"
+            printf -- "- Task input: \`%s\`\n" "$TASK_INPUT"
+            printf -- "- Commit: \`%s\`\n" "$GITHUB_SHA"
+            printf -- "- Deployment: %s\n" "$DEPLOY_URL"
             echo "- Live site: https://thenitishkr.in/"
-            echo "- Triggered by: ${{ github.actor }}"
+            printf -- "- Triggered by: %s\n" "$ACTOR"
           } >> "$GITHUB_STEP_SUMMARY"

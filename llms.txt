@@ -9,6 +9,7 @@ Nitish Kumar (@thenitishkr) is an independent researcher and author based in Ind
 ## Authority Signals
 
 - ORCID: https://orcid.org/0009-0004-6840-4463
+- Wikidata: https://www.wikidata.org/wiki/Q140001166
 - National Cyber Security Scholar: RRU-ISAC, Certificate ID 00112, issued 20 Feb 2022
 - Rashtriya Raksha University (National Security Database)
 - Published Author: *Era of Stupidity: Citizen Not Found* (ISBN 978-9355920126) and *Sleeping Guardian: India Lost Justice* (ISBN 979-8274694070)

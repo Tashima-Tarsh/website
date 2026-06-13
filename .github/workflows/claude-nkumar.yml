@@ -1,0 +1,75 @@
+name: claude nkumar
+
+on:
+  workflow_dispatch:
+    inputs:
+      task:
+        description: 'What to do (e.g. audit, deploy, verify)'
+        required: false
+        default: 'audit'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: claude-nkumar
+  cancel-in-progress: false
+
+jobs:
+  run:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Validate site
+        run: npm run audit
+
+      - name: Rebuild discovery signals
+        run: npm run signals
+
+      - name: Revalidate after signals
+        run: npm run audit
+
+      - name: Prepare release artifact
+        run: npm run release
+
+      - name: Deploy to Cloudflare Pages
+        id: deploy
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy dist --project-name=${{ vars.CLOUDFLARE_PAGES_PROJECT }} --branch=main --commit-hash=${{ github.sha }}
+
+      - name: Wait for custom domain propagation
+        run: sleep 20
+
+      - name: Verify live canonical URLs
+        run: npm run verify:live
+
+      - name: Submit to IndexNow
+        run: npm run indexnow
+
+      - name: Summary
+        env:
+          TASK_INPUT: ${{ github.event.inputs.task }}
+          DEPLOY_URL: ${{ steps.deploy.outputs.deployment-url }}
+          ACTOR: ${{ github.actor }}
+        run: |
+          {
+            echo "## claude nkumar — manual run"
+            echo ""
+            printf -- "- Task input: \`%s\`\n" "$TASK_INPUT"
+            printf -- "- Commit: \`%s\`\n" "$GITHUB_SHA"
+            printf -- "- Deployment: %s\n" "$DEPLOY_URL"
+            echo "- Live site: https://thenitishkr.in/"
+            printf -- "- Triggered by: %s\n" "$ACTOR"
+          } >> "$GITHUB_STEP_SUMMARY"

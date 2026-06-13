@@ -102,7 +102,7 @@ const feedSlugs = new Set([
 const feedPages = pages
   .filter(p => p.indexable && feedSlugs.has(contentPath(p)))
   .sort((a, b) => new Date(b.published || b.modified) - new Date(a.published || a.modified));
-const newsCutoff = buildTime.getTime() - (2 * 24 * 60 * 60 * 1000);
+const newsCutoff = buildTime.getTime() - (30 * 24 * 60 * 60 * 1000);
 const newsPages = pages.filter(p => p.indexable && p.newsEligible && p.published && new Date(p.published).getTime() >= newsCutoff).slice(0, 1000);
 if (newsPages.length) {
   fs.writeFileSync("news-sitemap.xml", `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">\n${newsPages.map(p => `  <url><loc>${escapeXml(p.url)}</loc><news:news><news:publication><news:name>thenitishkr</news:name><news:language>en</news:language></news:publication><news:publication_date>${p.published}</news:publication_date><news:title>${escapeXml(p.title)}</news:title></news:news></url>`).join("\n")}\n</urlset>\n`);

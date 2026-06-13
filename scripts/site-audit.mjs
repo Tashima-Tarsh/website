@@ -220,7 +220,7 @@ if (!booksAuthoritySchemaText) {
 }
 
 const case02Page = fs.readFileSync(
-  path.join(root, "intelligence-meity-digital-governance", "index.html"),
+  path.join(root, "intelligence/meity-digital-governance", "index.html"),
   "utf8",
 );
 for (const requiredCase02Signal of [
@@ -231,7 +231,7 @@ for (const requiredCase02Signal of [
 ]) {
   if (!case02Page.includes(requiredCase02Signal)) {
     errors.push(
-      `intelligence-meity-digital-governance/index.html: missing source-matrix signal ${requiredCase02Signal}`,
+      `intelligence/meity-digital-governance/index.html: missing source-matrix signal ${requiredCase02Signal}`,
     );
   }
 }
@@ -248,7 +248,7 @@ if (case02SourceSchemaText) {
       case02SourceSchema.itemListElement?.length !== 8
     ) {
       errors.push(
-        "intelligence-meity-digital-governance/index.html: public source schema must contain eight verified records",
+        "intelligence/meity-digital-governance/index.html: public source schema must contain eight verified records",
       );
     } else {
       for (const [index, listEntry] of case02SourceSchema.itemListElement.entries()) {
@@ -256,7 +256,7 @@ if (case02SourceSchemaText) {
         const sourceRecord = listEntry?.item;
         if (listEntry?.["@type"] !== "ListItem") {
           errors.push(
-            `intelligence-meity-digital-governance/index.html: source schema item ${expectedPosition} must be a ListItem`,
+            `intelligence/meity-digital-governance/index.html: source schema item ${expectedPosition} must be a ListItem`,
           );
         }
         if (
@@ -264,7 +264,7 @@ if (case02SourceSchemaText) {
           listEntry.position !== expectedPosition
         ) {
           errors.push(
-            `intelligence-meity-digital-governance/index.html: source schema item ${expectedPosition} has an invalid position`,
+            `intelligence/meity-digital-governance/index.html: source schema item ${expectedPosition} has an invalid position`,
           );
         }
         if (
@@ -276,14 +276,14 @@ if (case02SourceSchemaText) {
           !sourceRecord.citation
         ) {
           errors.push(
-            `intelligence-meity-digital-governance/index.html: source schema item ${expectedPosition} is missing required record metadata`,
+            `intelligence/meity-digital-governance/index.html: source schema item ${expectedPosition} is missing required record metadata`,
           );
         }
       }
     }
   } catch (error) {
     errors.push(
-      `intelligence-meity-digital-governance/index.html: invalid public source schema: ${error.message}`,
+      `intelligence/meity-digital-governance/index.html: invalid public source schema: ${error.message}`,
     );
   }
 }

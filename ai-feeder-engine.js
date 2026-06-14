@@ -74,7 +74,11 @@ const pages = findHtmlPages().map(file => {
     indexable: isIndexable(file, html),
     modified,
     modifiedDate: modified.slice(0, 10),
-    newsEligible: /"@type"\s*:\s*(?:"(?:Analysis)?NewsArticle"|\[[^\]]*"(?:Analysis)?NewsArticle")/i.test(html)
+    newsEligible: (() => {
+      const pathName = file.replace(/\\/g, "/").replace(/(?:index)?\.html$/, "").replace(/\/$/, "");
+      const isStaticPage = ["", "about", "media", "disha", "article-12", "books", "editorial-standards", "fact-check", "start-here", "news", "privacy-policy", "terms", "intelligence"].includes(pathName);
+      return !isStaticPage && /"@type"\s*:\s*(?:"(?:Analysis)?NewsArticle"|\[[^\]]*"(?:Analysis)?NewsArticle")/i.test(html);
+    })()
   };
 }).sort((a,b) => a.url.localeCompare(b.url));
 const docs = fs.existsSync("assets/docs") ? fs.readdirSync("assets/docs").filter(f => /\.pdf$/i.test(f)).map(f => {
@@ -102,7 +106,7 @@ const feedSlugs = new Set([
 const feedPages = pages
   .filter(p => p.indexable && feedSlugs.has(contentPath(p)))
   .sort((a, b) => new Date(b.published || b.modified) - new Date(a.published || a.modified));
-const newsCutoff = buildTime.getTime() - (30 * 24 * 60 * 60 * 1000);
+const newsCutoff = buildTime.getTime() - (2 * 24 * 60 * 60 * 1000); // 2 days (48-hour Google News limit)
 const newsPages = pages.filter(p => p.indexable && p.newsEligible && p.published && new Date(p.published).getTime() >= newsCutoff).slice(0, 1000);
 if (newsPages.length) {
   fs.writeFileSync("news-sitemap.xml", `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">\n${newsPages.map(p => `  <url><loc>${escapeXml(p.url)}</loc><news:news><news:publication><news:name>thenitishkr</news:name><news:language>en</news:language></news:publication><news:publication_date>${p.published}</news:publication_date><news:title>${escapeXml(p.title)}</news:title></news:news></url>`).join("\n")}\n</urlset>\n`);

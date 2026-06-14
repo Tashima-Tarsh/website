@@ -91,20 +91,16 @@ const docs = fs.existsSync("assets/docs") ? fs.readdirSync("assets/docs").filter
 const sitemapUrls = pages.filter(p => p.indexable).map(p => `  <url><loc>${escapeXml(p.url)}</loc><lastmod>${p.modifiedDate}</lastmod><changefreq>weekly</changefreq><priority>${p.file === "index.html" ? "1.0" : "0.8"}</priority></url>`).concat(docs.map(d => `  <url><loc>${escapeXml(d.url)}</loc><lastmod>${d.modifiedDate}</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>`));
 fs.writeFileSync("sitemap.xml", `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${sitemapUrls.join("\n")}\n</urlset>\n`);
 const contentPath = p => p.url.replace(`${SITE}/`, "").replace(/\/$/, "");
-const articlePages = pages.filter(p => /^(article-12|digital-constitutional-personhood|disha|intelligence|intelligence-)/.test(contentPath(p)));
-const feedSlugs = new Set([
-  "article-12",
-  "digital-constitutional-personhood",
-  "disha",
-  "intelligence-ndma-disaster-governance",
-  "intelligence-meity-digital-governance",
-  "intelligence/citizen-not-found",
-  "intelligence-niti-aayog-certification-funds",
-  "intelligence-odf-false-justification",
-  "intelligence-sir-constitutional-scam"
-]);
 const feedPages = pages
-  .filter(p => p.indexable && feedSlugs.has(contentPath(p)))
+  .filter(p => {
+    if (!p.indexable) return false;
+    const slug = contentPath(p);
+    if (["article-12", "digital-constitutional-personhood", "disha"].includes(slug)) return true;
+    if (slug.startsWith("intelligence/") || slug.startsWith("news/")) {
+      return slug !== "intelligence" && slug !== "news";
+    }
+    return false;
+  })
   .sort((a, b) => new Date(b.published || b.modified) - new Date(a.published || a.modified));
 const newsCutoff = buildTime.getTime() - (2 * 24 * 60 * 60 * 1000); // 2 days (48-hour Google News limit)
 const newsPages = pages.filter(p => p.indexable && p.newsEligible && p.published && new Date(p.published).getTime() >= newsCutoff).slice(0, 1000);

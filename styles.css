@@ -1480,6 +1480,8 @@ h3 {
 .social-quora { --social-bg: #b92b27; }
 .social-whatsapp { --social-bg: #25d366; color: #083b20; }
 .social-orcid { --social-bg: #a6ce39; color: #1b3518; }
+.social-wikidata { --social-bg: #006699; color: #ffffff; }
+.social-amazon { --social-bg: #ff9900; color: #111111; }
 
 .footer-legal {
   max-width: 980px;

@@ -3,6 +3,7 @@
   "private": true,
   "scripts": {
     "audit": "node scripts/site-audit.mjs",
+    "validate:sitemap": "node scripts/validate-sitemap.mjs",
     "signals": "node ai-feeder-engine.js",
     "release": "node scripts/prepare-release.mjs",
     "verify:live": "node scripts/verify-live.mjs",

@@ -20,19 +20,46 @@
 /fact-check  /fact-check/  301
 /fact-check.html  /fact-check/  301
 /intelligence.html  /intelligence/  301
-/intelligence-bihar-minister-constitutional-question.html  /intelligence-bihar-minister-constitutional-question/  301
-/intelligence-cpgrams-closure-without-relief.html  /intelligence-cpgrams-closure-without-relief/  301
-/intelligence-district-jamui-bihar.html  /intelligence-district-jamui-bihar/  301
-/intelligence-himachal-pradesh-scam.html  /intelligence-himachal-pradesh-scam/  301
-/intelligence-letters-emails.html  /intelligence-letters-emails/  301
-/intelligence-meity-digital-governance.html  /intelligence-meity-digital-governance/  301
-/intelligence-national-audit-financial-investigation.html  /intelligence-national-audit-financial-investigation/  301
-/intelligence-ndma-disaster-governance.html  /intelligence-ndma-disaster-governance/  301
-/intelligence-niti-aayog-certification-funds.html  /intelligence-niti-aayog-certification-funds/  301
-/intelligence-odf-false-justification.html  /intelligence-odf-false-justification/  301
-/intelligence-pmo-grievance.html  /intelligence-pmo-grievance/  301
-/intelligence-rti-missing-answers.html  /intelligence-rti-missing-answers/  301
-/intelligence-sir-constitutional-scam.html  /intelligence-sir-constitutional-scam/  301
+
+# Phase 1 information-architecture canonical redirects
+/article-12-digital-governance/  /article-12/  301
+/article-12-digital-governance/article-12-ai-systems/  /article-12/ai-systems/  301
+/article-12-digital-governance/automated-decisions/  /article-12/automated-decisions/  301
+/article-12-digital-governance/public-authority-responsibility/  /article-12/public-authority-responsibility/  301
+/digital-arrest/  /digital-arrest-data-harm/  301
+/digital-arrest-data-harm.html  /digital-arrest-data-harm/  301
+/datasets/  /research-datasets/  301
+/sitemap.html  /sitemap/  301
+
+# Intelligence legacy flat files
+/intelligence-bihar-minister-constitutional-question.html  /intelligence/bihar-minister-constitutional-question/  301
+/intelligence-cpgrams-closure-without-relief.html  /intelligence/cpgrams-closure-without-relief/  301
+/intelligence-district-jamui-bihar.html  /intelligence/district-jamui-bihar/  301
+/intelligence-himachal-pradesh-scam.html  /intelligence/himachal-pradesh-scam/  301
+/intelligence-letters-emails.html  /intelligence/letters-emails/  301
+/intelligence-meity-digital-governance.html  /intelligence/meity-digital-governance/  301
+/intelligence-national-audit-financial-investigation.html  /intelligence/national-audit-financial-investigation/  301
+/intelligence-ndma-disaster-governance.html  /intelligence/ndma-disaster-governance/  301
+/intelligence-niti-aayog-certification-funds.html  /intelligence/niti-aayog-certification-funds/  301
+/intelligence-odf-false-justification.html  /intelligence/odf-false-justification/  301
+/intelligence-pmo-grievance.html  /intelligence/pmo-grievance/  301
+/intelligence-rti-missing-answers.html  /intelligence/rti-missing-answers/  301
+/intelligence-sir-constitutional-scam.html  /intelligence/sir-constitutional-scam/  301
+
+# Intelligence case files moved to /intelligence/* hierarchy
+/intelligence-meity-digital-governance/  /intelligence/meity-digital-governance/  301
+/intelligence-ndma-disaster-governance/  /intelligence/ndma-disaster-governance/  301
+/intelligence-niti-aayog-certification-funds/  /intelligence/niti-aayog-certification-funds/  301
+/intelligence-odf-false-justification/  /intelligence/odf-false-justification/  301
+/intelligence-sir-constitutional-scam/  /intelligence/sir-constitutional-scam/  301
+/intelligence-rti-missing-answers/  /intelligence/rti-missing-answers/  301
+/intelligence-cpgrams-closure-without-relief/  /intelligence/cpgrams-closure-without-relief/  301
+/intelligence-pmo-grievance/  /intelligence/pmo-grievance/  301
+/intelligence-letters-emails/  /intelligence/letters-emails/  301
+/intelligence-district-jamui-bihar/  /intelligence/district-jamui-bihar/  301
+/intelligence-himachal-pradesh-scam/  /intelligence/himachal-pradesh-scam/  301
+/intelligence-bihar-minister-constitutional-question/  /intelligence/bihar-minister-constitutional-question/  301
+/intelligence-national-audit-financial-investigation/  /intelligence/national-audit-financial-investigation/  301
 /media.html  /media/  301
 /privacy-policy.html  /privacy-policy/  301
 /terms.html  /terms/  301

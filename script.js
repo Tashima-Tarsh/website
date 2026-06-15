@@ -637,3 +637,58 @@ document.querySelectorAll('[data-copy-link], [data-copy-citation]').forEach((but
     }
   });
 });
+
+function installSwg() {
+  const ldJsonScripts = document.querySelectorAll('script[type="application/ld+json"]');
+  let isNewsArticle = false;
+  for (const script of ldJsonScripts) {
+    try {
+      const data = JSON.parse(script.textContent);
+      const types = [];
+      const extractTypes = (obj) => {
+        if (!obj || typeof obj !== "object") return;
+        if (Array.isArray(obj)) {
+          obj.forEach(extractTypes);
+          return;
+        }
+        if (obj["@type"]) {
+          if (Array.isArray(obj["@type"])) {
+            types.push(...obj["@type"]);
+          } else {
+            types.push(obj["@type"]);
+          }
+        }
+        for (const key in obj) {
+          if (Object.prototype.hasOwnProperty.call(obj, key)) {
+            extractTypes(obj[key]);
+          }
+        }
+      };
+      extractTypes(data);
+      if (types.some(t => ["NewsArticle", "AnalysisNewsArticle", "Article"].includes(t))) {
+        const path = window.location.pathname.replace(/\/$/, "");
+        const isStaticIndex = ["", "/about", "/media", "/news", "/editorial-standards", "/fact-check", "/start-here", "/privacy-policy", "/terms", "/intelligence"].includes(path);
+        if (!isStaticIndex) {
+          isNewsArticle = true;
+          break;
+        }
+      }
+    } catch (_) {}
+  }
+  if (!isNewsArticle) return;
+  const script = document.createElement("script");
+  script.async = true;
+  script.src = "https://news.google.com/swg/js/v1/swg-basic.js";
+  document.head.appendChild(script);
+  self.SWG_BASIC = self.SWG_BASIC || [];
+  self.SWG_BASIC.push((basicSubscriptions) => {
+    basicSubscriptions.init({
+      type: "NewsArticle",
+      isPartOfType: ["Product"],
+      isPartOfProductId: "CAowlPvGDA:openaccess",
+      clientOptions: { theme: "light", lang: "en" },
+    });
+  });
+}
+installSwg();
+

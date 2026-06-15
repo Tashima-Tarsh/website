@@ -12,28 +12,28 @@
 /*.html
   Cache-Control: public, max-age=0, must-revalidate
 
-/intelligence-rti-missing-answers/*
+/intelligence/rti-missing-answers/*
   X-Robots-Tag: noindex, follow
 
-/intelligence-cpgrams-closure-without-relief/*
+/intelligence/cpgrams-closure-without-relief/*
   X-Robots-Tag: noindex, follow
 
-/intelligence-pmo-grievance/*
+/intelligence/pmo-grievance/*
   X-Robots-Tag: noindex, follow
 
-/intelligence-letters-emails/*
+/intelligence/letters-emails/*
   X-Robots-Tag: noindex, follow
 
-/intelligence-district-jamui-bihar/*
+/intelligence/district-jamui-bihar/*
   X-Robots-Tag: noindex, follow
 
-/intelligence-himachal-pradesh-scam/*
+/intelligence/himachal-pradesh-scam/*
   X-Robots-Tag: noindex, follow
 
-/intelligence-bihar-minister-constitutional-question/*
+/intelligence/bihar-minister-constitutional-question/*
   X-Robots-Tag: noindex, follow
 
-/intelligence-national-audit-financial-investigation/*
+/intelligence/national-audit-financial-investigation/*
   X-Robots-Tag: noindex, follow
 
 /assets/images/*

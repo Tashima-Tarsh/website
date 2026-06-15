@@ -20,6 +20,18 @@
 /fact-check  /fact-check/  301
 /fact-check.html  /fact-check/  301
 /intelligence.html  /intelligence/  301
+
+# Phase 1 information-architecture canonical redirects
+/article-12-digital-governance/  /article-12/  301
+/article-12-digital-governance/article-12-ai-systems/  /article-12/ai-systems/  301
+/article-12-digital-governance/automated-decisions/  /article-12/automated-decisions/  301
+/article-12-digital-governance/public-authority-responsibility/  /article-12/public-authority-responsibility/  301
+/digital-arrest/  /digital-arrest-data-harm/  301
+/digital-arrest-data-harm.html  /digital-arrest-data-harm/  301
+/datasets/  /research-datasets/  301
+/sitemap.html  /sitemap/  301
+
+# Intelligence legacy flat files
 /intelligence-bihar-minister-constitutional-question.html  /intelligence/bihar-minister-constitutional-question/  301
 /intelligence-cpgrams-closure-without-relief.html  /intelligence/cpgrams-closure-without-relief/  301
 /intelligence-district-jamui-bihar.html  /intelligence/district-jamui-bihar/  301

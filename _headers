@@ -65,3 +65,6 @@
 
 /media/*
   Link: </assets/court.webp>; rel="preload"; as="image"; type="image/webp"; fetchpriority="high"
+
+/*.pages.dev/*
+  X-Robots-Tag: noindex, nofollow

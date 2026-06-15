@@ -2,7 +2,6 @@ import fs from "node:fs";
 import path from "node:path";
 
 const root = process.cwd();
-const canonicalHost = "https://thenitishkr.in";
 const sitemapPath = path.join(root, "sitemap.xml");
 const errors = [];
 const warnings = [];
@@ -80,9 +79,10 @@ function validateSitemapUrls(urls) {
     if (robotsFromHtml(html).includes("noindex")) fail(`${path.relative(root, file)}: sitemap URL is marked noindex`);
 
     for (const href of hrefsFromHtml(html)) {
-      if (/\.html(?:[?#]|$)/i.test(href)) fail(`${path.relative(root, file)}: internal link should not use .html URL ${href}`);
       const target = localHrefTarget(file, href);
-      if (target && !fs.existsSync(target)) fail(`${path.relative(root, file)}: broken local link ${href}`);
+      if (!target) continue;
+      if (/\.html(?:[?#]|$)/i.test(href)) fail(`${path.relative(root, file)}: internal link should not use .html URL ${href}`);
+      if (!fs.existsSync(target)) fail(`${path.relative(root, file)}: broken local link ${href}`);
     }
   }
 }

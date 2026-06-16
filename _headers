@@ -18,6 +18,11 @@
 /410.html
   X-Robots-Tag: noindex
 
+# Retired PDFs — noindex (served 410 Gone by functions/[[path]].js)
+/assets/records/intelligence/*.pdf
+  X-Robots-Tag: noindex, nofollow
+  Cache-Control: no-store
+
 /*.html
   Cache-Control: public, max-age=0, must-revalidate
 

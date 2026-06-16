@@ -10,6 +10,9 @@
 /thenitishkr  /about/  301
 /hi  /  301
 /rss.xml  /feed.xml  301
+/connect.html  /about/#contact  301
+/record.html  /intelligence/  301
+/chronicle.html  /intelligence/  301
 /index.html  /  301
 /about.html  /about/  301
 /article-12.html  /article-12/  301
@@ -38,13 +41,10 @@
 /record/evidence-submissions/  /digital-arrest-data-harm/  301
 /sitemap.html  /sitemap/  301
 
-# Retired PDF URLs — permanently removed
-# Cloudflare Pages _redirects does not support 410 status code.
-# These redirect to a dedicated 410 page with noindex to signal permanent removal.
-/assets/records/intelligence/mity2.pdf  /410.html  200
-/assets/records/intelligence/pil-annexure-book-evidence-traced-final.pdf  /410.html  200
-/assets/records/intelligence/master-forensic-jamtara-digital-arrest-record-2012-2026.pdf  /410.html  200
-/assets/records/intelligence/wrt-crl-pil-1632026-2.pdf  /410.html  200
+# Retired PDF URLs — permanently removed (handled by functions/[[path]].js → 410 Gone)
+# No _redirects rules here — they would override the 410 handler.
+# See functions/[[path]].js GONE_PATHS.
+
 # Intelligence legacy flat files
 /intelligence-bihar-minister-constitutional-question.html  /intelligence/bihar-minister-constitutional-question/  301
 /intelligence-cpgrams-closure-without-relief.html  /intelligence/cpgrams-closure-without-relief/  301

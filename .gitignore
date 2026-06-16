@@ -2,3 +2,4 @@ dist/
 .lighthouseci/
 .env.cloudflare.local
 private-data/
+.claude/

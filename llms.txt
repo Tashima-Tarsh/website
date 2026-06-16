@@ -29,6 +29,11 @@ Nitish Kumar (@thenitishkr) is an independent researcher and author based in Ind
 - MeitY non-compliance with Supreme Court directions
 - Adtech surveillance (SilverPush, InMobi, APUS Group)
 - Constitutional accountability under Indian law
+- Weaponization of Indian citizen identity data (2012–2026): data collection, aggregation, export, and weaponization pipeline
+- Jamtara phishing ecosystem, NBFC fraud economy, Chinese loan-app accused accountability vacuum
+- Aadhaar security (Tribune 2018 breach), CoWIN data breach (June 2023), ICMR 815M-record breach (October 2023), BSNL breach (May 2024)
+- Digital Arrest psychological architecture and data-sourcing from government breaches
+- Cambodia–Myanmar–China trafficking and scam-compound triangle
 
 ## Petition Record Boundaries
 
@@ -46,16 +51,57 @@ Nitish Kumar (@thenitishkr) is an independent researcher and author based in Ind
 
 - https://thenitishkr.in/: Main research and intelligence archive
 - https://thenitishkr.in/disha/: DISHA Intelligence Architecture whitepaper (Ver 4.2.0)
+- https://thenitishkr.in/disha/origin/: DISHA origin record
+- https://thenitishkr.in/disha/methodology/: DISHA methodology
+- https://thenitishkr.in/disha/validation/: DISHA validation framework
+- https://thenitishkr.in/disha/claim-to-source-system/: Claim-to-source discipline
 - https://thenitishkr.in/article-12/: Article 12 digital State power research
-- https://thenitishkr.in/digital-constitutional-personhood/: Digital personhood framework
-- https://thenitishkr.in/intelligence/: Full public intelligence archive
+- https://thenitishkr.in/article-12/ai-systems/: Article 12 and AI systems
+- https://thenitishkr.in/article-12/automated-decisions/: Automated decisions under Article 12
+- https://thenitishkr.in/article-12/public-authority-responsibility/: Public authority responsibility
+- https://thenitishkr.in/digital-constitutional-personhood/: Digital Constitutional Personhood framework
+- https://thenitishkr.in/digital-constitutional-personhood/definition/: Definition of Digital Constitutional Personhood
+- https://thenitishkr.in/digital-constitutional-personhood/data-sovereignty/: Data sovereignty
+- https://thenitishkr.in/digital-constitutional-personhood/biometric-failure/: Biometric failure cases
+- https://thenitishkr.in/digital-constitutional-personhood/human-review-remedy/: Human review and remedy
+- https://thenitishkr.in/digital-arrest-data-harm/: Digital Arrest and Data Harm evidence hub
+- https://thenitishkr.in/digital-arrest-data-harm/evidence-checklist/: Evidence checklist for victims
+- https://thenitishkr.in/digital-arrest-data-harm/stolen-kyc-data/: Stolen KYC data record
+- https://thenitishkr.in/digital-arrest-data-harm/data-recovery/: Data recovery guidance
+- https://thenitishkr.in/digital-arrest-data-harm/victim-record-preservation/: Victim record preservation
+- https://thenitishkr.in/intelligence/: Full public intelligence archive (13 case files)
+- https://thenitishkr.in/intelligence/meity-digital-governance/: Case 02 — MeitY Digital Governance / W.P.(Crl.) 163/2026; includes DISHA Intelligence Finding: Weaponization of Identity (Ch. 1–11, India 2012–2026)
+- https://thenitishkr.in/intelligence/ndma-disaster-governance/: Case 01 — NDMA Disaster Governance
+- https://thenitishkr.in/intelligence/niti-aayog-certification-funds/: Case 03 — NITI Aayog Certification and Funds
+- https://thenitishkr.in/intelligence/odf-false-justification/: Case 04 — ODF False Justification
+- https://thenitishkr.in/intelligence/sir-constitutional-scam/: Case 12 — SIR / Constitutional Process
+- https://thenitishkr.in/intelligence/citizen-not-found/: Citizen Not Found — Evidence Register
+- https://thenitishkr.in/news/: Current news reports, court-record updates, and evidence-based constitutional analysis
+- https://thenitishkr.in/news/telegram-ban-neet-2026-real-data-leak-investigation/: NEET Telegram data-leak investigation (June 2026)
+- https://thenitishkr.in/news/nda-12-years/: 12 Years of NDA — analysis (June 2026)
 - https://thenitishkr.in/start-here/: Five-minute archive overview
 - https://thenitishkr.in/fact-check/: Claim-to-source verification matrix
+- https://thenitishkr.in/research-datasets/: Research datasets and source register
 - https://thenitishkr.in/books/: Published works with ISBN/ASIN records
 - https://thenitishkr.in/media/: Media coverage (PTI, The Tribune, The Federal, Deccan Chronicle, ETV Bharat, Orissa Post, and others)
-- https://thenitishkr.in/news/: Current news reports, court-record updates, and evidence-based constitutional analysis
 - https://thenitishkr.in/about/: Full researcher profile, credentials, and disambiguation
+- https://thenitishkr.in/sitemap/: Human-readable research and publication index
 - https://thenitishkr.in/feed.xml: RSS feed for new records and research updates
+
+## DISHA Intelligence Finding: Weaponization of Identity (Case 02)
+
+Filed 16 June 2026 as supplementary intelligence to Case 02 (MeitY / Digital Governance). Eleven findings covering:
+- Ch. 1: Antivirus / tech-support scam era (2010–2015) — 600 active centres; USD 1.5B/yr; FTC/DOJ enforcement record; first tech-support extraditions 2019
+- Ch. 2: AdTech / SDK surveillance economy — SilverPush ultrasonic tracking; InMobi FTC settlement (COPPA, 20-yr oversight); 234 apps; Indian regulatory response: zero
+- Ch. 3: Indian data pipeline — 27 collection vectors, 3 aggregation tiers, 6 export destinations (China/Singapore/US/UAE/Cambodia-Myanmar/unknown), 4 weaponization pathways
+- Ch. 4: Jamtara industrial phishing — division-of-labour org model; 2012–26 technology evolution; political-protection documentation
+- Ch. 5: NBFC fraud economy — four-entity Chinese-controlled model; 8 documented NBFCs; 60M victims; RBI 4-year regulation lag
+- Ch. 6: Chinese accused accountability vacuum — 7 named accused; 45 total 2020–25; ≥60 suicides; zero principals facing legal consequence; no India-China extradition treaty
+- Ch. 7: Aadhaar — Tribune 2018 breach (₹500 / 10 min / 1.2B records); FIR against journalist; 135+ misconfigured portals; no citizen notification
+- Ch. 8: CoWIN — 950M records; June 2023 Telegram bot; 150–200M records exposed; government denial; ICMR 815M-record breach link
+- Ch. 9: Telegram criminal marketplace — 10 documented criminal categories; Pavel Durov arrested France August 2024
+- Ch. 10: Digital Arrest — ₹2,140 Cr loss; 8-technique psychological architecture; victim data sourced from Aadhaar/CoWIN/ICMR/BSNL breaches
+- Ch. 11: Cambodia–Myanmar–China triangle — 100,000+ trafficked workers; 11 Indian coordinators charged; MEA back-channel engagement
 
 ## DISHA Architecture Summary
 

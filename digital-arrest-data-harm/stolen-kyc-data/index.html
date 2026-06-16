@@ -274,6 +274,72 @@
       <div style="padding:18px 0;border-top:1px solid rgba(36,33,31,.08);margin-top:8px;">
         <p style="color:var(--muted);font-size:13px;"><strong>Sources:</strong> Citizen Lab, Braunschweig TU, ICCL, Brave, ICO, FTC, Kaspersky, Zimperium, Lookout, BuzzFeed News, EFF. Report date: April 2026. All statements are based on the source document; verify against primary agency records before citing in legal proceedings.</p>
       </div>
+        <section class="case-study-section reveal" style="border:none;box-shadow:none;padding:28px 0 28px;border-top:1px solid rgba(7,26,66,.10);">
+          <p class="eyebrow">Finding 10 / Aadhaar Breach</p>
+          <h3>Aadhaar Ecosystem Breach 2018–2026 — 1 Billion Records, 210 Portals, Zero Citizen Notification</h3>
+          <p>On January 3, 2018, The Tribune newspaper published an investigation confirming that access to the details of any of the 1 billion+ Aadhaar holders could be purchased for Rs 500 via a WhatsApp contact. Within 10 minutes, the purchaser received access to a portal allowing searches by name, address, postal code, photo, date of birth, email, and phone number for any searched Aadhaar number. CERT-In investigation confirmed at least 210 government department and state government websites had been exposing Aadhaar data through misconfigured APIs and public-facing databases. UIDAI's response was to file an FIR against The Tribune reporter — widely condemned as criminalising responsible disclosure.</p>
+          <div class="case-study-table-wrap" style="margin-top:18px;">
+            <table class="case-study-table">
+              <thead><tr><th>Crime Enabled by Stolen Aadhaar Data</th><th>Aadhaar Data Used</th><th>Documented Impact</th></tr></thead>
+              <tbody>
+                <tr><td>SIM swap fraud</td><td>Aadhaar number + address to 'verify identity' with telecom CSR</td><td>SIM swapped; bank OTPs intercepted; accounts drained. RBI documented Rs 400 crore+ losses via SIM swap 2017–2022.</td></tr>
+                <tr><td>Fake KYC / bank account opening</td><td>Aadhaar + PAN to open mule accounts online</td><td>Thousands of Jan Dhan and zero-balance accounts opened under real identities for money mule use.</td></tr>
+                <tr><td>Digital arrest victim profiling</td><td>Aadhaar-linked mobile, address, employer, family names</td><td>Scammers use real personal details to appear credible during fake 'arrest' calls, increasing victim compliance.</td></tr>
+                <tr><td>Loan fraud</td><td>Aadhaar + PAN to apply for instant digital loans</td><td>Victims discover Rs 50,000–Rs 5 lakh loans taken in their name. Lenders have no recourse under current framework.</td></tr>
+                <tr><td>Chinese loan app KYC bypass</td><td>Aadhaar selfie verification spoofed with purchased photos</td><td>Liveness detection bypassed using 3D-rendered photos; loans disbursed to fraudster accounts.</td></tr>
+                <tr><td>Impersonation / forgery</td><td>Aadhaar printed with altered name on real data</td><td>Used for rental agreements, hotel check-in, SIM procurement, police station appearance.</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="case-study-note" style="margin-top:14px;"><strong>Critical action — lock your Aadhaar biometrics:</strong> As of 2024, fewer than 5% of Aadhaar holders have enabled biometric lock. UIDAI does not proactively notify citizens when their Aadhaar is used for authentication. Any Indian with Aadhaar-linked services remains vulnerable if their demographic data is in any of the documented breach datasets. Action: Immediately lock Aadhaar biometrics at uidai.gov.in or mAadhaar app. Security measures introduced post-2018: Virtual ID (16-digit temporary number); Aadhaar Biometric Lock (citizen-initiated); Masked Aadhaar (last 4 digits only — officially valid for most private uses); OTP-based authentication limit (10 attempts per day per Aadhaar). None of these are enabled by default.</div>
+        </section>
+
+        <section class="case-study-section reveal" style="border:none;box-shadow:none;padding:28px 0 28px;border-top:1px solid rgba(7,26,66,.10);">
+          <p class="eyebrow">Finding 11 / CoWIN Breach</p>
+          <h3>CoWIN Health Data Compromise — 150 Million Vaccination Records on Telegram, June 2023</h3>
+          <p>In June 2023, India's CoWIN portal — the government's COVID-19 vaccine management platform — suffered a data exposure placing the vaccination records, Aadhaar numbers, and mobile numbers of over 150 million Indian citizens on Telegram as a searchable bot. This was not a minor leak: it was a bot that allowed anyone to query specific individuals' health records using their phone number or Aadhaar number. The Ministry of Health stated: 'The CoWIN portal is completely safe. No data breach has occurred.' CloudSEK researchers sampled 100 queried records and found 100% accuracy rate. No individual or organisation has been criminally charged for the CoWIN breach as of 2026.</p>
+          <div class="case-study-table-wrap" style="margin-top:18px;">
+            <table class="case-study-table">
+              <thead><tr><th>Date</th><th>Event</th></tr></thead>
+              <tbody>
+                <tr><td>10 Jun 2023</td><td>Researcher discovers Telegram bot 'hak4learn CoWIN Bot' responding to phone number queries with real CoWIN data: full name, Aadhaar number, mobile, gender, year of birth, vaccination centre, dose dates, vaccine type.</td></tr>
+                <tr><td>11 Jun 2023</td><td>Multiple journalists verify bot. Personal data of sitting Cabinet Minister's family member confirmed accurate by cross-reference. Story breaks in Indian media.</td></tr>
+                <tr><td>12 Jun 2023</td><td>MoHFW states: 'The CoWIN portal is completely safe. No data breach has occurred.' NHA denies compromise. CERT-In issues advisory confirming investigation. Telegram bot taken down. Data already downloaded and circulating on dark web.</td></tr>
+                <tr><td>13 Jun 2023</td><td>Parliamentary opposition raises issue in Lok Sabha. Government maintains no breach occurred.</td></tr>
+                <tr><td>Jul 2023</td><td>NHA investigation concludes breach originated from third-party healthcare operator whose API credentials were compromised — a state-level vaccination partner portal. CoWIN central servers not directly hacked.</td></tr>
+                <tr><td>Aug 2023</td><td>No arrests. No public disclosure of records actually compromised. Parliamentary Standing Committee requests full audit report — government declines citing 'security concerns'.</td></tr>
+                <tr><td>2024</td><td>ICMR breach (815M records, Oct 2023) confirms CoWIN and ICMR data pools were linked — same data present in both breaches, suggesting common source or linked system compromise.</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="case-study-note" style="margin-top:14px;"><strong>Why this breach is more serious than disclosed:</strong> The government's position that 'no central breach occurred' is technically narrow but misleading. A government vaccination database is uniquely dangerous because: (1) it contains Aadhaar linkage for virtually every adult Indian; (2) the data was mandatory — citizens had no opt-out; (3) it includes children's data through family registration; (4) it was used to create one of the most comprehensive identity + health + location databases ever assembled in India. Data volume: researchers estimated the full dataset at 150–200 million unique records. As of Q1 2024, data is live on BreachForums and multiple dark web markets, being sold for $3,000–$8,000 per million records. Criminal exploitation potential includes: digital arrest profiling (vaccination centre location reveals physical whereabouts of high-value targets), health insurance fraud, medical record tampering, and identity verification for social engineering scams.</div>
+        </section>
+
+        <section class="case-study-section reveal" style="border:none;box-shadow:none;padding:28px 0 0;border-top:1px solid rgba(7,26,66,.10);">
+          <p class="eyebrow">Finding 12 / Breach Registry</p>
+          <h3>Complete India Data Breach Registry 2018–2026 — Forensic Record</h3>
+          <p>The following is a forensic record of major data breaches affecting Indian citizens and organisations, 2018–2026. All entries are sourced from verified disclosures, researcher reports, official government statements, or court records (NCRB, CERT-In, CloudSEK, Cyble, researcher disclosures). The aggregate effect of these breaches is that effectively every adult Indian's identity, health, financial, and behavioural profile is now available to criminal actors — rendering individual fraud 'prevention' advice structurally inadequate without upstream data source regulation.</p>
+          <div class="case-study-table-wrap" style="margin-top:18px;">
+            <table class="case-study-table">
+              <thead><tr><th>Year</th><th>Entity</th><th>Records</th><th>Data Exposed</th><th>Outcome</th></tr></thead>
+              <tbody>
+                <tr><td>2018</td><td>UIDAI/Aadhaar ecosystem</td><td>~1 billion</td><td>Name, address, photo, phone, Aadhaar no., bank</td><td>UIDAI denied central breach; 210 portals fixed. Reporter FIR filed.</td></tr>
+                <tr><td>2019</td><td>IRCTC (suspected)</td><td>90 million+</td><td>Booking history, travel patterns, identity</td><td>IRCTC denied. No official confirmation; data circulated on dark web forums.</td></tr>
+                <tr><td>2020</td><td>BigBasket</td><td>20 million</td><td>Email, phone, hashed passwords, addresses</td><td>BigBasket confirmed. FIR filed. Accused not arrested.</td></tr>
+                <tr><td>2021</td><td>MobiKwik</td><td>3.5M users; 8.2 TB KYC</td><td>Aadhaar, PAN, full address, transactions</td><td>MobiKwik initially denied; CERT-In investigated. No public prosecution.</td></tr>
+                <tr><td>2021</td><td>Air India / SITA PSS</td><td>4.5 million</td><td>Passport, ticket, frequent flyer, credit card</td><td>Air India disclosed May 2021. No class action filed in India.</td></tr>
+                <tr><td>2021</td><td>Domino's India</td><td>180M orders; 13 TB</td><td>Name, phone, email, location, payment type</td><td>Domino's confirmed. Data portal shut. No arrests.</td></tr>
+                <tr><td>2022</td><td>AIIMS Delhi (ransomware)</td><td>40 million patients</td><td>Medical records, personal data, Aadhaar-linked IDs</td><td>Patient profiles available for medical fraud and digital arrest threats.</td></tr>
+                <tr><td>2023</td><td>CoWIN portal</td><td>150M+</td><td>Aadhaar, mobile, vaccination details, beneficiary ID</td><td>Telegram bot created. NHA investigation confirmed 3rd-party vector. No prosecution.</td></tr>
+                <tr><td>2023</td><td>ICMR</td><td>815 million</td><td>Name, age, Aadhaar, mobile, COVID test results, address</td><td>Listed for $80,000 on BreachForums. India's largest-ever data breach. No arrests.</td></tr>
+                <tr><td>2024</td><td>BSNL</td><td>278 GB (IMSI, SIM data, HLR)</td><td>IMSI numbers, SIM card data, home location registers — enables SIM cloning at scale</td><td>Highest-risk breach for SIM swap attacks. Creates industrial-scale SIM clone capability.</td></tr>
+                <tr><td>2024</td><td>Star Health Insurance</td><td>31 million</td><td>Health claims data, medical diagnoses, personal identity</td><td>Telegram bot created. CEO implicated in insider leak allegation (lawsuit filed). High Court order to block bots.</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="case-study-note" style="margin-top:14px;"><strong>Pattern across all breaches:</strong> Government denial → third-party vector finding → no arrests → no citizen notification → data remains on dark web markets. The BSNL breach (278 GB of IMSI/SIM data) is particularly critical because it enables industrial-scale SIM cloning — making every SIM swap fraud exponentially easier. The aggregate effect is that every Indian who has registered a phone, received a vaccine, filed an income tax return, used a health service, ordered food, or booked a ticket has had their data breached at least once and likely multiple times. Source: CERT-In verified disclosures; CloudSEK and Cyble research reports; Parliamentary Standing Committee records; Supreme Court and High Court filings.</div>
+        </section>
+
     </div>
   </section>
 

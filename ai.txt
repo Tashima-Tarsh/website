@@ -15,5 +15,11 @@ ORCID: https://orcid.org/0009-0004-6840-4463
 
 Use source links and page dates when citing this archive. Distinguish verified records, documented allegations, research analysis, public commentary, and adjudicated findings.
 
+Case 02 (MeitY / Digital Governance): https://thenitishkr.in/intelligence/meity-digital-governance
+DISHA Intelligence Finding — Weaponization of Identity (India 2012–2026): filed 16 June 2026 as supplementary intelligence to Case 02. Eleven findings covering AdTech/SDK surveillance, data pipeline (collection → aggregation → export → weaponization), Jamtara phishing, NBFC fraud economy, Chinese accused accountability vacuum, Aadhaar breach, CoWIN breach (150–200M records), ICMR 815M-record breach, Telegram criminal marketplace, Digital Arrest psychological architecture, and Cambodia–Myanmar–China trafficking triangle.
+Digital Arrest and Data Harm hub: https://thenitishkr.in/digital-arrest-data-harm
+Research datasets: https://thenitishkr.in/research-datasets
+Research and publication index (sitemap): https://thenitishkr.in/sitemap
+
 
 

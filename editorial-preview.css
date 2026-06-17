@@ -674,3 +674,190 @@ h3 { font-size: 24px; line-height: 1.18; }
   .news-trust-grid article { border-right: 0; border-bottom: 1px solid #dbe2ec; }
   .news-record-body h2 { font-size: 27px !important; }
 }
+
+/* ═══════════════════════════════════════════════════════════════
+   GLOBAL CONTENT TYPOGRAPHY & IMAGE STANDARDS
+   Applies to all pages via editorial-preview.css — do not override
+   per-page. Header and footer are excluded by scope selectors.
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ── Paragraph typography ── */
+main p,
+.section p,
+.case-study-section p,
+.case-study-copy p,
+.hub-disha-body p,
+.hub-lead p,
+.news-record-body p,
+.about-story-main p,
+.disha-thesis-body p,
+.record-toc ~ * p {
+  text-align: justify;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  line-height: 1.78;
+  font-size: 15.5px;
+  color: #34445a;
+  max-width: 76ch;
+}
+
+/* Lead paragraph — slightly larger, still justified */
+main .lead,
+.section .lead {
+  font-size: clamp(16px, 1.6vw, 19px);
+  line-height: 1.68;
+  color: #34445a;
+  text-align: justify;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  max-width: 72ch;
+}
+
+/* Headings in content — breathing room */
+main h2 { margin-top: 2.4em; margin-bottom: .6em; }
+main h3 { margin-top: 1.8em; margin-bottom: .5em; }
+main h4 { margin-top: 1.4em; margin-bottom: .4em; }
+
+/* Paragraph spacing */
+main p + p { margin-top: .9em; }
+
+/* ── Image standards ── */
+main img,
+.section img,
+.case-study-section img,
+.hub-infographic img,
+.news-record-image img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 4px;
+}
+
+/* Constrain standalone figures so they never overflow their column */
+main figure {
+  margin: 1.8em 0;
+  max-width: 100%;
+}
+
+main figure img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;  /* never crops letters or edges */
+  border-radius: 4px;
+}
+
+main figcaption {
+  margin-top: 8px;
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--muted);
+  text-align: center;
+}
+
+/* Large infographic figures — cap height so they don't dominate viewport */
+.hub-infographic {
+  max-width: 100%;
+}
+
+.hub-infographic img {
+  max-height: 680px;
+  width: 100%;
+  object-fit: contain;
+  object-position: top center;
+  background: #f8fafc;
+}
+
+/* Book / document cover images — never stretch */
+.book-cover-stack img,
+.book-cover-frame img,
+.disha-document-frame img,
+.document-frame img {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* ── Blockquote / pull quote ── */
+main blockquote {
+  margin: 1.8em 0;
+  padding: 18px 24px;
+  border-left: 4px solid #f39c12;
+  background: #f8fafc;
+  border-radius: 0 4px 4px 0;
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--red);
+  font-style: italic;
+}
+
+main blockquote p {
+  color: var(--red);
+  text-align: left;
+}
+
+/* ── List readability ── */
+main ul, main ol {
+  padding-left: 1.5em;
+  margin: .8em 0 1.2em;
+}
+
+main li {
+  line-height: 1.72;
+  font-size: 15.5px;
+  color: #34445a;
+  margin-bottom: .35em;
+}
+
+/* ── Tables ── */
+main table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  line-height: 1.55;
+  margin: 1.4em 0;
+}
+
+main th {
+  background: #f3f6fa;
+  color: var(--red);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+  padding: 10px 14px;
+  text-align: left;
+  border-bottom: 2px solid var(--line);
+}
+
+main td {
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--line);
+  color: #34445a;
+  vertical-align: top;
+}
+
+main tr:last-child td { border-bottom: none; }
+main tr:nth-child(even) td { background: #f8fafc; }
+
+/* ── Horizontal rule ── */
+main hr {
+  border: none;
+  border-top: 1px solid var(--line);
+  margin: 2.4em 0;
+}
+
+/* ── Responsive: justify → left on narrow screens ── */
+@media (max-width: 480px) {
+  main p,
+  .section p,
+  main .lead,
+  .section .lead {
+    text-align: left;
+    hyphens: none;
+    -webkit-hyphens: none;
+  }
+
+  .hub-infographic img {
+    max-height: 360px;
+  }
+}

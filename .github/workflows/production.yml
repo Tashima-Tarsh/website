@@ -25,6 +25,15 @@ jobs:
         with:
           node-version: 22
 
+      - name: Validate release
+        run: npm run audit
+
+      - name: Rebuild discovery signals
+        run: npm run signals
+
+      - name: Revalidate generated signals
+        run: npm run audit
+
       - name: Prepare production artifact
         run: npm run release
 

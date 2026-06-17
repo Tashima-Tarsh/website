@@ -682,16 +682,15 @@ h3 { font-size: 24px; line-height: 1.18; }
    ═══════════════════════════════════════════════════════════════ */
 
 /* ── Paragraph typography ── */
-main p,
-.section p,
+/* Scoped to main only — .site-footer .section p is explicitly excluded */
+main p:not(.site-footer p),
 .case-study-section p,
 .case-study-copy p,
 .hub-disha-body p,
 .hub-lead p,
 .news-record-body p,
 .about-story-main p,
-.disha-thesis-body p,
-.record-toc ~ * p {
+.disha-thesis-body p {
   text-align: justify;
   hyphens: auto;
   -webkit-hyphens: auto;
@@ -701,9 +700,20 @@ main p,
   max-width: 76ch;
 }
 
+/* Undo justify inside footer — footer is never touched */
+.site-footer p,
+.site-footer .section p {
+  text-align: left !important;
+  hyphens: none !important;
+  -webkit-hyphens: none !important;
+  font-size: inherit !important;
+  max-width: none !important;
+  line-height: inherit !important;
+  color: inherit !important;
+}
+
 /* Lead paragraph — slightly larger, still justified */
-main .lead,
-.section .lead {
+main .lead {
   font-size: clamp(16px, 1.6vw, 19px);
   line-height: 1.68;
   color: #34445a;
@@ -723,7 +733,6 @@ main p + p { margin-top: .9em; }
 
 /* ── Image standards ── */
 main img,
-.section img,
 .case-study-section img,
 .hub-infographic img,
 .news-record-image img {

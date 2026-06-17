@@ -8,6 +8,21 @@ if (navToggle && navLinks) {
   });
 }
 
+// Mobile dropdown navigation
+document.querySelectorAll(".nav-item > a").forEach((trigger) => {
+  trigger.addEventListener("click", (e) => {
+    // Only for mobile where dropdowns are inline
+    if (window.innerWidth > 900) return;
+    if (trigger.getAttribute("href")?.startsWith("#")) {
+      e.preventDefault();
+    }
+    const parent = trigger.closest(".nav-item");
+    if (!parent) return;
+    const isOpen = parent.classList.toggle("is-open");
+    trigger.setAttribute("aria-expanded", String(isOpen));
+  });
+});
+
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {

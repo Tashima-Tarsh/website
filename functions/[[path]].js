@@ -6,7 +6,8 @@ const GONE_HTML = `<!doctype html>
   <meta name="robots" content="noindex, nofollow">
   <title>Record Permanently Removed | thenitishkr</title>
   <meta name="description" content="This record has been permanently removed from the thenitishkr public-interest archive.">
-  <link rel="stylesheet" href="/styles.css?v=20260618">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/editorial-preview.css">
 </head>
 <body>
   <main class="section not-found-page">

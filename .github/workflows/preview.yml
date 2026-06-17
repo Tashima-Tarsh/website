@@ -23,6 +23,9 @@ jobs:
         with:
           node-version: 22
 
+      - name: Validate site
+        run: npm run audit
+
       - name: Prepare release
         run: npm run release
 

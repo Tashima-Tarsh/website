@@ -10,13 +10,14 @@
     gtag('js', new Date());
     gtag('config', 'G-YJ314E1YHG');
   </script>
-<meta charset="utf-8">
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Research and Publication Index | thenitishkr</title>
   <meta name="description" content="Human-readable sitemap for the thenitishkr research archive: Article 12, Digital Constitutional Personhood, DISHA, case files, media, books and datasets.">
   <meta name="robots" content="index, follow, max-image-preview:large">
   <link rel="canonical" href="https://thenitishkr.in/sitemap/">
   <link rel="stylesheet" href="/styles.css?v=20260613">
+  <link rel="stylesheet" href="/editorial-preview.css?v=preview-20260611news">
   <link rel="icon" href="/favicon.ico?v=tnk-20260610" sizes="any">
   <link rel="icon" href="/assets/brand/favicon-64.png?v=tnk-20260610" type="image/png" sizes="64x64">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png?v=tnk-20260610" sizes="180x180">
@@ -55,16 +56,67 @@
   <meta name="twitter:image" content="https://thenitishkr.in/assets/images/og/home-evidence-records.png?v=20260608visual">
   <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"CollectionPage","@id":"https://thenitishkr.in/sitemap/#webpage","url":"https://thenitishkr.in/sitemap/","name":"Research and Publication Index","description":"Human-readable sitemap for the thenitishkr research archive.","isPartOf":{"@id":"https://thenitishkr.in/#website"},"author":{"@id":"https://thenitishkr.in/#person"},"publisher":{"@id":"https://thenitishkr.in/#person"},"inLanguage":"en-IN"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://thenitishkr.in/"},{"@type":"ListItem","position":2,"name":"Sitemap","item":"https://thenitishkr.in/sitemap/"}]}]}</script>
   <style>
-    .sitemap-index { padding-top: clamp(42px, 7vw, 76px); }
-    .sitemap-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; margin-top: 28px; }
-    .sitemap-card { border: 1px solid rgba(7,26,66,.14); border-top: 5px solid var(--red); border-radius: var(--radius); background: #fff; padding: 22px; box-shadow: var(--shadow); }
-    .sitemap-card h2 { margin: 0 0 8px; font-size: clamp(24px, 3vw, 34px); }
-    .sitemap-card p { color: var(--muted); margin-bottom: 14px; }
-    .sitemap-card ul { margin: 0; padding-left: 20px; }
-    .sitemap-card li { margin: 6px 0; }
-    .sitemap-card a { color: var(--red); text-decoration: underline; text-underline-offset: 3px; }
-    .status-note { display: inline-block; margin-left: 6px; color: var(--muted); font-size: 12px; }
-    @media (max-width: 760px) { .sitemap-grid { grid-template-columns: 1fr; } }
+    :root { --idx-navy:#062651; --idx-navy2:#071a42; --idx-gold:#f39c12; --idx-green:#1d5d41; --idx-line:rgba(7,26,66,.13); --idx-bg:#f3f6fa; }
+
+    /* ── Hero ── */
+    .idx-hero { padding:clamp(48px,8vw,88px) 0 clamp(32px,5vw,56px); }
+    .idx-hero h1 { font-size:clamp(38px,6vw,72px); line-height:1; color:var(--idx-navy); max-width:860px; }
+    .idx-hero .lead { margin-top:16px; color:var(--muted); font-size:clamp(16px,1.6vw,19px); max-width:720px; line-height:1.65; }
+
+    /* ── Stats strip ── */
+    .idx-stats { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:14px; margin:32px 0 0; }
+    .idx-stat { border:1px solid var(--idx-line); border-top:4px solid var(--idx-navy); border-radius:var(--radius); background:#fff; padding:18px 20px; box-shadow:var(--shadow); }
+    .idx-stat:nth-child(2) { border-top-color:var(--idx-gold); }
+    .idx-stat:nth-child(3) { border-top-color:var(--idx-green); }
+    .idx-stat:nth-child(4) { border-top-color:#9b59b6; }
+    .idx-stat strong { display:block; font-family:"Cormorant Garamond",Georgia,serif; font-size:clamp(30px,3.5vw,44px); color:var(--idx-navy); line-height:.9; }
+    .idx-stat span { display:block; margin-top:8px; font-size:11px; font-weight:900; letter-spacing:.1em; text-transform:uppercase; color:var(--charcoal); }
+
+    /* ── Section group ── */
+    .idx-group { margin-top:clamp(40px,6vw,64px); }
+    .idx-group-header { display:flex; align-items:center; gap:14px; padding-bottom:14px; border-bottom:2px solid var(--idx-navy); margin-bottom:22px; }
+    .idx-group-label { display:inline-block; padding:4px 12px; background:var(--idx-navy); color:#fff; font-size:10px; font-weight:900; letter-spacing:.14em; text-transform:uppercase; border-radius:3px; }
+    .idx-group-title { font-size:clamp(20px,2.4vw,28px); font-weight:800; color:var(--idx-navy2); margin:0; }
+
+    /* ── Cards grid ── */
+    .idx-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px; }
+    .idx-grid.two-col { grid-template-columns:repeat(2,minmax(0,1fr)); }
+    .idx-card { border:1px solid var(--idx-line); border-top:5px solid var(--idx-navy); border-radius:var(--radius); background:#fff; padding:22px 24px 24px; box-shadow:var(--shadow); display:flex; flex-direction:column; }
+    .idx-card:nth-child(2) { border-top-color:var(--idx-gold); }
+    .idx-card:nth-child(3) { border-top-color:var(--idx-green); }
+    .idx-card:nth-child(4) { border-top-color:#9b59b6; }
+    .idx-card:nth-child(5) { border-top-color:#e74c3c; }
+    .idx-card:nth-child(6) { border-top-color:#16a085; }
+    .idx-card-label { font-size:10px; font-weight:900; letter-spacing:.12em; text-transform:uppercase; color:var(--idx-navy); margin-bottom:8px; }
+    .idx-card h2 { font-size:clamp(17px,1.9vw,22px); margin:0 0 10px; line-height:1.2; }
+    .idx-card h2 a { color:var(--idx-navy2); text-decoration:none; }
+    .idx-card h2 a:hover { text-decoration:underline; text-underline-offset:3px; }
+    .idx-card > p { color:var(--muted); font-size:14px; line-height:1.6; margin:0 0 16px; }
+    .idx-card ul { margin:0; padding:0; list-style:none; border-top:1px solid var(--idx-line); padding-top:14px; margin-top:auto; }
+    .idx-card li { padding:6px 0; border-bottom:1px solid rgba(7,26,66,.07); display:flex; align-items:baseline; gap:8px; }
+    .idx-card li:last-child { border-bottom:0; padding-bottom:0; }
+    .idx-card li::before { content:"›"; color:var(--idx-navy); font-weight:900; flex-shrink:0; }
+    .idx-card a { color:var(--idx-navy2); font-size:13.5px; line-height:1.45; }
+    .idx-card a:hover { text-decoration:underline; text-underline-offset:2px; }
+    .idx-badge { display:inline-block; margin-left:6px; padding:1px 7px; background:var(--idx-bg); border:1px solid var(--idx-line); border-radius:3px; color:var(--muted); font-size:10px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; vertical-align:middle; }
+
+    /* ── Quick-access strip ── */
+    .idx-quicknav { margin-top:clamp(36px,5vw,56px); background:var(--idx-navy2); border-radius:var(--radius); padding:28px 32px; display:grid; grid-template-columns:1fr auto; gap:24px; align-items:center; }
+    .idx-quicknav h2 { color:#fff; font-size:clamp(18px,2vw,24px); margin:0 0 6px; }
+    .idx-quicknav p { color:rgba(255,255,255,.65); font-size:14px; margin:0; }
+    .idx-quicknav-links { display:flex; flex-wrap:wrap; gap:10px; justify-content:flex-end; }
+    .idx-quicknav-links a { display:inline-block; padding:9px 18px; border:1px solid rgba(255,255,255,.25); border-radius:6px; color:#fff; font-size:13px; font-weight:700; text-decoration:none; white-space:nowrap; }
+    .idx-quicknav-links a:hover { background:rgba(255,255,255,.12); }
+
+    @media (max-width:960px) {
+      .idx-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+      .idx-quicknav { grid-template-columns:1fr; }
+      .idx-quicknav-links { justify-content:flex-start; }
+    }
+    @media (max-width:640px) {
+      .idx-stats { grid-template-columns:repeat(2,minmax(0,1fr)); }
+      .idx-grid,.idx-grid.two-col { grid-template-columns:1fr; }
+    }
   </style>
 </head>
 <body>
@@ -76,24 +128,234 @@
       <a class="nav-cta" href="/intelligence/">Read the Archive</a>
     </nav>
   </header>
-  <nav class="breadcrumb-nav" aria-label="Breadcrumb"><div class="breadcrumb"><a href="/">Home</a><span class="breadcrumb-sep">›</span><span aria-current="page">Sitemap</span></div></nav>
-  <main class="sitemap-index">
-    <section class="section">
-      <p class="eyebrow">Human-readable sitemap</p>
+  <nav class="breadcrumb-nav" aria-label="Breadcrumb"><div class="breadcrumb"><a href="/">Home</a><span class="breadcrumb-sep">›</span><span aria-current="page">Research Index</span></div></nav>
+
+  <main>
+    <div class="section idx-hero">
+      <p class="eyebrow">Research Archive — Complete Index</p>
       <h1>Research and Publication Index</h1>
-      <p class="lead">This page is the visitor map for the research archive. It groups the published constitutional frameworks, DISHA records, intelligence case files, source registers, media references and books without listing technical files, redirects or feed internals.</p>
-      <div class="sitemap-grid">
-        <article class="sitemap-card"><h2><a href="/article-12/">Article 12 and Digital Governance</a></h2><p>Constitutional accountability when public functions are carried through departments, portals, contractors, records or digital systems.</p><ul><li><a href="/article-12/ai-systems/">Article 12 and AI Systems</a></li><li><a href="/article-12/automated-decisions/">Automated Decisions</a></li><li><a href="/article-12/public-authority-responsibility/">Public Authority Responsibility</a></li></ul></article>
-        <article class="sitemap-card"><h2><a href="/digital-constitutional-personhood/">Digital Constitutional Personhood</a></h2><p>The author’s proposed framework for identity, data, biometric dignity, human review and constitutional remedy.</p><ul><li><a href="/digital-constitutional-personhood/definition/">Definition</a></li><li><a href="/digital-constitutional-personhood/data-sovereignty/">Data Sovereignty</a></li><li><a href="/digital-constitutional-personhood/biometric-failure/">Biometric Failure</a></li><li><a href="/digital-constitutional-personhood/human-review-remedy/">Human Review and Remedy</a></li></ul></article>
-        <article class="sitemap-card"><h2><a href="/disha/">DISHA</a></h2><p>Evidence, memory and constitutional-intelligence architecture, with origin, method, validation limits and claim-to-source discipline separated.</p><ul><li><a href="/disha/origin/">Origin</a></li><li><a href="/disha/methodology/">Methodology</a></li><li><a href="/disha/validation/">Validation</a></li><li><a href="/disha/claim-to-source-system/">Claim-to-Source System</a></li></ul></article>
-        <article class="sitemap-card"><h2><a href="/digital-arrest-data-harm/">Digital Arrest and Data Harm</a></h2><p>Victim-focused evidence preservation, stolen identity data, recovery questions and record custody around digital-arrest harms.</p><ul><li><a href="/digital-arrest-data-harm/evidence-checklist/">Evidence Checklist</a></li><li><a href="/digital-arrest-data-harm/stolen-kyc-data/">Stolen KYC Data</a></li><li><a href="/digital-arrest-data-harm/data-recovery/">Data Recovery</a></li><li><a href="/digital-arrest-data-harm/victim-record-preservation/">Victim Record Preservation</a></li></ul></article>
-        <article class="sitemap-card"><h2><a href="/intelligence/">Intelligence Case Files</a></h2><p>Thirteen public-interest case files including Supreme Court petition records, RTI trails, grievance records and public-authority questions. Six open; seven sealed by the DISHA inventor's order.</p><ul><li><a href="/intelligence/ndma-disaster-governance/">Case 01 — NDMA / Disaster Governance</a></li><li><a href="/intelligence/meity-digital-governance/">Case 02 — MeitY Digital Governance / W.P.(Crl.) 163/2026</a></li><li><a href="/intelligence/niti-aayog-certification-funds/">Case 03 — NITI Aayog Certification and Funds</a></li><li><a href="/intelligence/odf-false-justification/">Case 04 — ODF False Justification</a></li><li><a href="/intelligence/sir-constitutional-scam/">Case 12 — SIR / Constitutional Process</a></li><li><a href="/intelligence/citizen-not-found/">Citizen Not Found — Evidence Register</a></li></ul></article>
-        <article class="sitemap-card"><h2><a href="/research-datasets/">Research Datasets</a></h2><p>Source-register and evidence-inventory entry point. Some records remain marked for manual verification where issuing authority, date or evidentiary meaning is incomplete.</p><ul><li><a href="/EVIDENCE-INVENTORY.md">Evidence Inventory</a> <span class="status-note">source register</span></li><li><a href="/assets/docs/WRIT_P_CRL_163_2026_REDACTED.pdf">W.P.(Crl.) 163/2026 redacted PDF</a></li><li><a href="/assets/docs/disha-whitepaper-what-it-can-what-it-did.pdf">DISHA whitepaper PDF</a></li></ul></article>
-        <article class="sitemap-card"><h2>Publication desks</h2><p>Public context, current analysis, media coverage and books.</p><ul><li><a href="/news/">News and Analysis</a></li><li><a href="/media/">Media Desk</a></li><li><a href="/books/">Books</a></li><li><a href="/about/">About Nitish Kumar (thenitishkr)</a></li></ul></article>
-        <article class="sitemap-card"><h2>Site policy</h2><p>How to read, cite and challenge the archive.</p><ul><li><a href="/editorial-standards/">Editorial Standards</a></li><li><a href="/fact-check/">Fact Check</a></li><li><a href="/terms/">Terms</a></li><li><a href="/privacy-policy/">Privacy Policy</a></li></ul></article>
+      <p class="lead">The complete map of constitutional frameworks, DISHA records, intelligence case files, citizen protection resources, source registers, media references and books published in this archive. Use this page to navigate directly to any section.</p>
+
+      <div class="idx-stats">
+        <div class="idx-stat"><strong>13</strong><span>Intelligence case files</span></div>
+        <div class="idx-stat"><strong>6</strong><span>Constitutional frameworks</span></div>
+        <div class="idx-stat"><strong>50+</strong><span>Pages indexed</span></div>
+        <div class="idx-stat"><strong>2026</strong><span>Active Supreme Court petition</span></div>
       </div>
-    </section>
+    </div>
+
+    <!-- ── CONSTITUTIONAL RESEARCH ── -->
+    <div class="section idx-group">
+      <div class="idx-group-header">
+        <span class="idx-group-label">Constitutional Research</span>
+        <h2 class="idx-group-title">Foundational frameworks and legal architecture</h2>
+      </div>
+      <div class="idx-grid">
+        <article class="idx-card">
+          <p class="idx-card-label">Framework 01</p>
+          <h2><a href="/article-12/">Article 12 and Digital Governance</a></h2>
+          <p>Constitutional accountability when public functions are carried through departments, portals, contractors, records and digital systems.</p>
+          <ul>
+            <li><a href="/article-12/ai-systems/">Article 12 and AI Systems</a></li>
+            <li><a href="/article-12/automated-decisions/">Automated Decisions</a></li>
+            <li><a href="/article-12/public-authority-responsibility/">Public Authority Responsibility</a></li>
+          </ul>
+        </article>
+        <article class="idx-card">
+          <p class="idx-card-label">Framework 02</p>
+          <h2><a href="/digital-constitutional-personhood/">Digital Constitutional Personhood</a></h2>
+          <p>The author's proposed framework for identity, data, biometric dignity, human review and constitutional remedy under Articles 14, 19 and 21.</p>
+          <ul>
+            <li><a href="/digital-constitutional-personhood/definition/">Definition</a></li>
+            <li><a href="/digital-constitutional-personhood/data-sovereignty/">Data Sovereignty</a></li>
+            <li><a href="/digital-constitutional-personhood/biometric-failure/">Biometric Failure</a></li>
+            <li><a href="/digital-constitutional-personhood/human-review-remedy/">Human Review and Remedy</a></li>
+          </ul>
+        </article>
+        <article class="idx-card">
+          <p class="idx-card-label">Framework 03</p>
+          <h2><a href="/disha/">DISHA Intelligence Architecture</a></h2>
+          <p>Evidence, memory and constitutional-intelligence architecture — origin, method, validation limits and claim-to-source discipline separated.</p>
+          <ul>
+            <li><a href="/disha/origin/">Origin</a></li>
+            <li><a href="/disha/methodology/">Methodology</a></li>
+            <li><a href="/disha/validation/">Validation</a></li>
+            <li><a href="/disha/claim-to-source-system/">Claim-to-Source System</a></li>
+          </ul>
+        </article>
+      </div>
+    </div>
+
+    <!-- ── INTELLIGENCE CASE FILES ── -->
+    <div class="section idx-group">
+      <div class="idx-group-header">
+        <span class="idx-group-label">Intelligence Archive</span>
+        <h2 class="idx-group-title">Thirteen public-interest case files — six open, seven sealed</h2>
+      </div>
+      <div class="idx-grid">
+        <article class="idx-card">
+          <p class="idx-card-label">Case 01</p>
+          <h2><a href="/intelligence/ndma-disaster-governance/">NDMA and Disaster Governance</a></h2>
+          <p>National Disaster Management Authority accountability — RTI records, certification gaps, and public-authority responsibility questions.</p>
+          <ul>
+            <li><a href="/intelligence/ndma-disaster-governance/">Full case record</a></li>
+          </ul>
+        </article>
+        <article class="idx-card">
+          <p class="idx-card-label">Case 02</p>
+          <h2><a href="/intelligence/meity-digital-governance/">MeitY Digital Governance <span class="idx-badge">Supreme Court</span></a></h2>
+          <p>W.P.(Crl.) No. 163/2026 — Supreme Court directed MeitY to examine representation on recovery or destruction of stolen citizen data.</p>
+          <ul>
+            <li><a href="/intelligence/meity-digital-governance/">Case record and petition</a></li>
+          </ul>
+        </article>
+        <article class="idx-card">
+          <p class="idx-card-label">Case 03</p>
+          <h2><a href="/intelligence/niti-aayog-certification-funds/">NITI Aayog Certification and Funds</a></h2>
+          <p>Certification integrity, fund allocation accountability and public-authority questions in NITI Aayog programmes.</p>
+          <ul>
+            <li><a href="/intelligence/niti-aayog-certification-funds/">Full case record</a></li>
+          </ul>
+        </article>
+        <article class="idx-card">
+          <p class="idx-card-label">Case 04</p>
+          <h2><a href="/intelligence/odf-false-justification/">ODF False Justification</a></h2>
+          <p>Open Defecation Free certification, dashboard reporting and the gap between declared status and ground-level evidence.</p>
+          <ul>
+            <li><a href="/intelligence/odf-false-justification/">Full case record</a></li>
+          </ul>
+        </article>
+        <article class="idx-card">
+          <p class="idx-card-label">Case 12</p>
+          <h2><a href="/intelligence/sir-constitutional-scam/">SIR and Constitutional Process</a></h2>
+          <p>Special Investigation Report — constitutional process, accountability gaps and public-record questions.</p>
+          <ul>
+            <li><a href="/intelligence/sir-constitutional-scam/">Full case record</a></li>
+          </ul>
+        </article>
+        <article class="idx-card">
+          <p class="idx-card-label">Evidence Register</p>
+          <h2><a href="/intelligence/citizen-not-found/">Citizen Not Found — Evidence Register</a></h2>
+          <p>The cross-case evidence register documenting the recurring pattern: authority reports success while citizens continue reporting the same failures.</p>
+          <ul>
+            <li><a href="/intelligence/citizen-not-found/">Evidence register</a></li>
+          </ul>
+        </article>
+      </div>
+    </div>
+
+    <!-- ── DIGITAL ARREST & CITIZEN PROTECTION ── -->
+    <div class="section idx-group">
+      <div class="idx-group-header">
+        <span class="idx-group-label">Citizen Protection</span>
+        <h2 class="idx-group-title">Digital arrest, stolen KYC data, and victim resources</h2>
+      </div>
+      <div class="idx-grid two-col">
+        <article class="idx-card">
+          <p class="idx-card-label">Hub</p>
+          <h2><a href="/digital-arrest-data-harm/">Digital Arrest and Data Harm</a></h2>
+          <p>Victim-focused evidence preservation, stolen identity data, recovery questions and record custody around digital-arrest harms. DISHA Intelligence Findings from two primary research reports.</p>
+          <ul>
+            <li><a href="/digital-arrest-data-harm/evidence-checklist/">Evidence Checklist — 8-step forensic anatomy</a></li>
+            <li><a href="/digital-arrest-data-harm/stolen-kyc-data/">Stolen KYC Data — Mobile Surveillance Architecture</a></li>
+            <li><a href="/digital-arrest-data-harm/data-recovery/">Data Recovery — 1930 Helpline and mechanisms</a></li>
+            <li><a href="/digital-arrest-data-harm/victim-record-preservation/">Victim Record Preservation — psychological architecture</a></li>
+          </ul>
+        </article>
+        <article class="idx-card">
+          <p class="idx-card-label">Research Datasets</p>
+          <h2><a href="/research-datasets/">Research Datasets and Source Register</a></h2>
+          <p>Source-register and evidence-inventory entry point. Records marked for manual verification where issuing authority, date or evidentiary meaning is incomplete.</p>
+          <ul>
+            <li><a href="/EVIDENCE-INVENTORY.md">Evidence Inventory <span class="idx-badge">source register</span></a></li>
+            <li><a href="/assets/docs/WRIT_P_CRL_163_2026_REDACTED.pdf">W.P.(Crl.) 163/2026 redacted PDF</a></li>
+            <li><a href="/assets/docs/disha-whitepaper-what-it-can-what-it-did.pdf">DISHA whitepaper PDF</a></li>
+            <li><a href="/api/publications.json">Publication index (JSON API)</a></li>
+          </ul>
+        </article>
+      </div>
+    </div>
+
+    <!-- ── PUBLICATION DESKS ── -->
+    <div class="section idx-group">
+      <div class="idx-group-header">
+        <span class="idx-group-label">Publications</span>
+        <h2 class="idx-group-title">News analysis, media desk, books and author record</h2>
+      </div>
+      <div class="idx-grid">
+        <article class="idx-card">
+          <p class="idx-card-label">News and Analysis</p>
+          <h2><a href="/news/">News and Analysis</a></h2>
+          <p>Current public-interest analysis, research updates and commentary on constitutional accountability and digital governance in India.</p>
+          <ul>
+            <li><a href="/news/">All news and analysis</a></li>
+          </ul>
+        </article>
+        <article class="idx-card">
+          <p class="idx-card-label">Media Desk</p>
+          <h2><a href="/media/">Media References</a></h2>
+          <p>Press coverage, citations and media references to this research archive across national and international publications.</p>
+          <ul>
+            <li><a href="/media/">Full media desk</a></li>
+          </ul>
+        </article>
+        <article class="idx-card">
+          <p class="idx-card-label">Books</p>
+          <h2><a href="/books/">Books by Nitish Kumar</a></h2>
+          <p>Published research books: <em>Era of Stupidity: Citizen Not Found</em> (ISBN 978-93-5592-012-6) and <em>Sleeping Guardian: India Lost Justice</em> (ISBN 979-8274694070).</p>
+          <ul>
+            <li><a href="/books/">Books and publication record</a></li>
+            <li><a href="/about/">About Nitish Kumar (thenitishkr)</a></li>
+          </ul>
+        </article>
+      </div>
+    </div>
+
+    <!-- ── SITE POLICY ── -->
+    <div class="section idx-group">
+      <div class="idx-group-header">
+        <span class="idx-group-label">Site Policy</span>
+        <h2 class="idx-group-title">How to read, cite and challenge the archive</h2>
+      </div>
+      <div class="idx-grid two-col">
+        <article class="idx-card">
+          <p class="idx-card-label">Standards and Fact-Check</p>
+          <h2><a href="/editorial-standards/">Editorial Standards</a></h2>
+          <p>How this archive sources, labels and separates public record, petitioner contention, alleged conduct and documented findings. Claim-to-source discipline applied to every page.</p>
+          <ul>
+            <li><a href="/editorial-standards/">Editorial standards</a></li>
+            <li><a href="/fact-check/">Fact-check and correction policy</a></li>
+          </ul>
+        </article>
+        <article class="idx-card">
+          <p class="idx-card-label">Legal and Privacy</p>
+          <h2><a href="/terms/">Terms, Privacy and Policy</a></h2>
+          <p>Non-commercial public-interest project. Content may include verified records, documented allegations and research analysis — readers should evaluate within the relevant documentary context.</p>
+          <ul>
+            <li><a href="/terms/">Terms and conditions</a></li>
+            <li><a href="/privacy-policy/">Privacy policy</a></li>
+          </ul>
+        </article>
+      </div>
+    </div>
+
+    <!-- ── QUICK ACCESS ── -->
+    <div class="section" style="padding-bottom:clamp(48px,7vw,80px);">
+      <div class="idx-quicknav">
+        <div>
+          <h2>Start reading the archive</h2>
+          <p>The intelligence case files are the core of this research. W.P.(Crl.) 163/2026 is the active Supreme Court petition.</p>
+        </div>
+        <div class="idx-quicknav-links">
+          <a href="/intelligence/meity-digital-governance/">Case 02 — MeitY / SC Petition</a>
+          <a href="/digital-arrest-data-harm/">Digital Arrest Hub</a>
+          <a href="/disha/">DISHA Architecture</a>
+          <a href="/intelligence/">All Case Files</a>
+        </div>
+      </div>
+    </div>
   </main>
+
   <footer class="site-footer">
     <div class="section">
       <div>
@@ -116,7 +378,7 @@
         <a href="/privacy-policy/">Privacy</a>
         <a href="/editorial-standards/">Editorial Standards</a>
       </div>
-            <div class="social-links" aria-label="Social links">
+      <div class="social-links" aria-label="Social links">
         <a class="social-icon social-x" href="https://x.com/thenitishkr" aria-label="X / Twitter" title="X / Twitter"><span aria-hidden="true">X</span></a>
         <a class="social-icon social-linkedin" href="https://www.linkedin.com/in/thenitishkr" aria-label="LinkedIn" title="LinkedIn"><span aria-hidden="true">in</span></a>
         <a class="social-icon social-substack" href="https://thenitishkr.substack.com" aria-label="Substack" title="Substack"><span aria-hidden="true">S</span></a>

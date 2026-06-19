@@ -165,6 +165,7 @@
       line-height: 1.78;
       color: #353c48;
       margin-bottom: 20px;
+      text-align: justify;
     }
     .home-statement-body p:last-child { margin-bottom: 0; }
     .home-statement-closing {
@@ -186,15 +187,67 @@
       padding-top: 18px;
       margin-top: 18px;
     }
+    /* ── Research archives premium grid ── */
+    .research-archives-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: 8px;
+    }
+    .archive-card {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      padding: 28px 24px;
+      border: 1px solid rgba(7,26,66,.12);
+      border-top: 4px solid var(--red);
+      border-radius: var(--radius);
+      background: #fff;
+      box-shadow: var(--shadow);
+      text-decoration: none;
+      transition: box-shadow .18s, transform .18s;
+    }
+    .archive-card:hover {
+      box-shadow: 0 6px 28px rgba(6,38,81,.13);
+      transform: translateY(-2px);
+    }
+    .archive-card:nth-child(2) { border-top-color: var(--red-2); }
+    .archive-card:nth-child(3) { border-top-color: #b8872c; }
+    .archive-card:nth-child(4) { border-top-color: #1a6b3c; }
+    .archive-card:nth-child(5) { border-top-color: var(--red); }
+    .archive-card:nth-child(6) { border-top-color: var(--red-2); }
+    .archive-card .arc-tag {
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .archive-card .arc-title {
+      font-family: 'Libre Franklin', sans-serif;
+      font-size: 17px;
+      font-weight: 800;
+      color: #071a42;
+      line-height: 1.25;
+    }
+    .archive-card .arc-desc {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.55;
+      margin-top: 2px;
+    }
     @media (max-width: 1100px) {
       .home-stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .research-archives-grid { grid-template-columns: repeat(2, 1fr); }
     }
     @media (max-width: 900px) {
       .home-statement-inner { grid-template-columns: 1fr; gap: 32px; }
       .home-statement-sidebar { position: static; }
+      .research-archives-grid { grid-template-columns: 1fr; }
     }
     @media (max-width: 600px) {
       .home-stats-grid { grid-template-columns: 1fr 1fr; }
+      .research-archives-grid { grid-template-columns: 1fr 1fr; }
     }
   </style>
   <script id="defined-terms-schema" type="application/ld+json">{"@context":"https://schema.org","@type":"DefinedTermSet","@id":"https://thenitishkr.in/#defined-terms","name":"thenitishkr Research Terminology","description":"Defined terms used in public-interest research by Nitish Kumar (thenitishkr).","hasDefinedTerm":[{"@type":"DefinedTerm","@id":"https://thenitishkr.in/disha/#architecture","name":"DISHA Intelligence Architecture","description":"A constitutional intelligence, cyber-evidence, geospatial and public-memory architecture conceived by Nitish Kumar in 2012. Transforms signals into evidence, evidence into memory, memory into intelligence, and intelligence into accountable understanding.","url":"https://thenitishkr.in/disha/","sameAs":"https://www.wikidata.org/wiki/Q140167664"},{"@type":"DefinedTerm","@id":"https://thenitishkr.in/article-12/#infected","name":"Article 12 Infected","description":"A research concept describing the widening gap between constitutional promise and administrative reality, where public authorities, schemes, dashboards, certifications, and grievance systems grow while citizen outcomes and remedies remain unresolved.","url":"https://thenitishkr.in/article-12/"},{"@type":"DefinedTerm","@id":"https://thenitishkr.in/digital-constitutional-personhood/#term","name":"Digital Constitutional Personhood","description":"A constitutional research framework asserting that a citizen's digital identity, data, and online presence are an extension of their constitutional personhood under Articles 14, 19, and 21 of the Indian Constitution.","url":"https://thenitishkr.in/digital-constitutional-personhood/"}]}</script>
@@ -282,25 +335,6 @@
       </div>
     </section>
 
-    <!-- FEATURED RESEARCH CARDS (two-column split) -->
-    <section class="section split" id="featured-research">
-      <div class="card reveal">
-        <span class="record-code">Latest · Supreme Court</span>
-        <h3><a href="/intelligence/meity-digital-governance/">W.P.(Crl.) No. 163/2026</a></h3>
-        <p>The Supreme Court directed MeitY to examine the representation on recovery or destruction of stolen personal data of Indian citizens held on foreign servers. <a href="/intelligence/meity-digital-governance/">Read the case file</a>.</p>
-      </div>
-      <div class="card reveal">
-        <span class="record-code">Constitutional Research</span>
-        <h3><a href="/article-12/">Article 12 Infected</a></h3>
-        <p>Article 12 Infected documents how public authorities, schemes, dashboards, certifications, and grievance systems grow while citizens struggle to locate accountability, remedy, and constitutional responsibility.</p>
-      </div>
-      <div class="card reveal">
-        <span class="record-code">Rights Framework</span>
-        <h3><a href="/digital-constitutional-personhood/">Digital Constitutional Personhood</a></h3>
-        <p>The framework asserting that a citizen's digital identity, data, and online presence are an extension of their constitutional personhood under Articles 14, 19, and 21 of the Constitution of India.</p>
-      </div>
-    </section>
-
     <!-- FULL STATEMENT -->
     <section class="section home-statement-section" id="statement" aria-labelledby="statement-title">
       <div class="section-head reveal">
@@ -346,13 +380,37 @@
     <!-- RESEARCH ARCHIVES -->
     <section class="section" id="research-archives">
       <div class="section-head reveal"><div><p class="eyebrow">Research archives</p><h2>Explore the evidence.</h2></div><p>Begin with a framework or open the full intelligence archive directly.</p></div>
-      <div class="flow-strip reveal">
-        <a href="/article-12/"><span>Constitutional accountability</span><strong>Article 12</strong></a>
-        <a href="/digital-constitutional-personhood/"><span>Digital rights framework</span><strong>Digital Constitutional Personhood</strong></a>
-        <a href="/disha/"><span>Evidence methodology</span><strong>DISHA Intelligence Architecture</strong></a>
-        <a href="/intelligence/"><span>Case files and records</span><strong>Intelligence Archive</strong></a>
-        <a href="/digital-arrest-data-harm/"><span>Citizen protection</span><strong>Digital Arrest and Data Harm</strong></a>
-        <a href="/research-datasets/"><span>Research data</span><strong>Datasets & Evidence</strong></a>
+      <div class="research-archives-grid reveal">
+        <a class="archive-card" href="/article-12/">
+          <span class="arc-tag">Constitutional accountability</span>
+          <span class="arc-title">Article 12</span>
+          <span class="arc-desc">Documents how public authorities and systems grow while citizens struggle to locate accountability, remedy, and constitutional responsibility.</span>
+        </a>
+        <a class="archive-card" href="/digital-constitutional-personhood/">
+          <span class="arc-tag">Digital rights framework</span>
+          <span class="arc-title">Digital Constitutional Personhood</span>
+          <span class="arc-desc">Asserts that a citizen's digital identity, data, and online presence are an extension of their constitutional personhood under Articles 14, 19, and 21.</span>
+        </a>
+        <a class="archive-card" href="/disha/">
+          <span class="arc-tag">Evidence methodology</span>
+          <span class="arc-title">DISHA Intelligence Architecture</span>
+          <span class="arc-desc">The intelligence architecture conceived in 2012 that transforms signals into evidence, evidence into memory, memory into intelligence, and intelligence into accountability.</span>
+        </a>
+        <a class="archive-card" href="/intelligence/">
+          <span class="arc-tag">Case files and records</span>
+          <span class="arc-title">Intelligence Archive</span>
+          <span class="arc-desc">Thirteen evidence case files built from public records, RTI trails, Supreme Court petitions, and source-linked data spanning 2013–2026.</span>
+        </a>
+        <a class="archive-card" href="/digital-arrest-data-harm/">
+          <span class="arc-tag">Citizen protection</span>
+          <span class="arc-title">Digital Arrest and Data Harm</span>
+          <span class="arc-desc">Research on organised cyber-enabled coercion, data harvesting, and the exploitation of technological vulnerabilities against ordinary citizens.</span>
+        </a>
+        <a class="archive-card" href="/research-datasets/">
+          <span class="arc-tag">Research data</span>
+          <span class="arc-title">Datasets &amp; Evidence</span>
+          <span class="arc-desc">Underlying datasets, RTI replies, audit trails, and evidentiary references that form the documentary backbone of the archive.</span>
+        </a>
       </div>
     </section>
 

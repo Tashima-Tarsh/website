@@ -48,6 +48,17 @@
   <url><loc>https://thenitishkr.in/news/nda-12-years/</loc><lastmod>2026-06-19</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://thenitishkr.in/news/governance-monitor/</loc><lastmod>2026-06-19</lastmod><changefreq>daily</changefreq><priority>0.75</priority></url>
 
+  <!-- PDF documents -->
+  <url><loc>https://thenitishkr.in/assets/docs/WRIT_P_CRL_163_2026_REDACTED.pdf</loc><lastmod>2026-06-20</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://thenitishkr.in/assets/docs/ECSCIN01370222025_WRIT_PIL_CRIMINAL_V3.pdf</loc><lastmod>2026-06-20</lastmod><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://thenitishkr.in/assets/docs/Digital_Arrest_root_cause_REDACTED.pdf</loc><lastmod>2026-06-20</lastmod><changefreq>yearly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://thenitishkr.in/assets/docs/disha-whitepaper-what-it-can-what-it-did.pdf</loc><lastmod>2026-06-20</lastmod><changefreq>yearly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://thenitishkr.in/assets/docs/forensic-intelligence-report.pdf</loc><lastmod>2026-06-20</lastmod><changefreq>yearly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://thenitishkr.in/assets/docs/silverpush-silveredge-technologies-inmobi.pdf</loc><lastmod>2026-06-20</lastmod><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://thenitishkr.in/assets/docs/apus-android-performance-manager.pdf</loc><lastmod>2026-06-20</lastmod><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://thenitishkr.in/assets/docs/digital-dacoit-how-india-was-looted.pdf</loc><lastmod>2026-06-20</lastmod><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://thenitishkr.in/assets/docs/digital-dacoity-national-importance.pdf</loc><lastmod>2026-06-20</lastmod><changefreq>yearly</changefreq><priority>0.7</priority></url>
+
   <!-- Supporting pages -->
   <url><loc>https://thenitishkr.in/media/</loc><lastmod>2026-06-19</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://thenitishkr.in/books/</loc><lastmod>2026-06-19</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>

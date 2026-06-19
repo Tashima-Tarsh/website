@@ -1,0 +1,45 @@
+{
+  "updated": "2026-06-20T09:00:00+05:30",
+  "items": [
+    {
+      "title": "MeitY Has 30 Days on Stolen Citizen Data — The Clock Has Run",
+      "url": "https://thenitishkr.in/news/meity-response-stolen-data-june-2026/",
+      "pubDate": "2026-06-20T09:00:00+05:30",
+      "category": "Intelligence",
+      "description": "The Supreme Court directed MeitY on 19 May 2026 to examine the representation in W.P.(Crl.) 163/2026 concerning stolen personal data of Indian citizens held on foreign servers. Thirty days have now elapsed. This report documents what the direction required, what the record shows, and what remains publicly unresolved as of 20 June 2026.",
+      "image": "https://thenitishkr.in/assets/images/evidence/wp-crl-163-2026-cyber-architecture-case.webp"
+    },
+    {
+      "title": "The Real NEET Exam Leak Investigation Has Not Yet Begun",
+      "url": "https://thenitishkr.in/news/telegram-ban-neet-2026-real-data-leak-investigation/",
+      "pubDate": "2026-06-16T16:30:00+05:30",
+      "category": "News",
+      "description": "India restricted Telegram before NEET 2026, but the harder question remains whether the State has traced the source — from devices and SDKs to stolen data pathways. The ban is a symptom. The investigation of origin has not yet begun in any documented public record.",
+      "image": "https://thenitishkr.in/assets/images/news/telegram-ban-neet-2026-real-data-leak-investigation/telegram-ban-neet-2026-og.webp"
+    },
+    {
+      "title": "12 Years of NDA: Milestone Governance or Implementation Failure?",
+      "url": "https://thenitishkr.in/news/nda-12-years/",
+      "pubDate": "2026-06-14T08:00:00+05:30",
+      "category": "News",
+      "description": "A public-interest analysis of twelve years of NDA governance covering public finance, disaster management, digital governance, Article 12 accountability and citizen remedy in India — examined against CAG audit findings, parliamentary records and RTI disclosures.",
+      "image": "https://thenitishkr.in/assets/images/news/nda-12-years/nda-12-years-og.webp"
+    },
+    {
+      "title": "What If the Citizen Was Never the Centre of Digital India?",
+      "url": "https://thenitishkr.in/intelligence/citizen-not-found/",
+      "pubDate": "2026-06-12T09:00:00+05:30",
+      "category": "Intelligence",
+      "description": "The State can locate citizens for tax, identity, data and compliance. This analysis asks why the same citizen can disappear when remedy, accountability and human review are required. Case 13 in the DISHA Intelligence Archive.",
+      "image": "https://thenitishkr.in/assets/images/evidence/citizens-disappeared-guardians-slept.webp"
+    },
+    {
+      "title": "W.P.(Crl.) 163/2026 and the MeitY Digital Governance Record",
+      "url": "https://thenitishkr.in/intelligence/meity-digital-governance/",
+      "pubDate": "2026-06-10T09:00:00+05:30",
+      "category": "Intelligence",
+      "description": "The Supreme Court routed W.P.(Crl.) 163/2026 to MeitY as a supplementary representation on 19 May 2026. This case file separates the procedural direction from the petition's broader data-sovereignty arguments and documents the adtech surveillance evidence record.",
+      "image": "https://thenitishkr.in/assets/images/evidence/wp-crl-163-2026-cyber-architecture-case.webp"
+    }
+  ]
+}

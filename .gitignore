@@ -2,3 +2,5 @@ dist/
 .lighthouseci/
 .env.cloudflare.local
 private-data/
+node_modules/
+package-lock.json

@@ -8,5 +8,8 @@
     "release": "node scripts/prepare-release.mjs",
     "verify:live": "node scripts/verify-live.mjs",
     "indexnow": "node scripts/submit-indexnow.mjs"
+  },
+  "dependencies": {
+    "sharp": "^0.35.2"
   }
 }

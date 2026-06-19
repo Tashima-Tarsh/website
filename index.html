@@ -79,8 +79,8 @@
     }
     .stat-card {
       padding: 28px 22px 22px;
-      border: 1px solid rgba(126,31,31,.14);
-      border-top: 5px solid #7e1f1f;
+      border: 1px solid rgba(7,26,66,.12);
+      border-top: 5px solid var(--red);
       border-radius: var(--radius);
       background: #fff;
       box-shadow: var(--shadow);
@@ -88,11 +88,11 @@
       flex-direction: column;
       gap: 6px;
     }
-    .stat-card:nth-child(2) { border-top-color: #071a42; }
+    .stat-card:nth-child(2) { border-top-color: var(--red-2); }
     .stat-card:nth-child(3) { border-top-color: #b8872c; }
     .stat-card:nth-child(4) { border-top-color: #1a6b3c; }
-    .stat-card:nth-child(5) { border-top-color: #7e1f1f; }
-    .stat-card:nth-child(6) { border-top-color: #071a42; }
+    .stat-card:nth-child(5) { border-top-color: var(--red); }
+    .stat-card:nth-child(6) { border-top-color: var(--red-2); }
     .stat-card:nth-child(7) { border-top-color: #b8872c; }
     .stat-card:nth-child(8) { border-top-color: #1a6b3c; }
     .stat-number {
@@ -100,14 +100,14 @@
       font-size: clamp(36px, 4vw, 54px);
       font-weight: 900;
       line-height: 1;
-      color: #7e1f1f;
+      color: var(--red);
       letter-spacing: -.02em;
     }
-    .stat-card:nth-child(2) .stat-number { color: #071a42; }
+    .stat-card:nth-child(2) .stat-number { color: var(--red-2); }
     .stat-card:nth-child(3) .stat-number { color: #b8872c; }
     .stat-card:nth-child(4) .stat-number { color: #1a6b3c; }
-    .stat-card:nth-child(5) .stat-number { color: #7e1f1f; }
-    .stat-card:nth-child(6) .stat-number { color: #071a42; }
+    .stat-card:nth-child(5) .stat-number { color: var(--red); }
+    .stat-card:nth-child(6) .stat-number { color: var(--red-2); }
     .stat-card:nth-child(7) .stat-number { color: #b8872c; }
     .stat-card:nth-child(8) .stat-number { color: #1a6b3c; }
     .stat-label {
@@ -143,8 +143,8 @@
       font-size: clamp(19px, 1.8vw, 26px);
       font-weight: 700;
       line-height: 1.35;
-      color: #071a42;
-      border-left: 4px solid #7e1f1f;
+      color: var(--charcoal);
+      border-left: 4px solid var(--red);
       padding-left: 20px;
       margin: 0 0 24px;
     }
@@ -186,95 +186,15 @@
       padding-top: 18px;
       margin-top: 18px;
     }
-    .home-case-board {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 18px;
-      align-items: stretch;
-    }
-    .home-case-board .case-card {
-      display: block;
-      min-height: 280px;
-      height: 100%;
-      perspective: 1200px;
-      color: inherit;
-      cursor: pointer;
-      text-decoration: none;
-    }
-    .home-case-board .case-card-inner {
-      display: block;
-      position: relative;
-      width: 100%;
-      height: 100%;
-      min-height: 280px;
-      transition: transform .55s ease;
-      transform-style: preserve-3d;
-    }
-    .home-case-board .case-card:not(.case-card--locked):hover .case-card-inner,
-    .home-case-board .case-card:not(.case-card--locked):focus-visible .case-card-inner,
-    .home-case-board .case-card:not(.case-card--locked).is-flipped .case-card-inner {
-      transform: rotateY(180deg);
-    }
-    .home-case-board .case-face {
-      position: absolute; inset: 0;
-      width: 100%; height: 100%;
-      display: flex; flex-direction: column;
-      border: 1px solid rgba(7,26,66,.14);
-      border-radius: var(--radius);
-      background: #fff;
-      box-shadow: var(--shadow);
-      backface-visibility: hidden;
-      overflow: hidden;
-    }
-    .home-case-board .case-front { z-index:2; border-top: 5px solid #8b1111; }
-    .home-case-board .case-back { z-index:1; transform:rotateY(180deg); border-top: 5px solid #071a42; background: linear-gradient(180deg,#fff,#fffaf4); }
-    .home-case-board .case-face-content { padding:18px; display:flex; flex-direction:column; flex:1; gap:10px; min-width:0; }
-    .home-case-board .case-number { color:#8b1111; font-size:11px; font-weight:900; letter-spacing:.14em; text-transform:uppercase; }
-    .home-case-board .case-card h3 { font-size:clamp(16px,1.5vw,20px); line-height:1.15; }
-    .home-case-board .case-summary { color:var(--muted); font-size:13px; line-height:1.55; }
-    .home-case-board .case-tags { display:flex; flex-wrap:wrap; gap:6px; margin-top:auto; padding-top:4px; }
-    .home-case-board .case-tags span { border:1px solid rgba(139,17,17,.18); border-radius:999px; padding:4px 7px; color:#8b1111; background:#fffaf5; font-size:10px; font-weight:900; letter-spacing:.08em; text-transform:uppercase; }
-    .home-case-board .case-badge { display:inline-flex; align-items:center; border-radius:999px; font-size:10px; font-weight:900; letter-spacing:.08em; text-transform:uppercase; padding:5px 8px; color:#fff; background:#8b1111; width:max-content; }
-    .home-case-board .case-live-banner { display:inline-flex; align-items:center; margin-top:auto; padding:6px 10px; color:#fffdf8; background:#071a42; border:1px solid rgba(7,26,66,.55); border-radius:999px; font-size:10px; font-weight:900; letter-spacing:.1em; text-transform:uppercase; }
-    .home-case-board .case-open { margin-top:auto; display:inline-flex; align-items:center; width:max-content; min-height:38px; padding:8px 14px; border-radius:999px; background:#8b1111; color:#fff; font-size:12px; font-weight:900; letter-spacing:.08em; text-transform:uppercase; }
-    .home-case-board .case-card--locked { cursor:default; }
-    .home-case-board .case-card--locked .case-card-inner { transform:none !important; }
-    .home-case-board .case-card--locked .case-front { border-top-color:#b8872c; }
-    .case-board-count {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin: -10px 0 22px;
-    }
-    .case-board-count span {
-      display: inline-flex;
-      align-items: center;
-      min-height: 36px;
-      padding: 7px 11px;
-      border: 1px solid rgba(139,17,17,.18);
-      border-radius: 999px;
-      background: #fffaf5;
-      color: #8b1111;
-      font-size: 11px;
-      font-weight: 900;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-    }
     @media (max-width: 1100px) {
       .home-stats-grid { grid-template-columns: repeat(2, 1fr); }
     }
     @media (max-width: 900px) {
       .home-statement-inner { grid-template-columns: 1fr; gap: 32px; }
       .home-statement-sidebar { position: static; }
-      .home-case-board { grid-template-columns: repeat(2, 1fr); }
     }
     @media (max-width: 600px) {
       .home-stats-grid { grid-template-columns: 1fr 1fr; }
-      .home-case-board { grid-template-columns: 1fr; }
-      .home-case-board .case-card { height: auto; min-height: 0; }
-      .home-case-board .case-card-inner { display: block; min-height: 0; transform: none !important; }
-      .home-case-board .case-face { position: relative; min-height: 0; }
-      .home-case-board .case-back { display: none; }
     }
   </style>
   <script id="defined-terms-schema" type="application/ld+json">{"@context":"https://schema.org","@type":"DefinedTermSet","@id":"https://thenitishkr.in/#defined-terms","name":"thenitishkr Research Terminology","description":"Defined terms used in public-interest research by Nitish Kumar (thenitishkr).","hasDefinedTerm":[{"@type":"DefinedTerm","@id":"https://thenitishkr.in/disha/#architecture","name":"DISHA Intelligence Architecture","description":"A constitutional intelligence, cyber-evidence, geospatial and public-memory architecture conceived by Nitish Kumar in 2012. Transforms signals into evidence, evidence into memory, memory into intelligence, and intelligence into accountable understanding.","url":"https://thenitishkr.in/disha/","sameAs":"https://www.wikidata.org/wiki/Q140167664"},{"@type":"DefinedTerm","@id":"https://thenitishkr.in/article-12/#infected","name":"Article 12 Infected","description":"A research concept describing the widening gap between constitutional promise and administrative reality, where public authorities, schemes, dashboards, certifications, and grievance systems grow while citizen outcomes and remedies remain unresolved.","url":"https://thenitishkr.in/article-12/"},{"@type":"DefinedTerm","@id":"https://thenitishkr.in/digital-constitutional-personhood/#term","name":"Digital Constitutional Personhood","description":"A constitutional research framework asserting that a citizen's digital identity, data, and online presence are an extension of their constitutional personhood under Articles 14, 19, and 21 of the Indian Constitution.","url":"https://thenitishkr.in/digital-constitutional-personhood/"}]}</script>
@@ -423,36 +343,6 @@
       </div>
     </section>
 
-    <!-- CASE FILES BOARD -->
-    <section class="section" id="case-files">
-      <div class="section-head reveal">
-        <div><p class="eyebrow">Thirteen case files</p><h2>Evidence board for institutional responsibility.</h2></div>
-        <p>Cases 01, 02, 03, 04, and 12 are live Breaking Exposure files. The remaining eight case files are sealed and will open by the DISHA Inventor's order.</p>
-      </div>
-      <div class="case-board-count reveal" aria-label="Case file count">
-        <span>13 case files</span>
-        <span>5 live evidence pages</span>
-        <span>8 scheduled files</span>
-        <span>Official record trail</span>
-        <span>97% accuracy</span>
-      </div>
-      <div class="home-case-board">
-        <a class="case-card reveal" href="/intelligence/ndma-disaster-governance/"><span class="case-card-inner"><span class="case-face case-front"><span class="case-face-content"><span class="case-badge">Breaking Exposure</span><span class="case-number">Case 01</span><h3>NDMA / Disaster Governance</h3><p class="case-summary"><strong>The Empty Vault.</strong> Disaster-fund governance failure, missing utilisation certificates, SDRF/NDRF accountability, citizen-life valuation concern, and statutory responsibility.</p><span class="case-tags"><span>Article 12</span><span>NDMA</span><span>Citizen Impact</span></span></span></span><span class="case-face case-back"><span class="case-face-content"><span class="case-number">Open Evidence Page</span><h3>NDMA / Disaster Governance</h3><p class="case-summary">View responsible authority, constitutional issue, negligence pattern, evidence status, source files, and official record trail.</p><span class="case-open">Open Case</span></span></span></span></a>
-        <a class="case-card reveal" href="/intelligence/meity-digital-governance/"><span class="case-card-inner"><span class="case-face case-front"><span class="case-face-content"><span class="case-badge">Breaking Exposure</span><span class="case-number">Case 02</span><h3>Follow the Data</h3><p class="case-summary"><strong>India under critical surveillance.</strong> Digital dacoity, data-forensic failure, Article 12, citizen not found, and MeitY accountability from 2015–2026.</p><span class="case-tags"><span>Data</span><span>MeitY</span><span>Article 12</span></span></span></span><span class="case-face case-back"><span class="case-face-content"><span class="case-number">Open Evidence Page</span><h3>MeitY / Digital Governance</h3><p class="case-summary">View W.P.(Crl.) No. 163/2026, root-cause PDFs, accused or absconder profile, interim questions, and source-linked data trail.</p><span class="case-open">Open Case</span></span></span></span></a>
-        <a class="case-card reveal" href="/intelligence/niti-aayog-certification-funds/"><span class="case-card-inner"><span class="case-face case-front"><span class="case-face-content"><span class="case-badge">Breaking Exposure</span><span class="case-number">Case 03</span><h3>When the Certificate Outran the Ground</h3><p class="case-summary"><strong>NITI Aayog / Certification & Funds.</strong> ODF declaration, survey-reality gap, SDG/MPI amplification, sanitation data, and public-record accountability.</p><span class="case-tags"><span>NITI Aayog</span><span>ODF</span><span>Audit</span></span></span></span><span class="case-face case-back"><span class="case-face-content"><span class="case-number">Open Evidence Page</span><h3>NITI Aayog / Certification & Funds</h3><p class="case-summary">View the correction, evidence table, NSS/NFHS/NARSS/CAG record trail, NITI index-amplification issue, and bounded verdict.</p><span class="case-open">Open Case</span></span></span></span></a>
-        <a class="case-card reveal" href="/intelligence/odf-false-justification/"><span class="case-card-inner"><span class="case-face case-front"><span class="case-face-content"><span class="case-badge">Breaking Exposure</span><span class="case-number">Case 04</span><h3>ODF / False Justification</h3><p class="case-summary"><strong>The Sanitation Mirage.</strong> ODF 100% claims, missing drainage, flood-WASH risk, ground-record mismatch, and compliance-verification demand.</p><span class="case-tags"><span>ODF</span><span>Record</span><span>Scheme</span></span></span></span><span class="case-face case-back"><span class="case-face-content"><span class="case-number">Open Evidence Page</span><h3>ODF / False Justification</h3><p class="case-summary">View responsible authority, constitutional issue, negligence pattern, evidence status, source files, and official record trail.</p><span class="case-open">Open Case</span></span></span></span></a>
-        <div class="case-card case-card--locked reveal" aria-disabled="true"><span class="case-card-inner"><span class="case-face case-front"><span class="case-face-content"><span class="case-number">Case 05</span><h3>RTI / Missing Answers</h3><p class="case-summary">Information denied, delayed, avoided, or answered without substance.</p><span class="case-tags"><span>RTI</span><span>Disclosure</span><span>Record</span></span><span class="case-live-banner">Sealed — Release by DISHA Inventor's Order</span></span></span></span></div>
-        <div class="case-card case-card--locked reveal" aria-disabled="true"><span class="case-card-inner"><span class="case-face case-front"><span class="case-face-content"><span class="case-number">Case 06</span><h3>CPGRAMS / Closure Without Relief</h3><p class="case-summary">Grievance closed, forwarded, redirected, or disposed without remedy.</p><span class="case-tags"><span>CPGRAMS</span><span>Grievance</span><span>Relief</span></span><span class="case-live-banner">Sealed — Release by DISHA Inventor's Order</span></span></span></span></div>
-        <div class="case-card case-card--locked reveal" aria-disabled="true"><span class="case-card-inner"><span class="case-face case-front"><span class="case-face-content"><span class="case-number">Case 07</span><h3>PMO Grievance / Forwarding Without Remedy</h3><p class="case-summary">PMO grievance trail, administrative forwarding, and absence of final relief.</p><span class="case-tags"><span>PMO</span><span>Forwarding</span><span>No Relief</span></span><span class="case-live-banner">Sealed — Release by DISHA Inventor's Order</span></span></span></span></div>
-        <div class="case-card case-card--locked reveal" aria-disabled="true"><span class="case-card-inner"><span class="case-face case-front"><span class="case-face-content"><span class="case-number">Case 08</span><h3>Letters and Emails / Official Communication Trail</h3><p class="case-summary">Official notices, emails, replies, reminders, silence, and proof of knowledge.</p><span class="case-tags"><span>Letters</span><span>Emails</span><span>Notice</span></span><span class="case-live-banner">Sealed — Release by DISHA Inventor's Order</span></span></span></span></div>
-        <div class="case-card case-card--locked reveal" aria-disabled="true"><span class="case-card-inner"><span class="case-face case-front"><span class="case-face-content"><span class="case-number">Case 09</span><h3>District Jamui, Bihar / Local Administrative Record</h3><p class="case-summary">District-level negligence, local record issue, officer responsibility, and field contradiction.</p><span class="case-tags"><span>Jamui</span><span>Bihar</span><span>District</span></span><span class="case-live-banner">Sealed — Release by DISHA Inventor's Order</span></span></span></span></div>
-        <div class="case-card case-card--locked reveal" aria-disabled="true"><span class="case-card-inner"><span class="case-face case-front"><span class="case-face-content"><span class="case-number">Case 10</span><h3>Himachal Pradesh Scam / State-Level Failure Pattern</h3><p class="case-summary">State-level scam pattern, certification issue, fund concern, and administrative silence.</p><span class="case-tags"><span>Himachal</span><span>Scam</span><span>State</span></span><span class="case-live-banner">Sealed — Release by DISHA Inventor's Order</span></span></span></span></div>
-        <div class="case-card case-card--locked reveal" aria-disabled="true"><span class="case-card-inner"><span class="case-face case-front"><span class="case-face-content"><span class="case-number">Case 11</span><h3>Bihar Minister / Constitutional Question</h3><p class="case-summary">Ministerial conduct, public-office accountability, misuse-of-authority concern, and oath responsibility.</p><span class="case-tags"><span>Bihar</span><span>Minister</span><span>Constitution</span></span><span class="case-live-banner">Sealed — Release by DISHA Inventor's Order</span></span></span></span></div>
-        <a class="case-card reveal" href="/intelligence/sir-constitutional-scam/"><span class="case-card-inner"><span class="case-face case-front"><span class="case-face-content"><span class="case-badge">Breaking Exposure</span><span class="case-number">Case 12</span><h3>SIR / Constitutional Process</h3><p class="case-summary"><strong>SIR was necessary. The process was unconstitutional.</strong> Bihar case study on voter burden, migration, State records, Article 12, and electoral due process.</p><span class="case-tags"><span>SIR</span><span>Due Process</span><span>Article 12</span></span></span></span><span class="case-face case-back"><span class="case-face-content"><span class="case-number">Open Evidence Page</span><h3>SIR / Constitutional Process</h3><p class="case-summary">View the Article 12 argument, burden-reversal concern, migration reality, institutional chain, due-process issue, and argued conclusion.</p><span class="case-open">Open Case</span></span></span></span></a>
-        <div class="case-card case-card--locked reveal" aria-disabled="true"><span class="case-card-inner"><span class="case-face case-front"><span class="case-face-content"><span class="case-number">Case 13</span><h3>National Audit / Financial Investigation</h3><p class="case-summary">Tax allocation, money received, money used, money unexplained, and public-money accountability.</p><span class="case-tags"><span>National Audit</span><span>Money Trail</span><span>Funds</span></span><span class="case-live-banner">Sealed — Release by DISHA Inventor's Order</span></span></span></span></div>
-      </div>
-    </section>
-
     <!-- RESEARCH ARCHIVES -->
     <section class="section" id="research-archives">
       <div class="section-head reveal"><div><p class="eyebrow">Research archives</p><h2>Explore the evidence.</h2></div><p>Begin with a framework or open the full intelligence archive directly.</p></div>
@@ -477,20 +367,6 @@
       </div>
     </section>
   </main>
-  <script>
-    document.querySelectorAll(".home-case-board .case-card").forEach((card) => {
-      card.addEventListener("click", (event) => {
-        if (card.classList.contains("case-card--locked")) { event.preventDefault(); return; }
-        const canHover = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
-        if (canHover) return;
-        if (!card.classList.contains("is-flipped")) {
-          event.preventDefault();
-          document.querySelectorAll(".home-case-board .case-card.is-flipped").forEach((c) => { if (c !== card) c.classList.remove("is-flipped"); });
-          card.classList.add("is-flipped");
-        }
-      });
-    });
-  </script>
   <section class="section share-follow" id="archive-links" aria-label="Share and follow">
     <div>
       <p class="eyebrow">Share / follow</p>

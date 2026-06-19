@@ -125,13 +125,13 @@
     }
     .home-statement-section {
       background: linear-gradient(180deg, #fffdf8 0%, #fff 100%);
-      border-top: 1px solid rgba(126,31,31,.1);
-      border-bottom: 1px solid rgba(126,31,31,.1);
+      border-top: 1px solid rgba(6,38,81,.1);
+      border-bottom: 1px solid rgba(6,38,81,.1);
     }
     .home-statement-inner {
       display: grid;
-      grid-template-columns: 340px 1fr;
-      gap: 48px;
+      grid-template-columns: 320px 1fr;
+      gap: 56px;
       align-items: start;
     }
     .home-statement-sidebar {
@@ -139,55 +139,82 @@
       top: 100px;
     }
     .home-statement-sidebar .statement-marquee-quote {
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(19px, 1.8vw, 26px);
+      font-family: 'Playfair Display', Georgia, "Times New Roman", serif;
+      font-size: clamp(17px, 1.6vw, 22px);
       font-weight: 700;
-      line-height: 1.35;
-      color: var(--charcoal);
-      border-left: 4px solid var(--red);
-      padding-left: 20px;
-      margin: 0 0 24px;
-      text-align: justify;
+      font-style: italic;
+      line-height: 1.5;
+      color: #071a42;
+      border-left: 3px solid var(--red);
+      padding: 4px 0 4px 20px;
+      margin: 0 0 28px;
+      text-align: left;
     }
     .home-statement-sidebar .statement-attr {
-      font-size: 13px;
+      font-size: 12.5px;
       color: var(--muted);
-      line-height: 1.5;
-      padding-left: 24px;
+      line-height: 1.6;
+      padding-left: 23px;
+      border-left: 1px solid rgba(6,38,81,.12);
     }
     .home-statement-sidebar .statement-attr strong {
       display: block;
       color: #071a42;
+      font-size: 13px;
       font-weight: 700;
-      margin-bottom: 3px;
+      margin-bottom: 4px;
+    }
+    .home-statement-body {
+      border-left: 1px solid rgba(6,38,81,.08);
+      padding-left: 40px;
     }
     .home-statement-body p {
-      font-size: 16px;
-      line-height: 1.78;
-      color: #353c48;
-      margin-bottom: 20px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 16.5px;
+      line-height: 1.85;
+      color: #2a3142;
+      margin-bottom: 22px;
       text-align: justify;
+      hyphens: auto;
+    }
+    .home-statement-body p:first-child::first-letter {
+      font-size: 3.2em;
+      font-weight: 700;
+      font-family: 'Playfair Display', Georgia, serif;
+      float: left;
+      line-height: .82;
+      margin: 4px 10px 0 0;
+      color: var(--red);
     }
     .home-statement-body p:last-child { margin-bottom: 0; }
     .home-statement-closing {
-      margin-top: 28px;
-      padding: 28px;
+      margin-top: 32px;
+      padding: 32px 36px;
       background: #071a42;
       border-radius: var(--radius);
       color: #fffdf8;
+      border-left: none;
     }
     .home-statement-closing p {
-      color: #d0d8ea !important;
-      font-size: 15px !important;
+      font-family: Georgia, "Times New Roman", serif;
+      color: #c8d4e8 !important;
+      font-size: 15.5px !important;
+      line-height: 1.8 !important;
       text-align: justify;
+      margin-bottom: 16px;
+      hyphens: auto;
     }
+    .home-statement-closing p:last-child { margin-bottom: 0; }
     .home-statement-closing .statement-final {
-      color: #fff !important;
+      font-family: Georgia, "Times New Roman", serif;
+      color: #f0f4fb !important;
       font-weight: 600;
       font-size: 16px !important;
+      line-height: 1.8 !important;
       border-top: 1px solid rgba(255,255,255,.15);
-      padding-top: 18px;
-      margin-top: 18px;
+      padding-top: 20px;
+      margin-top: 20px;
+      text-align: justify;
     }
     /* ── Research archives premium grid ── */
     .research-archives-grid {

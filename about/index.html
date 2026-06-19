@@ -84,6 +84,42 @@
     /* Tighten section padding on this dense page */
     main > .section, main > .tone-band > .section { padding-top: 48px; padding-bottom: 48px; }
     main > .tone-band { padding-top: 0; padding-bottom: 0; }
+
+    /* Sticky table of contents */
+    .about-toc {
+      position: sticky;
+      top: 0;
+      z-index: 80;
+      background: #fff;
+      border-bottom: 1px solid rgba(7,26,66,.1);
+      padding: 0 max(24px, calc((100vw - 1200px)/2));
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .about-toc::-webkit-scrollbar { display: none; }
+    .about-toc-inner {
+      display: flex;
+      gap: 0;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0;
+    }
+    .about-toc a {
+      display: block;
+      padding: 12px 18px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--muted);
+      text-decoration: none;
+      white-space: nowrap;
+      border-bottom: 2px solid transparent;
+      transition: color .15s, border-color .15s;
+    }
+    .about-toc a:hover, .about-toc a.active {
+      color: var(--red);
+      border-bottom-color: var(--red);
+    }
+    @media (max-width: 768px) { .about-toc { display: none; } }
     .about-hero { align-items: center; padding-top: 64px !important; padding-bottom: 64px !important; }
     .about-hero .hero-portrait { border-radius: 4px; overflow: hidden; }
     .about-hero .hero-portrait img { width: 100%; height: auto; display: block; border-radius: 4px; }
@@ -207,6 +243,18 @@
 
   <nav aria-label="Breadcrumb" class="breadcrumb-nav"><div class="breadcrumb"><a href="/">Home</a><span class="breadcrumb-sep" aria-hidden="true">&#8250;</span><span aria-current="page">About</span></div></nav>
 
+  <nav class="about-toc" aria-label="About page sections">
+    <div class="about-toc-inner">
+      <a href="#profile">Profile</a>
+      <a href="#credentials">Credentials</a>
+      <a href="#research-lineage">Research Lineage</a>
+      <a href="#publications">Publications</a>
+      <a href="#professional-experience">Experience</a>
+      <a href="#legal-record">Legal Record</a>
+      <a href="#faq">FAQ</a>
+    </div>
+  </nav>
+
   <main id="main-content">
 
     <!-- 2.1 HERO -->
@@ -255,7 +303,7 @@
     </section>
 
     <!-- 2.3 PROFILE SUMMARY -->
-    <section class="section split disha-product">
+    <section class="section split disha-product" id="profile">
       <div class="reveal">
         <p class="eyebrow">Profile</p>
         <h2>Independent researcher, DISHA inventor, and public-interest author.</h2>
@@ -397,10 +445,10 @@
           <p>It studies the gap between automated records and human remedy, between data collection and citizen protection, between governance claims and evidence. The archive is non-commercial, independent, and maintained as a public-interest documentary record.</p>
         </div>
         <div class="reveal">
-          <div class="card about-disambiguation" style="border:1px solid #DDD5CC; border-left:3px solid #8B4513; background:#fff8f2; padding:28px;">
-            <span class="label">Disambiguation</span>
-            <h3 style="color:#2D5016; margin-top:8px;">Nitish Kumar (thenitishkr) — not the politician</h3>
-            <p>Nitish Kumar (thenitishkr) is an independent researcher and author. He is not the Bihar Chief Minister or any politician. ORCID <span class="mono">0009-0004-6840-4463</span> · Wikidata <span class="mono">Q140001166</span>.</p>
+          <div class="card" style="border:1px solid #DDD5CC; padding:28px;">
+            <span class="label">Archive purpose</span>
+            <h3 style="color:#2D5016; margin-top:8px;">Non-commercial · independent · public interest</h3>
+            <p>This archive is maintained as a non-commercial public-interest documentary record. It is independent from any employer, client, or organisation. ORCID <span class="mono">0009-0004-6840-4463</span> · Wikidata <span class="mono">Q140001166</span>.</p>
           </div>
         </div>
       </div>
@@ -471,7 +519,7 @@
     </section>
 
     <!-- 2.10 CREDENTIALS GRID -->
-    <section class="section">
+    <section class="section" id="credentials">
       <div class="section-head reveal">
         <div>
           <p class="eyebrow">Credentials and research record</p>
@@ -653,7 +701,7 @@
     </section>
 
     <!-- 2.14 PROFESSIONAL TIMELINE -->
-    <section class="section about-experience" style="background:#F0EBE3;">
+    <section class="section about-experience" id="professional-experience" style="background:#F0EBE3;">
       <div class="section-head reveal">
         <div>
           <p class="eyebrow">Enterprise technology</p>
@@ -768,7 +816,7 @@
     </section>
 
     <!-- 2.17 VERIFICATION GRID -->
-    <section class="section about-verification">
+    <section class="section about-verification" id="legal-record">
       <div class="reveal" style="margin-bottom:20px;">
         <p class="eyebrow">Identity and authority</p>
         <h2>Verify the person and the work.</h2>
@@ -804,7 +852,7 @@
         <strong>Procedural note:</strong> W.P.(Crl.) No. 163/2026 was disposed of on 19 May 2026 with a direction that MeitY examine the representation. The Court did not adjudicate the underlying claims on their merits.
       </div>
       <div class="about-independence reveal">
-        Nitish Kumar's research, writing, books, DISHA work, and public-interest advocacy are conducted in a personal capacity. They are not affiliated with, endorsed by, or connected to any employer, client, or organisation. He is an independent researcher and is not the politician of the same name.
+        Nitish Kumar's research, writing, books, DISHA work, and public-interest advocacy are conducted in a personal capacity. They are not affiliated with, endorsed by, or connected to any employer, client, or organisation.
       </div>
     </section>
 

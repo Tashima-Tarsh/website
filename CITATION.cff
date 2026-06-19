@@ -1,0 +1,25 @@
+cff-version: 1.2.0
+message: "Cite this repository as: Nitish Kumar (thenitishkr), thenitishkr.in — Public Interest Research Archive, 2026."
+title: "thenitishkr.in — Constitutional Records and Research Archive"
+abstract: "Public-interest research archive documenting constitutional accountability, digital governance, cyber evidence, DISHA Intelligence Architecture, and citizen data rights in India."
+authors:
+  - family-names: Kumar
+    given-names: Nitish
+    name-particle: ""
+    name-suffix: ""
+    alias: thenitishkr
+    orcid: "https://orcid.org/0009-0004-6840-4463"
+    website: "https://thenitishkr.in/about/"
+repository-code: "https://github.com/Tashima-Tarsh/website"
+url: "https://thenitishkr.in/"
+license: "All Rights Reserved"
+date-released: "2026-06-16"
+keywords:
+  - "constitutional law"
+  - "digital governance"
+  - "public interest research"
+  - "cyber evidence"
+  - "Article 12"
+  - "DISHA Intelligence Architecture"
+  - "India"
+type: software

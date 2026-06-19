@@ -188,61 +188,115 @@
 
   <main id="main-content">
     <section class="section">
-      <p class="eyebrow">Live intelligence feed</p>
+      <p class="eyebrow">Intelligence &amp; news monitor</p>
       <h1>Governance Monitor</h1>
-      <p class="lead">Your archive cases and news alongside Supreme Court and national feeds — all fetched server-side, no third-party proxy. Archive column is always live with no cache.</p>
+      <p class="lead">Research cases, news analysis and public-interest records from this archive — alongside Supreme Court updates and national coverage. Three tracks. One screen.</p>
 
       <div class="refresh-bar">
-        <span>Updated: <strong id="last-updated">loading…</strong></span>
-        <button type="button" id="refresh-btn" aria-label="Refresh all feeds">&#8635; Refresh</button>
+        <span>External feeds updated: <strong id="last-updated">—</strong></span>
+        <button type="button" id="refresh-btn" aria-label="Refresh external feeds">&#8635; Refresh external feeds</button>
       </div>
 
       <div class="monitor-grid">
 
-        <!-- COLUMN 1: OWN ARCHIVE — always fresh, no cache -->
+        <!-- COLUMN 1: OWN ARCHIVE — pre-rendered, no loading state -->
         <div class="monitor-col col-primary">
           <div class="monitor-col-head">
             <p class="eyebrow">DISHA Archive &amp; News</p>
-            <h2>thenitishkr Intelligence &amp; Research</h2>
-            <span class="source-tag">&#9679; Live from thenitishkr.in/feed.xml</span>
+            <h2>Cases, Research &amp; News from this Archive</h2>
+            <span class="source-tag">&#9679; thenitishkr.in</span>
           </div>
           <div class="monitor-feed" id="feed-site">
-            <div class="feed-status">Loading archive…</div>
+            <div class="feed-item">
+              <span class="item-badge">News</span>
+              <a href="/news/telegram-ban-neet-2026-real-data-leak-investigation/">The Real NEET Exam Leak Investigation Has Not Yet Begun</a>
+              <time datetime="2026-06-16">16 Jun 2026</time>
+            </div>
+            <div class="feed-item">
+              <span class="item-badge">News</span>
+              <a href="/news/nda-12-years/">12 Years of NDA Excellence, or 12 Years of Stupidity?</a>
+              <time datetime="2026-06-14">14 Jun 2026</time>
+            </div>
+            <div class="feed-item">
+              <span class="item-badge">Intelligence</span>
+              <a href="/intelligence/citizen-not-found/">What If the Citizen Was Never the Centre of Digital India?</a>
+              <time datetime="2026-06-12">12 Jun 2026</time>
+            </div>
+            <div class="feed-item">
+              <span class="item-badge">Intelligence</span>
+              <a href="/intelligence/meity-digital-governance/">W.P.(Crl.) 163/2026 and the MeitY Examination Record</a>
+              <time datetime="2026-06-10">10 Jun 2026</time>
+            </div>
+            <div class="feed-item">
+              <span class="item-badge">Intelligence</span>
+              <a href="/intelligence/niti-aayog-certification-funds/">When the Certificate Outran the Ground: NITI Aayog Case</a>
+              <time datetime="2026-06-10">10 Jun 2026</time>
+            </div>
+            <div class="feed-item">
+              <span class="item-badge">Intelligence</span>
+              <a href="/intelligence/sir-constitutional-scam/">Bihar SIR: When a Legitimate Objective Meets a Disputed Process</a>
+              <time datetime="2026-06-10">10 Jun 2026</time>
+            </div>
+            <div class="feed-item">
+              <span class="item-badge">Article 12</span>
+              <a href="/article-12/">Article 12 Infected: How Citizens Became Invisible</a>
+              <time datetime="2026-06-06">6 Jun 2026</time>
+            </div>
+            <div class="feed-item">
+              <span class="item-badge">Digital Personhood</span>
+              <a href="/digital-constitutional-personhood/">Digital Constitutional Personhood: Data Sovereignty for India</a>
+              <time datetime="2026-06-06">6 Jun 2026</time>
+            </div>
+            <div class="feed-item">
+              <span class="item-badge">DISHA</span>
+              <a href="/disha/">DISHA Intelligence Architecture: Evidence, Memory and Constitutional Intelligence</a>
+              <time datetime="2026-06-06">6 Jun 2026</time>
+            </div>
+            <div class="feed-item">
+              <span class="item-badge">Intelligence</span>
+              <a href="/intelligence/ndma-disaster-governance/">The Empty Vault: NDMA Disaster-Fund Accountability Case</a>
+              <time datetime="2026-06-06">6 Jun 2026</time>
+            </div>
+            <div class="feed-item">
+              <span class="item-badge">Intelligence</span>
+              <a href="/intelligence/odf-false-justification/">The Sanitation Mirage: ODF False Justification Case</a>
+              <time datetime="2026-06-06">6 Jun 2026</time>
+            </div>
           </div>
-          <div class="monitor-col-foot">Own archive — cases, news and research records. No cache.</div>
+          <div class="monitor-col-foot">Intelligence cases · news · research · DISHA records</div>
         </div>
 
         <!-- COLUMN 2: SUPREME COURT -->
         <div class="monitor-col col-external">
           <div class="monitor-col-head">
             <p class="eyebrow">Constitutional Law</p>
-            <h2>Supreme Court — Live Law</h2>
-            <span class="source-tag">Source: livelaw.in</span>
+            <h2>Supreme Court Updates</h2>
+            <span class="source-tag">Via Live Law</span>
           </div>
           <div class="monitor-feed" id="feed-legal">
-            <div class="feed-status">Loading court updates…</div>
+            <div class="feed-status">Fetching Supreme Court updates…</div>
           </div>
-          <div class="monitor-col-foot">Live Law — Supreme Court of India orders and hearings</div>
+          <div class="monitor-col-foot">Latest orders and hearings from the Supreme Court of India</div>
         </div>
 
         <!-- COLUMN 3: NATIONAL NEWS -->
         <div class="monitor-col col-external">
           <div class="monitor-col-head">
-            <p class="eyebrow">National Coverage</p>
-            <h2>The Hindu — National</h2>
-            <span class="source-tag">Source: thehindu.com</span>
+            <p class="eyebrow">National News</p>
+            <h2>India — National Desk</h2>
+            <span class="source-tag">Via The Hindu</span>
           </div>
           <div class="monitor-feed" id="feed-policy">
-            <div class="feed-status">Loading national news…</div>
+            <div class="feed-status">Fetching national news…</div>
           </div>
-          <div class="monitor-col-foot">The Hindu national desk — governance, accountability, states</div>
+          <div class="monitor-col-foot">Governance, accountability and state coverage</div>
         </div>
 
       </div>
 
       <aside class="card" style="margin-top:28px; border-left:3px solid var(--red); padding:18px 20px;">
-        <p class="eyebrow" style="margin-bottom:4px">Archive note</p>
-        <p style="margin:0; font-size:0.85rem; color:var(--muted);">Column one is your own verified research. Columns two and three surface external references only — they are not part of the DISHA evidence archive and have not been verified against DISHA methodology. For verified records use the <a href="/intelligence/">Intelligence Archive</a> and <a href="/fact-check/">Fact Check</a>.</p>
+        <p class="eyebrow" style="margin-bottom:4px">How to read this page</p>
+        <p style="margin:0; font-size:0.85rem; color:var(--muted);">The left column is this archive — verified cases, news analysis and research records. The two right columns carry external headlines for reference and have not been verified against DISHA methodology. For source-linked case records go to the <a href="/intelligence/">Intelligence Archive</a>. To check a specific claim go to <a href="/fact-check/">Fact Check</a>.</p>
       </aside>
     </section>
   </main>

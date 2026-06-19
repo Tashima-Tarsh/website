@@ -77,3 +77,17 @@
 /media.html  /media/  301
 /privacy-policy.html  /privacy-policy/  301
 /terms.html  /terms/  301
+
+# Legacy orphan URLs — fix 4
+/intelligence  /intelligence/  301
+/what-is-era-of-stupidity  /books/  301
+/books/era-of-stupidity-citizen-not-found  /books/  301
+/books/era-of-stupidity-citizen-not-found/  /books/  301
+/record/public-records  /research-datasets/  301
+/record/public-records/  /research-datasets/  301
+/governance-record/state-authorities  /intelligence/  301
+/governance-record/state-authorities/  /intelligence/  301
+/record/wp-crl-394-2025.html  /intelligence/ndma-disaster-governance/  301
+/record/wp-crl-394-2025  /intelligence/ndma-disaster-governance/  301
+/record/wp-crl-394-2025/  /intelligence/ndma-disaster-governance/  301
+/record/substack-*  /news/  301

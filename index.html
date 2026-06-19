@@ -37,7 +37,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" as="font" href="/assets/fonts/inter-latin-variable.woff2" type="font/woff2" crossorigin>
   <link rel="preload" as="font" href="/assets/fonts/playfair-display-latin-variable.woff2" type="font/woff2" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Libre+Franklin:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Libre+Franklin:wght@400;600;700;800;900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Libre+Franklin:wght@400;600;700;800;900&display=swap"></noscript>
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#7e1f1f">
 
@@ -352,11 +353,12 @@
           <div class="stat-label">Supreme Court Petitions</div>
           <div class="stat-sub">W.P.(Crl.) 163/2026 · W.P.(Crl.) 394/2025</div>
         </div>
-        <div class="stat-card">
+        <a class="stat-card" href="/intelligence/#accuracy-record" style="text-decoration:none;color:inherit;cursor:pointer;">
           <div class="stat-number">97%</div>
           <div class="stat-label">DISHA Accuracy</div>
           <div class="stat-sub">Measured against government records and open data</div>
-        </div>
+          <div class="stat-sub" style="margin-top:6px;font-size:11px;opacity:.7;">Review supporting case files →</div>
+        </a>
         <div class="stat-card">
           <div class="stat-number">8+</div>
           <div class="stat-label">National Media</div>

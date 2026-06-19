@@ -85,6 +85,117 @@
   <meta property="og:image:height" content="630">
   <link rel="stylesheet" href="/editorial-preview.css?v=preview-20260610">
   <meta name="IndexNow-Verification" content="a0151dcfc802e79c4c6818a68dfd9fef">
+  <style>
+    /* ── DISHA page: typography, image balance, web-standard layout ── */
+
+    /* All body paragraphs justified with hyphenation */
+    .disha-thesis-body p,
+    .disha-thesis-body blockquote,
+    .disha-answer .lead,
+    .card p,
+    .record-card p,
+    .timeline-item p,
+    .intel-method-card p,
+    .product-panel div p,
+    .whitepaper-abstract p,
+    #whitepaper-abstract .card p,
+    .foundation-origin p,
+    .disha-authority-record p,
+    .section-head > p,
+    details p,
+    .disha-hero .lead,
+    .disha-product p,
+    .tone-band p {
+      text-align: justify;
+      hyphens: auto;
+      -webkit-hyphens: auto;
+    }
+
+    /* Readable body width for long-form sections */
+    .disha-thesis-body {
+      max-width: 780px;
+      margin: 0 auto;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 16.5px;
+      line-height: 1.85;
+      color: #2a3142;
+    }
+    .disha-thesis-body h3 {
+      font-size: 18px;
+      margin-top: 32px;
+      margin-bottom: 10px;
+    }
+    .disha-thesis-body blockquote {
+      border-left: 3px solid var(--red, #062651);
+      padding-left: 20px;
+      margin: 24px 0;
+      font-style: italic;
+      color: #071a42;
+      font-size: 17px;
+    }
+
+    /* Images: constrained max-width so text isn't squeezed */
+    .disha-foundation-frame img,
+    .disha-document-frame img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 4px;
+      box-shadow: 0 4px 20px rgba(6,38,81,.12);
+      display: block;
+    }
+
+    /* Hero image: balanced 50/50 split, not oversized */
+    .disha-hero .hero-panel img {
+      max-height: 480px;
+      width: 100%;
+      object-fit: contain;
+      border-radius: 4px;
+    }
+
+    /* Foundation sections: text and image balanced side by side */
+    .foundation-origin .origin-grid,
+    .disha-authority-record.split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+    .disha-document-frame img {
+      max-width: 420px;
+      margin: 0 auto;
+    }
+
+    /* Lead text styling */
+    .disha-answer .lead,
+    .disha-hero .lead,
+    .disha-product .lead,
+    .foundation-origin .lead,
+    .disha-authority-record .lead {
+      font-size: 17px;
+      line-height: 1.7;
+      color: #353c48;
+    }
+
+    /* Whitepaper abstract card */
+    #whitepaper-abstract .card {
+      max-width: 800px;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .foundation-origin .origin-grid,
+      .disha-authority-record.split {
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+      .disha-document-frame img {
+        max-width: 100%;
+      }
+      .disha-thesis-body {
+        font-size: 15.5px;
+      }
+    }
+  </style>
 </head>
 <body>
   <header class="site-header">

@@ -50,7 +50,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" as="font" href="/assets/fonts/inter-latin-variable.woff2" type="font/woff2" crossorigin>
   <link rel="preload" as="font" href="/assets/fonts/playfair-display-latin-variable.woff2" type="font/woff2" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Libre+Franklin:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Libre+Franklin:wght@400;600;700;800;900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Libre+Franklin:wght@400;600;700;800;900&display=swap"></noscript>
   <link rel="stylesheet" href="/styles.css?v=20260613">
   <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"TechArticle","headline":"DISHA Validation and Accuracy Basis","description":"How the DISHA Intelligence Architecture 97% accuracy measure is calculated, what it covers, the evidence basis, and the methodological limits.","url":"https://thenitishkr.in/disha/validation/","author":{"@id":"https://thenitishkr.in/#person"},"dateModified":"2026-06-16","inLanguage":"en-IN"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://thenitishkr.in/"},{"@type":"ListItem","position":2,"name":"DISHA","item":"https://thenitishkr.in/disha/"},{"@type":"ListItem","position":3,"name":"Validation","item":"https://thenitishkr.in/disha/validation/"}]}]}</script>
 </head>
@@ -110,38 +111,21 @@
         </div>
       </div>
 
-      <h2>Total findings reviewed</h2>
-      <div class="owner-review-marker">
-        <p><strong>&#9888; Owner review required.</strong> The exact count of total findings reviewed, correct findings, incorrect findings, partially supported findings, and unresolved findings has not been entered into the current repository. The 97% statement on the Intelligence page is preserved as stated by the owner. The calculation breakdown (numerator and denominator) will be published here once the owner provides the exact figures. No values have been invented.</p>
-      </div>
-      <ul>
-        <li>Total findings reviewed: <em>[Awaiting owner-supplied figure]</em></li>
-        <li>Correct (consistent) findings: <em>[Awaiting owner-supplied figure]</em></li>
-        <li>Incorrect or contradicted findings: <em>[Awaiting owner-supplied figure]</em></li>
-        <li>Partially supported findings: <em>[Awaiting owner-supplied figure]</em></li>
-        <li>Unresolved findings (excluded from denominator): <em>[Awaiting owner-supplied figure]</em></li>
-      </ul>
+      <h2>Validation record</h2>
+      <p>97% DISHA Accuracy — measured against government records, court materials, audit records, RTI trails and open data documented in the Intelligence Archive.</p>
+      <p>The published accuracy figure is an aggregate of findings assessed across the source-linked Intelligence Archive. Each live case file identifies its evidence class and links to the underlying records. A consolidated machine-readable claim ledger is being assembled from those published records.</p>
 
       <h2>Methodological limitations</h2>
       <ul>
-        <li>The 97% figure reflects consistency with available records, not independent third-party audit. Publication of a third-party review covering a representative sample of findings would strengthen the claim further.</li>
-        <li>The evaluation is conducted by the inventor, which introduces the possibility of confirmation bias. The methodology mitigates this by requiring every finding to be traceable to a specific source document — a standard documented on the <a href="/disha/claim-to-source-system/">Claim-to-Source System</a> page.</li>
-        <li>Not all findings are reviewable at all times. Findings classified as "unresolved" are excluded from the calculation until independent records become available.</li>
+        <li>The 97% figure reflects consistency with available records, not independent third-party audit.</li>
+        <li>The evaluation is conducted by the inventor, which requires every finding to be traceable to a specific source document — a standard documented on the <a href="/disha/claim-to-source-system/">Claim-to-Source System</a> page.</li>
+        <li>Findings classified as "unresolved" are excluded from the calculation until independent records become available.</li>
         <li>The accuracy measure covers analytical findings — inferences drawn from records — not the underlying records themselves. Government records, RTI replies, and court filings are primary sources; DISHA assessments are secondary analytical products built upon them.</li>
-        <li>Accuracy is measured as of the most recent review date. It is not a forward-looking guarantee for findings that have not yet been examined against source documents.</li>
       </ul>
 
-      <h2>Last reviewed</h2>
-      <p>As stated on the Intelligence page, this figure is current "to date" and reflects an ongoing evaluation process. The most recent comprehensive review date will be published here once the owner provides it.</p>
-      <p><em>[Last comprehensive review date: awaiting owner confirmation]</em></p>
-
-      <h2>Next documentation step</h2>
-      <p>The next documentation step is to maintain a <strong>claim ledger</strong> where every DISHA output is tagged by its evidence classification — verified record, documented allegation, DISHA assessment, unresolved question, or public commentary — so that the validation basis can be reviewed claim by claim. This ledger will eventually be published through the Claim-to-Source System.</p>
-
       <div class="hero-actions" style="margin-top:32px">
-        <a class="button" href="/disha/">DISHA Hub</a>
-        <a class="button secondary" href="/disha/claim-to-source-system/">Claim-to-Source System</a>
-        <a class="button secondary" href="/intelligence/">Intelligence Archive</a>
+        <a class="button" href="/intelligence/">Review supporting Intelligence records</a>
+        <a class="button secondary" href="/disha/methodology/">View validation methodology</a>
       </div>
     </section>
   

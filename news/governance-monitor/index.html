@@ -9,124 +9,162 @@
   <link rel="icon" href="/favicon.ico?v=tnk-20260610" sizes="any">
   <link rel="icon" href="/assets/brand/favicon-64.png?v=tnk-20260610" type="image/png" sizes="64x64">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png?v=tnk-20260610" sizes="180x180">
-  <title>Governance Monitor: Policy, Courts & Regional | thenitishkr</title>
-  <meta name="description" content="Live governance monitor tracking Indian policy, Supreme Court orders and regional accountability — sourced from PIB, Live Law and The Hindu.">
+  <title>Governance Monitor: Archive, Courts, National | thenitishkr</title>
+  <meta name="description" content="Live governance monitor: thenitishkr intelligence archive, Supreme Court updates from Live Law, and national news from The Hindu — no third-party proxy.">
   <meta name="robots" content="index, follow, max-image-preview:large">
   <link rel="canonical" href="https://thenitishkr.in/news/governance-monitor/">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Governance Monitor: Policy, Courts & Regional | thenitishkr">
-  <meta property="og:description" content="Live governance monitor tracking Indian policy, Supreme Court orders, and regional accountability.">
+  <meta property="og:title" content="Governance Monitor: Archive, Courts &amp; National | thenitishkr">
+  <meta property="og:description" content="Live governance monitor: thenitishkr intelligence archive, Supreme Court updates and national news.">
   <meta property="og:url" content="https://thenitishkr.in/news/governance-monitor/">
   <meta property="og:image" content="https://thenitishkr.in/assets/images/og/home-evidence-records.png?v=20260608visual">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Governance Monitor: Policy, Courts & Regional | thenitishkr">
-  <meta name="twitter:description" content="Live governance monitor tracking Indian policy, Supreme Court orders, and regional accountability.">
+  <meta name="twitter:title" content="Governance Monitor: Archive, Courts &amp; National | thenitishkr">
+  <meta name="twitter:description" content="Live governance monitor: thenitishkr intelligence archive, Supreme Court updates and national news.">
   <meta name="twitter:image" content="https://thenitishkr.in/assets/images/og/home-evidence-records.png?v=20260608visual">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","@id":"https://thenitishkr.in/news/governance-monitor/#webpage","url":"https://thenitishkr.in/news/governance-monitor/","name":"Governance Monitor: Policy, Courts & Regional","description":"Live governance monitor tracking Indian policy, Supreme Court orders, and regional accountability.","isPartOf":{"@id":"https://thenitishkr.in/#website"},"author":{"@id":"https://thenitishkr.in/#person"},"inLanguage":"en-IN","breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://thenitishkr.in/"},{"@type":"ListItem","position":2,"name":"News","item":"https://thenitishkr.in/news/"},{"@type":"ListItem","position":3,"name":"Governance Monitor","item":"https://thenitishkr.in/news/governance-monitor/"}]}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","@id":"https://thenitishkr.in/news/governance-monitor/#webpage","url":"https://thenitishkr.in/news/governance-monitor/","name":"Governance Monitor: Archive, Courts and National","description":"Live governance monitor displaying thenitishkr intelligence archive alongside Supreme Court and national news feeds.","isPartOf":{"@id":"https://thenitishkr.in/#website"},"author":{"@id":"https://thenitishkr.in/#person"},"inLanguage":"en-IN","breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://thenitishkr.in/"},{"@type":"ListItem","position":2,"name":"News","item":"https://thenitishkr.in/news/"},{"@type":"ListItem","position":3,"name":"Governance Monitor","item":"https://thenitishkr.in/news/governance-monitor/"}]}}</script>
   <link rel="stylesheet" href="/styles.css?v=20260613">
   <link rel="stylesheet" href="/editorial-preview.css?v=preview-20260610">
   <style>
     .monitor-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: 1.4fr 1fr 1fr;
       gap: 24px;
-      margin-top: 32px;
+      margin-top: 28px;
+      align-items: start;
     }
-    @media (max-width: 1024px) { .monitor-grid { grid-template-columns: repeat(2, 1fr); } }
-    @media (max-width: 680px)  { .monitor-grid { grid-template-columns: 1fr; } }
+    @media (max-width: 1024px) { .monitor-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 640px)  { .monitor-grid { grid-template-columns: 1fr; } }
 
     .monitor-col {
       background: #fff;
-      border: 1px solid rgba(7,26,66,.12);
+      border: 1px solid rgba(6,38,81,.12);
       border-top: 4px solid var(--red);
       border-radius: var(--radius);
       box-shadow: var(--shadow);
       display: flex;
       flex-direction: column;
-      overflow: hidden;
     }
+    .monitor-col.col-primary { border-top-color: var(--red); }
+    .monitor-col.col-external { border-top-color: rgba(6,38,81,.35); }
+
     .monitor-col-head {
-      padding: 16px 20px 14px;
-      border-bottom: 1px solid rgba(7,26,66,.08);
+      padding: 16px 20px 12px;
+      border-bottom: 1px solid rgba(6,38,81,.07);
       background: #f7f8fb;
     }
-    .monitor-col-head .eyebrow { margin: 0 0 4px; font-size: 0.7rem; }
-    .monitor-col-head h2 { margin: 0; font-size: 1rem; color: var(--red); line-height: 1.3; }
-    .monitor-col-head .source-tag {
+    .monitor-col-head .eyebrow { margin: 0 0 3px; font-size: 0.68rem; }
+    .monitor-col-head h2 { margin: 0; font-size: 1rem; line-height: 1.3; color: var(--red); }
+    .monitor-col.col-external .monitor-col-head h2 { color: #2c3e50; }
+    .source-tag {
       display: inline-block;
       margin-top: 6px;
-      font-size: 0.7rem;
+      font-size: 0.68rem;
       padding: 2px 8px;
-      background: rgba(6,38,81,.08);
+      background: rgba(6,38,81,.07);
       border-radius: 20px;
       color: var(--muted);
       font-weight: 600;
       letter-spacing: 0.04em;
     }
-    .monitor-feed { padding: 16px 20px; flex-grow: 1; }
+    .col-primary .source-tag { background: rgba(6,38,81,.1); color: var(--red); }
+
+    .monitor-feed { padding: 14px 18px; flex-grow: 1; }
 
     .feed-item {
-      padding: 12px 0;
-      border-bottom: 1px solid rgba(7,26,66,.07);
+      padding: 11px 0;
+      border-bottom: 1px solid rgba(6,38,81,.06);
     }
     .feed-item:last-child { border-bottom: none; padding-bottom: 0; }
-    .feed-item a {
-      display: block;
-      font-size: 0.9rem;
-      font-weight: 600;
+
+    /* Own archive items — more prominent */
+    .col-primary .feed-item a {
+      font-size: 0.92rem;
+      font-weight: 700;
       color: var(--red);
       text-decoration: none;
-      line-height: 1.45;
-      margin-bottom: 4px;
+      line-height: 1.4;
+      display: block;
+      margin-bottom: 3px;
     }
-    .feed-item a:hover { text-decoration: underline; }
-    .feed-item p {
+    .col-primary .feed-item a:hover { text-decoration: underline; }
+    .col-primary .feed-item .item-desc {
       font-size: 0.78rem;
       color: var(--muted);
-      margin: 0 0 4px;
+      margin: 0 0 3px;
       line-height: 1.4;
     }
-    .feed-item time { font-size: 0.72rem; color: #999; }
+    .item-badge {
+      display: inline-block;
+      font-size: 0.65rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      padding: 1px 6px;
+      border-radius: 3px;
+      margin-bottom: 5px;
+      background: rgba(6,38,81,.08);
+      color: var(--red);
+    }
+
+    /* External feed items */
+    .col-external .feed-item a {
+      font-size: 0.87rem;
+      font-weight: 600;
+      color: #2c3e50;
+      text-decoration: none;
+      line-height: 1.4;
+      display: block;
+      margin-bottom: 3px;
+    }
+    .col-external .feed-item a:hover { color: var(--red); text-decoration: underline; }
+
+    .feed-item time { font-size: 0.7rem; color: #aaa; display: block; margin-top: 2px; }
 
     .feed-status {
-      padding: 24px 0;
+      padding: 28px 0;
       text-align: center;
       font-size: 0.85rem;
       color: var(--muted);
       font-style: italic;
     }
-    .feed-status.error { color: #c0392b; font-style: normal; }
+    .feed-status.err { color: #c0392b; font-style: normal; }
 
-    .monitor-footer {
-      padding: 10px 20px;
-      border-top: 1px solid rgba(7,26,66,.07);
-      font-size: 0.72rem;
+    .monitor-col-foot {
+      padding: 9px 18px;
+      border-top: 1px solid rgba(6,38,81,.06);
+      font-size: 0.7rem;
       color: var(--muted);
       background: #f7f8fb;
+      border-radius: 0 0 var(--radius) var(--radius);
     }
+
     .refresh-bar {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      margin-top: 20px;
-      padding: 12px 16px;
+      flex-wrap: wrap;
+      gap: 10px;
+      padding: 10px 16px;
       background: rgba(6,38,81,.04);
       border-radius: var(--radius);
       font-size: 0.8rem;
       color: var(--muted);
+      margin-bottom: 4px;
     }
+    .refresh-bar strong { color: var(--red); }
     .refresh-bar button {
       background: var(--red);
       color: #fff;
       border: none;
-      padding: 6px 16px;
+      padding: 6px 18px;
       border-radius: 4px;
       font-size: 0.8rem;
-      font-weight: 600;
+      font-weight: 700;
       cursor: pointer;
+      letter-spacing: 0.02em;
     }
     .refresh-bar button:hover { opacity: 0.85; }
-    #last-updated { font-weight: 600; color: var(--red); }
   </style>
 </head>
 <body>
@@ -152,110 +190,161 @@
     <section class="section">
       <p class="eyebrow">Live intelligence feed</p>
       <h1>Governance Monitor</h1>
-      <p class="lead">Server-fetched feeds from three high-authority public sources — updated every 30 minutes. No third-party proxy. All requests route through the thenitishkr server.</p>
+      <p class="lead">Your archive cases and news alongside Supreme Court and national feeds — all fetched server-side, no third-party proxy. Archive column is always live with no cache.</p>
 
       <div class="refresh-bar">
-        <span>Last updated: <span id="last-updated">loading…</span></span>
-        <button type="button" onclick="loadAllFeeds(true)" aria-label="Refresh all feeds">Refresh</button>
+        <span>Updated: <strong id="last-updated">loading…</strong></span>
+        <button type="button" id="refresh-btn" aria-label="Refresh all feeds">&#8635; Refresh</button>
       </div>
 
       <div class="monitor-grid">
 
-        <div class="monitor-col">
+        <!-- COLUMN 1: OWN ARCHIVE — always fresh, no cache -->
+        <div class="monitor-col col-primary">
           <div class="monitor-col-head">
-            <p class="eyebrow">National Policy</p>
-            <h2>Government of India — PIB</h2>
-            <span class="source-tag">Source: pib.gov.in</span>
+            <p class="eyebrow">DISHA Archive &amp; News</p>
+            <h2>thenitishkr Intelligence &amp; Research</h2>
+            <span class="source-tag">&#9679; Live from thenitishkr.in/feed.xml</span>
           </div>
-          <div class="monitor-feed" id="feed-policy">
-            <div class="feed-status">Loading policy updates…</div>
+          <div class="monitor-feed" id="feed-site">
+            <div class="feed-status">Loading archive…</div>
           </div>
-          <div class="monitor-footer">Press Information Bureau — official Government of India releases</div>
+          <div class="monitor-col-foot">Own archive — cases, news and research records. No cache.</div>
         </div>
 
-        <div class="monitor-col">
-          <div class="monitor-col-head">
-            <p class="eyebrow">National Coverage</p>
-            <h2>The Hindu — National</h2>
-            <span class="source-tag">Source: thehindu.com</span>
-          </div>
-          <div class="monitor-feed" id="feed-regional">
-            <div class="feed-status">Loading national updates…</div>
-          </div>
-          <div class="monitor-footer">The Hindu national desk — states, governance, accountability</div>
-        </div>
-
-        <div class="monitor-col">
+        <!-- COLUMN 2: SUPREME COURT -->
+        <div class="monitor-col col-external">
           <div class="monitor-col-head">
             <p class="eyebrow">Constitutional Law</p>
-            <h2>Live Law — Supreme Court</h2>
+            <h2>Supreme Court — Live Law</h2>
             <span class="source-tag">Source: livelaw.in</span>
           </div>
           <div class="monitor-feed" id="feed-legal">
             <div class="feed-status">Loading court updates…</div>
           </div>
-          <div class="monitor-footer">Live Law — Supreme Court of India orders and hearings</div>
+          <div class="monitor-col-foot">Live Law — Supreme Court of India orders and hearings</div>
+        </div>
+
+        <!-- COLUMN 3: NATIONAL NEWS -->
+        <div class="monitor-col col-external">
+          <div class="monitor-col-head">
+            <p class="eyebrow">National Coverage</p>
+            <h2>The Hindu — National</h2>
+            <span class="source-tag">Source: thehindu.com</span>
+          </div>
+          <div class="monitor-feed" id="feed-policy">
+            <div class="feed-status">Loading national news…</div>
+          </div>
+          <div class="monitor-col-foot">The Hindu national desk — governance, accountability, states</div>
         </div>
 
       </div>
 
-      <aside class="card" style="margin-top:32px; border-left: 3px solid var(--red); padding: 20px;">
-        <p class="eyebrow">Archive note</p>
-        <p style="margin:0; font-size:0.9rem; color:var(--muted);">This monitor surfaces live external feeds for research reference. External articles are not part of the thenitishkr evidence archive and are not verified against DISHA methodology. For verified case records, use the <a href="/intelligence/">Intelligence Archive</a> and <a href="/fact-check/">Fact Check</a>.</p>
+      <aside class="card" style="margin-top:28px; border-left:3px solid var(--red); padding:18px 20px;">
+        <p class="eyebrow" style="margin-bottom:4px">Archive note</p>
+        <p style="margin:0; font-size:0.85rem; color:var(--muted);">Column one is your own verified research. Columns two and three surface external references only — they are not part of the DISHA evidence archive and have not been verified against DISHA methodology. For verified records use the <a href="/intelligence/">Intelligence Archive</a> and <a href="/fact-check/">Fact Check</a>.</p>
       </aside>
     </section>
   </main>
 
   <script src="/script.js?v=20260613" defer></script>
   <script>
+    // Category labels for own archive items
+    var LABELS = {
+      '/news/': 'News',
+      '/intelligence/': 'Intelligence',
+      '/disha/': 'DISHA',
+      '/article-12/': 'Article 12',
+      '/digital-constitutional-personhood/': 'Digital Personhood',
+    };
+
+    function badge(link) {
+      for (var prefix in LABELS) {
+        if (link.indexOf(prefix) !== -1) return LABELS[prefix];
+      }
+      return 'Archive';
+    }
+
     function fmt(dateStr) {
       if (!dateStr) return '';
       try {
         return new Date(dateStr).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' });
-      } catch { return ''; }
+      } catch(e) { return ''; }
     }
 
-    function renderItems(items, containerId) {
-      const el = document.getElementById(containerId);
+    function esc(str) {
+      return (str || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+    }
+
+    function renderSite(items, id) {
+      var el = document.getElementById(id);
       if (!items || items.length === 0) {
-        el.innerHTML = '<div class="feed-status error">No items returned from source.</div>';
+        el.innerHTML = '<div class="feed-status err">No archive items found.</div>';
         return;
       }
-      el.innerHTML = items.map(function(item) {
-        const safeUrl = encodeURI(item.link);
-        const safeTitle = item.title.replace(/</g,'&lt;').replace(/>/g,'&gt;');
-        const desc = item.description ? '<p>' + item.description.replace(/</g,'&lt;') + '</p>' : '';
-        const ts = item.pubDate ? '<time datetime="' + item.pubDate + '">' + fmt(item.pubDate) + '</time>' : '';
-        return '<div class="feed-item"><a href="' + safeUrl + '" target="_blank" rel="noopener noreferrer" aria-label="' + safeTitle + ' (opens in new tab)">' + safeTitle + '</a>' + desc + ts + '</div>';
-      }).join('');
+      var html = '';
+      for (var i = 0; i < items.length; i++) {
+        var it = items[i];
+        var safeLink  = encodeURI(it.link);
+        var safeTitle = esc(it.title);
+        var safeDesc  = it.description ? '<p class="item-desc">' + esc(it.description) + '</p>' : '';
+        var safeTime  = it.pubDate ? '<time datetime="' + esc(it.pubDate) + '">' + fmt(it.pubDate) + '</time>' : '';
+        html += '<div class="feed-item">'
+          + '<span class="item-badge">' + badge(it.link) + '</span>'
+          + '<a href="' + safeLink + '" aria-label="' + safeTitle + '">' + safeTitle + '</a>'
+          + safeDesc + safeTime + '</div>';
+      }
+      el.innerHTML = html;
     }
 
-    function renderError(containerId, msg) {
-      document.getElementById(containerId).innerHTML =
-        `<div class="feed-status error">Could not load feed. ${msg || ''}</div>`;
+    function renderExternal(items, id) {
+      var el = document.getElementById(id);
+      if (!items || items.length === 0) {
+        el.innerHTML = '<div class="feed-status err">No items returned from source.</div>';
+        return;
+      }
+      var html = '';
+      for (var i = 0; i < items.length; i++) {
+        var it = items[i];
+        var safeLink  = encodeURI(it.link);
+        var safeTitle = esc(it.title);
+        var safeTime  = it.pubDate ? '<time datetime="' + esc(it.pubDate) + '">' + fmt(it.pubDate) + '</time>' : '';
+        html += '<div class="feed-item">'
+          + '<a href="' + safeLink + '" target="_blank" rel="noopener noreferrer" aria-label="' + safeTitle + ' (opens in new tab)">' + safeTitle + '</a>'
+          + safeTime + '</div>';
+      }
+      el.innerHTML = html;
     }
 
-    async function loadFeed(key, containerId) {
+    function setError(id, msg) {
+      document.getElementById(id).innerHTML = '<div class="feed-status err">Could not load. ' + esc(msg) + '</div>';
+    }
+
+    async function loadFeed(key, id, renderer) {
       try {
-        const res = await fetch(`/rss-proxy?feed=${key}`);
-        if (!res.ok) throw new Error(`Server returned ${res.status}`);
-        const data = await res.json();
+        var res = await fetch('/rss-proxy?feed=' + key);
+        if (!res.ok) throw new Error('Server error ' + res.status);
+        var data = await res.json();
         if (!data.ok) throw new Error(data.error || 'Feed error');
-        renderItems(data.items, containerId);
-      } catch (err) {
-        renderError(containerId, err.message);
+        renderer(data.items, id);
+      } catch(e) {
+        setError(id, e.message);
       }
     }
 
-    function loadAllFeeds() {
+    function loadAll() {
+      var now = new Date();
       document.getElementById('last-updated').textContent =
-        new Date().toLocaleTimeString('en-IN', { hour: '2-digit', minute: '2-digit' });
-      loadFeed('policy',   'feed-policy');
-      loadFeed('regional', 'feed-regional');
-      loadFeed('legal',    'feed-legal');
+        now.toLocaleTimeString('en-IN', { hour: '2-digit', minute: '2-digit' }) + ', ' +
+        now.toLocaleDateString('en-IN', { day: 'numeric', month: 'short' });
+
+      loadFeed('site',   'feed-site',   renderSite);
+      loadFeed('legal',  'feed-legal',  renderExternal);
+      loadFeed('policy', 'feed-policy', renderExternal);
     }
 
-    document.addEventListener('DOMContentLoaded', loadAllFeeds);
+    document.getElementById('refresh-btn').addEventListener('click', loadAll);
+    document.addEventListener('DOMContentLoaded', loadAll);
   </script>
 
   <footer class="site-footer">

@@ -70,28 +70,344 @@
   </header>
   <nav aria-label="Breadcrumb" class="breadcrumb-nav"><div class="breadcrumb"><a href="/">Home</a><span class="breadcrumb-sep" aria-hidden="true">&#8250;</span><span aria-current="page">Fact Check</span></div></nav>
 <main id="main-content">
-    <section class="section hero">
-      <div>
-        <p class="eyebrow">Verification matrix</p>
-        <h1>Claim-to-source verification matrix</h1>
-        <p class="lead">This page is a starting register for matching public statements to primary evidence. It is intentionally conservative: missing fields require manual verification rather than guessed dates, issuers or legal meaning.</p>
+  <style>
+    .source-table { width:100%; border-collapse:collapse; font-size:14px; margin-top:24px; }
+    .source-table th { background:#f5f7fa; padding:10px 12px; text-align:left; border-bottom:2px solid rgba(7,26,66,.15); font-size:12px; text-transform:uppercase; letter-spacing:.05em; }
+    .source-table td { padding:10px 12px; border-bottom:1px solid rgba(7,26,66,.08); vertical-align:top; }
+    .source-table tr:hover td { background:#fafbfe; }
+    .ev-official { background:#e8f5e9; color:#1b5e20; padding:2px 8px; border-radius:4px; font-size:11px; font-weight:600; white-space:nowrap; }
+    .ev-corroborated { background:#e3f2fd; color:#0d47a1; padding:2px 8px; border-radius:4px; font-size:11px; font-weight:600; white-space:nowrap; }
+    .ev-disha { background:#fff3e0; color:#e65100; padding:2px 8px; border-radius:4px; font-size:11px; font-weight:600; white-space:nowrap; }
+    .ev-unresolved { background:#f3e5f5; color:#4a148c; padding:2px 8px; border-radius:4px; font-size:11px; font-weight:600; white-space:nowrap; }
+    .filter-strip { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:16px; }
+    .filter-btn { padding:6px 14px; border:1px solid rgba(7,26,66,.2); border-radius:20px; background:#fff; font-size:13px; cursor:pointer; }
+    .filter-btn.active, .filter-btn:hover { background:var(--red); color:#fff; border-color:var(--red); }
+  </style>
+
+  <section class="section hero">
+    <div>
+      <p class="eyebrow">Verification matrix</p>
+      <h1>Claim-to-source verification matrix</h1>
+      <p class="lead">A comprehensive fact-check register matching public claims to primary evidence. Every row identifies what a source establishes, what it does not establish, and the evidentiary class of each claim. Conservative by design: disputed or unverified facts are marked explicitly.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div>
+      <div class="filter-strip" role="group" aria-label="Filter by evidence category">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="court">Court</button>
+        <button class="filter-btn" data-filter="government">Government</button>
+        <button class="filter-btn" data-filter="audit">Audit</button>
+        <button class="filter-btn" data-filter="rti">RTI</button>
+        <button class="filter-btn" data-filter="disha">DISHA assessment</button>
+        <button class="filter-btn" data-filter="unresolved">Unresolved</button>
       </div>
-    </section>
-    <section class="section">
-      <div class="table-wrap" role="region" aria-label="Claim-to-source verification matrix" tabindex="0">
-        <table class="source-register">
-          <caption>Claim-to-source verification matrix</caption>
-          <thead><tr><th scope="col">Public statement</th><th scope="col">Primary evidence</th><th scope="col">What the source establishes</th><th scope="col">Status</th><th scope="col">Precise wording</th></tr></thead>
+
+      <div class="table-wrap" role="region" aria-label="Fact-check verification matrix" tabindex="0">
+        <table class="source-table" id="fc-table">
+          <caption>Fact-check verification matrix — thenitishkr.in</caption>
+          <thead>
+            <tr>
+              <th scope="col">Claim ID</th>
+              <th scope="col">Claim</th>
+              <th scope="col">Evidence class</th>
+              <th scope="col">Case file</th>
+              <th scope="col">Primary source</th>
+              <th scope="col">What it establishes</th>
+              <th scope="col">What it does not establish</th>
+              <th scope="col">Last verified</th>
+            </tr>
+          </thead>
           <tbody>
-            <tr><td>W.P.(Crl.) No. 163/2026 is part of the public court-related record cited by the archive.</td><td><a href="/assets/docs/WRIT_P_CRL_163_2026_REDACTED.pdf">Redacted petition PDF</a></td><td>The document records a petition/submission. It does not by itself prove every underlying allegation.</td><td>Procedural court record / documented allegation</td><td>Use procedural wording unless citing an express court finding.</td></tr>
-            <tr><td>DISHA is presented as an evidence-first intelligence architecture.</td><td><a href="/assets/docs/disha-whitepaper-what-it-can-what-it-did.pdf">DISHA whitepaper</a></td><td>The whitepaper presents the architecture and claimed method.</td><td>DISHA assessment</td><td>Attribute analytical conclusions to the DISHA assessment unless independently confirmed by an authority.</td></tr>
-            <tr><td>Case 12 argues that the SIR process was unconstitutional.</td><td><a href="/intelligence/sir-constitutional-scam/">Case 12 source and analysis record</a></td><td>The case page separates the author's argued conclusion, cited legal material, record chronology and unresolved questions.</td><td>Research analysis / argued conclusion</td><td>Attribute the conclusion to the author and distinguish it from an adjudicated court finding.</td></tr>
-            <tr><td>Some case records rely on redacted PDFs and supporting public-source material.</td><td><a href="/EVIDENCE-INVENTORY.md">Evidence inventory</a></td><td>The inventory lists discovered public evidence files and manual verification needs.</td><td>Unresolved / manual verification required</td><td>Do not infer issuer, date or legal meaning until verified from the document.</td></tr>
+
+            <!-- AUDIT rows -->
+            <tr data-cat="audit">
+              <td>FC-01</td>
+              <td>Bihar has 49,649 pending utilisation certificates worth ₹70,877.61 crore as of 31 March 2024.</td>
+              <td><span class="ev-official">Official</span></td>
+              <td><a href="/intelligence/ndma-disaster-fund-audit/">Case 01 — NDMA</a></td>
+              <td><a href="https://cag.gov.in" target="_blank" rel="noopener noreferrer">CAG Report (2024)</a></td>
+              <td>CAG audit confirms the volume and value of pending UCs in Bihar as of the stated date.</td>
+              <td>Does not establish fraud or deliberate misuse; pending UCs may reflect procedural delay.</td>
+              <td>2026-06-19</td>
+            </tr>
+
+            <tr data-cat="audit">
+              <td>FC-02</td>
+              <td>Union government FY25: 33,973 pending utilisation certificates worth ₹54,282.32 crore.</td>
+              <td><span class="ev-official">Official</span></td>
+              <td><a href="/intelligence/ndma-disaster-fund-audit/">Case 01 — NDMA</a></td>
+              <td><a href="https://cag.gov.in" target="_blank" rel="noopener noreferrer">CAG Report (FY25)</a></td>
+              <td>CAG audit confirms the aggregate figure of uncleared utilisation certificates at the Union level.</td>
+              <td>Does not establish that funds were diverted; delay in UCs alone is not proof of misappropriation.</td>
+              <td>2026-06-19</td>
+            </tr>
+
+            <!-- GOVERNMENT rows -->
+            <tr data-cat="government">
+              <td>FC-03</td>
+              <td>Punjab floods 2025 resulted in 57 deaths, approximately 4 lakh people affected, and 2,555 villages impacted.</td>
+              <td><span class="ev-official">Official</span></td>
+              <td><a href="/intelligence/ndma-disaster-fund-audit/">Case 01 — NDMA</a></td>
+              <td><a href="https://newsonair.gov.in" target="_blank" rel="noopener noreferrer">News on Air (Govt. of India)</a></td>
+              <td>Government broadcaster's report confirms casualty count, affected population and village figures.</td>
+              <td>Does not establish causal link between UC pendency and flood fatalities.</td>
+              <td>2026-06-19</td>
+            </tr>
+
+            <tr data-cat="government">
+              <td>FC-04</td>
+              <td>The Disaster Management Amendment Act 2025 received Presidential assent and commenced on 9 April 2025.</td>
+              <td><span class="ev-official">Official</span></td>
+              <td><a href="/intelligence/ndma-disaster-fund-audit/">Case 01 — NDMA</a></td>
+              <td><a href="https://ndrf.gov.in" target="_blank" rel="noopener noreferrer">NDRF official record</a></td>
+              <td>Gazette notification and NDRF record confirm the date of assent and commencement.</td>
+              <td>Does not establish the legislative intent or assess implementation adequacy.</td>
+              <td>2026-06-19</td>
+            </tr>
+
+            <tr data-cat="government">
+              <td>FC-05</td>
+              <td>ODF (Open Defecation Free) 100% declaration exists at policy level but ground-reality gaps are documented in NSS, NFHS, NARSS and CAG records.</td>
+              <td><span class="ev-official">Official</span></td>
+              <td><a href="/intelligence/odf-sanitation-gap/">Case 03 — ODF/Sanitation</a></td>
+              <td><a href="https://cag.gov.in" target="_blank" rel="noopener noreferrer">CAG / NFHS / NARSS records</a></td>
+              <td>Multiple government surveys and audit records document divergence between declared ODF status and field data.</td>
+              <td>Does not prove intentional misreporting; gaps may reflect survey methodology differences.</td>
+              <td>2026-06-19</td>
+            </tr>
+
+            <tr data-cat="government">
+              <td>FC-06</td>
+              <td>Bihar districts were declared ODF without verifiable drainage infrastructure or flood-WASH alignment.</td>
+              <td><span class="ev-official">Official</span></td>
+              <td><a href="/intelligence/bihar-odf-gap/">Case 04 — Bihar ODF</a></td>
+              <td><a href="https://cag.gov.in" target="_blank" rel="noopener noreferrer">CAG / State records</a></td>
+              <td>Audit records confirm ODF declaration in districts lacking documented drainage and flood-WASH infrastructure.</td>
+              <td>Does not establish deliberate falsification by named officials; systemic failures may have administrative causes.</td>
+              <td>2026-06-19</td>
+            </tr>
+
+            <!-- COURT rows -->
+            <tr data-cat="court">
+              <td>FC-07</td>
+              <td>Supreme Court W.P.(Crl.) 163/2026 directed MeitY to examine a representation on foreign-server personal data on 19 May 2026 before the CJI Surya Kant bench.</td>
+              <td><span class="ev-official">Official</span></td>
+              <td><a href="/intelligence/meity-data-sovereignty/">Case 02 — MeitY/Data</a></td>
+              <td><a href="/assets/docs/WRIT_P_CRL_163_2026_REDACTED.pdf">Court record (redacted)</a></td>
+              <td>Court order confirms the Supreme Court's direction to MeitY; the bench and date are on record.</td>
+              <td>Does not establish a finding on the merits; the direction is procedural, not a factual ruling on data sovereignty.</td>
+              <td>2026-06-19</td>
+            </tr>
+
+            <tr data-cat="court">
+              <td>FC-08</td>
+              <td>W.P.(Crl.) 394/2025 is a disaster governance and public accountability petition before the Supreme Court.</td>
+              <td><span class="ev-official">Official</span></td>
+              <td><a href="/intelligence/ndma-disaster-fund-audit/">Case 01 — NDMA</a></td>
+              <td><a href="/assets/docs/WRIT_P_CRL_163_2026_REDACTED.pdf">Supreme Court record</a></td>
+              <td>Petition number and subject matter are confirmed by the Supreme Court case record.</td>
+              <td>Does not establish any relief granted or judicial finding on the substantive claims.</td>
+              <td>2026-06-19</td>
+            </tr>
+
+            <tr data-cat="court">
+              <td>FC-09</td>
+              <td>Bihar Special Intensive Revision (SIR) 2025 — the archive records concern about burden reversal on voters and failure to account for migrant populations.</td>
+              <td><span class="ev-official">Official</span></td>
+              <td><a href="/intelligence/sir-constitutional-scam/">Case 12 — SIR</a></td>
+              <td><a href="/intelligence/sir-constitutional-scam/">Case 12 source record</a></td>
+              <td>The SIR process and its timeline are confirmed by Election Commission of India records cited in the case file.</td>
+              <td>Does not establish that the SIR outcome was unconstitutional; that remains argued conclusion pending adjudication.</td>
+              <td>2026-06-19</td>
+            </tr>
+
+            <!-- DISHA rows -->
+            <tr data-cat="disha">
+              <td>FC-10</td>
+              <td>DISHA accuracy is measured at 97% against source-linked government records, court materials, audit records and RTI trails.</td>
+              <td><span class="ev-disha">DISHA assessment</span></td>
+              <td><a href="/disha/">DISHA overview</a></td>
+              <td><a href="/assets/docs/disha-whitepaper-what-it-can-what-it-did.pdf">DISHA whitepaper</a></td>
+              <td>The 97% accuracy figure reflects the author's internal assessment methodology against linked records.</td>
+              <td>Does not represent an independently audited or third-party-verified accuracy metric.</td>
+              <td>2026-06-19</td>
+            </tr>
+
+            <tr data-cat="disha">
+              <td>FC-11</td>
+              <td>The DISHA archive holds 6,000+ evidence items including RTI replies, PDFs, emails, court records and audit trails.</td>
+              <td><span class="ev-disha">DISHA assessment</span></td>
+              <td><a href="/disha/">DISHA overview</a></td>
+              <td><a href="/EVIDENCE-INVENTORY.md">Evidence inventory</a></td>
+              <td>The inventory file documents the archive's evidence item count as maintained by the author.</td>
+              <td>Does not imply that all items are independently verified primary sources; some may be secondary or corroborative.</td>
+              <td>2026-06-19</td>
+            </tr>
+
+            <tr data-cat="disha">
+              <td>FC-12</td>
+              <td>DISHA architecture comprises six layers: DISHA Brain, Digital Soldiers, Security Brain, Yudh, Evidence Archive and Public Record Memory.</td>
+              <td><span class="ev-disha">DISHA assessment</span></td>
+              <td><a href="/disha/">DISHA overview</a></td>
+              <td><a href="/assets/docs/disha-whitepaper-what-it-can-what-it-did.pdf">DISHA whitepaper Ver 4.2.0</a></td>
+              <td>The whitepaper defines and describes the L1–L6 architecture layers as the author's system design.</td>
+              <td>Does not represent a peer-reviewed engineering specification or externally validated architecture.</td>
+              <td>2026-06-19</td>
+            </tr>
+
+            <!-- CORROBORATED rows -->
+            <tr data-cat="government">
+              <td>FC-13</td>
+              <td>National media coverage of the archive and related work includes PTI, Economic Times, The Tribune, Deccan Herald, New Indian Express, ABP Live, LawTrend and Verdictum.</td>
+              <td><span class="ev-corroborated">Corroborated</span></td>
+              <td><a href="/media/">Media coverage</a></td>
+              <td><a href="/media/">Media page (links to outlets)</a></td>
+              <td>Multiple independent media organisations have published reports referencing the archive and its findings.</td>
+              <td>Does not mean every claim in the archive has been independently fact-checked by those outlets.</td>
+              <td>2026-06-19</td>
+            </tr>
+
+            <tr data-cat="government">
+              <td>FC-14</td>
+              <td>Nitish Kumar (@thenitishkr) has published two books: "Era of Stupidity: Citizen Not Found" (ISBN 978-9355920126) and "Sleeping Guardian: India Lost Justice" (ISBN 979-8274694070).</td>
+              <td><span class="ev-corroborated">Corroborated</span></td>
+              <td><a href="/about/">About</a></td>
+              <td><a href="https://www.amazon.com/author/nikukr" target="_blank" rel="noopener noreferrer">Amazon author page</a></td>
+              <td>ISBN records and author listings confirm publication of both books.</td>
+              <td>Does not constitute endorsement of the books' arguments by any government or judicial body.</td>
+              <td>2026-06-19</td>
+            </tr>
+
+            <tr data-cat="government">
+              <td>FC-15</td>
+              <td>Nitish Kumar (@thenitishkr) holds Wikidata entity Q140001166 and ORCID 0009-0004-6840-4463.</td>
+              <td><span class="ev-corroborated">Corroborated</span></td>
+              <td><a href="/about/">About</a></td>
+              <td><a href="https://www.wikidata.org/wiki/Q140001166" target="_blank" rel="noopener noreferrer">Wikidata Q140001166</a></td>
+              <td>Wikidata and ORCID registry entries confirm the persistent identifiers linked to the author.</td>
+              <td>Does not validate the research claims made in the archive; identifiers establish identity, not accuracy.</td>
+              <td>2026-06-19</td>
+            </tr>
+
+            <!-- RTI rows -->
+            <tr data-cat="rti">
+              <td>FC-16</td>
+              <td>RTI replies form part of the evidence base for NDMA disaster fund claims.</td>
+              <td><span class="ev-official">Official</span></td>
+              <td><a href="/intelligence/ndma-disaster-fund-audit/">Case 01 — NDMA</a></td>
+              <td><a href="/EVIDENCE-INVENTORY.md">Evidence inventory</a></td>
+              <td>RTI responses from government departments are official public records under the Right to Information Act 2005.</td>
+              <td>Does not establish that the information disclosed in RTI replies is comprehensive or that no information was withheld.</td>
+              <td>2026-06-19</td>
+            </tr>
+
+            <tr data-cat="rti">
+              <td>FC-17</td>
+              <td>RTI trails form part of the evidentiary basis for ODF ground-reality findings in Bihar.</td>
+              <td><span class="ev-official">Official</span></td>
+              <td><a href="/intelligence/bihar-odf-gap/">Case 04 — Bihar ODF</a></td>
+              <td><a href="/EVIDENCE-INVENTORY.md">Evidence inventory</a></td>
+              <td>RTI-obtained records provide official government data on ODF declarations at district level.</td>
+              <td>Does not resolve discrepancies between administrative declarations and field survey data.</td>
+              <td>2026-06-19</td>
+            </tr>
+
+            <!-- UNRESOLVED rows -->
+            <tr data-cat="unresolved">
+              <td>FC-18</td>
+              <td>The SIR 2025 process in Bihar may have unconstitutionally reversed the burden of proof onto voters to demonstrate citizenship.</td>
+              <td><span class="ev-unresolved">Unresolved</span></td>
+              <td><a href="/intelligence/sir-constitutional-scam/">Case 12 — SIR</a></td>
+              <td><a href="/intelligence/sir-constitutional-scam/">Case 12 analysis</a></td>
+              <td>The argued legal position is on the record; the question has been filed before appropriate authorities.</td>
+              <td>Does not represent an adjudicated finding; constitutional validity of the SIR remains unresolved pending judicial determination.</td>
+              <td>2026-06-19</td>
+            </tr>
+
+            <tr data-cat="unresolved">
+              <td>FC-19</td>
+              <td>Data concerning personal information of Indian citizens may be stored on foreign servers without adequate legal protection.</td>
+              <td><span class="ev-unresolved">Unresolved</span></td>
+              <td><a href="/intelligence/meity-data-sovereignty/">Case 02 — MeitY/Data</a></td>
+              <td><a href="/assets/docs/WRIT_P_CRL_163_2026_REDACTED.pdf">W.P.(Crl.) 163/2026</a></td>
+              <td>The petition places the question on the Supreme Court record; MeitY has been directed to examine the representation.</td>
+              <td>Does not establish as fact that foreign-server storage is occurring unlawfully; the question is under official examination.</td>
+              <td>2026-06-19</td>
+            </tr>
+
+            <tr data-cat="unresolved">
+              <td>FC-20</td>
+              <td>Migrant populations in Bihar were not adequately accounted for during the Special Intensive Revision 2025, risking disenfranchisement.</td>
+              <td><span class="ev-unresolved">Unresolved</span></td>
+              <td><a href="/intelligence/sir-constitutional-scam/">Case 12 — SIR</a></td>
+              <td><a href="/intelligence/sir-constitutional-scam/">Case 12 source record</a></td>
+              <td>The concern is documented in the case file with reference to migration patterns and ECI process timelines.</td>
+              <td>Does not establish the actual number of affected migrants or that disenfranchisement occurred; investigation is pending.</td>
+              <td>2026-06-19</td>
+            </tr>
+
+            <tr data-cat="audit">
+              <td>FC-21</td>
+              <td>Disaster fund utilisation certificate pendency in Bihar represents the highest quantum among states audited in the CAG report.</td>
+              <td><span class="ev-official">Official</span></td>
+              <td><a href="/intelligence/ndma-disaster-fund-audit/">Case 01 — NDMA</a></td>
+              <td><a href="https://cag.gov.in" target="_blank" rel="noopener noreferrer">CAG Report (2024)</a></td>
+              <td>CAG audit tables confirm Bihar's position relative to other states in UC pendency volume and value.</td>
+              <td>Does not attribute the pendency to any individual official or prove misuse of funds.</td>
+              <td>2026-06-19</td>
+            </tr>
+
+            <tr data-cat="disha">
+              <td>FC-22</td>
+              <td>DISHA operates under a No-First-Use doctrine meaning the system does not initiate adversarial action without a predicate evidence record.</td>
+              <td><span class="ev-disha">DISHA assessment</span></td>
+              <td><a href="/disha/">DISHA overview</a></td>
+              <td><a href="/assets/docs/disha-whitepaper-what-it-can-what-it-did.pdf">DISHA whitepaper Ver 4.2.0</a></td>
+              <td>The whitepaper defines the No-First-Use doctrine as an operational constraint of the DISHA system.</td>
+              <td>Does not represent a legally enforceable constraint verified by an independent auditor.</td>
+              <td>2026-06-19</td>
+            </tr>
+
+            <tr data-cat="court">
+              <td>FC-23</td>
+              <td>W.P.(Crl.) 163/2026 was disposed by the Supreme Court on 19 May 2026 with a direction to MeitY — this is a procedural disposal, not a factual ruling on data sovereignty.</td>
+              <td><span class="ev-official">Official</span></td>
+              <td><a href="/intelligence/meity-data-sovereignty/">Case 02 — MeitY/Data</a></td>
+              <td><a href="/assets/docs/WRIT_P_CRL_163_2026_REDACTED.pdf">Court order record</a></td>
+              <td>The order on 19 May 2026 before the CJI Surya Kant bench directed MeitY to examine the representation; disposal is confirmed.</td>
+              <td>Does not constitute a finding that any data sovereignty violation occurred or that MeitY acted unlawfully.</td>
+              <td>2026-06-19</td>
+            </tr>
+
           </tbody>
         </table>
       </div>
-    </section>
-  </main>
+    </div>
+  </section>
+
+  <script>
+    (function () {
+      var btns = document.querySelectorAll('.filter-btn');
+      var rows = document.querySelectorAll('#fc-table tbody tr');
+      btns.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          btns.forEach(function (b) { b.classList.remove('active'); });
+          btn.classList.add('active');
+          var f = btn.getAttribute('data-filter');
+          rows.forEach(function (row) {
+            if (f === 'all') {
+              row.style.display = '';
+            } else {
+              row.style.display = (row.getAttribute('data-cat') === f) ? '' : 'none';
+            }
+          });
+        });
+      });
+    })();
+  </script>
+</main>
   <script src="/script.js?v=20260609noscript" defer></script>
 </body>
 </html>

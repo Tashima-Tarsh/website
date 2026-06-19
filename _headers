@@ -95,8 +95,7 @@
 
 /news-sitemap.xml
   Content-Type: application/xml; charset=utf-8
-  Cache-Control: public, max-age=3600, must-revalidate
-  X-Robots-Tag: noindex
+  Cache-Control: public, max-age=900, must-revalidate
 
 /feed.xml
   Content-Type: application/rss+xml; charset=utf-8

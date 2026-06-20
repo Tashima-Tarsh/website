@@ -1,0 +1,1266 @@
+/* ================================================================
+   DISHA PAGE — Institutional Architecture Dossier Stylesheet
+   Version 4 · June 2026
+   ================================================================
+   Designed for the DISHA Intelligence Architecture page.
+   Inherits from /styles.css — this file adds component-level styles.
+   ================================================================ */
+
+/* ---- CSS Variables ---- */
+:root {
+  --disha-page-max: 1280px;
+  --disha-content-max: 760px;
+  --disha-wide-content-max: 1080px;
+  --disha-reading-max: 72ch;
+  --disha-section-space: clamp(5rem, 9vw, 9rem);
+  --disha-section-space-mobile: 4rem;
+  --disha-gutter: clamp(1rem, 3vw, 2rem);
+  --disha-radius-sm: 10px;
+  --disha-radius-md: 16px;
+  --disha-border-subtle: rgba(127, 127, 127, 0.22);
+  --disha-border-light: rgba(127, 127, 127, 0.12);
+  --disha-surface: #fafaf8;
+  --disha-surface-alt: #f2f2ee;
+  --disha-accent: #7e1f1f;
+  --disha-accent-light: rgba(126, 31, 31, 0.06);
+  --disha-accent-mid: rgba(126, 31, 31, 0.14);
+  --disha-text: #24211d;
+  --disha-text-muted: #6c6258;
+  --disha-text-light: #8a8075;
+  --disha-charcoal: #1a1a18;
+  --disha-ink: #2a2a26;
+  --disha-gold: #b28a44;
+  --disha-green: #1d6b3c;
+  --disha-blue: #1a3a6a;
+}
+
+/* ---- General DISHA Section Styles ---- */
+.disha-section {
+  width: min(100% - (2 * var(--disha-gutter)), var(--disha-page-max));
+  margin-inline: auto;
+  padding: var(--disha-section-space) var(--disha-gutter);
+}
+
+.disha-section-alt {
+  background: var(--disha-surface);
+  width: 100%;
+  padding-left: max(var(--disha-gutter), calc((100% - var(--disha-page-max)) / 2 + var(--disha-gutter)));
+  padding-right: max(var(--disha-gutter), calc((100% - var(--disha-page-max)) / 2 + var(--disha-gutter)));
+}
+
+.disha-section-alt .disha-content-max,
+.disha-section-alt .disha-timeline-grid,
+.disha-section-alt .disha-vyuha-grid,
+.disha-section-alt .disha-cognitive-grid,
+.disha-section-alt .disha-memory-grid,
+.disha-section-alt .disha-system-grid {
+  max-width: var(--disha-page-max);
+  margin-inline: auto;
+}
+
+/* ---- Content Width Constraints ---- */
+.disha-content-max {
+  max-width: var(--disha-content-max);
+  margin-inline: auto;
+}
+
+.disha-reading-block {
+  max-width: var(--disha-reading-max);
+}
+
+.disha-reading-block p,
+.disha-reading-block li {
+  font-size: clamp(1rem, 0.96rem + 0.18vw, 1.125rem);
+  line-height: 1.68;
+  color: var(--disha-ink);
+  margin-bottom: 1rem;
+}
+
+.disha-reading-block p:last-child {
+  margin-bottom: 0;
+}
+
+/* ---- Typography ---- */
+.disha-eyebrow {
+  color: var(--disha-accent);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  max-width: var(--disha-reading-max);
+}
+
+.disha-h2 {
+  font-size: clamp(2rem, 4vw, 3.8rem);
+  line-height: 1.05;
+  letter-spacing: -0.035em;
+  max-width: 18ch;
+  margin-bottom: 1.5rem;
+  color: var(--disha-charcoal);
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-weight: 700;
+}
+
+.disha-h3 {
+  font-size: clamp(1.25rem, 2vw, 1.75rem);
+  line-height: 1.2;
+  margin-bottom: 0.75rem;
+  color: var(--disha-charcoal);
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-weight: 700;
+}
+
+.disha-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5rem;
+}
+
+.disha-list li {
+  padding-left: 1.5rem;
+  position: relative;
+  margin-bottom: 0.5rem;
+  font-size: clamp(1rem, 0.96rem + 0.18vw, 1.125rem);
+  line-height: 1.68;
+  color: var(--disha-ink);
+}
+
+.disha-list li::before {
+  content: "*";
+  position: absolute;
+  left: 0.25rem;
+  color: var(--disha-accent);
+  font-weight: 700;
+}
+
+.disha-list-ol {
+  list-style: none;
+  counter-reset: disha-ol;
+}
+
+.disha-list-ol li {
+  counter-increment: disha-ol;
+}
+
+.disha-list-ol li::before {
+  content: counter(disha-ol) ".";
+  font-weight: 700;
+  color: var(--disha-accent);
+}
+
+.disha-list-two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 2rem;
+}
+
+.disha-list-prohibited li::before {
+  content: "✕";
+  color: var(--disha-accent);
+  font-size: 0.85em;
+}
+
+.disha-list-prohibited li {
+  color: var(--disha-text-muted);
+}
+
+.disha-blockquote {
+  border-left: 3px solid var(--disha-accent);
+  padding: 1rem 1.5rem;
+  margin: 1.5rem 0;
+  font-style: italic;
+  font-size: clamp(1.1rem, 1.05rem + 0.25vw, 1.35rem);
+  line-height: 1.6;
+  color: var(--disha-charcoal);
+  background: var(--disha-accent-light);
+  border-radius: 0 var(--disha-radius-sm) var(--disha-radius-sm) 0;
+}
+
+/* ---- Inline Links ---- */
+.disha-inline-link {
+  display: inline-block;
+  color: var(--disha-accent);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-top: 0.75rem;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease;
+}
+
+.disha-inline-link:hover {
+  border-bottom-color: var(--disha-accent);
+}
+
+.disha-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 1.5rem;
+}
+
+.disha-answer-p {
+  margin-bottom: 1.25rem;
+}
+
+/* ================================================================ */
+/* HERO SECTION                                                     */
+/* ================================================================ */
+.disha-hero {
+  display: grid;
+  grid-template-columns: 7fr 5fr;
+  gap: 3rem;
+  align-items: center;
+  min-height: 680px;
+  padding-top: calc(var(--disha-section-space) * 0.7);
+  padding-bottom: 0;
+}
+
+.disha-hero-title {
+  font-size: clamp(2.7rem, 6vw, 5.8rem);
+  line-height: 0.98;
+  letter-spacing: -0.045em;
+  max-width: 13ch;
+  margin: 0.75rem 0 1.5rem;
+  color: var(--disha-charcoal);
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-weight: 700;
+}
+
+.disha-hero-lead {
+  font-size: clamp(1rem, 0.96rem + 0.2vw, 1.15rem);
+  line-height: 1.65;
+  color: var(--disha-text-muted);
+  margin-bottom: 1rem;
+  max-width: 62ch;
+}
+
+.disha-does-not {
+  font-style: italic;
+  color: var(--disha-text-light);
+  border-left: 2px solid var(--disha-border-subtle);
+  padding-left: 1rem;
+}
+
+.disha-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 1.75rem;
+}
+
+/* Hero visual */
+.disha-hero-visual {
+  width: 100%;
+  max-width: 560px;
+  max-height: 520px;
+  margin-inline: auto;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  border: 1px solid var(--disha-border-subtle);
+  border-radius: var(--disha-radius-md);
+  background: #fff;
+}
+
+.disha-hero-visual picture {
+  width: 100%;
+  padding: 12px;
+  display: grid;
+  place-items: center;
+}
+
+.disha-hero-visual img {
+  width: 100%;
+  height: auto;
+  max-height: 460px;
+  object-fit: contain;
+  object-position: center;
+}
+
+/* ---- Figcaption ---- */
+.disha-figcaption {
+  width: 100%;
+  padding: 10px 14px;
+  border-top: 1px solid var(--disha-border-subtle);
+  color: var(--disha-text-muted);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+/* ================================================================ */
+/* QUICK FACTS STRIP                                                */
+/* ================================================================ */
+.disha-facts-strip {
+  border-top: 1px solid var(--disha-border-subtle);
+  border-bottom: 1px solid var(--disha-border-subtle);
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.disha-facts-inner {
+  width: min(100% - (2 * var(--disha-gutter)), var(--disha-page-max));
+  margin-inline: auto;
+  padding: 18px var(--disha-gutter);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.disha-fact {
+  margin: 0;
+  padding: 0;
+}
+
+.disha-fact dt {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--disha-accent);
+  margin-bottom: 3px;
+}
+
+.disha-fact dd {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--disha-charcoal);
+  line-height: 1.4;
+}
+
+/* ================================================================ */
+/* EXHIBIT GRID — HANDWRITTEN RECORDS                              */
+/* ================================================================ */
+.disha-exhibit-grid {
+  width: min(100% - (2 * var(--disha-gutter)), var(--disha-page-max));
+  margin-inline: auto;
+  padding: 0 var(--disha-gutter);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.disha-exhibit {
+  margin: 0;
+}
+
+.disha-document-wrapper {
+  aspect-ratio: 1 / 1.414;
+  width: min(100%, 620px);
+  margin-inline: auto;
+  border: 1px solid var(--disha-border-subtle);
+  border-radius: var(--disha-radius-sm);
+  background: #f4f1e8;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+}
+
+.disha-document-wrapper a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.disha-document-wrapper picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.disha-document-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+
+.disha-document-full {
+  aspect-ratio: 698 / 960;
+  max-width: 680px;
+}
+
+.disha-exhibit-caption {
+  margin-top: 12px;
+  max-width: 620px;
+  margin-inline: auto;
+}
+
+.disha-exhibit-label {
+  display: block;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--disha-accent);
+  margin-bottom: 4px;
+}
+
+.disha-exhibit-caption strong {
+  display: block;
+  font-size: clamp(0.82rem, 0.78rem + 0.15vw, 0.95rem);
+  line-height: 1.5;
+  color: var(--disha-charcoal);
+  margin-bottom: 6px;
+}
+
+.disha-exhibit-meta {
+  display: block;
+  font-size: 11px;
+  line-height: 1.5;
+  color: var(--disha-text-muted);
+}
+
+.disha-zoom-link {
+  text-decoration: none;
+  border: none;
+}
+
+.disha-zoom-link:hover {
+  opacity: 0.92;
+}
+
+/* ================================================================ */
+/* INSTITUTIONAL LAYOUT — BIHAR COUNCIL                            */
+/* ================================================================ */
+.disha-institutional-layout {
+  width: min(100% - (2 * var(--disha-gutter)), var(--disha-page-max));
+  margin-inline: auto;
+  padding: 0 var(--disha-gutter);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+  align-items: start;
+  margin-top: 2rem;
+}
+
+.disha-institutional-figure {
+  margin: 0;
+}
+
+.disha-document-aside {
+  margin-top: 1rem;
+  padding: 1rem;
+  background: var(--disha-surface);
+  border-radius: var(--disha-radius-sm);
+  max-width: 620px;
+}
+
+.disha-meta-dl {
+  margin: 0;
+  display: grid;
+  gap: 6px;
+}
+
+.disha-meta-dl div {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 8px;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.disha-meta-dl dt {
+  font-weight: 700;
+  color: var(--disha-accent);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.disha-meta-dl dd {
+  margin: 0;
+  color: var(--disha-ink);
+}
+
+/* ================================================================ */
+/* TIMELINE                                                        */
+/* ================================================================ */
+.disha-timeline-grid {
+  width: min(100% - (2 * var(--disha-gutter)), var(--disha-page-max));
+  margin-inline: auto;
+  padding: 0 var(--disha-gutter);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  margin-top: 2rem;
+}
+
+.disha-timeline-item {
+  border: 1px solid var(--disha-border-subtle);
+  border-radius: var(--disha-radius-sm);
+  padding: 1.5rem;
+  background: #fff;
+}
+
+.disha-tl-year {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--disha-accent);
+  display: block;
+  margin-bottom: 6px;
+}
+
+.disha-tl-title {
+  font-size: 1.25rem;
+  line-height: 1.2;
+  margin-bottom: 0.5rem;
+  color: var(--disha-charcoal);
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-weight: 700;
+}
+
+.disha-timeline-item p {
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--disha-text-muted);
+}
+
+/* ================================================================ */
+/* EVIDENCE CHAIN                                                  */
+/* ================================================================ */
+.disha-chain-grid {
+  width: min(100% - (2 * var(--disha-gutter)), var(--disha-page-max));
+  margin-inline: auto;
+  padding: 0 var(--disha-gutter);
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.disha-chain-card {
+  border: 1px solid var(--disha-border-subtle);
+  border-radius: var(--disha-radius-sm);
+  padding: 1.5rem;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.disha-chain-num {
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--disha-accent);
+  line-height: 1;
+}
+
+.disha-chain-card h3 {
+  font-size: 1.3rem;
+  line-height: 1.15;
+}
+
+.disha-chain-card p {
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--disha-text-muted);
+}
+
+/* ================================================================ */
+/* COGNITIVE ENGINE — SEVEN STAGES                                 */
+/* ================================================================ */
+.disha-cognitive-grid {
+  width: min(100% - (2 * var(--disha-gutter)), var(--disha-page-max));
+  margin-inline: auto;
+  padding: 0 var(--disha-gutter);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.disha-cog-card {
+  border: 1px solid var(--disha-border-subtle);
+  border-radius: var(--disha-radius-sm);
+  padding: 1.5rem;
+  background: #fff;
+}
+
+.disha-cog-card:nth-child(n+5) {
+  grid-column: span 2;
+}
+
+.disha-cog-num {
+  display: block;
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--disha-accent);
+  margin-bottom: 8px;
+}
+
+.disha-cog-card p {
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--disha-text-muted);
+}
+
+/* ================================================================ */
+/* ARCHITECTURE LAYERS — SIX PUBLIC LAYERS                         */
+/* ================================================================ */
+.disha-layer-grid {
+  width: min(100% - (2 * var(--disha-gutter)), var(--disha-page-max));
+  margin-inline: auto;
+  padding: 0 var(--disha-gutter);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  margin-top: 2rem;
+}
+
+.disha-layer-card {
+  border: 1px solid var(--disha-border-subtle);
+  border-radius: var(--disha-radius-sm);
+  padding: 1.5rem;
+  background: #fff;
+}
+
+.disha-layer-num {
+  display: block;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--disha-accent);
+  margin-bottom: 6px;
+}
+
+.disha-layer-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 8px;
+}
+
+.disha-layer-card p {
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--disha-text-muted);
+}
+
+/* ================================================================ */
+/* VYUHA GRID                                                      */
+/* ================================================================ */
+.disha-vyuha-grid {
+  width: min(100% - (2 * var(--disha-gutter)), var(--disha-page-max));
+  margin-inline: auto;
+  padding: 0 var(--disha-gutter);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.disha-vyuha-card {
+  border: 1px solid var(--disha-border-subtle);
+  border-radius: var(--disha-radius-sm);
+  padding: 1.5rem;
+  background: #fff;
+}
+
+.disha-vyuha-wide {
+  grid-column: 1 / -1;
+}
+
+.disha-vyuha-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 8px;
+}
+
+.disha-vyuha-card p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--disha-text-muted);
+}
+
+/* ================================================================ */
+/* DOCTRINE SPLIT — PERMITTED / PROHIBITED                        */
+/* ================================================================ */
+.disha-doctrine-split {
+  width: min(100% - (2 * var(--disha-gutter)), var(--disha-wide-content-max));
+  margin-inline: auto;
+  padding: 0 var(--disha-gutter);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.disha-doctrine-col {
+  padding: 1.5rem;
+  border: 1px solid var(--disha-border-subtle);
+  border-radius: var(--disha-radius-sm);
+  background: #fff;
+}
+
+.disha-doctrine-col h3 {
+  margin-bottom: 1rem;
+}
+
+/* ================================================================ */
+/* MEMORY GRID — THREE MEMORY SYSTEMS                             */
+/* ================================================================ */
+.disha-memory-grid {
+  width: min(100% - (2 * var(--disha-gutter)), var(--disha-page-max));
+  margin-inline: auto;
+  padding: 0 var(--disha-gutter);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  margin-top: 2rem;
+}
+
+.disha-memory-card {
+  border: 1px solid var(--disha-border-subtle);
+  border-radius: var(--disha-radius-sm);
+  padding: 1.5rem;
+  background: #fff;
+}
+
+.disha-memory-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 8px;
+}
+
+.disha-memory-card p {
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--disha-text-muted);
+}
+
+/* ================================================================ */
+/* EVIDENCE CLASS GRID — FOUR CLASSES                              */
+/* ================================================================ */
+.disha-evidence-class-grid {
+  width: min(100% - (2 * var(--disha-gutter)), var(--disha-page-max));
+  margin-inline: auto;
+  padding: 0 var(--disha-gutter);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.disha-evidence-card {
+  border: 1px solid var(--disha-border-subtle);
+  border-radius: var(--disha-radius-sm);
+  padding: 1.25rem;
+  background: #fff;
+}
+
+.disha-evidence-card p {
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--disha-text-muted);
+  margin-top: 10px;
+}
+
+.disha-ev-badge {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 3px;
+}
+
+.disha-ev-verified {
+  background: rgba(26, 58, 106, 0.08);
+  color: var(--disha-blue);
+}
+
+.disha-ev-allegation {
+  background: rgba(178, 138, 68, 0.12);
+  color: #7a5800;
+}
+
+.disha-ev-assessment {
+  background: rgba(126, 31, 31, 0.08);
+  color: var(--disha-accent);
+}
+
+.disha-ev-unresolved {
+  background: rgba(108, 98, 88, 0.08);
+  color: var(--disha-text-muted);
+}
+
+/* ================================================================ */
+/* RESEARCH ADVISER CARD                                          */
+/* ================================================================ */
+.disha-adviser-card {
+  border: 1px solid var(--disha-border-subtle);
+  border-radius: var(--disha-radius-sm);
+  padding: 1.5rem;
+  background: #fff;
+  margin-top: 2rem;
+}
+
+.disha-adviser-card p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--disha-ink);
+}
+
+/* ================================================================ */
+/* SYSTEM MAP — 12 DOMAINS                                        */
+/* ================================================================ */
+.disha-system-grid {
+  width: min(100% - (2 * var(--disha-gutter)), var(--disha-page-max));
+  margin-inline: auto;
+  padding: 0 var(--disha-gutter);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.disha-system-item {
+  border: 1px solid var(--disha-border-subtle);
+  border-radius: var(--disha-radius-sm);
+  padding: 1.25rem;
+  background: #fff;
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--disha-text-muted);
+}
+
+.disha-system-item strong {
+  display: block;
+  color: var(--disha-charcoal);
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+/* ================================================================ */
+/* FAQ SECTION                                                     */
+/* ================================================================ */
+.disha-faq-list {
+  width: min(100% - (2 * var(--disha-gutter)), var(--disha-content-max));
+  margin-inline: auto;
+  padding: 0 var(--disha-gutter);
+}
+
+.disha-faq-item {
+  border-bottom: 1px solid var(--disha-border-light);
+  padding: 0.25rem 0;
+}
+
+.disha-faq-item:first-child {
+  border-top: 1px solid var(--disha-border-light);
+}
+
+.disha-faq-item summary {
+  padding: 1rem 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--disha-charcoal);
+  cursor: pointer;
+  border: none;
+}
+
+.disha-faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.disha-faq-item summary::marker {
+  display: none;
+  content: "";
+}
+
+.disha-faq-item summary {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.disha-faq-item summary::after {
+  content: "+";
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: var(--disha-text-muted);
+  transition: transform 0.2s ease;
+}
+
+.disha-faq-item[open] summary::after {
+  content: "–";
+}
+
+.disha-faq-answer {
+  padding: 0 0 1rem;
+}
+
+.disha-faq-answer p {
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--disha-text-muted);
+}
+
+/* ================================================================ */
+/* FINAL STATEMENT & CITATION BLOCK                                */
+/* ================================================================ */
+.disha-final-statement {
+  background: var(--disha-surface);
+  width: 100%;
+  padding-top: var(--disha-section-space);
+  padding-bottom: var(--disha-section-space);
+}
+
+.disha-final-h2 {
+  font-size: clamp(2.4rem, 5vw, 4.5rem);
+  max-width: 16ch;
+}
+
+.disha-citation {
+  padding: 1rem;
+  background: var(--disha-surface);
+  border: 1px solid var(--disha-border-subtle);
+  border-radius: var(--disha-radius-sm);
+  font-family: "Georgia", serif;
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--disha-ink);
+  margin: 0;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.disha-author-block {
+  margin-top: 2rem;
+  padding: 1.25rem;
+  border: 1px solid var(--disha-border-subtle);
+  border-radius: var(--disha-radius-sm);
+  background: var(--disha-surface);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.disha-author-block p {
+  font-size: 13px;
+  line-height: 1.65;
+  color: var(--disha-text-muted);
+  margin: 0;
+}
+
+.disha-author-block p strong {
+  color: var(--disha-charcoal);
+}
+
+.disha-updated-block {
+  text-align: right;
+}
+
+/* ================================================================ */
+/* INTERNAL LINKS GRID                                             */
+/* ================================================================ */
+.disha-links-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.disha-link-card {
+  display: block;
+  padding: 1rem 1.25rem;
+  border: 1px solid var(--disha-border-subtle);
+  border-radius: var(--disha-radius-sm);
+  background: #fff;
+  text-decoration: none;
+  color: var(--disha-charcoal);
+  font-size: 14px;
+  font-weight: 700;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.disha-link-card:hover {
+  border-color: var(--disha-accent-mid);
+  background: var(--disha-accent-light);
+}
+
+.disha-link-card span {
+  display: block;
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--disha-text-muted);
+  margin-top: 3px;
+}
+
+/* ================================================================ */
+/* Citation Block (inside disha-citation-block)                    */
+/* ================================================================ */
+.disha-citation-block .disha-citation {
+  background: #fff;
+}
+
+/* ================================================================ */
+/* RESPONSIVE — TABLET                                            */
+/* ================================================================ */
+@media (max-width: 1199px) {
+  .disha-hero {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    min-height: auto;
+    padding-top: 3rem;
+  }
+
+  .disha-hero-title {
+    max-width: 100%;
+  }
+
+  .disha-hero-visual {
+    max-width: 100%;
+    max-height: 420px;
+  }
+
+  .disha-hero-visual img {
+    max-height: 380px;
+  }
+
+  .disha-facts-inner {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+  }
+
+  .disha-exhibit-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .disha-institutional-layout {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .disha-chain-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .disha-cognitive-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .disha-cog-card:nth-child(n+5) {
+    grid-column: span 1;
+  }
+
+  .disha-cog-card:nth-child(n+6) {
+    grid-column: span 2;
+  }
+
+  .disha-layer-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .disha-vyuha-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .disha-evidence-class-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .disha-system-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .disha-links-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .disha-list-two-col {
+    grid-template-columns: 1fr;
+  }
+
+  .disha-memory-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .disha-timeline-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .disha-hero-lead {
+    max-width: 100%;
+  }
+}
+
+/* ================================================================ */
+/* RESPONSIVE — MOBILE                                             */
+/* ================================================================ */
+@media (max-width: 767px) {
+  .disha-section {
+    padding-top: var(--disha-section-space-mobile);
+    padding-bottom: var(--disha-section-space-mobile);
+  }
+
+  .disha-section-alt {
+    padding-top: var(--disha-section-space-mobile);
+    padding-bottom: var(--disha-section-space-mobile);
+  }
+
+  .disha-hero {
+    padding-top: 2rem;
+  }
+
+  .disha-hero-visual {
+    max-height: 380px;
+  }
+
+  .disha-hero-visual img {
+    max-height: 320px;
+  }
+
+  .disha-facts-inner {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+
+  .disha-fact dd {
+    font-size: 12px;
+  }
+
+  .disha-chain-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .disha-cognitive-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .disha-cog-card:nth-child(n+6) {
+    grid-column: span 1;
+  }
+
+  .disha-layer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .disha-vyuha-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .disha-vyuha-wide {
+    grid-column: 1;
+  }
+
+  .disha-doctrine-split {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .disha-evidence-class-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .disha-system-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .disha-links-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .disha-memory-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .disha-timeline-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .disha-author-block {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .disha-updated-block {
+    text-align: left;
+  }
+
+  .disha-document-wrapper {
+    width: 100%;
+  }
+
+  .disha-exhibit-grid .disha-document-wrapper {
+    min-width: unset;
+  }
+
+  .disha-document-full {
+    width: 100%;
+  }
+
+  .disha-meta-dl div {
+    grid-template-columns: 1fr;
+    gap: 2px;
+  }
+
+  .disha-system-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* ================================================================ */
+/* ACCESSIBILITY — FOCUS STATES                                   */
+/* ================================================================ */
+.disha-link-card:focus-visible,
+.disha-inline-link:focus-visible,
+.disha-hero-actions a:focus-visible,
+.disha-actions a:focus-visible {
+  outline: 2px solid var(--disha-accent);
+  outline-offset: 2px;
+}
+
+.disha-faq-item summary:focus-visible {
+  outline: 2px solid var(--disha-accent);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* ================================================================ */
+/* PRINT STYLES                                                    */
+/* ================================================================ */
+@media print {
+  .disha-hero {
+    display: block;
+  }
+
+  .disha-hero-visual {
+    max-width: 50%;
+    margin: 1rem auto;
+    page-break-inside: avoid;
+  }
+
+  .disha-exhibit-grid,
+  .disha-institutional-layout,
+  .disha-chain-grid,
+  .disha-cognitive-grid,
+  .disha-layer-grid,
+  .disha-vyuha-grid,
+  .disha-doctrine-split,
+  .disha-memory-grid,
+  .disha-evidence-class-grid,
+  .disha-system-grid,
+  .disha-links-grid,
+  .disha-timeline-grid {
+    break-inside: avoid;
+  }
+
+  .disha-facts-strip {
+    border: 1px solid #ccc;
+  }
+
+  .disha-section-alt {
+    background: none;
+  }
+}

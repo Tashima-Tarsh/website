@@ -127,7 +127,7 @@
 }
 
 .disha-list li::before {
-  content: "*";
+  content: "";
   position: absolute;
   left: 0.25rem;
   color: var(--disha-accent);
@@ -1520,8 +1520,8 @@
   grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
   gap: 32px;
   align-items: start;
-  padding-top: 34px;
-  padding-bottom: 34px;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 .disha-page-map-intro {
@@ -1536,14 +1536,9 @@
 
 .disha-page-map-item {
   display: block;
-  padding: 18px 0 16px;
+  padding: 8px 0;
   color: var(--disha-charcoal);
   text-decoration: none;
-  border-radius: 0;
-  border: 1px solid rgba(6, 38, 81, 0.1);
-  padding-left: 16px;
-  padding-right: 16px;
-  background: #fffdfa;
 }
 
 .disha-page-map-item strong {
@@ -1567,8 +1562,8 @@
 }
 
 .disha-facts-strip {
-  border-top-color: rgba(6, 38, 81, 0.14);
-  border-bottom-color: rgba(6, 38, 81, 0.14);
+  border-top-color: transparent;
+  border-bottom-color: transparent;
 }
 
 .disha-facts-inner {
@@ -1608,23 +1603,45 @@
   display: none;
 }
 
-.disha-answer-structured {
-  margin-bottom: 1rem;
+.disha-answer-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.8fr);
+  gap: 28px;
+  align-items: start;
+}
+
+.disha-answer-aside {
+  padding-top: 8px;
+}
+
+.disha-answer-kicker {
+  margin: 0 0 0.9rem;
+  font-size: 0.94rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--disha-charcoal);
 }
 
 .disha-answer-note {
-  margin-top: 1.2rem;
-  padding-top: 1rem;
-  border-top: 1px solid rgba(6, 38, 81, 0.12);
+  margin-top: 1rem;
+  padding-top: 0;
+  border-top: 0;
+  color: var(--disha-text-muted);
 }
 
 .disha-list {
   margin: 0.25rem 0 1.35rem;
+  list-style: disc;
+  padding-left: 1.1rem;
 }
 
 .disha-list li {
-  padding-left: 1.2rem;
+  padding-left: 0;
   margin-bottom: 0.55rem;
+}
+
+.disha-list-clean li::before {
+  display: none;
 }
 
 .disha-exhibit-grid,
@@ -1683,7 +1700,7 @@
 .disha-system-item,
 .disha-link-card {
   padding: 22px 0;
-  border-top: 1px solid rgba(6, 38, 81, 0.16);
+  border-top: 0;
 }
 
 .disha-chain-grid,
@@ -1758,6 +1775,7 @@
   }
 
   .disha-page-map,
+  .disha-answer-grid,
   .disha-timeline-grid,
   .disha-chain-grid,
   .disha-cognitive-grid,

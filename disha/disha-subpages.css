@@ -281,6 +281,83 @@ body.disha-subpage main > .section {
   }
 }
 
+/* Child page shell tightening: June 2026 */
+
+body.disha-subpage main > .section {
+  padding-top: clamp(34px, 5vw, 56px);
+  padding-bottom: clamp(34px, 5vw, 56px);
+}
+
+body.disha-subpage main > .section + .section {
+  border-top: 1px solid rgba(6, 38, 81, 0.1);
+}
+
+body.disha-subpage .hero {
+  display: grid;
+  gap: 18px;
+  align-items: start;
+}
+
+body.disha-subpage h1 {
+  max-width: 11ch;
+  margin-bottom: 0.85rem;
+}
+
+body.disha-subpage main .lead,
+body.disha-subpage main p,
+body.disha-subpage main li,
+body.disha-subpage .citation-text,
+body.disha-subpage .citation-block pre,
+body.disha-subpage .term-def {
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+body.disha-subpage .hero-actions {
+  margin-top: 0.35rem;
+}
+
+body.disha-subpage .hero-actions a,
+body.disha-subpage .hero-actions button {
+  margin-right: 0;
+}
+
+body.disha-subpage .validation-table,
+body.disha-subpage .source-table,
+body.disha-subpage .citation-block,
+body.disha-subpage .evidence-key-item {
+  border-radius: 0;
+}
+
+body.disha-subpage .glossary-entry,
+body.disha-subpage .evidence-key-item {
+  border-top: 1px solid rgba(6, 38, 81, 0.12);
+  border-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  background: transparent;
+}
+
+body.disha-subpage .evidence-key {
+  gap: 0 28px;
+}
+
+body.disha-subpage .glossary-grid {
+  max-width: 920px;
+}
+
+@media (max-width: 720px) {
+  body.disha-subpage h1 {
+    font-size: clamp(2.1rem, 9vw, 3rem);
+  }
+
+  body.disha-subpage .validation-table th,
+  body.disha-subpage .validation-table td,
+  body.disha-subpage .source-table th,
+  body.disha-subpage .source-table td {
+    min-width: 140px;
+  }
+}
+
 /* Editorial page system. Header and footer continue to use /styles.css. */
 body.disha-subpage {
   background: linear-gradient(180deg, #fff 0, #fff 70%, #fbfaf6 100%);

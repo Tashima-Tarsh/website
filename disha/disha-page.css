@@ -8,12 +8,12 @@
 
 /* ---- CSS Variables ---- */
 :root {
-  --disha-page-max: 1280px;
+  --disha-page-max: 1240px;
   --disha-content-max: 760px;
   --disha-wide-content-max: 1080px;
   --disha-reading-max: 72ch;
-  --disha-section-space: clamp(5rem, 9vw, 9rem);
-  --disha-section-space-mobile: 4rem;
+  --disha-section-space: clamp(3.5rem, 6vw, 5.75rem);
+  --disha-section-space-mobile: 3rem;
   --disha-gutter: clamp(1rem, 3vw, 2rem);
   --disha-radius-sm: 10px;
   --disha-radius-md: 16px;
@@ -92,11 +92,11 @@
 }
 
 .disha-h2 {
-  font-size: clamp(2rem, 4vw, 3.8rem);
-  line-height: 1.05;
+  font-size: clamp(1.9rem, 3.1vw, 3rem);
+  line-height: 1.08;
   letter-spacing: -0.035em;
-  max-width: 18ch;
-  margin-bottom: 1.5rem;
+  max-width: 17ch;
+  margin-bottom: 1.1rem;
   color: var(--disha-charcoal);
   font-family: "Cormorant Garamond", Georgia, serif;
   font-weight: 700;
@@ -199,7 +199,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-  margin-top: 1.5rem;
+  margin-top: 1.25rem;
 }
 
 .disha-answer-p {
@@ -211,20 +211,24 @@
 /* ================================================================ */
 .disha-hero {
   display: grid;
-  grid-template-columns: 7fr 5fr;
-  gap: 3rem;
+  grid-template-columns: minmax(0, 6fr) minmax(320px, 5fr);
+  gap: 2rem;
   align-items: center;
-  min-height: 680px;
-  padding-top: calc(var(--disha-section-space) * 0.7);
-  padding-bottom: 0;
+  min-height: auto;
+  padding-top: clamp(2rem, 4vw, 3rem);
+  padding-bottom: 1rem;
+}
+
+.disha-hero-text {
+  max-width: 60ch;
 }
 
 .disha-hero-title {
-  font-size: clamp(2.7rem, 6vw, 5.8rem);
-  line-height: 0.98;
+  font-size: clamp(2.3rem, 4.9vw, 4.45rem);
+  line-height: 1.01;
   letter-spacing: -0.045em;
-  max-width: 13ch;
-  margin: 0.75rem 0 1.5rem;
+  max-width: 11ch;
+  margin: 0.55rem 0 1.1rem;
   color: var(--disha-charcoal);
   font-family: "Cormorant Garamond", Georgia, serif;
   font-weight: 700;
@@ -232,10 +236,10 @@
 
 .disha-hero-lead {
   font-size: clamp(1rem, 0.96rem + 0.2vw, 1.15rem);
-  line-height: 1.65;
+  line-height: 1.6;
   color: var(--disha-text-muted);
-  margin-bottom: 1rem;
-  max-width: 62ch;
+  margin-bottom: 0.85rem;
+  max-width: 58ch;
 }
 
 .disha-does-not {
@@ -249,14 +253,14 @@
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-  margin-top: 1.75rem;
+  margin-top: 1.25rem;
 }
 
 /* Hero visual */
 .disha-hero-visual {
   width: 100%;
-  max-width: 560px;
-  max-height: 520px;
+  max-width: 500px;
+  max-height: 430px;
   margin-inline: auto;
   display: grid;
   place-items: center;
@@ -268,7 +272,7 @@
 
 .disha-hero-visual picture {
   width: 100%;
-  padding: 12px;
+  padding: 8px;
   display: grid;
   place-items: center;
 }
@@ -276,7 +280,7 @@
 .disha-hero-visual img {
   width: 100%;
   height: auto;
-  max-height: 460px;
+  max-height: 350px;
   object-fit: contain;
   object-position: center;
 }
@@ -284,7 +288,7 @@
 /* ---- Figcaption ---- */
 .disha-figcaption {
   width: 100%;
-  padding: 10px 14px;
+  padding: 8px 12px;
   border-top: 1px solid var(--disha-border-subtle);
   color: var(--disha-text-muted);
   font-size: 12px;
@@ -303,10 +307,10 @@
 .disha-facts-inner {
   width: min(100% - (2 * var(--disha-gutter)), var(--disha-page-max));
   margin-inline: auto;
-  padding: 18px var(--disha-gutter);
+  padding: 14px var(--disha-gutter);
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 1rem;
+  gap: 0.75rem 1rem;
 }
 
 .disha-fact {
@@ -340,9 +344,9 @@
   padding: 0 var(--disha-gutter);
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 2.5rem;
-  margin-top: 2.5rem;
-  margin-bottom: 2.5rem;
+  gap: 1.75rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
 .disha-exhibit {
@@ -434,9 +438,9 @@
   padding: 0 var(--disha-gutter);
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 2.5rem;
+  gap: 1.75rem;
   align-items: start;
-  margin-top: 2rem;
+  margin-top: 1.5rem;
 }
 
 .disha-institutional-figure {
@@ -487,14 +491,14 @@
   padding: 0 var(--disha-gutter);
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1.25rem;
-  margin-top: 2rem;
+  gap: 1rem;
+  margin-top: 1.5rem;
 }
 
 .disha-timeline-item {
   border: 1px solid var(--disha-border-subtle);
   border-radius: var(--disha-radius-sm);
-  padding: 1.5rem;
+  padding: 1.25rem;
   background: #fff;
 }
 
@@ -532,14 +536,14 @@
   padding: 0 var(--disha-gutter);
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  gap: 1rem;
-  margin-top: 2rem;
+  gap: 0.9rem;
+  margin-top: 1.5rem;
 }
 
 .disha-chain-card {
   border: 1px solid var(--disha-border-subtle);
   border-radius: var(--disha-radius-sm);
-  padding: 1.5rem;
+  padding: 1.2rem;
   background: #fff;
   display: flex;
   flex-direction: column;
@@ -573,14 +577,14 @@
   padding: 0 var(--disha-gutter);
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 1rem;
-  margin-top: 2rem;
+  gap: 0.9rem;
+  margin-top: 1.5rem;
 }
 
 .disha-cog-card {
   border: 1px solid var(--disha-border-subtle);
   border-radius: var(--disha-radius-sm);
-  padding: 1.5rem;
+  padding: 1.2rem;
   background: #fff;
 }
 
@@ -613,14 +617,14 @@
   padding: 0 var(--disha-gutter);
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1.25rem;
-  margin-top: 2rem;
+  gap: 1rem;
+  margin-top: 1.5rem;
 }
 
 .disha-layer-card {
   border: 1px solid var(--disha-border-subtle);
   border-radius: var(--disha-radius-sm);
-  padding: 1.5rem;
+  padding: 1.2rem;
   background: #fff;
 }
 
@@ -654,14 +658,14 @@
   padding: 0 var(--disha-gutter);
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
-  margin-top: 2rem;
+  gap: 0.9rem;
+  margin-top: 1.5rem;
 }
 
 .disha-vyuha-card {
   border: 1px solid var(--disha-border-subtle);
   border-radius: var(--disha-radius-sm);
-  padding: 1.5rem;
+  padding: 1.2rem;
   background: #fff;
 }
 
@@ -689,12 +693,12 @@
   padding: 0 var(--disha-gutter);
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 2rem;
-  margin-top: 2rem;
+  gap: 1.25rem;
+  margin-top: 1.5rem;
 }
 
 .disha-doctrine-col {
-  padding: 1.5rem;
+  padding: 1.2rem;
   border: 1px solid var(--disha-border-subtle);
   border-radius: var(--disha-radius-sm);
   background: #fff;
@@ -713,14 +717,14 @@
   padding: 0 var(--disha-gutter);
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1.25rem;
-  margin-top: 2rem;
+  gap: 1rem;
+  margin-top: 1.5rem;
 }
 
 .disha-memory-card {
   border: 1px solid var(--disha-border-subtle);
   border-radius: var(--disha-radius-sm);
-  padding: 1.5rem;
+  padding: 1.2rem;
   background: #fff;
 }
 
@@ -744,8 +748,8 @@
   padding: 0 var(--disha-gutter);
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 1rem;
-  margin-top: 2rem;
+  gap: 0.9rem;
+  margin-top: 1.5rem;
 }
 
 .disha-evidence-card {
@@ -798,9 +802,9 @@
 .disha-adviser-card {
   border: 1px solid var(--disha-border-subtle);
   border-radius: var(--disha-radius-sm);
-  padding: 1.5rem;
+  padding: 1.2rem;
   background: #fff;
-  margin-top: 2rem;
+  margin-top: 1.5rem;
 }
 
 .disha-adviser-card p {
@@ -818,8 +822,8 @@
   padding: 0 var(--disha-gutter);
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 1rem;
-  margin-top: 2rem;
+  gap: 0.9rem;
+  margin-top: 1.5rem;
 }
 
 .disha-system-item {
@@ -1009,9 +1013,9 @@
 @media (max-width: 1199px) {
   .disha-hero {
     grid-template-columns: 1fr;
-    gap: 1.5rem;
+    gap: 1.25rem;
     min-height: auto;
-    padding-top: 3rem;
+    padding-top: 2.5rem;
   }
 
   .disha-hero-title {
@@ -1020,11 +1024,11 @@
 
   .disha-hero-visual {
     max-width: 100%;
-    max-height: 420px;
+    max-height: 360px;
   }
 
   .disha-hero-visual img {
-    max-height: 380px;
+    max-height: 300px;
   }
 
   .disha-facts-inner {
@@ -1110,15 +1114,21 @@
   }
 
   .disha-hero {
-    padding-top: 2rem;
+    padding-top: 1.5rem;
+    padding-bottom: 0.5rem;
+  }
+
+  .disha-hero-title {
+    font-size: clamp(2rem, 9vw, 2.9rem);
+    max-width: 100%;
   }
 
   .disha-hero-visual {
-    max-height: 380px;
+    max-height: 300px;
   }
 
   .disha-hero-visual img {
-    max-height: 320px;
+    max-height: 250px;
   }
 
   .disha-facts-inner {

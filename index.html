@@ -17,20 +17,20 @@
   <link rel="icon" href="/assets/brand/favicon-64.png?v=tnk-20260610" type="image/png" sizes="64x64">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png?v=tnk-20260610" sizes="180x180">
   <title>Constitutional Records & Research Archive | thenitishkr</title>
-  <meta name="description" content="Official public-interest research archive and evidence records by Nitish Kumar (thenitishkr): DISHA, Article 12, and constitutional accountability in India.">
+  <meta name="description" content="Public research archive of Nitish Kumar, inventor of DISHA, with 6,000+ evidence items and reviewed case-file claims checked against official records.">
   <meta name="robots" content="index, follow, max-image-preview:large">
   <meta name="archive-successor" content="Diksha Sharma">
   <meta name="msvalidate.01" content="A96FB222179B2086591EDB93382DCCC0">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://thenitishkr.in/">
   <meta property="og:title" content="Constitutional Records & Research Archive | thenitishkr">
-  <meta property="og:description" content="Official public-interest research archive and evidence records by Nitish Kumar (thenitishkr): DISHA, Article 12, and constitutional accountability in India.">
+  <meta property="og:description" content="Public research archive of Nitish Kumar, inventor of DISHA, with 6,000+ evidence items and reviewed case-file claims checked against official records.">
   <meta property="og:image" content="https://thenitishkr.in/assets/images/og/home-evidence-records.png?v=20260608visual">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@thenitishkr">
   <meta name="twitter:creator" content="@thenitishkr">
   <meta name="twitter:title" content="Constitutional Records & Research Archive | thenitishkr">
-  <meta name="twitter:description" content="Official public-interest research archive and evidence records by Nitish Kumar (thenitishkr): DISHA, Article 12, and constitutional accountability in India.">
+  <meta name="twitter:description" content="Public research archive of Nitish Kumar, inventor of DISHA, with 6,000+ evidence items and reviewed case-file claims checked against official records.">
   <link rel="dns-prefetch" href="https://analytics.ahrefs.com">
   <link rel="dns-prefetch" href="https://www.googletagmanager.com">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -111,6 +111,17 @@
     .stat-card:nth-child(6) .stat-number { color: var(--red-2); }
     .stat-card:nth-child(7) .stat-number { color: #b8872c; }
     .stat-card:nth-child(8) .stat-number { color: #1a6b3c; }
+    .stat-value {
+      font-family: 'Libre Franklin', sans-serif;
+      font-size: clamp(24px, 2.2vw, 31px);
+      font-weight: 900;
+      line-height: 1.12;
+      color: var(--red);
+      letter-spacing: -.02em;
+    }
+    .stat-card:nth-child(2) .stat-value { color: var(--red-2); }
+    .stat-card:nth-child(3) .stat-value { color: #b8872c; }
+    .stat-card:nth-child(4) .stat-value { color: #1a6b3c; }
     .stat-label {
       font-size: 11px;
       font-weight: 900;
@@ -217,7 +228,7 @@
       margin-top: 20px;
       text-align: justify;
     }
-    /* ── Research archives premium grid ── */
+    /* ── Research archives grid ── */
     .research-archives-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -266,14 +277,70 @@
       line-height: 1.55;
       margin-top: 2px;
     }
+    .credibility-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+    .credibility-card,
+    .entry-card {
+      padding: 24px;
+      border: 1px solid rgba(7,26,66,.12);
+      border-top: 4px solid var(--red);
+      border-radius: var(--radius);
+      background: #fff;
+      box-shadow: var(--shadow);
+    }
+    .credibility-card:nth-child(2),
+    .entry-card:nth-child(2) { border-top-color: var(--red-2); }
+    .credibility-card:nth-child(3),
+    .entry-card:nth-child(3) { border-top-color: #b8872c; }
+    .credibility-card:nth-child(4) { border-top-color: #1a6b3c; }
+    .entry-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+    .entry-card .hero-actions {
+      margin-top: 16px;
+    }
+    #archive-stats .home-stats-grid {
+      display: none;
+    }
+    .archive-status-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+    .archive-status-card {
+      padding: 28px 22px 22px;
+      border: 1px solid rgba(7,26,66,.12);
+      border-top: 5px solid var(--red);
+      border-radius: var(--radius);
+      background: #fff;
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .archive-status-card:nth-child(2) { border-top-color: var(--red-2); }
+    .archive-status-card:nth-child(3) { border-top-color: #b8872c; }
+    .archive-status-card:nth-child(4) { border-top-color: #1a6b3c; }
+    .archive-status-card .stat-number,
+    .archive-status-card .stat-value {
+      margin-top: 2px;
+    }
     @media (max-width: 1100px) {
       .home-stats-grid { grid-template-columns: repeat(2, 1fr); }
       .research-archives-grid { grid-template-columns: repeat(2, 1fr); }
+      .entry-grid { grid-template-columns: 1fr; }
+      .archive-status-grid { grid-template-columns: 1fr; }
     }
     @media (max-width: 900px) {
       .home-statement-inner { grid-template-columns: 1fr; gap: 32px; }
       .home-statement-sidebar { position: static; }
       .research-archives-grid { grid-template-columns: 1fr; }
+      .credibility-grid { grid-template-columns: 1fr; }
     }
     @media (max-width: 600px) {
       .home-stats-grid { grid-template-columns: 1fr 1fr; }
@@ -300,8 +367,8 @@
         <p class="eyebrow">Public-Interest Research Archive · Est. 2012</p>
         <h1>Constitutional records, evidence, and accountability research.</h1>
         <div class="hero-actions">
-          <a class="button" href="/intelligence/">Open the Archive</a>
-          <a class="button secondary" href="#statement">Read the Statement</a>
+          <a class="button" href="/intelligence/">Browse Published Evidence</a>
+          <a class="button secondary" href="/statement/">Read the Full Statement</a>
         </div>
         <p class="hero-intro">Thirteen evidence case files built from public records, Supreme Court petitions, RTI trails, and source-linked data. The research centres on one constitutional question: when every authority reports success and every dashboard reports progress — when the citizen is harmed, can the State still find them? The work spans <a href="/article-12/">Article 12 constitutional accountability</a>, the <a href="/disha/">DISHA Intelligence Architecture</a>, <a href="/digital-constitutional-personhood/">Digital Constitutional Personhood</a>, and <a href="/intelligence/meity-digital-governance/">W.P.(Crl.) No.&#8202;163/2026</a> before the Supreme Court of India.</p>
       </div>
@@ -318,9 +385,9 @@
       <div class="section-head reveal">
         <div>
           <p class="eyebrow">Archive at a glance</p>
-          <h2 id="stats-heading">The record in numbers.</h2>
+          <h2 id="stats-heading">How this archive is disclosed.</h2>
         </div>
-        <p>Every figure below is drawn from the documented record. No estimates, no projections.</p>
+        <p>These four disclosures separate archive scale, documentary verification and DISHA's constitutional analysis.</p>
       </div>
       <div class="home-stats-grid reveal">
         <div class="stat-card">
@@ -367,6 +434,79 @@
           <div class="stat-sub">PTI · Economic Times · The Tribune · Deccan Herald</div>
           <div class="stat-sub" style="margin-top:6px;font-size:11px;opacity:.7;">Sources: <a href="/media/" style="color:inherit;">R-06</a></div>
         </div>
+      </div>
+    </section>
+
+    <section class="section split" aria-labelledby="verification-meaning">
+      <div class="reveal">
+        <p class="eyebrow">What the 97% figure means</p>
+        <h2 id="verification-meaning">Documentary source matching within the reviewed case-file set.</h2>
+        <p>DISHA reviewed the factual claims included in the published case files and matched them against identified government records, court documents, audit material, official correspondence and other primary public records.</p>
+        <p>In the current reviewed set, 97% of the assessed case-file claims were supported by the cited official documentary record.</p>
+        <p>This percentage measures documentary source matching within the reviewed case-file set. It does not mean that a government authority, court or external institution has certified DISHA with a 97% rating.</p>
+        <p>After verifying the documentary facts, DISHA examines how institutions, legal duties, timelines and administrative responses connect. Its Article 12 analysis identifies situations where State responsibility appears missing, fragmented, unanswered or ineffective. That constitutional conclusion is the analytical finding of DISHA and Nitish Kumar, unless a court or public authority has separately recorded the same conclusion.</p>
+      </div>
+      <div class="reveal">
+        <p class="eyebrow">How DISHA reaches its findings</p>
+        <h2>Verification first. Accountability analysis second.</h2>
+        <div class="credibility-grid">
+          <article class="credibility-card">
+            <p class="label">Stage 1</p>
+            <h3>What the official records establish</h3>
+            <p>Facts directly supported by government documents, court records, audit reports, official replies or other identified primary records.</p>
+          </article>
+          <article class="credibility-card">
+            <p class="label">Stage 2</p>
+            <h3>What DISHA identifies</h3>
+            <p>DISHA connects the verified records to institutional duties, timelines and constitutional responsibility. It identifies where Article 12 accountability appears absent, fragmented, delayed or unanswered.</p>
+          </article>
+        </div>
+        <p style="margin-top:18px;">DISHA's internal documentary review found that 97% of assessed claims in the current reviewed case-file set matched the identified official record.</p>
+        <p>After connecting those verified records across institutions, duties and timelines, DISHA identifies where effective State accountability under Article 12 appears missing, fragmented or unanswered.</p>
+        <div class="hero-actions" style="margin-top:18px;">
+          <a class="button secondary" href="/disha/validation/">View Verification Method</a>
+          <a class="button secondary" href="/disha/claim-to-source-system/">Open Claim Ledger</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="reader-routes-heading">
+      <div class="archive-status-grid reveal">
+        <article class="archive-status-card">
+          <p class="stat-label">Archive scale</p>
+          <div class="stat-number">6,000+</div>
+          <p class="stat-sub">Evidence items collected across public records, audit trails, petitions, correspondence and source files.</p>
+          <div class="hero-actions" style="margin-top:10px;">
+            <a class="button secondary" href="/research-datasets/">Open source register</a>
+          </div>
+        </article>
+        <article class="archive-status-card">
+          <p class="stat-label">Reviewed case-file set</p>
+          <div class="stat-value">97% matched</div>
+          <p class="stat-sub">Assessed factual claims in the reviewed case-file set matched the identified official documentary record.</p>
+          <div class="hero-actions" style="margin-top:10px;">
+            <a class="button secondary" href="/disha/validation/">Read what this figure means</a>
+          </div>
+        </article>
+        <article class="archive-status-card">
+          <p class="stat-label">Public verification path</p>
+          <div class="stat-value">2 stages</div>
+          <p class="stat-sub">Official records establish the facts first. DISHA analysis then examines duties, timelines and Article 12 accountability.</p>
+          <div class="hero-actions" style="margin-top:10px;">
+            <a class="button secondary" href="/disha/claim-to-source-system/">Open claim ledger</a>
+          </div>
+        </article>
+        <article class="archive-status-card">
+          <p class="stat-label">Reader routes</p>
+          <div class="stat-value">4 entry points</div>
+          <p class="stat-sub">Start with the route built for journalists, public authorities, researchers, or the full statement for the record.</p>
+          <div class="hero-actions" style="margin-top:10px;">
+            <a class="button secondary" href="/start-here/#journalists">For journalists</a>
+            <a class="button secondary" href="/start-here/#public-authorities">For public authorities</a>
+            <a class="button secondary" href="/start-here/#researchers">For researchers</a>
+            <a class="button secondary" href="/statement/">Read statement</a>
+          </div>
+        </article>
       </div>
     </section>
 

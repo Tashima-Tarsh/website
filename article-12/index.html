@@ -61,14 +61,14 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Person","@id":"https://thenitishkr.in/#person","name":"Nitish Kumar","alternateName":["thenitishkr","Nitish Kumar (thenitishkr)","Nitish Kumar"],"url":"https://thenitishkr.in/","jobTitle":"Researcher, author, National Cyber Security Scholar, and inventor of DISHA","sameAs":["https://x.com/thenitishkr","https://www.linkedin.com/in/thenitishkr","https://thenitishkr.substack.com","https://medium.com/@thenitishkr","https://github.com/Tashima-Tarsh","https://www.instagram.com/thenitishkr","https://www.facebook.com/thenitishkr","https://www.reddit.com/user/Ok-File-6559/","https://www.quora.com/profile/Nitish-Kumar-11545","https://orcid.org/0009-0004-6840-4463","https://www.wikidata.org/wiki/Q140001166"],"knowsAbout":["Article 12","constitutional accountability","public authority","digital governance","citizen evidence records","DISHA"],"identifier":"https://orcid.org/0009-0004-6840-4463"},{"@type":["Article","ScholarlyArticle"],"@id":"https://thenitishkr.in/article-12/#article","headline":"Article 12 Infected: How Citizens Became Invisible","description":"Article 12 Infected explains how public authorities, schemes, dashboards, certifications, and grievance systems can grow while citizens struggle to locate accountability, remedy, and constitutional responsibility.","author":{"@id":"https://thenitishkr.in/#person"},"publisher":{"@id":"https://thenitishkr.in/#person"},"image":{"@type":"ImageObject","url":"https://thenitishkr.in/assets/images/article-12-infected-institutional-silence.png?v=20260607b","caption":"Article 12 is treated here as an accountability map: ministry, department, authority, regulator, welfare system, grievance platform, public body, and funded institution must remain answerable to the citizen."},"url":"https://thenitishkr.in/article-12/","mainEntityOfPage":"https://thenitishkr.in/article-12","inLanguage":"en-IN","about":["Article 12","State accountability","public authority","administrative reality","citizen visibility","constitutional governance","public records","digital governance"],"articleBody":"Article 12 is not merely a definition section of the Constitution of India. It is the constitutional identity of the State. Every ministry, department, authority, municipality, regulator, disaster-management body, public institution, welfare system, grievance platform, and government-funded authority ultimately derives its constitutional accountability through the framework represented by Article 12. Without Article 12, there is no meaningful answer to a citizen's most important question: Who is responsible? Article 12 is treated here as an accountability map: ministry, department, authority, regulator, welfare system, grievance platform, public body, and funded institution must remain answerable to the citizen. The research describes Article 12 Infected as the widening gap between constitutional promise and administrative reality. The infection begins when compliance becomes more important than outcomes, deepens when certification becomes more important than verification, grows when grievance disposal becomes more important than grievance resolution, and becomes systemic when citizens repeatedly encounter procedures without protection. The State becomes more visible through technology, dashboards, portals, schemes, and certifications while the citizen becomes less visible through outcomes. The Constitution was not written to produce successful files. It was written to protect citizens. Article 12 was never meant to create institutions that merely exist. It was meant to create institutions that are accountable."},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://thenitishkr.in/"},{"@type":"ListItem","position":2,"name":"Article 12","item":"https://thenitishkr.in/article-12/"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does Article 12 mean in this research?","acceptedAnswer":{"@type":"Answer","text":"Article 12 is treated as the constitutional identity of the State and the accountability framework through which citizens ask who is responsible when public authority affects rights, services, records, safety, welfare, and remedy."}},{"@type":"Question","name":"What is Article 12 Infected?","acceptedAnswer":{"@type":"Answer","text":"Article 12 Infected describes the widening gap between constitutional promise and administrative reality, where compliance, certification, dashboards, and schemes may exist while citizen outcomes and remedies remain unresolved."}},{"@type":"Question","name":"What is the central question?","acceptedAnswer":{"@type":"Answer","text":"If every authority reports success, every dashboard reports progress, every certification reports compliance, and every department reports achievement, why do citizens continue reporting the same failures year after year?"}}]}]}</script>
   <style>
     .a12-page {
-      --a12-red: #8b1111;
-      --a12-navy: #071a42;
-      --a12-gold: #b8872c;
+      --a12-red: #12437a;
+      --a12-navy: #062651;
+      --a12-gold: #b28a44;
     }
     .a12-hero {
-      grid-template-columns: minmax(0, .95fr) minmax(420px, 1.05fr);
-      gap: 28px;
-      align-items: stretch;
+      grid-template-columns: minmax(0, 1fr) minmax(360px, .94fr);
+      gap: 24px 34px;
+      align-items: start;
       padding-top: clamp(44px, 6vw, 72px);
       padding-bottom: clamp(40px, 6vw, 68px);
     }
@@ -77,21 +77,21 @@
       flex-direction: column;
       justify-content: center;
       padding: clamp(26px, 4vw, 42px);
-      border: 1px solid rgba(139,17,17,.18);
-      border-top: 7px solid var(--a12-red);
+      border: 1px solid rgba(6,38,81,.12);
+      border-top: 4px solid var(--a12-red);
       border-radius: var(--radius);
-      background: linear-gradient(180deg, #fff, #fffaf4);
-      box-shadow: var(--glow);
+      background: #fffdfa;
+      box-shadow: var(--shadow);
     }
     .a12-hero-copy h1 {
       max-width: 760px;
-      font-size: clamp(48px, 7vw, 92px);
-      line-height: .9;
+      font-size: clamp(40px, 5.8vw, 70px);
+      line-height: .96;
     }
     .a12-hero-copy .lead { max-width: 700px; }
     .a12-visual {
       margin: 0;
-      min-height: 100%;
+      min-height: 0;
       overflow: hidden;
       border: 1px solid rgba(7,26,66,.16);
       border-radius: var(--radius);
@@ -108,10 +108,10 @@
     .a12-visual img {
       width: 100%;
       height: 100%;
-      min-height: 520px;
+      min-height: 360px;
       object-fit: contain;
-      padding: 18px;
-      filter: saturate(.95) contrast(1.03);
+      padding: 14px;
+      filter: none;
     }
     .a12-visual figcaption {
       padding: 14px 16px;
@@ -121,7 +121,7 @@
       line-height: 1.45;
     }
     .a12-question {
-      border: 1px solid rgba(139,17,17,.22);
+      border: 1px solid rgba(6,38,81,.12);
       border-radius: var(--radius);
       background: #fff;
       padding: clamp(26px, 5vw, 52px);
@@ -129,8 +129,8 @@
     }
     .a12-question h2 {
       max-width: 900px;
-      font-size: clamp(36px, 5vw, 68px);
-      line-height: .95;
+      font-size: clamp(32px, 4.2vw, 54px);
+      line-height: 1.02;
     }
     .a12-answer {
       display: grid;
@@ -152,7 +152,7 @@
       display: grid;
       place-items: center;
       padding: 12px;
-      border: 1px solid rgba(139,17,17,.18);
+      border: 1px solid rgba(6,38,81,.12);
       border-radius: var(--radius);
       background: #fff;
       color: var(--a12-red);
@@ -161,7 +161,7 @@
       letter-spacing: .12em;
       text-align: center;
       text-transform: uppercase;
-      box-shadow: 0 10px 22px rgba(52,38,22,.055);
+      box-shadow: 0 8px 18px rgba(52,38,22,.04);
     }
     .a12-infection-grid {
       display: grid;
@@ -191,9 +191,9 @@
       gap: 16px;
     }
     .a12-audit-section {
-      background: linear-gradient(180deg, #fff, #fffaf4);
-      border-top: 1px solid rgba(139,17,17,.12);
-      border-bottom: 1px solid rgba(139,17,17,.12);
+      background: #f8f5ee;
+      border-top: 1px solid rgba(6,38,81,.08);
+      border-bottom: 1px solid rgba(6,38,81,.08);
     }
     .a12-audit-section .section-head h2 {
       color: var(--charcoal);
@@ -229,19 +229,19 @@
       line-height: 1.55;
     }
     .a12-declaration {
-      border: 1px solid rgba(139,17,17,.22);
+      border: 1px solid rgba(6,38,81,.12);
       border-radius: var(--radius);
-      background: linear-gradient(135deg, #fff, #fff7ed);
+      background: #fbfaf6;
       padding: clamp(28px, 5vw, 56px);
-      box-shadow: var(--glow);
+      box-shadow: var(--shadow);
     }
     .a12-declaration p {
       max-width: 930px;
       color: var(--charcoal);
       font-family: "Cormorant Garamond", Georgia, serif;
-      font-size: clamp(30px, 4.5vw, 60px);
+      font-size: clamp(28px, 4vw, 50px);
       font-weight: 700;
-      line-height: 1;
+      line-height: 1.05;
     }
     @media (max-width: 900px) {
       .a12-hero, .a12-answer, .a12-audit { grid-template-columns: 1fr; }

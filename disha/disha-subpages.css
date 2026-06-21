@@ -629,3 +629,56 @@ body.disha-subpage .term-def {
     border-right: 0;
   }
 }
+
+/* DISHA subpage consistency pass: June 2026 */
+body.disha-subpage main > .section + .section {
+  border-top: 1px solid rgba(6, 38, 81, 0.08);
+}
+
+body.disha-subpage .page-intro-grid,
+body.disha-subpage .page-split-grid {
+  grid-template-columns: minmax(0, 1.08fr) minmax(280px, 0.92fr);
+  gap: 28px 32px;
+  align-items: start;
+}
+
+body.disha-subpage .page-intro-aside,
+body.disha-subpage .page-split-aside,
+body.disha-subpage .page-meta-box,
+body.disha-subpage .section-summary {
+  border-radius: 6px;
+  background: #fffdfa;
+}
+
+body.disha-subpage main h1 {
+  max-width: 13ch;
+}
+
+body.disha-subpage main p,
+body.disha-subpage main li,
+body.disha-subpage .page-meta-list dd,
+body.disha-subpage .citation-text,
+body.disha-subpage .citation-block pre,
+body.disha-subpage .term-def {
+  text-align: left;
+}
+
+body.disha-subpage .page-link-row {
+  gap: 10px;
+}
+
+body.disha-subpage .citation-block {
+  background: #fbfaf6;
+}
+
+body.disha-subpage .citation-text,
+body.disha-subpage .citation-block pre {
+  background: #fff;
+}
+
+@media (max-width: 720px) {
+  body.disha-subpage .page-intro-grid,
+  body.disha-subpage .page-split-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -674,3 +674,146 @@ h3 { font-size: 24px; line-height: 1.18; }
   .news-trust-grid article { border-right: 0; border-bottom: 1px solid #dbe2ec; }
   .news-record-body h2 { font-size: 27px !important; }
 }
+
+/* editorial reading system: June 2026 */
+.section-head {
+  align-items: start;
+}
+
+.section-head p:last-child,
+.section-head .muted,
+.section-head + p {
+  max-width: 64ch;
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+.lead,
+.hero-intro,
+.citation-text,
+.answer-capsule,
+.start-source-block p,
+.start-note,
+.footer-legal {
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.lead {
+  max-width: 62ch;
+  font-size: clamp(18px, 1.75vw, 22px);
+  line-height: 1.7;
+}
+
+.section ul,
+.section ol {
+  margin: 18px 0 10px;
+  padding-left: 1.15rem;
+}
+
+.section li {
+  margin-bottom: 0.55rem;
+  line-height: 1.72;
+}
+
+.section li::marker {
+  color: #8c6a2f;
+}
+
+.citation-block {
+  margin-top: 10px;
+  padding: 30px;
+  border: 1px solid var(--line);
+  background: #fbfaf6;
+}
+
+.citation-text,
+.citation-block pre {
+  border-left: 3px solid #d4b076;
+  border-top: 0 !important;
+  padding: 1rem 1rem 1rem 1.1rem;
+  background: #fff;
+}
+
+.share-follow,
+.tone-band,
+.related-records,
+.trust-citation {
+  background: #f8f5ee;
+}
+
+.record-meta-strip .card,
+.intel-method-card,
+.news-record-card,
+.news-desk-standard,
+.start-step,
+.dcp-principle,
+.dcp-policy-card,
+.a12-infection-card,
+.a12-audit-card {
+  border-radius: 6px !important;
+}
+
+.record-meta-strip .card h2,
+.intel-method-card h2,
+.intel-method-card h3,
+.news-record-body h2,
+.start-step h3,
+.dcp-principle h3,
+.dcp-policy-card h3,
+.a12-infection-card h3,
+.a12-audit-card h3 {
+  color: var(--red);
+  line-height: 1.16;
+}
+
+.record-link,
+.citation-block a,
+.news-desk-standard a {
+  color: var(--red-2);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.record-toolkit,
+.record-toolkit-grid,
+.record-toc,
+.evidence-badges,
+.source-jump {
+  border-radius: 6px !important;
+}
+
+img + figcaption,
+figure figcaption,
+.caption {
+  font-size: 12.5px;
+  line-height: 1.55;
+}
+
+.newspaper-page .section,
+.case-study-page .section,
+.dcp-page .section,
+.a12-page .section,
+.intel-page .section {
+  padding-top: clamp(42px, 5vw, 70px);
+  padding-bottom: clamp(42px, 5vw, 70px);
+}
+
+.newspaper-page .section + .section,
+.case-study-page .section + .section,
+.dcp-page .section + .section,
+.a12-page .section + .section,
+.intel-page .section + .section {
+  border-top: 1px solid rgba(6,38,81,.08);
+}
+
+@media (max-width: 640px) {
+  .citation-block {
+    padding: 22px 20px;
+  }
+
+  .section-head p:last-child,
+  .section-head .muted,
+  .section-head + p {
+    max-width: none;
+  }
+}

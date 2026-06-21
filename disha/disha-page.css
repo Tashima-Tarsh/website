@@ -359,7 +359,7 @@
   margin-inline: auto;
   border: 1px solid var(--disha-border-subtle);
   border-radius: var(--disha-radius-sm);
-  background: #f4f1e8;
+  background: #fff;
   overflow: hidden;
   display: grid;
   place-items: center;

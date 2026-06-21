@@ -1,0 +1,282 @@
+:root {
+  --disha-subpage-max: 1180px;
+  --disha-subpage-reading: 760px;
+  --disha-subpage-line: rgba(6, 38, 81, 0.12);
+  --disha-subpage-line-strong: rgba(6, 38, 81, 0.22);
+  --disha-subpage-surface: #fafaf8;
+  --disha-subpage-surface-alt: #f3f2ec;
+  --disha-subpage-ink: #24211d;
+  --disha-subpage-muted: #6c6258;
+  --disha-subpage-accent: #062651;
+}
+
+body.disha-subpage {
+  background:
+    radial-gradient(circle at top right, rgba(255, 255, 255, 0.96), transparent 32%),
+    linear-gradient(180deg, #ffffff, #fbfbf8 56%, #f6f3ec);
+}
+
+body.disha-subpage .section {
+  width: min(100% - 2rem, var(--disha-subpage-max));
+  margin: 0 auto;
+  padding: clamp(2.5rem, 5vw, 4.5rem) 1rem;
+}
+
+body.disha-subpage main > .section:first-of-type {
+  padding-top: clamp(2rem, 4vw, 3rem);
+}
+
+body.disha-subpage .eyebrow {
+  color: var(--disha-subpage-accent);
+}
+
+body.disha-subpage h1 {
+  max-width: 12ch;
+  margin: 0.4rem 0 1rem;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(2.3rem, 5vw, 4.2rem);
+  line-height: 1;
+  letter-spacing: -0.04em;
+  color: var(--disha-subpage-ink);
+}
+
+body.disha-subpage h2 {
+  margin: 2rem 0 0.9rem;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(1.7rem, 3vw, 2.5rem);
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  color: var(--disha-subpage-ink);
+}
+
+body.disha-subpage h3 {
+  margin: 1.5rem 0 0.75rem;
+  font-size: 1.05rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--disha-subpage-accent);
+}
+
+body.disha-subpage .lead,
+body.disha-subpage p,
+body.disha-subpage li {
+  max-width: var(--disha-subpage-reading);
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--disha-subpage-ink);
+}
+
+body.disha-subpage .lead {
+  font-size: 1.08rem;
+  color: var(--disha-subpage-muted);
+}
+
+body.disha-subpage ul {
+  padding-left: 1.15rem;
+}
+
+body.disha-subpage li {
+  margin-bottom: 0.6rem;
+}
+
+body.disha-subpage .validation-table,
+body.disha-subpage .source-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1.25rem;
+  background: #fff;
+  border: 1px solid var(--disha-subpage-line);
+}
+
+body.disha-subpage .validation-table th,
+body.disha-subpage .validation-table td,
+body.disha-subpage .source-table th,
+body.disha-subpage .source-table td {
+  padding: 0.9rem 1rem;
+  border-bottom: 1px solid var(--disha-subpage-line);
+  text-align: left;
+  vertical-align: top;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+body.disha-subpage .validation-table th,
+body.disha-subpage .source-table th {
+  background: var(--disha-subpage-surface-alt);
+  font-size: 0.76rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--disha-subpage-accent);
+}
+
+body.disha-subpage .citation-block {
+  border: 1px solid var(--disha-subpage-line);
+  border-radius: 14px;
+  background: linear-gradient(180deg, #fff, var(--disha-subpage-surface));
+}
+
+body.disha-subpage .citation-text,
+body.disha-subpage .citation-block pre {
+  margin: 1rem 0 0;
+  padding: 1rem;
+  border: 1px solid var(--disha-subpage-line);
+  border-radius: 10px;
+  background: #fff;
+  font-family: Georgia, "Times New Roman", serif;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+body.disha-subpage .hero-actions,
+body.disha-subpage .filter-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+body.disha-subpage .table-wrap {
+  overflow-x: auto;
+  border-radius: 12px;
+}
+
+body.disha-subpage .filter-strip {
+  margin: 1.25rem 0 1rem;
+}
+
+body.disha-subpage .filter-btn {
+  padding: 0.52rem 0.9rem;
+  border: 1px solid var(--disha-subpage-line-strong);
+  border-radius: 999px;
+  background: #fff;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--disha-subpage-accent);
+  cursor: pointer;
+}
+
+body.disha-subpage .filter-btn.active,
+body.disha-subpage .filter-btn:hover {
+  background: var(--disha-subpage-accent);
+  border-color: var(--disha-subpage-accent);
+  color: #fff;
+}
+
+body.disha-subpage .evidence-key {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1.25rem;
+}
+
+body.disha-subpage .evidence-key-item {
+  padding: 1rem;
+  border: 1px solid var(--disha-subpage-line);
+  border-radius: 12px;
+  background: #fff;
+}
+
+body.disha-subpage .ev-badge,
+body.disha-subpage .ev-official,
+body.disha-subpage .ev-corroborated,
+body.disha-subpage .ev-disha,
+body.disha-subpage .ev-unresolved,
+body.disha-subpage .ev-allegation {
+  display: inline-block;
+  padding: 0.28rem 0.55rem;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+body.disha-subpage .ev-badge,
+body.disha-subpage .ev-official {
+  background: rgba(6, 38, 81, 0.08);
+  color: var(--disha-subpage-accent);
+}
+
+body.disha-subpage .ev-corroborated {
+  background: rgba(178, 138, 68, 0.14);
+  color: #6f5519;
+}
+
+body.disha-subpage .ev-disha {
+  background: rgba(36, 33, 29, 0.08);
+  color: #3f3932;
+}
+
+body.disha-subpage .ev-unresolved,
+body.disha-subpage .ev-allegation {
+  background: rgba(108, 98, 88, 0.12);
+  color: var(--disha-subpage-muted);
+}
+
+body.disha-subpage .glossary-grid {
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+body.disha-subpage .glossary-entry {
+  padding: 1.75rem 0;
+  border-bottom: 1px solid var(--disha-subpage-line);
+}
+
+body.disha-subpage .glossary-entry:first-child {
+  padding-top: 0;
+}
+
+body.disha-subpage .glossary-entry:last-child {
+  border-bottom: 0;
+}
+
+body.disha-subpage .term-name {
+  margin: 0 0 0.3rem;
+  font-size: 1.6rem;
+  color: var(--disha-subpage-ink);
+}
+
+body.disha-subpage .term-layer,
+body.disha-subpage .term-link {
+  color: var(--disha-subpage-accent);
+}
+
+body.disha-subpage .term-layer {
+  display: block;
+  margin-bottom: 0.75rem;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+body.disha-subpage .term-def {
+  font-family: Georgia, "Times New Roman", serif;
+  color: var(--disha-subpage-ink);
+}
+
+@media (max-width: 980px) {
+  body.disha-subpage .evidence-key {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  body.disha-subpage .section {
+    width: min(100% - 1.25rem, var(--disha-subpage-max));
+    padding: 2.25rem 0.625rem;
+  }
+
+  body.disha-subpage h1 {
+    max-width: 100%;
+    font-size: clamp(2rem, 9vw, 3rem);
+  }
+
+  body.disha-subpage .validation-table th,
+  body.disha-subpage .validation-table td,
+  body.disha-subpage .source-table th,
+  body.disha-subpage .source-table td {
+    padding: 0.8rem;
+    font-size: 0.88rem;
+  }
+}

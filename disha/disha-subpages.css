@@ -16,7 +16,7 @@ body.disha-subpage {
     linear-gradient(180deg, #ffffff, #fbfbf8 56%, #f6f3ec);
 }
 
-body.disha-subpage .section {
+body.disha-subpage main > .section {
   width: min(100% - 2rem, var(--disha-subpage-max));
   margin: 0 auto;
   padding: clamp(2.5rem, 5vw, 4.5rem) 1rem;
@@ -57,16 +57,16 @@ body.disha-subpage h3 {
   color: var(--disha-subpage-accent);
 }
 
-body.disha-subpage .lead,
-body.disha-subpage p,
-body.disha-subpage li {
+body.disha-subpage main .lead,
+body.disha-subpage main p,
+body.disha-subpage main li {
   max-width: var(--disha-subpage-reading);
   font-size: 1rem;
   line-height: 1.75;
   color: var(--disha-subpage-ink);
 }
 
-body.disha-subpage .lead {
+body.disha-subpage main .lead {
   font-size: 1.08rem;
   color: var(--disha-subpage-muted);
 }
@@ -262,7 +262,7 @@ body.disha-subpage .term-def {
 }
 
 @media (max-width: 640px) {
-  body.disha-subpage .section {
+body.disha-subpage main > .section {
     width: min(100% - 1.25rem, var(--disha-subpage-max));
     padding: 2.25rem 0.625rem;
   }
@@ -278,5 +278,173 @@ body.disha-subpage .term-def {
   body.disha-subpage .source-table td {
     padding: 0.8rem;
     font-size: 0.88rem;
+  }
+}
+
+/* Editorial page system. Header and footer continue to use /styles.css. */
+body.disha-subpage {
+  background: linear-gradient(180deg, #fff 0, #fff 70%, #fbfaf6 100%);
+}
+
+body.disha-subpage main > .section {
+  width: min(calc(100% - 48px), var(--max));
+  padding: clamp(42px, 6vw, 76px) 0;
+}
+
+body.disha-subpage main > .section:first-of-type {
+  padding-top: clamp(38px, 5vw, 64px);
+  padding-bottom: clamp(42px, 6vw, 72px);
+  border-bottom: 1px solid var(--disha-subpage-line);
+}
+
+body.disha-subpage main > .section:not(:first-of-type) {
+  border-top: 1px solid rgba(6, 38, 81, 0.08);
+}
+
+body.disha-subpage main h1 {
+  max-width: 15ch;
+  margin: 8px 0 18px;
+  font-size: clamp(42px, 6vw, 68px) !important;
+  line-height: 0.98;
+  letter-spacing: -0.035em;
+}
+
+body.disha-subpage main h2 {
+  max-width: 22ch;
+  margin: clamp(38px, 5vw, 58px) 0 14px;
+  font-size: clamp(28px, 3.4vw, 42px) !important;
+  line-height: 1.08;
+}
+
+body.disha-subpage main h3 {
+  margin-top: 30px;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+}
+
+body.disha-subpage main p,
+body.disha-subpage main li {
+  font-size: clamp(16px, 1.4vw, 18px);
+  line-height: 1.78;
+}
+
+body.disha-subpage main p + p {
+  margin-top: 18px;
+}
+
+body.disha-subpage main .lead {
+  max-width: 68ch;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(18px, 2vw, 22px);
+  line-height: 1.65;
+}
+
+body.disha-subpage main ul {
+  margin: 18px 0 8px;
+}
+
+body.disha-subpage .hero-actions,
+body.disha-subpage .filter-strip {
+  margin-top: 28px;
+}
+
+body.disha-subpage .table-wrap {
+  width: 100%;
+  margin-top: 24px;
+  border: 1px solid var(--disha-subpage-line);
+  border-radius: 0;
+  background: #fff;
+}
+
+body.disha-subpage .validation-table,
+body.disha-subpage .source-table {
+  min-width: 720px;
+  margin-top: 0;
+  border: 0;
+}
+
+body.disha-subpage .filter-btn {
+  border-radius: 3px;
+}
+
+body.disha-subpage .evidence-key {
+  max-width: 900px;
+  gap: 0;
+  border-top: 1px solid var(--disha-subpage-line);
+}
+
+body.disha-subpage .evidence-key-item {
+  padding: 20px 22px 22px 0;
+  border: 0;
+  border-bottom: 1px solid var(--disha-subpage-line);
+  border-radius: 0;
+  background: transparent;
+}
+
+body.disha-subpage .evidence-key-item:nth-child(odd) {
+  padding-right: 28px;
+  border-right: 1px solid var(--disha-subpage-line);
+}
+
+body.disha-subpage .evidence-key-item:nth-child(even) {
+  padding-left: 28px;
+}
+
+body.disha-subpage .citation-block {
+  margin-top: 42px;
+  padding: 28px;
+  border-radius: 0;
+  background: #fbfaf6;
+}
+
+body.disha-subpage .citation-text,
+body.disha-subpage .citation-block pre {
+  border-width: 0 0 0 3px;
+  border-radius: 0;
+}
+
+body.disha-subpage .glossary-grid {
+  max-width: 820px;
+  margin-left: 0;
+  border-top: 1px solid var(--disha-subpage-line);
+}
+
+body.disha-subpage .glossary-entry {
+  padding: 30px 0;
+}
+
+body.disha-subpage .term-name {
+  margin: 0 0 5px;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(25px, 3vw, 34px);
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  text-transform: none;
+}
+
+body.disha-subpage .term-def {
+  text-align: left;
+}
+
+@media (max-width: 760px) {
+  body.disha-subpage main > .section {
+    width: min(calc(100% - 32px), var(--max));
+    padding: 38px 0;
+  }
+
+  body.disha-subpage main h1 {
+    max-width: none;
+    font-size: clamp(38px, 12vw, 54px) !important;
+  }
+
+  body.disha-subpage .evidence-key {
+    grid-template-columns: 1fr;
+  }
+
+  body.disha-subpage .evidence-key-item,
+  body.disha-subpage .evidence-key-item:nth-child(odd),
+  body.disha-subpage .evidence-key-item:nth-child(even) {
+    padding: 18px 0;
+    border-right: 0;
   }
 }

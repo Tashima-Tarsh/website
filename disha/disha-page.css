@@ -1274,3 +1274,232 @@
     background: none;
   }
 }
+
+/* Editorial rebuild: the DISHA page sits inside the unchanged home shell. */
+.disha-section {
+  width: min(calc(100% - 48px), var(--max));
+  padding: clamp(52px, 7vw, 86px) 0;
+}
+
+.disha-section + .disha-section {
+  border-top: 1px solid rgba(6, 38, 81, 0.1);
+}
+
+.disha-section-alt {
+  width: 100%;
+  padding-left: max(24px, calc((100% - var(--max)) / 2));
+  padding-right: max(24px, calc((100% - var(--max)) / 2));
+  background: #fbfaf6;
+}
+
+.disha-hero {
+  display: block;
+  padding-top: clamp(42px, 6vw, 70px);
+  padding-bottom: clamp(48px, 6vw, 72px);
+}
+
+.disha-hero-text {
+  max-width: 880px;
+}
+
+.disha-hero-title {
+  max-width: 15ch;
+  font-size: clamp(44px, 6.4vw, 76px) !important;
+  line-height: 0.98;
+  letter-spacing: -0.035em;
+}
+
+.disha-hero-lead {
+  max-width: 70ch;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(17px, 1.7vw, 21px);
+  line-height: 1.68;
+}
+
+.disha-does-not {
+  max-width: 66ch;
+  margin-top: 20px;
+  padding: 14px 0 14px 20px;
+  border-left: 3px solid var(--disha-accent);
+  color: var(--disha-text);
+}
+
+.disha-hero-visual {
+  width: min(100%, 860px);
+  max-width: none;
+  max-height: none;
+  margin: clamp(34px, 5vw, 54px) 0 0;
+  border: 0;
+  border-top: 1px solid var(--disha-border-subtle);
+  border-bottom: 1px solid var(--disha-border-subtle);
+  border-radius: 0;
+  background: transparent;
+  overflow: visible;
+}
+
+.disha-hero-visual picture {
+  padding: 20px 0;
+}
+
+.disha-hero-visual img {
+  max-height: 430px;
+}
+
+.disha-figcaption {
+  padding: 12px 0;
+  border-top: 1px solid var(--disha-border-subtle);
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.disha-facts-inner {
+  width: min(calc(100% - 48px), var(--max));
+  padding: 22px 0;
+}
+
+.disha-fact {
+  padding-right: 18px;
+  border-right: 1px solid var(--disha-border-light);
+}
+
+.disha-fact:nth-child(4n) {
+  border-right: 0;
+}
+
+.disha-content-max {
+  max-width: 820px;
+  margin-left: 0;
+}
+
+.disha-h2 {
+  max-width: 20ch;
+  font-size: clamp(32px, 3.4vw, 48px) !important;
+}
+
+.disha-exhibit-grid,
+.disha-institutional-layout,
+.disha-timeline-grid,
+.disha-chain-grid,
+.disha-cognitive-grid,
+.disha-layer-grid,
+.disha-vyuha-grid,
+.disha-doctrine-split,
+.disha-memory-grid,
+.disha-evidence-class-grid,
+.disha-system-grid {
+  width: min(100%, var(--max));
+  padding: 0;
+}
+
+.disha-exhibit-grid {
+  max-width: 980px;
+  margin-left: 0;
+  gap: clamp(28px, 4vw, 52px);
+}
+
+.disha-document-wrapper {
+  width: 100%;
+  max-width: 460px;
+  aspect-ratio: auto;
+  margin-left: 0;
+  border-radius: 0;
+  background: #fff;
+}
+
+.disha-document-wrapper a,
+.disha-document-wrapper picture {
+  height: auto;
+}
+
+.disha-document-wrapper img {
+  height: auto;
+  max-height: 580px;
+  object-fit: contain;
+}
+
+.disha-document-full {
+  max-width: 430px;
+}
+
+.disha-exhibit-caption {
+  margin-left: 0;
+}
+
+.disha-timeline-item,
+.disha-chain-card,
+.disha-cog-card,
+.disha-layer-card,
+.disha-vyuha-card,
+.disha-doctrine-col,
+.disha-memory-card,
+.disha-evidence-card,
+.disha-adviser-card,
+.disha-system-item,
+.disha-link-card {
+  border-width: 1px 0 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.disha-links-grid {
+  gap: 0 24px;
+}
+
+.disha-link-card {
+  padding: 18px 0;
+}
+
+.disha-final-statement {
+  background: #fbfaf6;
+}
+
+.disha-author-block,
+.disha-citation {
+  border-radius: 0;
+}
+
+@media (max-width: 767px) {
+  .disha-section {
+    width: min(calc(100% - 32px), var(--max));
+    padding: 46px 0;
+  }
+
+  .disha-section-alt {
+    width: 100%;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .disha-hero-title {
+    font-size: clamp(40px, 12vw, 58px) !important;
+  }
+
+  .disha-hero-visual {
+    margin-top: 34px;
+  }
+
+  .disha-hero-visual img {
+    max-height: 280px;
+  }
+
+  .disha-facts-inner {
+    width: min(calc(100% - 32px), var(--max));
+  }
+
+  .disha-fact {
+    padding: 0 12px 12px 0;
+  }
+
+  .disha-fact:nth-child(4n) {
+    border-right: 1px solid var(--disha-border-light);
+  }
+
+  .disha-fact:nth-child(2n) {
+    border-right: 0;
+  }
+
+  .disha-document-wrapper,
+  .disha-document-full {
+    max-width: 100%;
+  }
+}

@@ -1465,10 +1465,6 @@
   padding-bottom: clamp(44px, 6vw, 78px);
 }
 
-.disha-section + .disha-section {
-  border-top: 1px solid rgba(6, 38, 81, 0.1);
-}
-
 .disha-hero {
   display: grid;
   grid-template-columns: minmax(0, 1.08fr) minmax(360px, 0.92fr);
@@ -1541,9 +1537,13 @@
 .disha-page-map-item {
   display: block;
   padding: 18px 0 16px;
-  border-top: 1px solid rgba(6, 38, 81, 0.16);
   color: var(--disha-charcoal);
   text-decoration: none;
+  border-radius: 0;
+  border: 1px solid rgba(6, 38, 81, 0.1);
+  padding-left: 16px;
+  padding-right: 16px;
+  background: #fffdfa;
 }
 
 .disha-page-map-item strong {
@@ -1593,6 +1593,7 @@
 .disha-content-max,
 .disha-reading-block {
   max-width: 760px;
+  margin-inline: auto;
 }
 
 .disha-reading-block p,
@@ -1600,8 +1601,30 @@
   font-family: Georgia, "Times New Roman", serif;
   font-size: 1.06rem;
   line-height: 1.75;
-  text-align: justify;
-  text-justify: inter-word;
+  text-align: left;
+}
+
+#what-is-disha .disha-reading-block > .disha-answer-p:nth-of-type(3) {
+  display: none;
+}
+
+.disha-answer-structured {
+  margin-bottom: 1rem;
+}
+
+.disha-answer-note {
+  margin-top: 1.2rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(6, 38, 81, 0.12);
+}
+
+.disha-list {
+  margin: 0.25rem 0 1.35rem;
+}
+
+.disha-list li {
+  padding-left: 1.2rem;
+  margin-bottom: 0.55rem;
 }
 
 .disha-exhibit-grid,
@@ -1620,7 +1643,7 @@
 }
 
 .disha-document-full {
-  max-width: 520px;
+  max-width: 410px;
 }
 
 .disha-document-wrapper img {
@@ -1774,7 +1797,6 @@
   .disha-reading-block li,
   .disha-page-map-item span {
     font-size: 1rem;
-    text-align: left;
   }
 
   .disha-facts-inner {

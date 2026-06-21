@@ -2471,9 +2471,46 @@
   max-width: 980px;
 }
 
+#origin .disha-origin-intro {
+  width: min(100% - (2 * var(--disha-gutter)), var(--disha-page-max));
+  margin-inline: auto;
+  padding: 0 var(--disha-gutter);
+  display: grid;
+  grid-template-columns: minmax(0, 1.18fr) minmax(300px, 0.82fr);
+  gap: 24px 30px;
+  align-items: start;
+}
+
+#origin .disha-origin-note {
+  padding: 20px 22px;
+  border: 1px solid rgba(6, 38, 81, 0.12);
+  border-radius: 16px;
+  background: #f7f1e6;
+  box-shadow: 0 10px 28px rgba(28, 25, 20, 0.04);
+}
+
+#origin .disha-origin-note .disha-list {
+  display: grid;
+  gap: 10px;
+  margin: 0.25rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+#origin .disha-origin-note .disha-list li {
+  margin: 0;
+  padding: 10px 14px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(6, 38, 81, 0.08);
+  font-size: 0.98rem;
+  line-height: 1.55;
+}
+
 #origin .disha-exhibit-grid {
   gap: 26px;
   margin-top: 28px;
+  align-items: start;
 }
 
 #origin .disha-exhibit {
@@ -2507,7 +2544,16 @@
 }
 
 #origin .disha-origin-closing {
-  margin-top: 10px;
+  margin-top: 18px;
+}
+
+#origin .disha-record-action {
+  display: inline-flex;
+  margin-top: 6px;
+  padding: 14px 18px;
+  border: 1px solid rgba(6, 38, 81, 0.12);
+  border-radius: 14px;
+  background: #f7f1e6;
 }
 
 #bihar-council-record .disha-institutional-layout {
@@ -2537,7 +2583,8 @@
 
 @media (max-width: 1100px) {
   #what-is-disha .disha-answer-grid,
-  #bihar-council-record .disha-institutional-layout {
+  #bihar-council-record .disha-institutional-layout,
+  #origin .disha-origin-intro {
     grid-template-columns: 1fr;
   }
 }
@@ -2558,5 +2605,239 @@
   #origin .disha-exhibit-grid .disha-document-wrapper img,
   #bihar-council-record .disha-document-full img {
     max-height: 340px;
+  }
+}
+
+/* ================================================================ */
+/* DISHA EDITORIAL REDESIGN                                         */
+/* ================================================================ */
+.disha-section,
+.disha-section > * {
+  background: #fff;
+}
+
+.disha-hero {
+  row-gap: 28px;
+}
+
+#what-is-disha .disha-content-max {
+  max-width: 1120px;
+}
+
+#what-is-disha .disha-definition-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.18fr) minmax(300px, 0.82fr);
+  gap: 24px 36px;
+  align-items: start;
+}
+
+#what-is-disha .disha-definition-copy {
+  display: contents;
+}
+
+#what-is-disha .disha-definition-layout .disha-h2 {
+  grid-column: 1 / -1;
+  max-width: 11ch;
+  margin-bottom: 1.1rem;
+  font-size: clamp(2.35rem, 4.7vw, 4.2rem);
+  line-height: 1;
+}
+
+#what-is-disha .disha-definition-copy > .disha-answer-p:nth-of-type(1),
+#what-is-disha .disha-definition-copy > .disha-answer-p:nth-of-type(2),
+#what-is-disha .disha-definition-copy > .disha-h3:nth-of-type(1),
+#what-is-disha .disha-definition-copy > .disha-answer-p:nth-of-type(3),
+#what-is-disha .disha-definition-copy > .disha-answer-p:nth-of-type(4) {
+  grid-column: 1;
+}
+
+#what-is-disha .disha-definition-copy > .disha-h3:nth-of-type(2),
+#what-is-disha .disha-definition-copy > .disha-answer-p:nth-of-type(5),
+#what-is-disha .disha-definition-copy > .disha-answer-p:nth-of-type(6),
+#what-is-disha .disha-definition-copy > .disha-h3:nth-of-type(3),
+#what-is-disha .disha-definition-copy > .disha-answer-p:nth-of-type(7),
+#what-is-disha .disha-definition-copy > .disha-answer-p:nth-of-type(8) {
+  grid-column: 2;
+}
+
+#what-is-disha .disha-definition-copy .disha-h3 {
+  margin: 2.4rem 0 0.8rem;
+  font-size: clamp(1.45rem, 2vw, 1.85rem);
+}
+
+#what-is-disha .disha-definition-copy .disha-answer-p {
+  margin: 0 0 1rem;
+  max-width: none;
+  font-size: 1.1rem;
+  line-height: 1.86;
+  text-align: justify;
+  text-wrap: pretty;
+}
+
+#what-is-disha .disha-definition-emphasis {
+  font-size: 1.18rem;
+  font-style: italic;
+}
+
+#what-is-disha .disha-definition-copy .disha-answer-p strong {
+  color: #082b63;
+}
+
+#what-is-disha .disha-definition-figure {
+  grid-column: 2;
+  grid-row: 2 / span 2;
+  width: 100%;
+  margin: 0 0 1.2rem;
+  position: static;
+}
+
+#what-is-disha .disha-definition-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 14px;
+}
+
+#what-is-disha .disha-definition-figure .disha-figcaption {
+  margin-top: 10px;
+  padding: 0;
+}
+
+#what-is-disha .disha-definition-layout ~ * {
+  display: none !important;
+}
+
+#origin .disha-origin-intro,
+#origin .disha-content-max.disha-origin-records {
+  width: min(100% - (2 * var(--disha-gutter)), 1120px);
+  margin-inline: auto;
+}
+
+#origin .disha-origin-intro {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 0.9fr);
+  gap: 18px 34px;
+}
+
+#origin .disha-origin-intro > *:nth-child(1),
+#origin .disha-origin-intro > *:nth-child(2),
+#origin .disha-origin-intro > *:nth-child(3) {
+  grid-column: 1;
+}
+
+#origin .disha-origin-intro > *:nth-child(4) {
+  grid-column: 2;
+  grid-row: 2 / span 2;
+}
+
+#origin .disha-origin-intro > * {
+  text-align: justify;
+  max-width: none;
+}
+
+#origin .disha-origin-intro .disha-h2 {
+  max-width: 14ch;
+  text-align: left;
+}
+
+#origin .disha-content-max.disha-origin-records {
+  display: grid;
+  gap: 18px;
+  padding-inline: 0;
+}
+
+#origin .disha-exhibit-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px;
+  margin-top: 0;
+}
+
+#origin .disha-exhibit {
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+#origin .disha-document-wrapper {
+  padding: 0;
+  border-radius: 14px;
+  overflow: hidden;
+  background: #fff;
+}
+
+#origin .disha-exhibit-grid .disha-document-wrapper img {
+  display: block;
+  width: 100%;
+  max-height: 360px;
+  object-fit: cover;
+}
+
+#origin .disha-exhibit-caption {
+  display: grid;
+  gap: 8px;
+  padding: 10px 2px 0;
+  text-align: justify;
+}
+
+#origin .disha-origin-summary {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 0.9fr);
+  gap: 18px 34px;
+  align-items: start;
+}
+
+#origin .disha-origin-summary > .disha-reading-block,
+#origin .disha-origin-summary > .disha-h3,
+#origin .disha-origin-summary > .disha-answer-p {
+  text-align: justify;
+  max-width: none;
+}
+
+#origin .disha-origin-summary-note {
+  display: none;
+}
+
+@media (max-width: 1100px) {
+  #what-is-disha .disha-definition-layout,
+  #origin .disha-origin-intro,
+  #origin .disha-exhibit-grid,
+  #origin .disha-origin-summary {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  #what-is-disha .disha-definition-layout .disha-h2 {
+    max-width: 100%;
+    font-size: clamp(2rem, 10vw, 3rem);
+  }
+
+  #what-is-disha .disha-definition-layout {
+    grid-template-columns: 1fr;
+    gap: 16px 0;
+  }
+
+  #what-is-disha .disha-definition-copy,
+  #what-is-disha .disha-definition-copy > *,
+  #what-is-disha .disha-definition-figure {
+    grid-column: 1;
+    grid-row: auto;
+  }
+
+  #origin .disha-origin-intro > *,
+  #origin .disha-origin-summary > * {
+    grid-column: 1;
+    grid-row: auto;
+  }
+
+  #what-is-disha .disha-definition-figure {
+    width: 100%;
+    margin: 0 0 1rem;
+  }
+
+  #origin .disha-exhibit-grid .disha-document-wrapper img {
+    max-height: 280px;
   }
 }

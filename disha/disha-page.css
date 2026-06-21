@@ -2388,3 +2388,175 @@
     padding-inline: 16px;
   }
 }
+
+/* ================================================================ */
+/* DISHA MAIN PAGE REBALANCE                                        */
+/* ================================================================ */
+#what-is-disha .disha-content-max,
+#origin .disha-content-max,
+#bihar-council-record .disha-content-max {
+  max-width: 1120px;
+}
+
+#what-is-disha .disha-h2,
+#origin .disha-h2,
+#bihar-council-record .disha-h2 {
+  max-width: 14ch;
+  margin-bottom: 1.2rem;
+}
+
+#what-is-disha .disha-answer-grid {
+  grid-template-columns: minmax(0, 1.45fr) minmax(320px, 0.95fr);
+  gap: 28px 32px;
+  align-items: start;
+}
+
+#what-is-disha .disha-reading-block {
+  max-width: none;
+}
+
+#what-is-disha .disha-answer-p,
+#origin .disha-reading-block p,
+#bihar-council-record .disha-reading-block p {
+  max-width: none;
+  font-size: 1.08rem;
+  line-height: 1.72;
+}
+
+#what-is-disha .disha-answer-aside {
+  display: grid;
+  gap: 14px;
+  padding: 22px;
+  border: 1px solid rgba(6, 38, 81, 0.14);
+  border-radius: 16px;
+  background: #f7f1e6;
+  box-shadow: 0 10px 28px rgba(28, 25, 20, 0.04);
+}
+
+#what-is-disha .disha-answer-kicker {
+  margin: 0;
+  font-size: 1.05rem;
+  line-height: 1.45;
+}
+
+#what-is-disha .disha-list {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+#what-is-disha .disha-list li {
+  padding: 12px 14px 12px 18px;
+  margin: 0;
+  border: 1px solid rgba(6, 38, 81, 0.1);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.76);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+#what-is-disha .disha-answer-note {
+  margin: 0;
+  padding: 14px 16px;
+  border-left: 3px solid rgba(6, 38, 81, 0.22);
+  border-radius: 0 12px 12px 0;
+  background: rgba(255, 255, 255, 0.88);
+  color: var(--disha-ink);
+}
+
+#origin .disha-reading-block,
+#bihar-council-record .disha-reading-block {
+  max-width: 980px;
+}
+
+#origin .disha-exhibit-grid {
+  gap: 26px;
+  margin-top: 28px;
+}
+
+#origin .disha-exhibit {
+  display: grid;
+  gap: 14px;
+  align-content: start;
+}
+
+#origin .disha-document-wrapper,
+#bihar-council-record .disha-document-wrapper {
+  min-height: 0;
+  padding: 12px;
+  background: #fff;
+  border-radius: 14px;
+}
+
+#origin .disha-document-wrapper {
+  aspect-ratio: auto;
+}
+
+#origin .disha-exhibit-grid .disha-document-wrapper img {
+  max-height: 430px;
+  object-fit: contain;
+  object-position: center;
+}
+
+#origin .disha-exhibit-caption,
+#bihar-council-record .disha-exhibit-caption {
+  max-width: none;
+  padding: 2px 2px 0;
+}
+
+#origin .disha-origin-closing {
+  margin-top: 10px;
+}
+
+#bihar-council-record .disha-institutional-layout {
+  grid-template-columns: minmax(0, 1.12fr) minmax(320px, 0.88fr);
+  gap: 24px 32px;
+  align-items: start;
+}
+
+#bihar-council-record .disha-record-brief,
+#bihar-council-record .disha-document-aside {
+  padding: 18px 20px;
+  border-radius: 14px;
+  border-left: 0;
+  border: 1px solid rgba(6, 38, 81, 0.1);
+  background: #f7f1e6;
+}
+
+#bihar-council-record .disha-document-full img {
+  max-height: 460px;
+  object-fit: contain;
+  object-position: center;
+}
+
+#bihar-council-record .disha-meta-dl div {
+  grid-template-columns: 118px 1fr;
+}
+
+@media (max-width: 1100px) {
+  #what-is-disha .disha-answer-grid,
+  #bihar-council-record .disha-institutional-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  #what-is-disha .disha-h2,
+  #origin .disha-h2,
+  #bihar-council-record .disha-h2 {
+    max-width: 100%;
+  }
+
+  #what-is-disha .disha-answer-aside,
+  #bihar-council-record .disha-record-brief,
+  #bihar-council-record .disha-document-aside {
+    padding: 18px;
+  }
+
+  #origin .disha-exhibit-grid .disha-document-wrapper img,
+  #bihar-council-record .disha-document-full img {
+    max-height: 340px;
+  }
+}

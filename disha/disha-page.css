@@ -1470,40 +1470,53 @@
 }
 
 .disha-hero {
-  padding-top: clamp(30px, 5vw, 56px);
-  gap: 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(360px, 0.92fr);
+  gap: clamp(28px, 4vw, 52px);
+  align-items: start;
+  padding-top: clamp(26px, 4vw, 44px);
 }
 
 .disha-hero-text {
-  max-width: 780px;
+  max-width: 720px;
 }
 
 .disha-hero-title {
-  max-width: 12ch;
-  margin-bottom: 20px;
+  max-width: 10ch;
+  margin-bottom: 16px;
+  font-size: clamp(34px, 4vw, 52px) !important;
+  line-height: 0.99;
 }
 
 .disha-hero-lead {
-  max-width: 62ch;
+  max-width: 58ch;
   color: #4e473f;
+  font-size: clamp(16px, 1.25vw, 18px);
+  line-height: 1.72;
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 .disha-hero-actions {
-  margin-top: 28px;
+  margin-top: 22px;
 }
 
 .disha-hero-visual {
-  width: min(100%, 1040px);
-  margin-top: clamp(36px, 5vw, 56px);
+  width: 100%;
+  max-width: 520px;
+  margin: 4px 0 0 auto;
+  border: 1px solid rgba(6, 38, 81, 0.14);
+  background: #fffdfa;
 }
 
 .disha-hero-visual picture {
-  padding: 26px 0;
+  padding: 12px;
 }
 
 .disha-hero-visual img {
-  width: min(100%, 980px);
-  max-height: none;
+  width: 100%;
+  max-height: 430px;
+  object-fit: contain;
 }
 
 .disha-page-map {
@@ -1511,6 +1524,8 @@
   grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
   gap: 32px;
   align-items: start;
+  padding-top: 34px;
+  padding-bottom: 34px;
 }
 
 .disha-page-map-intro {
@@ -1585,6 +1600,8 @@
   font-family: Georgia, "Times New Roman", serif;
   font-size: 1.06rem;
   line-height: 1.75;
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 .disha-exhibit-grid,
@@ -1707,6 +1724,16 @@
 }
 
 @media (max-width: 980px) {
+  .disha-hero {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .disha-hero-visual {
+    max-width: none;
+    margin-left: 0;
+  }
+
   .disha-page-map,
   .disha-timeline-grid,
   .disha-chain-grid,
@@ -1739,7 +1766,7 @@
 
   .disha-hero-title {
     max-width: 11ch;
-    font-size: clamp(36px, 11vw, 54px) !important;
+    font-size: clamp(28px, 8.8vw, 38px) !important;
   }
 
   .disha-hero-lead,
@@ -1747,6 +1774,7 @@
   .disha-reading-block li,
   .disha-page-map-item span {
     font-size: 1rem;
+    text-align: left;
   }
 
   .disha-facts-inner {

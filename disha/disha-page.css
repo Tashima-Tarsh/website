@@ -2841,3 +2841,23 @@
     max-height: 280px;
   }
 }
+
+.disha-hero-text > .disha-eyebrow,
+.disha-hero-text > .disha-hero-title,
+.disha-hero-text > .disha-hero-lead,
+.disha-hero-text > .disha-does-not {
+  display: none;
+}
+
+.disha-hero-topcopy {
+  display: grid;
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+.disha-hero-topcopy > .disha-eyebrow,
+.disha-hero-topcopy > .disha-hero-title,
+.disha-hero-topcopy > .disha-hero-lead,
+.disha-hero-topcopy > .disha-does-not {
+  display: block;
+}

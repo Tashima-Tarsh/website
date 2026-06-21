@@ -1650,6 +1650,12 @@
   align-items: start;
 }
 
+.disha-institutional-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.95fr);
+  gap: 28px 36px;
+}
+
 .disha-exhibit {
   gap: 14px;
 }
@@ -1660,7 +1666,7 @@
 }
 
 .disha-document-full {
-  max-width: 410px;
+  max-width: 320px;
 }
 
 .disha-document-wrapper img {
@@ -1670,6 +1676,17 @@
 .disha-exhibit-caption,
 .disha-document-aside {
   max-width: 560px;
+}
+
+.disha-institutional-text .disha-reading-block,
+.disha-institutional-text p {
+  max-width: none;
+}
+
+.disha-document-aside {
+  padding: 1rem 1.1rem;
+  border: 1px solid rgba(6, 38, 81, 0.1);
+  background: #fffdfa;
 }
 
 .disha-timeline-grid,

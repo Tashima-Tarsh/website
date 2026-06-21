@@ -2159,3 +2159,232 @@
     max-width: none;
   }
 }
+
+/* DISHA exhibit alignment correction */
+.disha-exhibit-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 26px 30px;
+  align-items: start;
+}
+
+.disha-exhibit {
+  display: grid;
+  align-content: start;
+  gap: 12px;
+}
+
+.disha-document-wrapper {
+  max-width: 100%;
+  min-height: 420px;
+  display: grid;
+  align-items: center;
+}
+
+.disha-document-wrapper img {
+  width: 100%;
+  max-height: 520px;
+  object-fit: contain;
+}
+
+.disha-exhibit-caption {
+  max-width: none;
+}
+
+.disha-institutional-layout {
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 0.84fr);
+  gap: 24px 30px;
+  align-items: start;
+}
+
+.disha-institutional-text {
+  min-width: 0;
+}
+
+.disha-document-full {
+  max-width: 100%;
+  min-height: 0;
+}
+
+.disha-document-aside {
+  margin-top: 12px;
+}
+
+@media (max-width: 980px) {
+  .disha-exhibit-grid,
+  .disha-institutional-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .disha-document-wrapper {
+    min-height: 0;
+  }
+}
+
+/* Final editorial structure overrides */
+.disha-section + .disha-section {
+  border-top: 0;
+}
+
+.disha-hero-visual,
+.disha-document-wrapper {
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.disha-hero-visual picture,
+.disha-document-wrapper a,
+.disha-document-wrapper picture {
+  display: block;
+}
+
+.disha-hero-visual picture {
+  padding: 0;
+}
+
+.disha-page-map {
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+  gap: 28px 40px;
+  padding-top: 10px;
+  padding-bottom: 8px;
+}
+
+.disha-page-map-intro {
+  display: grid;
+  gap: 18px;
+  align-content: start;
+}
+
+.disha-page-map-intro .disha-reading-block {
+  margin-inline: 0;
+}
+
+.disha-page-map-principles {
+  margin: 0;
+  padding: 18px 20px;
+  list-style: none;
+  border-left: 3px solid rgba(6, 38, 81, 0.18);
+  background: #f7f1e6;
+  display: grid;
+  gap: 10px;
+}
+
+.disha-page-map-principles li {
+  margin: 0;
+  padding: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 0.98rem;
+  line-height: 1.65;
+  color: var(--disha-charcoal);
+}
+
+.disha-page-map-grid {
+  align-self: start;
+  gap: 18px 22px;
+}
+
+.disha-page-map-item {
+  display: grid;
+  gap: 8px;
+  min-height: 100%;
+  padding: 18px 20px;
+  border-top: 2px solid rgba(6, 38, 81, 0.14);
+  background: rgba(247, 241, 230, 0.48);
+}
+
+.disha-page-map-item strong {
+  margin-bottom: 0;
+}
+
+.disha-content-max,
+.disha-reading-block {
+  max-width: 860px;
+}
+
+.disha-answer-grid {
+  grid-template-columns: minmax(0, 1.3fr) minmax(280px, 0.7fr);
+  gap: 24px 32px;
+}
+
+.disha-answer-aside {
+  padding: 18px 20px;
+  background: #f7f1e6;
+  border-left: 3px solid rgba(6, 38, 81, 0.18);
+}
+
+.disha-exhibit-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 30px 34px;
+}
+
+.disha-document-wrapper {
+  min-height: 0;
+}
+
+.disha-exhibit-grid .disha-document-wrapper img {
+  width: 100%;
+  max-height: 400px;
+  object-fit: contain;
+  object-position: center top;
+}
+
+.disha-exhibit-caption {
+  display: grid;
+  gap: 8px;
+}
+
+.disha-institutional-layout {
+  grid-template-columns: minmax(0, 1.22fr) minmax(260px, 0.78fr);
+  gap: 22px 34px;
+  margin-top: 24px;
+}
+
+.disha-record-brief {
+  margin-top: 20px;
+  padding: 18px 20px 20px;
+  background: #f7f1e6;
+  border-left: 3px solid rgba(6, 38, 81, 0.18);
+}
+
+.disha-record-brief .disha-h3 {
+  margin-bottom: 0.9rem;
+}
+
+.disha-record-brief .disha-list {
+  margin-bottom: 1rem;
+}
+
+.disha-document-full {
+  max-width: 100%;
+}
+
+.disha-document-full img {
+  width: 100%;
+  max-height: 360px;
+  object-fit: contain;
+  object-position: center top;
+}
+
+.disha-document-aside {
+  padding-top: 14px;
+}
+
+@media (max-width: 980px) {
+  .disha-page-map,
+  .disha-answer-grid,
+  .disha-exhibit-grid,
+  .disha-institutional-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .disha-page-map-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .disha-page-map-item,
+  .disha-answer-aside,
+  .disha-page-map-principles,
+  .disha-record-brief {
+    padding-inline: 16px;
+  }
+}

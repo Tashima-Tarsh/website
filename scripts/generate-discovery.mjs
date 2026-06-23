@@ -35,6 +35,11 @@ function extract(html, regex) {
   return html.match(regex)?.[1]?.trim() || "";
 }
 
+function datePublished(html) {
+  return extract(html, /"datePublished"\s*:\s*"([^"]+)"/i)
+    || extract(html, /<meta\s+[^>]*property=["']article:published_time["'][^>]*content=["']([^"']+)["']/i);
+}
+
 function htmlItems() {
   const items = [];
   walk(root, (file) => {
@@ -48,6 +53,8 @@ function htmlItems() {
       url: canonical,
       title: extract(html, /<title>([^<]+)<\/title>/i),
       description: extract(html, /<meta\s+[^>]*name=["']description["'][^>]*content=["']([^"']+)["']/i),
+      published: datePublished(html),
+      isNews: /"@type"\s*:\s*(?:"(?:Analysis|Reportage)?NewsArticle"|\[[^\]]*"(?:Analysis|Reportage)?NewsArticle")/i.test(html),
       mtime: fs.statSync(file).mtime,
     });
   });
@@ -76,6 +83,46 @@ function buildSitemap(pages) {
   fs.writeFileSync(path.join(root, "sitemap.xml"), xml);
 }
 
+function buildNewsSitemap(pages) {
+  const cutoff = Date.now() - (48 * 60 * 60 * 1000);
+  const newsPages = pages
+    .filter((item) => item.isNews && item.published && Date.parse(item.published) >= cutoff)
+    .sort((a, b) => Date.parse(b.published) - Date.parse(a.published))
+    .slice(0, 1000);
+
+  const file = path.join(root, "news-sitemap.xml");
+  if (!newsPages.length) {
+    if (fs.existsSync(file)) fs.unlinkSync(file);
+    return false;
+  }
+
+  const entries = newsPages.map((item) => `  <url>
+    <loc>${escapeXml(item.url)}</loc>
+    <news:news>
+      <news:publication>
+        <news:name>thenitishkr</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>${escapeXml(item.published)}</news:publication_date>
+      <news:title>${escapeXml(item.title)}</news:title>
+    </news:news>
+  </url>`).join("\n");
+
+  const xml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"\n        xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">\n${entries}\n</urlset>\n`;
+  fs.writeFileSync(file, xml);
+  return true;
+}
+
+function updateRobots(hasNewsSitemap) {
+  const file = path.join(root, "robots.txt");
+  if (!fs.existsSync(file)) return;
+  const cleaned = read(file)
+    .replace(/(?:\r?\n)?Sitemap: https:\/\/thenitishkr\.in\/news-sitemap\.xml\s*/g, "\n")
+    .trimEnd();
+  const content = `${cleaned}${hasNewsSitemap ? "\nSitemap: https://thenitishkr.in/news-sitemap.xml" : ""}\n`;
+  fs.writeFileSync(file, content);
+}
+
 function buildFeed(pages) {
   const items = [...pages]
     .sort((a, b) => b.mtime - a.mtime)
@@ -92,5 +139,7 @@ function buildFeed(pages) {
 const pages = htmlItems();
 const docs = docItems();
 buildSitemap(pages);
+const hasNewsSitemap = buildNewsSitemap(pages);
+updateRobots(hasNewsSitemap);
 buildFeed(pages);
-console.log(`Generated discovery files for ${pages.length} pages and ${docs.length} docs.`);
+console.log(`Generated discovery files for ${pages.length} pages, ${docs.length} docs,${hasNewsSitemap ? " active news sitemap," : ""} and feed outputs.`);

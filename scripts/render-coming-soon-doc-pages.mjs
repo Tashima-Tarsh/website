@@ -1,4 +1,155 @@
-<!doctype html>
+import fs from "node:fs";
+import path from "node:path";
+
+const root = process.cwd();
+const templatePath = path.join(root, "index.html");
+const template = fs.readFileSync(templatePath, "utf8");
+
+const bodyStart = template.indexOf("<body>");
+const mainStart = template.indexOf('<main id="main-content">');
+const footerStart = template.indexOf('<footer class="site-footer">');
+const footerEnd = template.indexOf("</footer>", footerStart) + "</footer>".length;
+const scriptMatch = template.match(/<script src="\/script\.js\?v=[^"]+" defer><\/script>/);
+
+if (bodyStart === -1 || mainStart === -1 || footerStart === -1 || footerEnd === -1 || !scriptMatch) {
+  throw new Error("Could not extract the live HTML shell from index.html");
+}
+
+const bodyShell = template.slice(bodyStart + "<body>".length, mainStart);
+const footerShell = template.slice(footerStart, footerEnd);
+const siteScript = scriptMatch[0];
+const launchDateIso = "2026-07-20T00:00:00+05:30";
+const launchDateDisplay = "20 July 2026";
+
+const pages = [
+  {
+    dir: path.join(root, "intelligence", "documents"),
+    canonical: "https://thenitishkr.in/intelligence/documents/",
+    slugLabel: "Documents",
+    title: "Document Records",
+    description: "Surprise Element is being prepared for release on 20 July 2026.",
+  },
+  {
+    dir: path.join(root, "intelligence", "documents", "adtech-surveillance-evidence"),
+    canonical: "https://thenitishkr.in/intelligence/documents/adtech-surveillance-evidence/",
+    slugLabel: "AdTech Surveillance Evidence",
+    title: "AdTech Surveillance Evidence",
+    description: "This document page is being prepared for release on 20 July 2026.",
+  },
+  {
+    dir: path.join(root, "intelligence", "documents", "apus-android-apk-analysis"),
+    canonical: "https://thenitishkr.in/intelligence/documents/apus-android-apk-analysis/",
+    slugLabel: "APUS APK Behaviour Analysis",
+    title: "APUS APK Behaviour Analysis",
+    description: "This document page is being prepared for release on 20 July 2026.",
+  },
+  {
+    dir: path.join(root, "intelligence", "documents", "digital-arrest-root-cause"),
+    canonical: "https://thenitishkr.in/intelligence/documents/digital-arrest-root-cause/",
+    slugLabel: "Digital Arrest Root Cause",
+    title: "Digital Arrest Root Cause",
+    description: "This document page is being prepared for release on 20 July 2026.",
+  },
+  {
+    dir: path.join(root, "intelligence", "documents", "digital-dacoit-evidence"),
+    canonical: "https://thenitishkr.in/intelligence/documents/digital-dacoit-evidence/",
+    slugLabel: "Digital Dacoit Evidence Report",
+    title: "Digital Dacoit Evidence Report",
+    description: "This document page is being prepared for release on 20 July 2026.",
+  },
+  {
+    dir: path.join(root, "intelligence", "documents", "digital-dacoity-national-importance"),
+    canonical: "https://thenitishkr.in/intelligence/documents/digital-dacoity-national-importance/",
+    slugLabel: "Digital Dacoity and National Importance",
+    title: "Digital Dacoity and National Importance",
+    description: "This document page is being prepared for release on 20 July 2026.",
+  },
+  {
+    dir: path.join(root, "intelligence", "documents", "disha-whitepaper"),
+    canonical: "https://thenitishkr.in/intelligence/documents/disha-whitepaper/",
+    slugLabel: "DISHA Whitepaper",
+    title: "DISHA Whitepaper",
+    description: "This document page is being prepared for release on 20 July 2026.",
+  },
+  {
+    dir: path.join(root, "intelligence", "documents", "forensic-intelligence-report"),
+    canonical: "https://thenitishkr.in/intelligence/documents/forensic-intelligence-report/",
+    slugLabel: "Forensic Intelligence Report",
+    title: "Forensic Intelligence Report",
+    description: "This document page is being prepared for release on 20 July 2026.",
+  },
+  {
+    dir: path.join(root, "intelligence", "documents", "intelligence-report-visual"),
+    canonical: "https://thenitishkr.in/intelligence/documents/intelligence-report-visual/",
+    slugLabel: "Intelligence Report Visual Record",
+    title: "Intelligence Report Visual Record",
+    description: "This document page is being prepared for release on 20 July 2026.",
+  },
+  {
+    dir: path.join(root, "intelligence", "documents", "wp-crl-163-2026"),
+    canonical: "https://thenitishkr.in/intelligence/documents/wp-crl-163-2026/",
+    slugLabel: "W.P.(Crl.) 163/2026",
+    title: "W.P.(Crl.) 163/2026",
+    description: "This document page is being prepared for release on 20 July 2026.",
+  },
+  {
+    dir: path.join(root, "intelligence", "documents", "wp-crl-394-2025"),
+    canonical: "https://thenitishkr.in/intelligence/documents/wp-crl-394-2025/",
+    slugLabel: "W.P.(Crl.) 394/2025",
+    title: "W.P.(Crl.) 394/2025",
+    description: "This document page is being prepared for release on 20 July 2026.",
+  },
+];
+
+function escapeHtml(value) {
+  return String(value).replace(/[&<>"']/g, (char) => ({
+    "&": "&amp;",
+    "<": "&lt;",
+    ">": "&gt;",
+    "\"": "&quot;",
+    "'": "&#39;",
+  })[char]);
+}
+
+function buildBreadcrumb(page) {
+  const items = [
+    { name: "Home", url: "https://thenitishkr.in/" },
+    { name: "Intelligence", url: "https://thenitishkr.in/intelligence/" },
+    { name: "Documents", url: "https://thenitishkr.in/intelligence/documents/" },
+  ];
+
+  if (page.canonical !== "https://thenitishkr.in/intelligence/documents/") {
+    items.push({ name: page.slugLabel, url: page.canonical });
+  }
+
+  return items;
+}
+
+function buildHead(page) {
+  const pageTitle = `${page.title} | thenitishkr`;
+  const description = page.description;
+  const breadcrumbItems = buildBreadcrumb(page);
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: breadcrumbItems.map((item, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: item.name,
+      item: item.url,
+    })),
+  };
+  const webpageSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: pageTitle,
+    url: page.canonical,
+    description,
+    inLanguage: "en-IN",
+    dateModified: "2026-06-23T00:00:00+05:30",
+  };
+
+  return `<!doctype html>
 <html lang="en-IN">
 <head>
   <script src="https://analytics.ahrefs.com/analytics.js" data-key="raXJnI4KDG8kEc2xtPYpYQ" async></script>
@@ -14,12 +165,12 @@
   <link rel="icon" href="/favicon.ico?v=tnk-20260610" sizes="any">
   <link rel="icon" href="/assets/brand/favicon-64.png?v=tnk-20260610" type="image/png" sizes="64x64">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png?v=tnk-20260610" sizes="180x180">
-  <title>Forensic Intelligence Report | thenitishkr</title>
-  <meta name="description" content="This document page is being prepared for release on 20 July 2026.">
+  <title>${escapeHtml(pageTitle)}</title>
+  <meta name="description" content="${escapeHtml(description)}">
   <meta name="robots" content="index, follow, max-image-preview:large">
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#062651">
-  <link rel="canonical" href="https://thenitishkr.in/intelligence/documents/forensic-intelligence-report/">
+  <link rel="canonical" href="${page.canonical}">
   <link rel="alternate" type="application/rss+xml" title="thenitishkr research and evidence feed" href="https://thenitishkr.in/feed.xml">
   <link rel="me" href="https://x.com/thenitishkr">
   <link rel="me" href="https://www.linkedin.com/in/thenitishkr">
@@ -34,15 +185,15 @@
   <link rel="me" href="https://www.wikidata.org/wiki/Q140001166">
   <link rel="me" href="https://www.amazon.com/author/nikukr">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://thenitishkr.in/intelligence/documents/forensic-intelligence-report/">
-  <meta property="og:title" content="Forensic Intelligence Report | thenitishkr">
-  <meta property="og:description" content="This document page is being prepared for release on 20 July 2026.">
+  <meta property="og:url" content="${page.canonical}">
+  <meta property="og:title" content="${escapeHtml(pageTitle)}">
+  <meta property="og:description" content="${escapeHtml(description)}">
   <meta property="og:image" content="https://thenitishkr.in/assets/images/og/intelligence.png?v=20260608engagement">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@thenitishkr">
   <meta name="twitter:creator" content="@thenitishkr">
-  <meta name="twitter:title" content="Forensic Intelligence Report | thenitishkr">
-  <meta name="twitter:description" content="This document page is being prepared for release on 20 July 2026.">
+  <meta name="twitter:title" content="${escapeHtml(pageTitle)}">
+  <meta name="twitter:description" content="${escapeHtml(description)}">
   <meta name="twitter:image" content="https://thenitishkr.in/assets/images/og/intelligence.png?v=20260608engagement">
   <link rel="dns-prefetch" href="https://analytics.ahrefs.com">
   <link rel="dns-prefetch" href="https://www.googletagmanager.com">
@@ -220,28 +371,34 @@
       }
     }
   </style>
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Forensic Intelligence Report | thenitishkr","url":"https://thenitishkr.in/intelligence/documents/forensic-intelligence-report/","description":"This document page is being prepared for release on 20 July 2026.","inLanguage":"en-IN","dateModified":"2026-06-23T00:00:00+05:30"}</script>
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://thenitishkr.in/"},{"@type":"ListItem","position":2,"name":"Intelligence","item":"https://thenitishkr.in/intelligence/"},{"@type":"ListItem","position":3,"name":"Documents","item":"https://thenitishkr.in/intelligence/documents/"},{"@type":"ListItem","position":4,"name":"Forensic Intelligence Report","item":"https://thenitishkr.in/intelligence/documents/forensic-intelligence-report/"}]}</script>
-</head>
-<body>
-  <a href="#main-content" class="skip-link">Skip to main content</a>
-  <header class="site-header">
-    <nav class="nav" aria-label="Primary navigation">
-      <a class="brand" href="/">THENITISHKR<span>INDIA | RESEARCH - EVIDENCE - INTELLIGENCE</span></a>
-      <button class="menu-button" type="button" aria-label="Open menu" aria-expanded="false" data-menu-toggle><span></span><span></span><span></span></button>
-      <div class="nav-links" data-nav-links><a href="/start-here/">Start Here</a><a href="/intelligence/">Intelligence</a><a href="/disha/">DISHA</a><a href="/article-12/">Article 12</a><a href="/digital-constitutional-personhood/">Digital Personhood</a><a href="/news/">News</a><a href="/media/">Media</a><a href="/about/">About</a></div>
-      <a class="nav-cta" href="/intelligence/">Read the Archive</a>
-    </nav>
-  </header>
+  <script type="application/ld+json">${JSON.stringify(webpageSchema)}</script>
+  <script type="application/ld+json">${JSON.stringify(breadcrumbSchema)}</script>
+</head>`;
+}
 
-  <main id="main-content">
+function buildMain(page) {
+  const breadcrumbItems = buildBreadcrumb(page);
+  const crumbs = breadcrumbItems
+    .map((item, index) => {
+      const isLast = index === breadcrumbItems.length - 1;
+      return isLast
+        ? `<span aria-current="page">${escapeHtml(item.name)}</span>`
+        : `<a href="${new URL(item.url).pathname}">${escapeHtml(item.name)}</a>`;
+    })
+    .join("<span aria-hidden=\"true\">/</span>");
+
+  const label = page.canonical === "https://thenitishkr.in/intelligence/documents/"
+    ? "Document Section"
+    : "Reserved Document Route";
+
+  return `<main id="main-content">
   <div class="coming-shell">
-    <nav class="coming-breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span><a href="/intelligence/">Intelligence</a><span aria-hidden="true">/</span><a href="/intelligence/documents/">Documents</a><span aria-hidden="true">/</span><span aria-current="page">Forensic Intelligence Report</span></nav>
+    <nav class="coming-breadcrumb" aria-label="Breadcrumb">${crumbs}</nav>
     <section class="coming-panel" aria-labelledby="coming-title">
       <article class="coming-card">
         <span class="coming-kicker">Surprise Element</span>
         <h1 id="coming-title">Coming Soon</h1>
-        <p class="coming-line">Forensic Intelligence Report will go live on 20 July 2026.</p>
+        <p class="coming-line">${escapeHtml(page.title)} will go live on ${launchDateDisplay}.</p>
         <p class="coming-copy">This route is reserved and the final page is now being prepared inside the live HTML site shell. The URL is active, the route is preserved, and the published version will appear automatically when the countdown ends.</p>
         <div class="coming-actions button-row">
           <a class="button" href="/intelligence/">Back to Intelligence Archive</a>
@@ -250,15 +407,15 @@
         </div>
       </article>
       <aside class="countdown-card" aria-live="polite">
-        <span class="coming-meta-label">Reserved Document Route</span>
+        <span class="coming-meta-label">${label}</span>
         <h2>Countdown to Launch</h2>
-        <div class="countdown-grid" data-countdown="2026-07-20T00:00:00+05:30">
+        <div class="countdown-grid" data-countdown="${launchDateIso}">
           <div class="countdown-unit"><span class="countdown-value" data-days>0</span><span class="countdown-label">Days</span></div>
           <div class="countdown-unit"><span class="countdown-value" data-hours>0</span><span class="countdown-label">Hours</span></div>
           <div class="countdown-unit"><span class="countdown-value" data-minutes>0</span><span class="countdown-label">Minutes</span></div>
           <div class="countdown-unit"><span class="countdown-value" data-seconds>0</span><span class="countdown-label">Seconds</span></div>
         </div>
-        <p class="countdown-date">Launch target: <strong>20 July 2026</strong><br>Timezone: India Standard Time</p>
+        <p class="countdown-date">Launch target: <strong>${launchDateDisplay}</strong><br>Timezone: India Standard Time</p>
       </aside>
     </section>
     <section class="coming-note" aria-labelledby="coming-note-title">
@@ -292,48 +449,10 @@
     <a class="button secondary" href="/intelligence/">Browse case files</a>
     <a class="button" href="https://thenitishkr.substack.com" target="_blank" aria-label="Get record updates (opens in new tab)" rel="noopener">Get record updates</a>
   </div>
-</section><footer class="site-footer">
-    <div class="section">
-      <div>
-        <img class="footer-brand-mark" src="/assets/brand/thenitishkr-logo.png" alt="Nitish Kumar thenitishkr monogram" width="74" height="74" loading="lazy"><div class="footer-logo">THENITISHKR</div>
-        <p class="footer-kicker">INDIA | RESEARCH - EVIDENCE - INTELLIGENCE</p>
-        <p class="muted" style="margin-top:18px">&copy; 2026 Nitish Kumar (thenitishkr). All Rights Reserved.</p>
-      </div>
-      <div class="footer-links" aria-label="Footer navigation">
-        <a href="/article-12/">Article 12</a>
-        <a href="/digital-constitutional-personhood/">Digital Constitutional Personhood</a>
-        <a href="/disha/">DISHA</a>
-        <a href="/intelligence/">Intelligence</a><a href="/news/">News & Analysis</a>
-        <a href="/books/">Books</a>
-        <a href="/about/">About</a>
-        <a href="/feed.xml">RSS Feed</a>
-        <a href="/sitemap/">Research Index</a>
-        <a href="/terms/">T&C</a>
-        <a href="/privacy-policy/">Privacy</a>
-        <a href="/editorial-standards/">Editorial Standards</a>
-      </div>
-            <div class="social-links" aria-label="Social links">
-        <a class="social-icon social-x" href="https://x.com/thenitishkr" aria-label="X / Twitter" title="X / Twitter"><span aria-hidden="true">X</span></a>
-        <a class="social-icon social-linkedin" href="https://www.linkedin.com/in/thenitishkr" aria-label="LinkedIn" title="LinkedIn"><span aria-hidden="true">in</span></a>
-        <a class="social-icon social-substack" href="https://thenitishkr.substack.com" aria-label="Substack" title="Substack"><span aria-hidden="true">S</span></a>
-        <a class="social-icon social-medium" href="https://medium.com/@thenitishkr" aria-label="Medium" title="Medium"><span aria-hidden="true">M</span></a>
-        <a class="social-icon social-github" href="https://github.com/Tashima-Tarsh" aria-label="GitHub" title="GitHub"><span aria-hidden="true">GH</span></a>
-        <a class="social-icon social-instagram" href="https://www.instagram.com/thenitishkr" aria-label="Instagram" title="Instagram"><span aria-hidden="true">IG</span></a>
-        <a class="social-icon social-facebook" href="https://www.facebook.com/thenitishkr" aria-label="Facebook" title="Facebook"><span aria-hidden="true">f</span></a>
-        <a class="social-icon social-reddit" href="https://www.reddit.com/user/Ok-File-6559/" aria-label="Reddit" title="Reddit"><span aria-hidden="true">R</span></a>
-        <a class="social-icon social-quora" href="https://www.quora.com/profile/Nitish-Kumar-11545" aria-label="Quora" title="Quora"><span aria-hidden="true">Q</span></a>
-        <a class="social-icon social-whatsapp" href="https://wa.me/919142197135" aria-label="WhatsApp Business" title="WhatsApp Business"><span aria-hidden="true">WA</span></a>
-        <a class="social-icon social-orcid" href="https://orcid.org/0009-0004-6840-4463" aria-label="ORCID" title="ORCID"><span aria-hidden="true">iD</span></a>
-        <a class="social-icon social-wikidata" href="https://www.wikidata.org/wiki/Q140001166" aria-label="Wikidata" title="Wikidata" rel="me"><span aria-hidden="true">WD</span></a>
-        <a class="social-icon social-amazon" href="https://www.amazon.com/author/nikukr" aria-label="Amazon Author" title="Amazon Author" rel="me"><span aria-hidden="true">A</span></a>
-      </div>
-      <div class="footer-note">
-        <p><strong>Not for sale / non-commercial public-interest project</strong></p>
-        <p class="footer-legal">This archive assembles public records, court filings, documented allegations, and research analysis on constitutional accountability and digital governance in India. The material presented here is open for scrutiny, criticism, and independent verification. Readers are encouraged to consult original sources, cross-reference claims with other publications, and reach their own conclusions. The archive does not represent final adjudication on any matter, only the compilation of evidence and reasoning in service of informed public understanding.</p>
-      </div>
-    </div>
-  </footer>
-<script>
+</section>`;
+}
+
+const countdownScript = `<script>
   (() => {
     const root = document.querySelector("[data-countdown]");
     if (!root) return;
@@ -359,7 +478,18 @@
     update();
     setInterval(update, 1000);
   })();
-</script>
-<script src="/script.js?v=20260609substacktrusted" defer></script>
+</script>`;
+
+for (const page of pages) {
+  fs.mkdirSync(page.dir, { recursive: true });
+  const html = `${buildHead(page)}
+<body>${bodyShell}${buildMain(page)}${footerShell}
+${countdownScript}
+${siteScript}
 </body>
 </html>
+`;
+  fs.writeFileSync(path.join(page.dir, "index.html"), html);
+}
+
+console.log(`Rendered ${pages.length} coming-soon document pages with the live HTML shell.`);

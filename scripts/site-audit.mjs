@@ -137,7 +137,7 @@ if (architectureEntity?.sameAs !== "https://www.wikidata.org/wiki/Q140167664") {
 if (
   architectureEntity?.subjectOf?.["@type"] !== "Report" ||
   architectureEntity.subjectOf.url !==
-    "https://thenitishkr.in/assets/docs/disha-whitepaper-what-it-can-what-it-did.pdf" ||
+    "https://thenitishkr.in/assets/docs/disha-whitepaper-what-it-can-what-it-did-v66.pdf" ||
   architectureEntity.subjectOf.author?.["@id"] !== "https://thenitishkr.in/#person"
 ) {
   errors.push("disha/index.html: DISHA architecture must identify its authored whitepaper report");

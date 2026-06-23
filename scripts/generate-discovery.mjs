@@ -67,10 +67,9 @@ function docItems() {
     }));
 }
 
-function buildSitemap(pages, docs) {
+function buildSitemap(pages) {
   const entries = [
     ...pages.map((item) => `  <url><loc>${escapeXml(item.url)}</loc><lastmod>${item.mtime.toISOString().slice(0, 10)}</lastmod><changefreq>weekly</changefreq><priority>${item.url === `${site}/` ? "1.0" : "0.8"}</priority></url>`),
-    ...docs.map((item) => `  <url><loc>${escapeXml(item.url)}</loc><lastmod>${item.mtime.toISOString().slice(0, 10)}</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>`),
   ];
 
   const xml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${entries.join("\n")}\n</urlset>\n`;
@@ -92,6 +91,6 @@ function buildFeed(pages) {
 
 const pages = htmlItems();
 const docs = docItems();
-buildSitemap(pages, docs);
+buildSitemap(pages);
 buildFeed(pages);
 console.log(`Generated discovery files for ${pages.length} pages and ${docs.length} docs.`);

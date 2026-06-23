@@ -1,163 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0"
-  xmlns:atom="http://www.w3.org/2005/Atom"
-  xmlns:media="http://search.yahoo.com/mrss/"
-  xmlns:dc="http://purl.org/dc/elements/1.1/">
-  <channel>
-    <title>thenitishkr — Research, Evidence and Intelligence</title>
-    <link>https://thenitishkr.in/</link>
-    <description>Public-interest intelligence archive: Article 12, DISHA, digital constitutional personhood, Supreme Court records, cyber evidence and accountability cases — by Nitish Kumar (thenitishkr), India.</description>
-    <language>en-IN</language>
-    <copyright>2026 Nitish Kumar (thenitishkr). All Rights Reserved.</copyright>
-    <managingEditor>nkumar906099@gmail.com (Nitish Kumar)</managingEditor>
-    <webMaster>nkumar906099@gmail.com (Nitish Kumar)</webMaster>
-    <pubDate>Fri, 20 Jun 2026 09:00:00 +0530</pubDate>
-    <lastBuildDate>Fri, 20 Jun 2026 09:00:00 +0530</lastBuildDate>
-    <category>Constitutional Law</category>
-    <category>Digital Governance India</category>
-    <category>Cyber Evidence</category>
-    <category>Public Interest Research</category>
-    <ttl>60</ttl>
-    <image>
-      <url>https://thenitishkr.in/assets/brand/thenitishkr-logo.png</url>
-      <title>thenitishkr — Research, Evidence and Intelligence</title>
-      <link>https://thenitishkr.in/</link>
-      <width>74</width>
-      <height>74</height>
-    </image>
-    <atom:link href="https://thenitishkr.in/feed.xml" rel="self" type="application/rss+xml"/>
-
-    <item>
-      <title>The Real NEET Exam Leak Investigation Has Not Yet Begun</title>
-      <link>https://thenitishkr.in/news/telegram-ban-neet-2026-real-data-leak-investigation/</link>
-      <guid isPermaLink="true">https://thenitishkr.in/news/telegram-ban-neet-2026-real-data-leak-investigation/</guid>
-      <pubDate>Tue, 16 Jun 2026 16:30:00 +0530</pubDate>
-      <dc:creator>Nitish Kumar (thenitishkr)</dc:creator>
-      <category>News</category>
-      <category>NEET 2026</category>
-      <category>Data Leak</category>
-      <category>Cyber Evidence</category>
-      <description><![CDATA[India restricted Telegram before NEET 2026, but the harder question remains whether the State has traced the source — from devices and SDKs to stolen data pathways. The ban is a symptom. The investigation of origin has not yet begun in any documented public record.]]></description>
-      <media:content url="https://thenitishkr.in/assets/images/news/telegram-ban-neet-2026-real-data-leak-investigation/telegram-ban-neet-2026-og.webp" medium="image" type="image/webp" width="1200" height="630"/>
-      <media:thumbnail url="https://thenitishkr.in/assets/images/news/telegram-ban-neet-2026-real-data-leak-investigation/telegram-ban-neet-2026-og.webp"/>
-    </item>
-
-    <item>
-      <title>12 Years of NDA: Milestone Governance or Implementation Failure?</title>
-      <link>https://thenitishkr.in/news/nda-12-years/</link>
-      <guid isPermaLink="true">https://thenitishkr.in/news/nda-12-years/</guid>
-      <pubDate>Sun, 14 Jun 2026 08:00:00 +0530</pubDate>
-      <dc:creator>Nitish Kumar (thenitishkr)</dc:creator>
-      <category>News</category>
-      <category>NDA</category>
-      <category>Governance</category>
-      <category>Public Finance</category>
-      <description><![CDATA[A public-interest analysis of twelve years of NDA governance covering public finance, disaster management, digital governance, Article 12 accountability and citizen remedy in India — examined against CAG audit findings, parliamentary records and RTI disclosures.]]></description>
-      <media:content url="https://thenitishkr.in/assets/images/news/nda-12-years/nda-12-years-og.webp" medium="image" type="image/webp" width="1400" height="735"/>
-      <media:thumbnail url="https://thenitishkr.in/assets/images/news/nda-12-years/nda-12-years-og.webp"/>
-    </item>
-
-    <item>
-      <title>What If the Citizen Was Never the Centre of Digital India?</title>
-      <link>https://thenitishkr.in/intelligence/citizen-not-found/</link>
-      <guid isPermaLink="true">https://thenitishkr.in/intelligence/citizen-not-found/</guid>
-      <pubDate>Fri, 12 Jun 2026 09:00:00 +0530</pubDate>
-      <dc:creator>Nitish Kumar (thenitishkr)</dc:creator>
-      <category>Intelligence</category>
-      <category>Digital India</category>
-      <category>Constitutional Accountability</category>
-      <description><![CDATA[The State can locate citizens for tax, identity, data and compliance. This analysis asks why the same citizen can disappear when remedy, accountability and human review are required. Case 13 in the DISHA Intelligence Archive.]]></description>
-      <media:content url="https://thenitishkr.in/assets/images/evidence/citizens-disappeared-guardians-slept.webp" medium="image" type="image/webp" width="1200" height="675"/>
-      <media:thumbnail url="https://thenitishkr.in/assets/images/evidence/citizens-disappeared-guardians-slept.webp"/>
-    </item>
-
-    <item>
-      <title>W.P.(Crl.) 163/2026 and the MeitY Digital Governance Record</title>
-      <link>https://thenitishkr.in/intelligence/meity-digital-governance/</link>
-      <guid isPermaLink="true">https://thenitishkr.in/intelligence/meity-digital-governance/</guid>
-      <pubDate>Wed, 10 Jun 2026 09:00:00 +0530</pubDate>
-      <dc:creator>Nitish Kumar (thenitishkr)</dc:creator>
-      <category>Intelligence</category>
-      <category>MeitY</category>
-      <category>Supreme Court</category>
-      <category>Cyber Evidence</category>
-      <description><![CDATA[The Supreme Court routed W.P.(Crl.) 163/2026 to MeitY as a supplementary representation on 19 May 2026. This case file separates the procedural direction from the petition's broader data-sovereignty arguments and documents the adtech surveillance evidence record.]]></description>
-      <media:content url="https://thenitishkr.in/assets/images/evidence/wp-crl-163-2026-cyber-architecture-case.webp" medium="image" type="image/webp" width="1200" height="800"/>
-      <media:thumbnail url="https://thenitishkr.in/assets/images/evidence/wp-crl-163-2026-cyber-architecture-case.webp"/>
-    </item>
-
-    <item>
-      <title>When the Certificate Outran the Ground: NITI Aayog ODF Case</title>
-      <link>https://thenitishkr.in/intelligence/niti-aayog-certification-funds/</link>
-      <guid isPermaLink="true">https://thenitishkr.in/intelligence/niti-aayog-certification-funds/</guid>
-      <pubDate>Wed, 10 Jun 2026 09:00:00 +0530</pubDate>
-      <dc:creator>Nitish Kumar (thenitishkr)</dc:creator>
-      <category>Intelligence</category>
-      <category>NITI Aayog</category>
-      <category>ODF</category>
-      <category>Public Audit</category>
-      <description><![CDATA[India's 2019 ODF declaration tested against NSS, NFHS-5, NARSS, CAG and public-health evidence. The case documents the gap between certification timing and ground reality, keeping NITI Aayog's amplification role distinct from the original certification chain.]]></description>
-      <media:content url="https://thenitishkr.in/assets/images/evidence/article-12-collapsed-map.webp" medium="image" type="image/webp" width="1200" height="900"/>
-      <media:thumbnail url="https://thenitishkr.in/assets/images/evidence/article-12-collapsed-map.webp"/>
-    </item>
-
-    <item>
-      <title>Bihar SIR: When a Legitimate Objective Meets a Disputed Process</title>
-      <link>https://thenitishkr.in/intelligence/sir-constitutional-scam/</link>
-      <guid isPermaLink="true">https://thenitishkr.in/intelligence/sir-constitutional-scam/</guid>
-      <pubDate>Wed, 10 Jun 2026 09:00:00 +0530</pubDate>
-      <dc:creator>Nitish Kumar (thenitishkr)</dc:creator>
-      <category>Intelligence</category>
-      <category>Bihar</category>
-      <category>Electoral Rolls</category>
-      <category>Constitutional Process</category>
-      <description><![CDATA[The Special Intensive Revision of electoral rolls in Bihar asked existing registered voters to prove themselves again despite records already held by the State. Case 12 analyses the constitutional process question — an author conclusion, not a Supreme Court finding.]]></description>
-      <media:content url="https://thenitishkr.in/assets/images/evidence/supreme-court-of-india-guardian.webp" medium="image" type="image/webp" width="1200" height="675"/>
-      <media:thumbnail url="https://thenitishkr.in/assets/images/evidence/supreme-court-of-india-guardian.webp"/>
-    </item>
-
-    <item>
-      <title>The Empty Vault: NDMA Disaster-Fund Accountability Case</title>
-      <link>https://thenitishkr.in/intelligence/ndma-disaster-governance/</link>
-      <guid isPermaLink="true">https://thenitishkr.in/intelligence/ndma-disaster-governance/</guid>
-      <pubDate>Sat, 06 Jun 2026 18:30:00 +0530</pubDate>
-      <dc:creator>Nitish Kumar (thenitishkr)</dc:creator>
-      <category>Intelligence</category>
-      <category>NDMA</category>
-      <category>Disaster Governance</category>
-      <category>Public Finance</category>
-      <description><![CDATA[Statutory responsibility, disaster-governance documents, citizen impact and accountability questions connected to W.P.(Crl.) No. 394/2025. Case 01 in the DISHA Intelligence Archive examines utilisation certificates, CAG audit gaps and NDMA fund accountability.]]></description>
-      <media:content url="https://thenitishkr.in/assets/images/governance-record.png" medium="image" type="image/png" width="1200" height="675"/>
-      <media:thumbnail url="https://thenitishkr.in/assets/images/governance-record.png"/>
-    </item>
-
-    <item>
-      <title>The Sanitation Mirage: ODF False Justification Case</title>
-      <link>https://thenitishkr.in/intelligence/odf-false-justification/</link>
-      <guid isPermaLink="true">https://thenitishkr.in/intelligence/odf-false-justification/</guid>
-      <pubDate>Sat, 06 Jun 2026 18:30:00 +0530</pubDate>
-      <dc:creator>Nitish Kumar (thenitishkr)</dc:creator>
-      <category>Intelligence</category>
-      <category>ODF</category>
-      <category>Sanitation</category>
-      <category>Public Audit</category>
-      <description><![CDATA[A case record examining the gap between India's Open Defecation Free declaration and ground evidence from NSS, NFHS and CAG reports. Case 04 in the DISHA Intelligence Archive documents the evidence and separates it from political claims.]]></description>
-      <media:content url="https://thenitishkr.in/assets/images/evidence/article-12-infected.webp" medium="image" type="image/webp" width="1200" height="675"/>
-      <media:thumbnail url="https://thenitishkr.in/assets/images/evidence/article-12-infected.webp"/>
-    </item>
-
-    <item>
-      <title>DISHA Intelligence Architecture: Evidence, Memory and Constitutional Intelligence</title>
-      <link>https://thenitishkr.in/disha/</link>
-      <guid isPermaLink="true">https://thenitishkr.in/disha/</guid>
-      <pubDate>Sat, 06 Jun 2026 18:30:00 +0530</pubDate>
-      <dc:creator>Nitish Kumar (thenitishkr)</dc:creator>
-      <category>DISHA</category>
-      <category>Intelligence Architecture</category>
-      <description><![CDATA[DISHA (Defence Intelligence Signals Heuristic Architecture) is a six-layer evidence-first civic intelligence framework invented by Nitish Kumar on 25 April 2012. Ver 4.2.0 whitepaper documents methodology, validation limits and the claim-to-source discipline.]]></description>
-      <media:content url="https://thenitishkr.in/assets/images/disha-intelligence-architecture.png" medium="image" type="image/png" width="1200" height="675"/>
-      <media:thumbnail url="https://thenitishkr.in/assets/images/disha-intelligence-architecture.png"/>
-    </item>
-
-  </channel>
-</rss>
+<rss version="2.0"><channel><title>thenitishkr.in articles and evidence records</title><link>https://thenitishkr.in/</link><description>Article 12, DISHA, digital constitutional personhood, and intelligence case records from thenitishkr.in.</description><lastBuildDate>Tue, 23 Jun 2026 01:03:50 GMT</lastBuildDate>
+<item><title>Document Records | thenitishkr.in</title><link>https://thenitishkr.in/intelligence/documents/</link><guid isPermaLink="true">https://thenitishkr.in/intelligence/documents/</guid><pubDate>Tue, 23 Jun 2026 01:02:31 GMT</pubDate><description>Public-interest article and evidence record from thenitishkr.in</description></item>
+<item><title>Writ Petition (Criminal) No. 394/2025 — Nitish Kumar v. Union of India &amp;amp; Ors. | Document Record | thenitishkr.in</title><link>https://thenitishkr.in/intelligence/documents/wp-crl-394-2025/</link><guid isPermaLink="true">https://thenitishkr.in/intelligence/documents/wp-crl-394-2025/</guid><pubDate>Tue, 23 Jun 2026 01:02:31 GMT</pubDate><description>Supreme Court writ petition concerning disaster fund governance, NITI Aayog certification, ODF false justification, and public record accountability under Article 32 of the Constitution of India.</description></item>
+<item><title>Writ Petition (Criminal) No. 163/2026 — Nitish Kumar v. Union of India &amp;amp; Ors. | Document Record | thenitishkr.in</title><link>https://thenitishkr.in/intelligence/documents/wp-crl-163-2026/</link><guid isPermaLink="true">https://thenitishkr.in/intelligence/documents/wp-crl-163-2026/</guid><pubDate>Tue, 23 Jun 2026 01:02:31 GMT</pubDate><description>Supreme Court writ petition concerning data sovereignty, personal data of Indian citizens held on foreign servers, MeitY accountability, and Digital Constitutional Personhood.</description></item>
+<item><title>Intelligence Report — Visual Evidence Compilation | Document Record | thenitishkr.in</title><link>https://thenitishkr.in/intelligence/documents/intelligence-report-visual/</link><guid isPermaLink="true">https://thenitishkr.in/intelligence/documents/intelligence-report-visual/</guid><pubDate>Tue, 23 Jun 2026 01:02:31 GMT</pubDate><description>Visual evidence compilation. This is a scan-only document; text has not been extracted. The document contains visual records relevant to the intelligence archive.</description></item>
+<item><title>DISHA Whitepaper - What It Can, What It Did | Document Record | thenitishkr.in</title><link>https://thenitishkr.in/intelligence/documents/disha-whitepaper/</link><guid isPermaLink="true">https://thenitishkr.in/intelligence/documents/disha-whitepaper/</guid><pubDate>Tue, 23 Jun 2026 01:02:31 GMT</pubDate><description>Whitepaper documenting the DISHA Intelligence Architecture: what it is designed to do, what it has achieved, and its application to constitutional accountability research.</description></item>
+<item><title>Forensic Intelligence Report — Digital Evidence Analysis | Document Record | thenitishkr.in</title><link>https://thenitishkr.in/intelligence/documents/forensic-intelligence-report/</link><guid isPermaLink="true">https://thenitishkr.in/intelligence/documents/forensic-intelligence-report/</guid><pubDate>Tue, 23 Jun 2026 01:02:31 GMT</pubDate><description>Forensic intelligence report documenting digital evidence analysis, including APK behaviour, permission exploitation patterns, and data exfiltration pathways observed in digital-loan-app and cyber-fraud ecosystems.</description></item>
+<item><title>Digital Dacoit: How India Was Looted — Evidence Report | Document Record | thenitishkr.in</title><link>https://thenitishkr.in/intelligence/documents/digital-dacoit-evidence/</link><guid isPermaLink="true">https://thenitishkr.in/intelligence/documents/digital-dacoit-evidence/</guid><pubDate>Tue, 23 Jun 2026 01:02:31 GMT</pubDate><description>Evidence report examining the scale and architecture of digital fraud in India, including digital dacoity patterns, financial loss data, and the gap between money-trail enforcement and data-trail investigation.</description></item>
+<item><title>Digital Dacoity — A Matter of National Importance | Document Record | thenitishkr.in</title><link>https://thenitishkr.in/intelligence/documents/digital-dacoity-national-importance/</link><guid isPermaLink="true">https://thenitishkr.in/intelligence/documents/digital-dacoity-national-importance/</guid><pubDate>Tue, 23 Jun 2026 01:02:31 GMT</pubDate><description>Analysis framing digital dacoity as a matter of national importance, examining constitutional security implications, data sovereignty, and the structural gaps in India</description></item>
+<item><title>APUS Android Performance Manager — APK Behaviour Analysis | Document Record | thenitishkr.in</title><link>https://thenitishkr.in/intelligence/documents/apus-android-apk-analysis/</link><guid isPermaLink="true">https://thenitishkr.in/intelligence/documents/apus-android-apk-analysis/</guid><pubDate>Tue, 23 Jun 2026 01:02:31 GMT</pubDate><description>Technical analysis of the APUS Android Performance Manager APK, documenting permission requests, data access patterns, and behavioural characteristics relevant to the AdTech data-extraction layer.</description></item>
+<item><title>SilverPush, Silveredge Technologies, and InMobi — AdTech Surveillance Evidence Compendium | Document Record | thenitishkr.in</title><link>https://thenitishkr.in/intelligence/documents/adtech-surveillance-evidence/</link><guid isPermaLink="true">https://thenitishkr.in/intelligence/documents/adtech-surveillance-evidence/</guid><pubDate>Tue, 23 Jun 2026 01:02:31 GMT</pubDate><description>Evidence compendium documenting FTC regulatory actions against InMobi and SilverPush, including ultrasonic beacon technology, cross-device tracking, and WiFi/BSSID-based geolocation concerns.</description></item>
+<item><title>Digital Arrest Root Cause Analysis — Intervenor Application in Suo Motu W.P.(Crl.) No. 3/2025 | Document Record | thenitishkr.in</title><link>https://thenitishkr.in/intelligence/documents/digital-arrest-root-cause/</link><guid isPermaLink="true">https://thenitishkr.in/intelligence/documents/digital-arrest-root-cause/</guid><pubDate>Tue, 23 Jun 2026 01:02:31 GMT</pubDate><description>Intervenor application and root-cause analysis of the Digital Arrest phenomenon in India, submitted in the Supreme Court</description></item>
+<item><title>Research and Publication Index | thenitishkr</title><link>https://thenitishkr.in/sitemap/</link><guid isPermaLink="true">https://thenitishkr.in/sitemap/</guid><pubDate>Tue, 23 Jun 2026 00:39:17 GMT</pubDate><description>Human-readable sitemap for the thenitishkr research archive: Article 12, Digital Constitutional Personhood, DISHA, case files, media, books and datasets.</description></item>
+<item><title>Fact Check | Claim-to-Source Verification Matrix</title><link>https://thenitishkr.in/fact-check/</link><guid isPermaLink="true">https://thenitishkr.in/fact-check/</guid><pubDate>Tue, 23 Jun 2026 00:39:17 GMT</pubDate><description>Claim-to-source verification matrix separating official records, allegations, DISHA assessments, court procedure and unresolved questions.</description></item>
+<item><title>Research Source Register | thenitishkr</title><link>https://thenitishkr.in/research-datasets/</link><guid isPermaLink="true">https://thenitishkr.in/research-datasets/</guid><pubDate>Tue, 23 Jun 2026 00:39:17 GMT</pubDate><description>Source register and evidence inventory for research documents, PDFs, court records and manual verification records on thenitishkr.in.</description></item>
+<item><title>DISHA Claim-to-Source System | thenitishkr</title><link>https://thenitishkr.in/disha/claim-to-source-system/</link><guid isPermaLink="true">https://thenitishkr.in/disha/claim-to-source-system/</guid><pubDate>Tue, 23 Jun 2026 00:39:17 GMT</pubDate><description>DISHA claim-to-source framework for separating verified records, allegations, assessments, unresolved questions and commentary.</description></item>
+<item><title>DISHA Intelligence Architecture | Nitish Kumar</title><link>https://thenitishkr.in/disha/</link><guid isPermaLink="true">https://thenitishkr.in/disha/</guid><pubDate>Tue, 23 Jun 2026 00:39:17 GMT</pubDate><description>DISHA by Nitish Kumar: evidence, validation, cyber defence, and constitutional accountability.</description></item>
+<item><title>DISHA Intelligence Archive | thenitishkr</title><link>https://thenitishkr.in/intelligence/</link><guid isPermaLink="true">https://thenitishkr.in/intelligence/</guid><pubDate>Tue, 23 Jun 2026 00:34:10 GMT</pubDate><description>13 DISHA Intelligence case files: Supreme Court petitions, MeitY, NDMA, NITI Aayog, RTI trails, and Article 12 constitutional evidence in India.</description></item>
+<item><title>DISHA Validation and Accuracy Basis | thenitishkr</title><link>https://thenitishkr.in/disha/validation/</link><guid isPermaLink="true">https://thenitishkr.in/disha/validation/</guid><pubDate>Tue, 23 Jun 2026 00:29:55 GMT</pubDate><description>How the DISHA Intelligence Architecture 97% accuracy measure is calculated, what it covers, the evidence basis, and the methodological limits.</description></item>
+<item><title>DISHA Origin Record | thenitishkr</title><link>https://thenitishkr.in/disha/origin/</link><guid isPermaLink="true">https://thenitishkr.in/disha/origin/</guid><pubDate>Tue, 23 Jun 2026 00:29:55 GMT</pubDate><description>DISHA origin page separating the 2012 foundation sketch, 2013 institutional record and present research limits.</description></item>
+<item><title>DISHA Methodology | thenitishkr</title><link>https://thenitishkr.in/disha/methodology/</link><guid isPermaLink="true">https://thenitishkr.in/disha/methodology/</guid><pubDate>Tue, 23 Jun 2026 00:29:55 GMT</pubDate><description>DISHA methodology page explaining signals, evidence, memory, analysis, policy restraint and public-record accountability.</description></item>
+<item><title>DISHA Glossary — Defined Terms | thenitishkr</title><link>https://thenitishkr.in/disha/glossary/</link><guid isPermaLink="true">https://thenitishkr.in/disha/glossary/</guid><pubDate>Tue, 23 Jun 2026 00:29:55 GMT</pubDate><description>Defined terms for DISHA Intelligence Architecture: DISHA, Vyuha, Yudh, Digital Soldiers, No-First-Use, Digital Constitutional Personhood. By Nitish Kumar.</description></item>
+<item><title>Nitish Kumar (thenitishkr): Researcher &amp;amp; DISHA Inventor</title><link>https://thenitishkr.in/about/</link><guid isPermaLink="true">https://thenitishkr.in/about/</guid><pubDate>Sun, 21 Jun 2026 23:00:28 GMT</pubDate><description>Nitish Kumar (thenitishkr) — researcher, National Cyber Security Scholar, DISHA inventor, author. Not the Bihar politician. ORCID 0009-0004-6840-4463</description></item>
+<item><title>Constitutional Records &amp; Research Archive | thenitishkr</title><link>https://thenitishkr.in/</link><guid isPermaLink="true">https://thenitishkr.in/</guid><pubDate>Sun, 21 Jun 2026 22:43:45 GMT</pubDate><description>Public research archive of Nitish Kumar, inventor of DISHA, with 6,000+ evidence items and reviewed case-file claims checked against official records.</description></item>
+<item><title>Statement by the Inventor of DISHA | thenitishkr</title><link>https://thenitishkr.in/statement/</link><guid isPermaLink="true">https://thenitishkr.in/statement/</guid><pubDate>Sun, 21 Jun 2026 21:04:59 GMT</pubDate><description>Full public statement by Nitish Kumar (thenitishkr), inventor of DISHA, on constitutional visibility, citizen harm and the documentary basis of this archive.</description></item>
+<item><title>Start Here | DISHA, Evidence Archive and Public Record</title><link>https://thenitishkr.in/start-here/</link><guid isPermaLink="true">https://thenitishkr.in/start-here/</guid><pubDate>Sun, 21 Jun 2026 21:04:59 GMT</pubDate><description>Five-minute overview of Nitish Kumar (thenitishkr), DISHA, the evidence archive, court-related records, public-source verification and unresolved questions.</description></item>
+<item><title>Digital Personhood Model Bill, 2026 | thenitishkr</title><link>https://thenitishkr.in/digital-constitutional-personhood/model-bill-2026/</link><guid isPermaLink="true">https://thenitishkr.in/digital-constitutional-personhood/model-bill-2026/</guid><pubDate>Sun, 21 Jun 2026 17:15:38 GMT</pubDate><description>Public-interest model bill on biometric integrity, data autonomy, AI accountability, digital remedy and constitutional protection in India.</description></item>
+<item><title>Digital Constitutional Personhood &amp; Data Sovereignty</title><link>https://thenitishkr.in/digital-constitutional-personhood/</link><guid isPermaLink="true">https://thenitishkr.in/digital-constitutional-personhood/</guid><pubDate>Sun, 21 Jun 2026 17:01:00 GMT</pubDate><description>A citizen-first Indian framework for digital identity, biometric dignity, AI governance, evidence custody, data sovereignty and constitutional remedy.</description></item>
+<item><title>Digital Arrest and Data Harm | thenitishkr</title><link>https://thenitishkr.in/digital-arrest-data-harm/</link><guid isPermaLink="true">https://thenitishkr.in/digital-arrest-data-harm/</guid><pubDate>Sun, 21 Jun 2026 16:01:04 GMT</pubDate><description>Research hub for digital arrest, stolen KYC data, data recovery and victim record preservation in the public evidence archive.</description></item>
+<item><title>Article 12: How Citizens Became Invisible | thenitishkr</title><link>https://thenitishkr.in/article-12/</link><guid isPermaLink="true">https://thenitishkr.in/article-12/</guid><pubDate>Sun, 21 Jun 2026 15:57:24 GMT</pubDate><description>Article 12 research by Nitish Kumar: how public authorities grow while citizen outcomes remain unresolved. Constitutional accountability in India.</description></item>
+<item><title>Terms and Conditions | thenitishkr.in</title><link>https://thenitishkr.in/terms/</link><guid isPermaLink="true">https://thenitishkr.in/terms/</guid><pubDate>Sun, 21 Jun 2026 09:26:57 GMT</pubDate><description>Terms and conditions for thenitishkr.in, the public-interest research archive of Nitish Kumar (thenitishkr).</description></item>
+<item><title>Privacy Policy | thenitishkr.in</title><link>https://thenitishkr.in/privacy-policy/</link><guid isPermaLink="true">https://thenitishkr.in/privacy-policy/</guid><pubDate>Sun, 21 Jun 2026 09:26:57 GMT</pubDate><description>Privacy policy for thenitishkr.in, the public-interest research archive of Nitish Kumar (thenitishkr).</description></item>
+<item><title>NEET 2026 Telegram Ban: Real Data Probe Not Begun</title><link>https://thenitishkr.in/news/telegram-ban-neet-2026-real-data-leak-investigation/</link><guid isPermaLink="true">https://thenitishkr.in/news/telegram-ban-neet-2026-real-data-leak-investigation/</guid><pubDate>Sun, 21 Jun 2026 09:26:57 GMT</pubDate><description>India restricted Telegram before NEET 2026, but has the State traced the source—from devices and SDKs to stolen data? A DISHA evidence-based analysis.</description></item>
+<item><title>12 Years of the NDA: Governance, Data and Accountability</title><link>https://thenitishkr.in/news/nda-12-years/</link><guid isPermaLink="true">https://thenitishkr.in/news/nda-12-years/</guid><pubDate>Sun, 21 Jun 2026 09:26:57 GMT</pubDate><description>Analysis of NDA governance, public finance, disaster management, Digital India, Article 12 accountability and citizen remedy.</description></item>
+<item><title>Nitish Kumar (thenitishkr): Media &amp; Press Kit</title><link>https://thenitishkr.in/media/</link><guid isPermaLink="true">https://thenitishkr.in/media/</guid><pubDate>Sun, 21 Jun 2026 09:26:57 GMT</pubDate><description>Media coverage, source links, publications and journalist verification paths for Nitish Kumar (thenitishkr) and the research archive.</description></item>
+<item><title>SIR Was Necessary: Why the Process Was Unconstitutional</title><link>https://thenitishkr.in/intelligence/sir-constitutional-scam/</link><guid isPermaLink="true">https://thenitishkr.in/intelligence/sir-constitutional-scam/</guid><pubDate>Sun, 21 Jun 2026 09:26:57 GMT</pubDate><description>Case 12 argues that Bihar SIR served a legitimate electoral purpose but used a process raising exclusion, burden and Article 12 concerns.</description></item>
+<item><title>The Sanitation Mirage: ODF False Justification Case</title><link>https://thenitishkr.in/intelligence/odf-false-justification/</link><guid isPermaLink="true">https://thenitishkr.in/intelligence/odf-false-justification/</guid><pubDate>Sun, 21 Jun 2026 09:26:57 GMT</pubDate><description>Case 04 examines ODF justification, sanitation-data contradictions, Bihar flood-WASH risk, SBM-G verification and official records.</description></item>
+<item><title>When the Certificate Outran the Ground: NITI Aayog Case</title><link>https://thenitishkr.in/intelligence/niti-aayog-certification-funds/</link><guid isPermaLink="true">https://thenitishkr.in/intelligence/niti-aayog-certification-funds/</guid><pubDate>Sun, 21 Jun 2026 09:26:57 GMT</pubDate><description>Case 03 compares NITI Aayog and ODF certification claims with NSS, NFHS, NARSS and CAG records on sanitation and public funds.</description></item>
+<item><title>The Empty Vault: NDMA Disaster-Fund Accountability Case</title><link>https://thenitishkr.in/intelligence/ndma-disaster-governance/</link><guid isPermaLink="true">https://thenitishkr.in/intelligence/ndma-disaster-governance/</guid><pubDate>Sun, 21 Jun 2026 09:26:57 GMT</pubDate><description>Case 01 examines NDMA disaster governance, W.P.(Crl.) 394/2025, SDRF/NDRF funds, CAG records and Article 12 responsibility.</description></item>
+<item><title>Follow the Data: W.P.(Crl.) 163/2026 and MeitY Record</title><link>https://thenitishkr.in/intelligence/meity-digital-governance/</link><guid isPermaLink="true">https://thenitishkr.in/intelligence/meity-digital-governance/</guid><pubDate>Sun, 21 Jun 2026 09:26:57 GMT</pubDate><description>Case 02 covers W.P.(Crl.) 163/2026, MeitY, data sovereignty, digital-arrest evidence and the Supreme Court</description></item>
+<item><title>What If the Citizen Was Never the Centre of Digital India?</title><link>https://thenitishkr.in/intelligence/citizen-not-found/</link><guid isPermaLink="true">https://thenitishkr.in/intelligence/citizen-not-found/</guid><pubDate>Sun, 21 Jun 2026 09:26:57 GMT</pubDate><description>Citizen Not Found analyzes Digital India, Article 12, data sovereignty, grievance closure, public money and democratic visibility.</description></item>
+<item><title>Editorial Standards and Contact | thenitishkr.in</title><link>https://thenitishkr.in/editorial-standards/</link><guid isPermaLink="true">https://thenitishkr.in/editorial-standards/</guid><pubDate>Sun, 21 Jun 2026 09:26:57 GMT</pubDate><description>Editorial standards, source classification, correction policy, contact route, and public-interest publishing principles for thenitishkr.in.</description></item>
+<item><title>Books by Nitish Kumar: Citizen Not Found &amp; Sleeping Guardian</title><link>https://thenitishkr.in/books/</link><guid isPermaLink="true">https://thenitishkr.in/books/</guid><pubDate>Sun, 21 Jun 2026 09:26:57 GMT</pubDate><description>Books by Nitish Kumar (thenitishkr): Era of Stupidity and Sleeping Guardian, examining citizen visibility and constitutional accountability.</description></item>
+<item><title>News &amp; Analysis: Courts, Data and Public Accountability</title><link>https://thenitishkr.in/news/</link><guid isPermaLink="true">https://thenitishkr.in/news/</guid><pubDate>Sun, 21 Jun 2026 08:59:35 GMT</pubDate><description>Current reporting and evidence-based analysis on Supreme Court records, digital governance, citizen data and constitutional accountability in India.</description></item>
+<item><title>Governance Monitor: Archive, Courts, National | thenitishkr</title><link>https://thenitishkr.in/news/governance-monitor/</link><guid isPermaLink="true">https://thenitishkr.in/news/governance-monitor/</guid><pubDate>Sun, 21 Jun 2026 08:59:35 GMT</pubDate><description>Live governance monitor: thenitishkr intelligence archive, Supreme Court updates from Live Law, and national news from The Hindu — no third-party proxy.</description></item>
+<item><title>Human Review and Remedy | thenitishkr</title><link>https://thenitishkr.in/digital-constitutional-personhood/human-review-remedy/</link><guid isPermaLink="true">https://thenitishkr.in/digital-constitutional-personhood/human-review-remedy/</guid><pubDate>Sun, 21 Jun 2026 08:59:35 GMT</pubDate><description>Digital Constitutional Personhood page on human review, explanation, correction, appeal and remedy in digital systems.</description></item>
+<item><title>Digital Personhood Definition | thenitishkr</title><link>https://thenitishkr.in/digital-constitutional-personhood/definition/</link><guid isPermaLink="true">https://thenitishkr.in/digital-constitutional-personhood/definition/</guid><pubDate>Sun, 21 Jun 2026 08:59:35 GMT</pubDate><description>Definition page for Digital Constitutional Personhood, presented as Nitish Kumar</description></item>
+<item><title>Data Sovereignty | thenitishkr</title><link>https://thenitishkr.in/digital-constitutional-personhood/data-sovereignty/</link><guid isPermaLink="true">https://thenitishkr.in/digital-constitutional-personhood/data-sovereignty/</guid><pubDate>Sun, 21 Jun 2026 08:59:35 GMT</pubDate><description>Digital Constitutional Personhood page on data sovereignty, custody, transfer, recovery and remedy for Indian citizen records.</description></item>
+<item><title>Biometric Failure | thenitishkr</title><link>https://thenitishkr.in/digital-constitutional-personhood/biometric-failure/</link><guid isPermaLink="true">https://thenitishkr.in/digital-constitutional-personhood/biometric-failure/</guid><pubDate>Sun, 21 Jun 2026 08:59:35 GMT</pubDate><description>Digital Constitutional Personhood page on biometric failure, dignity, identity records, correction and human review.</description></item>
+<item><title>Victim Record Preservation | thenitishkr</title><link>https://thenitishkr.in/digital-arrest-data-harm/victim-record-preservation/</link><guid isPermaLink="true">https://thenitishkr.in/digital-arrest-data-harm/victim-record-preservation/</guid><pubDate>Sun, 21 Jun 2026 08:59:35 GMT</pubDate><description>Victim-centered record preservation page for digital arrest and stolen data harm research without exposing sensitive data.</description></item>
+<item><title>Stolen KYC Data Harm | thenitishkr</title><link>https://thenitishkr.in/digital-arrest-data-harm/stolen-kyc-data/</link><guid isPermaLink="true">https://thenitishkr.in/digital-arrest-data-harm/stolen-kyc-data/</guid><pubDate>Sun, 21 Jun 2026 08:59:35 GMT</pubDate><description>Research page on stolen KYC data as identity, financial and public-governance harm within the digital arrest evidence cluster.</description></item>
+<item><title>Digital Arrest Evidence Checklist | thenitishkr</title><link>https://thenitishkr.in/digital-arrest-data-harm/evidence-checklist/</link><guid isPermaLink="true">https://thenitishkr.in/digital-arrest-data-harm/evidence-checklist/</guid><pubDate>Sun, 21 Jun 2026 08:59:35 GMT</pubDate><description>Evidence preservation checklist for digital arrest and stolen data research records, with careful source-status language.</description></item>
+<item><title>Data Recovery After Digital Harm | thenitishkr</title><link>https://thenitishkr.in/digital-arrest-data-harm/data-recovery/</link><guid isPermaLink="true">https://thenitishkr.in/digital-arrest-data-harm/data-recovery/</guid><pubDate>Sun, 21 Jun 2026 08:59:35 GMT</pubDate><description>Research framing for data recovery, deletion, correction and accountability after digital arrest or stolen identity data harm.</description></item>
+<item><title>Public Authority Responsibility | thenitishkr</title><link>https://thenitishkr.in/article-12/public-authority-responsibility/</link><guid isPermaLink="true">https://thenitishkr.in/article-12/public-authority-responsibility/</guid><pubDate>Sun, 21 Jun 2026 08:59:33 GMT</pubDate><description>Article 12 page on public-authority responsibility when digital governance uses portals, contractors, records and systems.</description></item>
+<item><title>Automated Decisions | thenitishkr</title><link>https://thenitishkr.in/article-12/automated-decisions/</link><guid isPermaLink="true">https://thenitishkr.in/article-12/automated-decisions/</guid><pubDate>Sun, 21 Jun 2026 08:59:33 GMT</pubDate><description>Evidence-led Article 12 page on automated decisions, explanation, records, review and remedy in digital governance.</description></item>
+<item><title>Article 12 and AI Systems | thenitishkr</title><link>https://thenitishkr.in/article-12/ai-systems/</link><guid isPermaLink="true">https://thenitishkr.in/article-12/ai-systems/</guid><pubDate>Sun, 21 Jun 2026 08:59:33 GMT</pubDate><description>Article 12 analysis for AI systems used in public functions, contractors, portals and digital governance records in India.</description></item>
+</channel></rss>

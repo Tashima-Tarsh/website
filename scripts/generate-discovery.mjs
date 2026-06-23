@@ -40,6 +40,11 @@ function datePublished(html) {
     || extract(html, /<meta\s+[^>]*property=["']article:published_time["'][^>]*content=["']([^"']+)["']/i);
 }
 
+function newsHeadline(html) {
+  return extract(html, /"headline"\s*:\s*"([^"]+)"/i)
+    || extract(html, /<h1[^>]*>(.*?)<\/h1>/i).replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim();
+}
+
 function htmlItems() {
   const items = [];
   walk(root, (file) => {
@@ -52,6 +57,7 @@ function htmlItems() {
     items.push({
       url: canonical,
       title: extract(html, /<title>([^<]+)<\/title>/i),
+      newsTitle: newsHeadline(html),
       description: extract(html, /<meta\s+[^>]*name=["']description["'][^>]*content=["']([^"']+)["']/i),
       published: datePublished(html),
       isNews: /"@type"\s*:\s*(?:"(?:Analysis|Reportage)?NewsArticle"|\[[^\]]*"(?:Analysis|Reportage)?NewsArticle")/i.test(html),
@@ -104,7 +110,7 @@ function buildNewsSitemap(pages) {
         <news:language>en</news:language>
       </news:publication>
       <news:publication_date>${escapeXml(item.published)}</news:publication_date>
-      <news:title>${escapeXml(item.title)}</news:title>
+      <news:title>${escapeXml(item.newsTitle || item.title)}</news:title>
     </news:news>
   </url>`).join("\n");
 

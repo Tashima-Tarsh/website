@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://thenitishkr.in/</loc><lastmod>2026-06-21</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://thenitishkr.in/about/</loc><lastmod>2026-06-21</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://thenitishkr.in/</loc><lastmod>2026-06-22</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://thenitishkr.in/about/</loc><lastmod>2026-06-22</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://thenitishkr.in/article-12/</loc><lastmod>2026-06-21</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://thenitishkr.in/article-12/ai-systems/</loc><lastmod>2026-06-21</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://thenitishkr.in/article-12/automated-decisions/</loc><lastmod>2026-06-21</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
@@ -52,17 +52,18 @@
   <url><loc>https://thenitishkr.in/privacy-policy/</loc><lastmod>2026-06-21</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://thenitishkr.in/research-datasets/</loc><lastmod>2026-06-23</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://thenitishkr.in/sitemap/</loc><lastmod>2026-06-23</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://thenitishkr.in/start-here/</loc><lastmod>2026-06-21</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://thenitishkr.in/statement/</loc><lastmod>2026-06-21</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://thenitishkr.in/start-here/</loc><lastmod>2026-06-22</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://thenitishkr.in/statement/</loc><lastmod>2026-06-22</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://thenitishkr.in/terms/</loc><lastmod>2026-06-21</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://thenitishkr.in/assets/docs/apus-android-performance-manager.pdf</loc><lastmod>2026-06-21</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://thenitishkr.in/assets/docs/Digital_Arrest_root_cause_REDACTED.pdf</loc><lastmod>2026-06-21</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://thenitishkr.in/assets/docs/digital-dacoit-how-india-was-looted.pdf</loc><lastmod>2026-06-21</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://thenitishkr.in/assets/docs/digital-dacoity-national-importance.pdf</loc><lastmod>2026-06-21</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://thenitishkr.in/assets/docs/disha-whitepaper-what-it-can-what-it-did-v66.pdf</loc><lastmod>2026-06-22</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://thenitishkr.in/assets/docs/ECSCIN01370222025_WRIT_PIL_CRIMINAL_V3.pdf</loc><lastmod>2026-06-21</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://thenitishkr.in/assets/docs/forensic-intelligence-report.pdf</loc><lastmod>2026-06-21</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://thenitishkr.in/assets/docs/Intillgence-report.pdf</loc><lastmod>2026-06-21</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://thenitishkr.in/assets/docs/silverpush-silveredge-technologies-inmobi.pdf</loc><lastmod>2026-06-21</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://thenitishkr.in/assets/docs/WRIT_P_CRL_163_2026_REDACTED.pdf</loc><lastmod>2026-06-21</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://thenitishkr.in/assets/docs/apus-android-performance-manager.pdf</loc><lastmod>2026-06-08</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://thenitishkr.in/assets/docs/digital-dacoit-how-india-was-looted.pdf</loc><lastmod>2026-06-08</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://thenitishkr.in/assets/docs/digital-dacoity-national-importance.pdf</loc><lastmod>2026-06-08</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://thenitishkr.in/assets/docs/Digital_Arrest_root_cause_REDACTED.pdf</loc><lastmod>2026-06-07</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://thenitishkr.in/assets/docs/disha-whitepaper-what-it-can-what-it-did-v66.pdf</loc><lastmod>2026-06-23</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://thenitishkr.in/assets/docs/disha-whitepaper-what-it-can-what-it-did.pdf</loc><lastmod>2026-06-23</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://thenitishkr.in/assets/docs/ECSCIN01370222025_WRIT_PIL_CRIMINAL_V3.pdf</loc><lastmod>2026-06-07</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://thenitishkr.in/assets/docs/forensic-intelligence-report.pdf</loc><lastmod>2026-06-08</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://thenitishkr.in/assets/docs/Intillgence-report.pdf</loc><lastmod>2026-06-18</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://thenitishkr.in/assets/docs/silverpush-silveredge-technologies-inmobi.pdf</loc><lastmod>2026-06-08</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://thenitishkr.in/assets/docs/WRIT_P_CRL_163_2026_REDACTED.pdf</loc><lastmod>2026-06-07</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
 </urlset>

@@ -27,7 +27,8 @@ const pages = [
     canonical: "https://thenitishkr.in/intelligence/documents/",
     slugLabel: "Documents",
     title: "Document Records",
-    description: "Surprise Element is being prepared for release on 20 July 2026.",
+    description: "Document archive for key PDFs in the public-interest research record.",
+    kind: "hub",
   },
   {
     dir: path.join(root, "intelligence", "documents", "adtech-surveillance-evidence"),
@@ -69,7 +70,8 @@ const pages = [
     canonical: "https://thenitishkr.in/intelligence/documents/disha-whitepaper/",
     slugLabel: "DISHA Whitepaper",
     title: "DISHA Whitepaper",
-    description: "This document page is being prepared for release on 20 July 2026.",
+    description: "Updated DISHA whitepaper record with download, checksum, and document details.",
+    kind: "whitepaper",
   },
   {
     dir: path.join(root, "intelligence", "documents", "forensic-intelligence-report"),
@@ -376,7 +378,142 @@ function buildHead(page) {
 </head>`;
 }
 
-function buildMain(page) {
+function buildHubMain(page) {
+  const cards = [
+    {
+      href: "/intelligence/documents/disha-whitepaper/",
+      tag: "Updated record",
+      title: "DISHA Whitepaper",
+      desc: "Updated public document record with download link, checksum, page count, and release metadata.",
+      meta: "19 pages · 428.1 KB",
+    },
+    {
+      href: "/intelligence/documents/adtech-surveillance-evidence/",
+      tag: "Scheduled release",
+      title: "AdTech Surveillance Evidence",
+      desc: "Reserved route. Full page scheduled for publication on 20 July 2026.",
+      meta: "Countdown active",
+    },
+    {
+      href: "/intelligence/documents/apus-android-apk-analysis/",
+      tag: "Scheduled release",
+      title: "APUS APK Behaviour Analysis",
+      desc: "Reserved route. Full page scheduled for publication on 20 July 2026.",
+      meta: "Countdown active",
+    },
+    {
+      href: "/intelligence/documents/digital-arrest-root-cause/",
+      tag: "Scheduled release",
+      title: "Digital Arrest Root Cause",
+      desc: "Reserved route. Full page scheduled for publication on 20 July 2026.",
+      meta: "Countdown active",
+    },
+    {
+      href: "/intelligence/documents/digital-dacoit-evidence/",
+      tag: "Scheduled release",
+      title: "Digital Dacoit Evidence Report",
+      desc: "Reserved route. Full page scheduled for publication on 20 July 2026.",
+      meta: "Countdown active",
+    },
+    {
+      href: "/intelligence/documents/digital-dacoity-national-importance/",
+      tag: "Scheduled release",
+      title: "Digital Dacoity and National Importance",
+      desc: "Reserved route. Full page scheduled for publication on 20 July 2026.",
+      meta: "Countdown active",
+    },
+  ];
+
+  const cardHtml = cards.map((card) => `
+        <a class="archive-card" href="${card.href}">
+          <span class="arc-tag">${card.tag}</span>
+          <span class="arc-title">${card.title}</span>
+          <span class="arc-desc">${card.desc}</span>
+          <span class="arc-meta">${card.meta}</span>
+        </a>`).join("");
+
+  return `<main id="main-content">
+  <section class="section" style="padding-top:34px;">
+    <div class="section-head reveal">
+      <div>
+        <p class="eyebrow">Document archive</p>
+        <h1>Document Records</h1>
+      </div>
+      <p>Context pages for primary PDFs, technical records, and evidence documents referenced across the research archive.</p>
+    </div>
+    <div class="research-archives-grid reveal">
+${cardHtml}
+    </div>
+  </section>
+  <section class="section citation-block" aria-labelledby="docs-note-heading">
+    <p class="eyebrow">Release note</p>
+    <h2 id="docs-note-heading">Selected document routes are scheduled for staged publication.</h2>
+    <p class="muted">The DISHA whitepaper record is live now. Additional document pages will be published on their existing URLs as the release cycle continues.</p>
+    <div class="hero-actions">
+      <a class="button" href="/intelligence/documents/disha-whitepaper/">Open the DISHA whitepaper</a>
+      <a class="button secondary" href="/intelligence/">Back to Intelligence Archive</a>
+      <a class="button secondary" href="/sitemap/">Research Index</a>
+    </div>
+  </section>
+</main>`;
+}
+
+function buildWhitepaperMain() {
+  return `<main id="main-content">
+  <section class="section" style="padding-top:34px;">
+    <div class="section-head reveal">
+      <div>
+        <p class="eyebrow">Document record</p>
+        <h1>DISHA Whitepaper</h1>
+      </div>
+      <p>Updated public record for the DISHA whitepaper with current file metadata and direct access to the live PDF.</p>
+    </div>
+    <div class="home-statement-inner reveal" style="grid-template-columns:minmax(0,1.2fr) 320px;gap:32px;align-items:start;">
+      <div class="home-statement-body" style="border-left:0;padding-left:0;">
+        <p>The DISHA whitepaper currently published on this site is the updated 19-page version served from the live document asset. This page keeps the file reference, checksum, and release details in one place for citation and verification.</p>
+        <p>The live PDF route is preserved at the versioned address below so the public page and the downloadable file remain aligned.</p>
+        <div class="hero-actions" style="margin-top:24px;">
+          <a class="button" href="/assets/docs/disha-whitepaper-what-it-can-what-it-did-v66.pdf">Open PDF</a>
+          <a class="button secondary" href="/assets/docs/disha-whitepaper-what-it-can-what-it-did-v66.pdf" download>Download PDF</a>
+          <a class="button secondary" href="/disha/">Open DISHA</a>
+        </div>
+      </div>
+      <aside class="coming-note" style="margin-bottom:0;">
+        <span class="coming-meta-label">File details</span>
+        <div class="coming-note-grid" style="grid-template-columns:1fr;gap:14px;margin-top:16px;">
+          <article>
+            <h3>Pages</h3>
+            <p>19</p>
+          </article>
+          <article>
+            <h3>File size</h3>
+            <p>428.1 KB</p>
+          </article>
+          <article>
+            <h3>SHA-256</h3>
+            <p style="word-break:break-all;">eb0a7786487fbe6ae8128f6ed1c6e7d871aecad74441715c36c9f68723db85ae</p>
+          </article>
+          <article>
+            <h3>Release date</h3>
+            <p>23 June 2026</p>
+          </article>
+        </div>
+      </aside>
+    </div>
+  </section>
+  <section class="section citation-block" aria-labelledby="whitepaper-cite-heading">
+    <p class="eyebrow">Citation</p>
+    <h2 id="whitepaper-cite-heading">Research citation</h2>
+    <pre class="citation-text">Nitish Kumar (@thenitishkr). "DISHA Whitepaper." thenitishkr.in, updated 23 June 2026. https://thenitishkr.in/intelligence/documents/disha-whitepaper/</pre>
+    <div class="hero-actions">
+      <a class="button secondary" href="/research-datasets/">Research Source Register</a>
+      <a class="button secondary" href="/disha/claim-to-source-system/">Claim-to-source system</a>
+    </div>
+  </section>
+</main>`;
+}
+
+function buildComingSoonMain(page) {
   const breadcrumbItems = buildBreadcrumb(page);
   const crumbs = breadcrumbItems
     .map((item, index) => {
@@ -450,6 +587,12 @@ function buildMain(page) {
     <a class="button" href="https://thenitishkr.substack.com" target="_blank" aria-label="Get record updates (opens in new tab)" rel="noopener">Get record updates</a>
   </div>
 </section>`;
+}
+
+function buildMain(page) {
+  if (page.kind === "hub") return buildHubMain(page);
+  if (page.kind === "whitepaper") return buildWhitepaperMain();
+  return buildComingSoonMain(page);
 }
 
 const countdownScript = `<script>

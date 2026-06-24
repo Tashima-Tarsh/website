@@ -42,6 +42,14 @@
   <link rel="me" href="https://www.amazon.com/author/nikukr">
   <link rel="stylesheet" href="/styles.css?v=20260611news">
   <link rel="stylesheet" href="/editorial-preview.css?v=20260611news">
+  <style>
+    .media-meta-row { display:flex; flex-wrap:wrap; gap:6px 10px; margin:6px 0 2px; align-items:center; }
+    .media-pub-date { font-size:11px; color:var(--muted); font-weight:600; }
+    .media-source-type { background:#e8f0fe; color:#1a3a6b; font-size:11px; font-weight:700; padding:2px 7px; border-radius:3px; letter-spacing:.04em; }
+    .media-syndication { background:#fff3e0; color:#b45309; font-size:11px; font-weight:700; padding:2px 7px; border-radius:3px; letter-spacing:.04em; }
+    .media-syndication.independent { background:#e8f5e9; color:#1b5e20; }
+    .media-verified { font-size:11px; color:var(--muted); margin-top:2px; }
+  </style>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -67,6 +75,10 @@
         "name": "thenitishkr Public Interest Research Archive",
         "url": "https://thenitishkr.in/",
         "founder": {"@id": "https://thenitishkr.in/#person"},
+        "sameAs": [
+          "https://biz.prlog.org/thenitishkr/",
+          "https://pressroom.prlog.org/thenitishkr/"
+        ],
         "publishingPrinciples": "https://thenitishkr.in/editorial-standards/"
       },
       {
@@ -86,7 +98,12 @@
         "dateModified": "2026-06-23T12:00:00+05:30",
         "isPartOf": {"@id": "https://thenitishkr.in/#website"},
         "publisher": {"@id": "https://thenitishkr.in/#organization"},
-        "mainEntity": {"@id": "https://thenitishkr.in/news/#reports"}
+        "mainEntity": {"@id": "https://thenitishkr.in/news/#reports"},
+        "subjectOf": [
+          "https://biz.prlog.org/thenitishkr/",
+          "https://pressroom.prlog.org/thenitishkr/",
+          "https://www.openpr.com/news/4559442/india-s-surveillance-pipeline-is-documented-13-years"
+        ]
       },
       {
         "@type": "ItemList",
@@ -123,7 +140,7 @@
     <nav class="nav" aria-label="Primary navigation">
       <a class="brand" href="/">THENITISHKR<span>INDIA | RESEARCH - EVIDENCE - INTELLIGENCE</span></a>
       <button class="menu-button" type="button" aria-label="Open menu" aria-expanded="false" data-menu-toggle><span></span><span></span><span></span></button>
-      <div class="nav-links" data-nav-links><a href="/start-here/">Start Here</a><a href="/intelligence/">Intelligence</a><a href="/disha/">DISHA</a><a href="/article-12/">Article 12</a><a href="/digital-constitutional-personhood/">Digital Personhood</a><a href="/news/">News</a><a href="/media/">Media</a><a href="/about/">About</a></div>
+      <div class="nav-links" data-nav-links><a href="/start-here/">Start Here</a><a href="/intelligence/">Intelligence</a><a href="/disha/">DISHA</a><a href="/article-12/">Article 12</a><a href="/digital-constitutional-personhood/">Digital Personhood</a><a href="/news/">News</a><a href="/about/">About</a></div>
       <a class="nav-cta" href="/intelligence/">Read the Archive</a>
     </nav>
   </header>
@@ -134,15 +151,8 @@
       <div class="reveal">
         <p class="eyebrow">News &amp; analysis desk</p>
         <h1>Current records, explained with evidence.</h1>
-        <p class="lead">A public-interest desk for public records, court material, digital governance, citizen data, and constitutional accountability. Each entry separates the visible record, the author's analysis, and what remains unresolved.</p>
-        <div class="hero-actions"><a class="button" href="#current-records">Read current records</a><a class="button secondary" href="/editorial-standards/">Editorial standards</a></div>
+        <div class="hero-actions"><a class="button" href="#current-records">Read current records</a><a class="button secondary" href="#press-coverage">Press coverage</a></div>
       </div>
-      <aside class="news-desk-standard reveal" aria-label="Publication standard">
-        <span>Record status</span>
-        <strong>Evidence before interpretation.</strong>
-        <p>This desk contains public records, documented allegations, DISHA analysis, and unresolved questions. Allegations remain allegations unless confirmed by a competent authority or adjudicated by a court.</p>
-        <a href="/editorial-standards/">Open editorial standards</a>
-      </aside>
     </section>
 
     <section class="section" id="current-records">
@@ -189,6 +199,89 @@
       </div>
     </section>
 
+    <section class="section" id="press-coverage">
+      <div class="section-head reveal">
+        <div><p class="eyebrow">National coverage</p><h2>Top channel and publication references.</h2></div>
+        <div class="hero-actions"><a class="button secondary" href="https://thenitishkr.substack.com" target="_blank" rel="noopener">Substack</a><a class="button secondary" href="https://medium.com/@thenitishkr" target="_blank" rel="noopener">Medium</a></div>
+      </div>
+      <div class="media-coverage-grid dynamic-archive-slot dynamic-archive-slot--coverage is-loaded" data-media-grid>
+        <article class="media-card reveal">
+          <a href="https://www.ptinews.com/story/national/sc-asks-meity-to-examine-pil-seeking-recovery-or-destruction-of-stolen-personal-data-of-citizens/3681804" target="_blank" rel="noopener noreferrer" aria-label="PTI coverage opens in new tab"><img src="/assets/images/supreme-court-meity-order.png" alt="PTI coverage of Supreme Court direction to MeitY on stolen citizen data" width="640" height="360" loading="lazy" decoding="async"></a>
+          <div class="media-body"><span class="media-outlet">PTI | PTI syndication</span><div class="media-meta-row"><span class="media-pub-date"><time datetime="2026-05-19">19 May 2026</time></span><span class="media-source-type">National wire</span><span class="media-syndication">PTI wire - syndicated</span></div><h3><a href="https://www.ptinews.com/story/national/sc-asks-meity-to-examine-pil-seeking-recovery-or-destruction-of-stolen-personal-data-of-citizens/3681804" target="_blank" rel="noopener noreferrer">SC asks MeitY to examine PIL seeking recovery or destruction of stolen personal data of citizens</a></h3><p>PTI coverage of the Supreme Court direction asking MeitY to examine the petition on stolen citizen data and foreign-server custody.</p><p class="media-verified">Link last verified: 24 June 2026</p><div class="media-actions"><a href="https://www.ptinews.com/story/national/sc-asks-meity-to-examine-pil-seeking-recovery-or-destruction-of-stolen-personal-data-of-citizens/3681804" target="_blank" rel="noopener noreferrer">Source</a></div></div>
+        </article>
+        <article class="media-card reveal">
+          <a href="https://m.economictimes.com/news/india/sc-asks-meity-to-examine-pil-seeking-recovery-or-destruction-of-stolen-personal-data-of-citizens/articleshow/131194292.cms" target="_blank" rel="noopener noreferrer" aria-label="Economic Times coverage opens in new tab"><img src="/assets/images/supreme-court-meity-order.png" alt="Economic Times coverage of MeitY data petition proceedings" width="640" height="360" loading="lazy" decoding="async"></a>
+          <div class="media-body"><span class="media-outlet">Economic Times | National business press</span><div class="media-meta-row"><span class="media-pub-date"><time datetime="2026-05-20">20 May 2026</time></span><span class="media-source-type">National newspaper</span><span class="media-syndication independent">Independent</span></div><h3><a href="https://m.economictimes.com/news/india/sc-asks-meity-to-examine-pil-seeking-recovery-or-destruction-of-stolen-personal-data-of-citizens/articleshow/131194292.cms" target="_blank" rel="noopener noreferrer">SC asks MeitY to examine PIL seeking recovery or destruction of stolen personal data of citizens</a></h3><p>Economic Times coverage placing the Supreme Court direction in a wider national governance and data-accountability context.</p><p class="media-verified">Link last verified: 24 June 2026</p><div class="media-actions"><a href="https://m.economictimes.com/news/india/sc-asks-meity-to-examine-pil-seeking-recovery-or-destruction-of-stolen-personal-data-of-citizens/articleshow/131194292.cms" target="_blank" rel="noopener noreferrer">Source</a></div></div>
+        </article>
+        <article class="media-card reveal">
+          <a href="https://www.tribuneindia.com/news/india/examine-pil-on-stolen-data-of-citizens-supreme-court-directs-ministry-of-electronics-and-it/" target="_blank" rel="noopener noreferrer" aria-label="The Tribune coverage opens in new tab"><img src="/assets/images/supreme-court-meity-order.png" alt="The Tribune coverage of Supreme Court direction on stolen data petition" width="640" height="360" loading="lazy" decoding="async"></a>
+          <div class="media-body"><span class="media-outlet">The Tribune | National newspaper</span><div class="media-meta-row"><span class="media-pub-date"><time datetime="2026-05-19">19 May 2026</time></span><span class="media-source-type">National newspaper</span><span class="media-syndication independent">Independent</span></div><h3><a href="https://www.tribuneindia.com/news/india/examine-pil-on-stolen-data-of-citizens-supreme-court-directs-ministry-of-electronics-and-it/" target="_blank" rel="noopener noreferrer">Examine PIL on stolen data of citizens, Supreme Court directs Ministry of Electronics and IT</a></h3><p>The Tribune report on the Court asking MeitY to examine the matter as a ministry-facing representation.</p><p class="media-verified">Link last verified: 24 June 2026</p><div class="media-actions"><a href="https://www.tribuneindia.com/news/india/examine-pil-on-stolen-data-of-citizens-supreme-court-directs-ministry-of-electronics-and-it/" target="_blank" rel="noopener noreferrer">Source</a></div></div>
+        </article>
+        <article class="media-card reveal">
+          <a href="https://www.deccanherald.com/india/supreme-court-asks-meity-to-examine-pil-seeking-recovery-or-destruction-of-stolen-personal-data-of-citizens-4008290" target="_blank" rel="noopener noreferrer" aria-label="Deccan Herald coverage opens in new tab"><img src="/assets/images/supreme-court-meity-order.png" alt="Deccan Herald coverage of Supreme Court data petition direction" width="640" height="360" loading="lazy" decoding="async"></a>
+          <div class="media-body"><span class="media-outlet">Deccan Herald | National publication</span><div class="media-meta-row"><span class="media-pub-date"><time datetime="2026-05-20">20 May 2026</time></span><span class="media-source-type">National newspaper</span><span class="media-syndication independent">Independent</span></div><h3><a href="https://www.deccanherald.com/india/supreme-court-asks-meity-to-examine-pil-seeking-recovery-or-destruction-of-stolen-personal-data-of-citizens-4008290" target="_blank" rel="noopener noreferrer">Supreme Court asks MeitY to examine PIL seeking recovery or destruction of stolen personal data of citizens</a></h3><p>Deccan Herald coverage of the same Court direction, framed as a national question of data custody and remedy.</p><p class="media-verified">Link last verified: 24 June 2026</p><div class="media-actions"><a href="https://www.deccanherald.com/india/supreme-court-asks-meity-to-examine-pil-seeking-recovery-or-destruction-of-stolen-personal-data-of-citizens-4008290" target="_blank" rel="noopener noreferrer">Source</a></div></div>
+        </article>
+        <article class="media-card reveal">
+          <a href="https://www.verdictum.in/supreme-court/cyber-security-consultant-plea-destruction-stolen-personal-data-indian-citizens-1614263" target="_blank" rel="noopener noreferrer" aria-label="Verdictum coverage opens in new tab"><img src="/assets/images/supreme-court-meity-order.png" alt="Verdictum legal publication coverage of stolen personal data petition" width="640" height="360" loading="lazy" decoding="async"></a>
+          <div class="media-body"><span class="media-outlet">Verdictum | Legal publication</span><div class="media-meta-row"><span class="media-pub-date"><time datetime="2026-05-20">20 May 2026</time></span><span class="media-source-type">Legal publication</span><span class="media-syndication independent">Independent</span></div><h3><a href="https://www.verdictum.in/supreme-court/cyber-security-consultant-plea-destruction-stolen-personal-data-indian-citizens-1614263" target="_blank" rel="noopener noreferrer">Cyber security consultant plea on destruction of stolen personal data of Indian citizens</a></h3><p>Verdictum legal report on the plea, the data-destruction question, and the Court-facing procedural record.</p><p class="media-verified">Link last verified: 24 June 2026</p><div class="media-actions"><a href="https://www.verdictum.in/supreme-court/cyber-security-consultant-plea-destruction-stolen-personal-data-indian-citizens-1614263" target="_blank" rel="noopener noreferrer">Source</a></div></div>
+        </article>
+        <article class="media-card reveal">
+          <a href="https://www.newindianexpress.com/india/2026/May/20/consider-how-to-destroy-recover-data-kept-abroad" target="_blank" rel="noopener noreferrer" aria-label="New Indian Express coverage opens in new tab"><img src="/assets/images/supreme-court-meity-order.png" alt="New Indian Express coverage on data kept abroad and citizen remedy" width="640" height="360" loading="lazy" decoding="async"></a>
+          <div class="media-body"><span class="media-outlet">New Indian Express | National newspaper</span><div class="media-meta-row"><span class="media-pub-date"><time datetime="2026-05-20">20 May 2026</time></span><span class="media-source-type">National newspaper</span><span class="media-syndication independent">Independent</span></div><h3><a href="https://www.newindianexpress.com/india/2026/May/20/consider-how-to-destroy-recover-data-kept-abroad" target="_blank" rel="noopener noreferrer">Consider how to destroy, recover data kept abroad</a></h3><p>New Indian Express coverage highlighting the Court's concern over Indian citizens' data held beyond domestic control.</p><p class="media-verified">Link last verified: 24 June 2026</p><div class="media-actions"><a href="https://www.newindianexpress.com/india/2026/May/20/consider-how-to-destroy-recover-data-kept-abroad" target="_blank" rel="noopener noreferrer">Source</a></div></div>
+        </article>
+        <article class="media-card reveal">
+          <a href="https://news.abplive.com/technology/supreme-court-india-data-theft-foreign-servers-dpdp-act-meity-petition-1844663" target="_blank" rel="noopener noreferrer" aria-label="ABP Live coverage opens in new tab"><img src="/assets/images/supreme-court-meity-order.png" alt="ABP Live coverage on India data theft and foreign servers" width="640" height="360" loading="lazy" decoding="async"></a>
+          <div class="media-body"><span class="media-outlet">ABP Live | Technology desk</span><div class="media-meta-row"><span class="media-pub-date"><time datetime="2026-05-20">20 May 2026</time></span><span class="media-source-type">Digital publication</span><span class="media-syndication independent">Independent</span></div><h3><a href="https://news.abplive.com/technology/supreme-court-india-data-theft-foreign-servers-dpdp-act-meity-petition-1844663" target="_blank" rel="noopener noreferrer">Supreme Court, India data theft, foreign servers, DPDP Act, MeitY petition</a></h3><p>ABP Live technology coverage connecting the petition to foreign servers, digital harm, and the data-protection debate.</p><p class="media-verified">Link last verified: 24 June 2026</p><div class="media-actions"><a href="https://news.abplive.com/technology/supreme-court-india-data-theft-foreign-servers-dpdp-act-meity-petition-1844663" target="_blank" rel="noopener noreferrer">Source</a></div></div>
+        </article>
+        <article class="media-card reveal">
+          <a href="https://lawtrend.in/supreme-court-directs-it-ministry-to-tackle-stolen-indian-data-on-foreign-servers-amid-digital-arrest-threats/" target="_blank" rel="noopener noreferrer" aria-label="LawTrend coverage opens in new tab"><img src="/assets/images/supreme-court-meity-order.png" alt="LawTrend coverage on stolen Indian data and digital arrest threats" width="640" height="360" loading="lazy" decoding="async"></a>
+          <div class="media-body"><span class="media-outlet">LawTrend | Legal publication</span><div class="media-meta-row"><span class="media-pub-date"><time datetime="2026-05-20">20 May 2026</time></span><span class="media-source-type">Legal publication</span><span class="media-syndication independent">Independent</span></div><h3><a href="https://lawtrend.in/supreme-court-directs-it-ministry-to-tackle-stolen-indian-data-on-foreign-servers-amid-digital-arrest-threats/" target="_blank" rel="noopener noreferrer">Supreme Court directs IT Ministry to tackle stolen Indian data on foreign servers amid digital arrest threats</a></h3><p>LawTrend coverage connecting the MeitY direction to digital arrest risks, foreign-server custody, and public accountability.</p><p class="media-verified">Link last verified: 24 June 2026</p><div class="media-actions"><a href="https://lawtrend.in/supreme-court-directs-it-ministry-to-tackle-stolen-indian-data-on-foreign-servers-amid-digital-arrest-threats/" target="_blank" rel="noopener noreferrer">Source</a></div></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="news-publications">
+      <div class="section-head reveal">
+        <div><p class="eyebrow">Publications feed</p><h2>Substack and Medium records.</h2></div>
+      </div>
+      <div class="publication-grid dynamic-archive-slot is-loaded" data-publication-grid data-static-publications="true">
+        <div class="archive-featured">
+          <article class="publication-card reveal"><a href="https://thenitishkr.substack.com/p/we-record-everything-we-remember" target="_blank" rel="noopener noreferrer" aria-label="Substack publication opens in new tab"><img src="/assets/images/evidence/files-continue-books.webp" alt="The files continue publication visual" width="640" height="360" loading="lazy" decoding="async"></a><div class="publication-body"><span class="publication-meta">Substack | 3 Jun 2026</span><h3><a href="https://thenitishkr.substack.com/p/we-record-everything-we-remember" target="_blank" rel="noopener noreferrer">We Record Everything. We Remember Almost Nothing.</a></h3><p>Records, institutional memory, citizen data, and the constitutional questions carried to the Supreme Court.</p></div></article>
+          <article class="publication-card reveal"><a href="https://thenitishkr.medium.com/india-followed-the-money-he-followed-the-data-106c0fa40190" target="_blank" rel="noopener noreferrer" aria-label="Medium publication opens in new tab"><img src="/assets/images/evidence/wp-crl-163-2026-cyber-architecture-case.webp" alt="W.P.(Crl.) No. 163 of 2026 cyber architecture publication visual" width="640" height="360" loading="lazy" decoding="async"></a><div class="publication-body"><span class="publication-meta">Medium | 26 May 2026</span><h3><a href="https://thenitishkr.medium.com/india-followed-the-money-he-followed-the-data-106c0fa40190" target="_blank" rel="noopener noreferrer">India Followed the Money. He Followed the Data.</a></h3><p>The documentary narrative behind W.P.(Crl.) No. 163/2026 and citizen-data accountability.</p></div></article>
+          <article class="publication-card reveal"><a href="https://thenitishkr.substack.com/p/india-arrested-the-operators-but" target="_blank" rel="noopener noreferrer" aria-label="Substack publication opens in new tab"><img src="/assets/images/chinese-loan-app-cyber-slavery-2015-2025.webp" alt="Cyber-fraud architecture and data-extraction investigation visual" width="640" height="360" loading="lazy" decoding="async"></a><div class="publication-body"><span class="publication-meta">Substack | 23 May 2026</span><h3><a href="https://thenitishkr.substack.com/p/india-arrested-the-operators-but" target="_blank" rel="noopener noreferrer">India Arrested the Operators. But Did It Miss the Architecture?</a></h3><p>Chinese-linked cyber-fraud networks, data extraction, enforcement records, and unresolved infrastructure.</p></div></article>
+          <article class="publication-card reveal"><a href="https://thenitishkr.substack.com/p/india-followed-the-money-i-followed" target="_blank" rel="noopener noreferrer" aria-label="Substack publication opens in new tab"><img src="/assets/images/evidence/data-ethics-constitution-india.webp" alt="Data ethics and Constitution of India publication visual" width="640" height="360" loading="lazy" decoding="async"></a><div class="publication-body"><span class="publication-meta">Substack | 22 May 2026</span><h3><a href="https://thenitishkr.substack.com/p/india-followed-the-money-i-followed" target="_blank" rel="noopener noreferrer">India Followed the Money. I Followed the Data.</a></h3><p>A data-sovereignty analysis linking foreign servers, public authority, and citizen remedy.</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="external-press-records" aria-labelledby="external-press-records-title">
+      <div class="external-press-records__inner">
+        <p class="section-kicker">Public Record</p>
+        <h2 id="external-press-records-title">External Press Records</h2>
+        <p class="external-press-records__intro">Independent press-release records connected with thenitishkr and DISHA are available on PRLog and openPR. These links are provided for citation, verification, and public record continuity.</p>
+        <div class="external-press-records__grid">
+          <article class="press-record-card">
+            <span class="press-record-card__label">PRLog</span>
+            <h3>PRLog Business Profile</h3>
+            <p>Public business profile for thenitishkr on PRLog.</p>
+            <a href="https://biz.prlog.org/thenitishkr/" target="_blank" rel="noopener noreferrer">View PRLog Profile</a>
+          </article>
+          <article class="press-record-card">
+            <span class="press-record-card__label">PRLog</span>
+            <h3>PRLog Newsroom</h3>
+            <p>PRLog newsroom containing published press-release records for thenitishkr.</p>
+            <a href="https://pressroom.prlog.org/thenitishkr/" target="_blank" rel="noopener noreferrer">View PRLog Newsroom</a>
+          </article>
+          <article class="press-record-card">
+            <span class="press-record-card__label">openPR | 24 June 2026</span>
+            <h3>India's surveillance pipeline is documented. 13 years of evidence. Still not investigated.</h3>
+            <p>openPR press release concerning DISHA 6.6, public-interest evidence records, and the request for institutional investigation.</p>
+            <a href="https://www.openpr.com/news/4559442/india-s-surveillance-pipeline-is-documented-13-years" target="_blank" rel="noopener noreferrer">Read on openPR</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <section class="tone-band">
       <div class="section news-trust-grid">
         <article><span>Source status</span><h2>Primary documents remain visible.</h2><p>Official records, court files, reports, correspondence, and source links sit beside the analysis wherever publication and privacy permit.</p></article>
@@ -198,7 +291,7 @@
     </section>
   </main>
 
-      <footer class="site-footer">
+        <footer class="site-footer">
     <div class="section">
       <div>
         <img class="footer-brand-mark" src="/assets/brand/thenitishkr-logo.png" alt="Nitish Kumar thenitishkr monogram" width="74" height="74" loading="lazy"><div class="footer-logo">THENITISHKR</div>

@@ -38,9 +38,9 @@ Generated: 2026-06-16 | Branch: `fix/phase-1-2-closeout`
 
 | Location | Old Text | New Text | Reason |
 |---|---|---|---|
-| `/disha/validation/` | "The premium product path is to add a claim ledger..." | "The next documentation step is to maintain a claim ledger..." | Public-interest research; "premium product" sounds like SaaS marketing |
+| `/disha/validation/` | "The documentation path is to add a claim ledger..." | "The next documentation step is to maintain a claim ledger..." | Public-interest research; product language sounds like SaaS marketing |
 
-No other occurrences of "premium" found in any `.html` file in the repository.
+No other flagged wording was found in any `.html` file in the repository.
 
 ---
 

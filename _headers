@@ -81,9 +81,6 @@
 /disha/*
   Link: </assets/images/disha-version-4.webp>; rel="preload"; as="image"; type="image/webp"; fetchpriority="high"
 
-/media/*
-  Link: </assets/court.webp>; rel="preload"; as="image"; type="image/webp"; fetchpriority="high"
-
 /*.pages.dev/*
   X-Robots-Tag: noindex, nofollow
 

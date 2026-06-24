@@ -57,7 +57,7 @@ const NEW_NAV = `<div class="nav-links" data-nav-links>
           <div class="nav-dropdown">
             <a href="/books/">Books<small>Authored works</small></a>
             <a href="/news/">News and Analysis<small>Research commentary</small></a>
-            <a href="/media/">Media Coverage<small>Press mentions</small></a>
+            <a href="/news/#press-coverage">Press Coverage<small>Press mentions</small></a>
           </div>
         </div>
         <div class="nav-item">

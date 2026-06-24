@@ -15,7 +15,6 @@ The repository separates official records, documented allegations, DISHA assessm
 - `/disha/`
 - `/intelligence/`
 - `/article-12/`
-- `/media/`
 - `/editorial-standards/`
 - `/start-here/`
 - `/fact-check/`

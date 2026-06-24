@@ -38,7 +38,7 @@
       <div class="reveal">
         <p class="eyebrow">DISHA Intelligence Architecture</p>
         <h1>A top researcher showing the power of DISHA as an evidence-first defence system.</h1>
-        <p class="lead">DISHA is presented here as a premium public-interest intelligence architecture: conceived in 2012, built as a cyber-evidence and public-record system, and governed by a defensive, policy-gated doctrine.</p>
+        <p class="lead">DISHA is presented here as a public-interest intelligence architecture: conceived in 2012, built as a cyber-evidence and public-record system, and governed by a defensive, policy-gated doctrine.</p>
         <div class="hero-actions"><a class="button" href="#foundation">See the foundation</a><a class="button secondary" href="#layers">Explore the layers</a></div>
       </div>
       <figure class="hero-panel reveal">

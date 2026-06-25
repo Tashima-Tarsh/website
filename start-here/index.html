@@ -56,140 +56,294 @@
   <link rel="stylesheet" href="/styles.css?v=20260613">
   <link rel="stylesheet" href="/editorial-preview.css?v=preview-20260610">
   <style>
+    main {
+      background: linear-gradient(180deg, #fff 0%, #fffdf8 54%, #fff 100%);
+    }
+    .start-page p {
+      text-align: justify;
+      hyphens: auto;
+      text-wrap: pretty;
+    }
+    .start-page .eyebrow,
+    .start-page .label,
+    .start-page .button,
+    .start-page th,
+    .start-page td:first-child {
+      text-align: left;
+    }
     .start-hero {
+      grid-template-columns: minmax(0, 1.05fr) minmax(300px, .72fr);
       align-items: start;
-      gap: 40px;
+      gap: clamp(28px, 4vw, 52px);
     }
     .start-hero-copy {
-      max-width: 720px;
+      max-width: 760px;
+    }
+    .start-hero h1 {
+      max-width: 900px;
+      font-size: clamp(38px, 5.6vw, 68px);
+      line-height: 1.02;
     }
     .start-hero-copy .lead {
-      max-width: 64ch;
+      max-width: 68ch;
       margin-top: 18px;
-      font-size: 1.04rem;
-      line-height: 1.78;
-      color: #3b3a37;
+      font-size: clamp(1rem, 1.3vw, 1.12rem);
+      line-height: 1.82;
+      color: #302d28;
     }
-    .start-hero-actions {
+    .start-hero-actions,
+    .start-source-actions,
+    .start-verify-links {
       display: flex;
       flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 24px;
+      gap: 10px;
+      margin-top: 22px;
     }
-    .start-note {
-      margin-top: 18px;
-      max-width: 62ch;
-      font-size: .94rem;
+    .start-note,
+    .start-source-meta,
+    .start-verify-meta {
+      margin-top: 14px;
+      color: #625b52;
+      font-size: .93rem;
       line-height: 1.7;
-      color: var(--muted);
     }
-    .start-rule-panel {
+    .start-panel,
+    .start-card,
+    .start-route-table,
+    .start-evidence-table,
+    .start-cta-band {
+      background: #fff;
+      border: 1px solid rgba(6,38,81,.12);
+      box-shadow: 0 14px 34px rgba(35,31,26,.055);
+    }
+    .start-panel,
+    .start-card,
+    .start-cta-band {
+      border-radius: 8px;
+    }
+    .start-panel {
       display: grid;
       gap: 16px;
+      padding: 26px 24px;
+      border-top: 5px solid var(--red);
     }
-    .start-rule-panel ul {
+    .start-panel h2,
+    .start-card h2 {
+      font-size: clamp(26px, 3vw, 38px);
+      line-height: 1.08;
+    }
+    .start-panel ul,
+    .start-card ul,
+    .start-card ol {
       margin: 0;
-      padding-left: 18px;
-      line-height: 1.8;
+      padding-left: 20px;
+      line-height: 1.82;
+      color: #3b362f;
     }
     .start-overview {
       display: grid;
-      grid-template-columns: minmax(0, 1.15fr) minmax(280px, .85fr);
+      grid-template-columns: minmax(0, 1.08fr) minmax(300px, .72fr);
       gap: 22px;
       align-items: start;
     }
-    .start-card-stack {
+    .start-stack {
       display: grid;
-      gap: 22px;
+      gap: 18px;
     }
-    .start-card-stack .card p + p {
+    .start-card {
+      padding: clamp(22px, 3vw, 32px);
+      border-top: 4px solid rgba(6,38,81,.82);
+    }
+    .start-card p {
+      color: #342f29;
+      line-height: 1.82;
+    }
+    .start-card p + p {
       margin-top: 12px;
     }
-    .start-timeline {
+    .start-fact-list {
       list-style: none;
       padding: 0;
       margin: 0;
       display: grid;
-      gap: 14px;
+      gap: 12px;
     }
-    .start-timeline li {
-      padding-bottom: 14px;
-      border-bottom: 1px solid rgba(6,38,81,.08);
-      line-height: 1.75;
+    .start-fact-list li {
+      display: grid;
+      grid-template-columns: 82px minmax(0, 1fr);
+      gap: 12px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid rgba(6,38,81,.09);
+      line-height: 1.7;
     }
-    .start-timeline li:last-child {
-      padding-bottom: 0;
+    .start-fact-list li:last-child {
       border-bottom: 0;
+      padding-bottom: 0;
     }
-    .start-timeline strong {
-      display: inline-block;
-      min-width: 92px;
+    .start-fact-list strong {
+      color: var(--red);
+      font-size: .78rem;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    .start-table-wrap {
+      overflow-x: auto;
+      border-radius: 8px;
+    }
+    .start-route-table,
+    .start-evidence-table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 680px;
+    }
+    .start-route-table caption,
+    .start-evidence-table caption {
+      padding: 0 0 14px;
+      color: var(--red);
+      font-size: .76rem;
+      font-weight: 900;
+      letter-spacing: .13em;
+      text-align: left;
+      text-transform: uppercase;
+    }
+    .start-route-table th,
+    .start-route-table td,
+    .start-evidence-table th,
+    .start-evidence-table td {
+      padding: 15px 16px;
+      border-bottom: 1px solid rgba(6,38,81,.1);
+      vertical-align: top;
+      line-height: 1.62;
+    }
+    .start-route-table th,
+    .start-evidence-table th {
       color: var(--navy);
+      background: #f8f5ee;
+      font-size: .82rem;
+      letter-spacing: .08em;
+      text-transform: uppercase;
     }
-    .start-verify-card {
-      background: linear-gradient(180deg, #fffdf8 0%, #fff 100%);
+    .start-route-table td,
+    .start-evidence-table td {
+      color: #38332d;
+      background: #fff;
     }
-    .start-verify-card p {
-      margin-bottom: 14px;
+    .start-route-table a,
+    .start-evidence-table a {
+      color: var(--red);
+      font-weight: 800;
+      text-decoration: underline;
+      text-underline-offset: 3px;
     }
-    .start-verify-links,
-    .start-source-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-    .start-verify-links .button,
-    .start-source-actions .button {
-      min-height: 40px;
-    }
-    .start-verify-meta,
-    .start-source-meta {
-      margin-top: 12px;
-      font-size: .88rem;
-      line-height: 1.65;
-      color: var(--muted);
-    }
-    .start-journey {
+    .start-columns {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 18px;
-      margin-top: 18px;
     }
-    .start-step {
+    .start-column {
       padding: 24px 22px;
+      background: #fff;
       border: 1px solid rgba(6,38,81,.11);
       border-top: 4px solid var(--navy);
-      border-radius: var(--radius);
-      background: #fff;
-      box-shadow: 0 4px 18px rgba(36,33,29,.05);
+      border-radius: 8px;
+      box-shadow: 0 10px 26px rgba(35,31,26,.045);
     }
-    .start-step .label {
-      margin-bottom: 10px;
-    }
-    .start-step h3 {
-      margin: 0 0 10px;
-      font-size: 1.02rem;
-      line-height: 1.35;
+    .start-column h3 {
+      margin: 8px 0 10px;
+      font-size: 1.04rem;
+      line-height: 1.32;
       color: var(--navy);
     }
-    .start-step p {
+    .start-column p {
       margin: 0;
-      font-size: .94rem;
-      line-height: 1.72;
-      color: #3b3a37;
+      color: #3b362f;
+      font-size: .95rem;
+      line-height: 1.76;
     }
-    .start-source-block {
-      max-width: 860px;
+    .start-cta-band {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 22px;
+      align-items: center;
+      padding: clamp(24px, 4vw, 36px);
+      border-left: 5px solid var(--red);
     }
-    .start-source-block p {
-      font-size: 1rem;
+    .start-cta-band h2 {
+      font-size: clamp(28px, 3.4vw, 42px);
+      line-height: 1.08;
+    }
+    .start-cta-band p {
+      max-width: 72ch;
+      margin-top: 12px;
       line-height: 1.8;
-      color: #3b3a37;
+      color: #3b362f;
+    }
+    .start-cta-band .start-source-meta {
+      display: none;
     }
     @media (max-width: 980px) {
+      .start-hero,
       .start-overview,
-      .start-journey {
+      .start-columns,
+      .start-cta-band {
         grid-template-columns: 1fr;
+      }
+      .start-cta-band .start-source-actions {
+        margin-top: 0;
+      }
+    }
+    @media (max-width: 640px) {
+      .start-hero h1 {
+        font-size: 36px;
+      }
+      .start-card,
+      .start-panel,
+      .start-column,
+      .start-cta-band {
+        padding: 20px 18px;
+      }
+      .start-fact-list li {
+        grid-template-columns: 1fr;
+        gap: 4px;
+      }
+      .start-route-table,
+      .start-evidence-table {
+        min-width: 0;
+      }
+      .start-route-table,
+      .start-route-table tbody,
+      .start-route-table tr,
+      .start-route-table td,
+      .start-evidence-table,
+      .start-evidence-table tbody,
+      .start-evidence-table tr,
+      .start-evidence-table td {
+        display: block;
+        width: 100%;
+      }
+      .start-route-table thead,
+      .start-evidence-table thead {
+        display: none;
+      }
+      .start-route-table tr,
+      .start-evidence-table tr {
+        border-bottom: 1px solid rgba(6,38,81,.12);
+      }
+      .start-route-table td,
+      .start-evidence-table td {
+        border-bottom: 0;
+        padding: 10px 14px;
+      }
+      .start-route-table td::before,
+      .start-evidence-table td::before {
+        content: attr(data-label);
+        display: block;
+        margin-bottom: 4px;
+        color: var(--red);
+        font-size: .72rem;
+        font-weight: 900;
+        letter-spacing: .1em;
+        text-transform: uppercase;
       }
     }
   </style>
@@ -205,22 +359,22 @@
     </nav>
   </header>
   <nav aria-label="Breadcrumb" class="breadcrumb-nav"><div class="breadcrumb"><a href="/">Home</a><span class="breadcrumb-sep" aria-hidden="true">&#8250;</span><span aria-current="page">Start Here</span></div></nav>
-  <main id="main-content">
+  <main id="main-content" class="start-page">
     <section class="section hero start-hero">
       <div class="start-hero-copy">
         <p class="eyebrow">Start here</p>
-        <h1>Start here: DISHA, the evidence archive and the public record</h1>
-        <p class="lead">This page gives journalists, lawyers, researchers and first-time readers a short route into the archive without asking them to accept interpretation before checking source records.</p>
-        <div class="start-hero-actions">
+        <h1>DISHA, the evidence archive, and the public record.</h1>
+        <p class="lead">This page is a plain route into the archive for journalists, lawyers, researchers, public authorities, and first-time readers. It explains what to read first, what each record type means, and where to verify the underlying material before relying on any analysis.</p>
+        <div class="start-hero-actions" aria-label="Primary start-here actions">
           <a class="button" href="/intelligence/">Open case files</a>
           <a class="button secondary" href="/fact-check/">Check source matrix</a>
-          <a class="button secondary" href="/news/">Open news desk</a>
+          <a class="button secondary" href="/editorial-standards/">Read standards</a>
         </div>
-        <p class="start-note">Use this page as an orientation sheet, not as a substitute for the underlying record. The archive separates official documents, petitioner submissions, DISHA assessments and unresolved questions so readers can verify each layer independently.</p>
+        <p class="start-note">Use this page as an orientation sheet, not as a substitute for the underlying record. The archive separates official documents, petitioner submissions, DISHA assessments, and unresolved questions so that each layer can be checked independently.</p>
       </div>
-      <aside class="hero-panel start-rule-panel">
-        <div class="record-code">Reader rule</div>
-        <h2>Record first. Assessment second.</h2>
+      <aside class="start-panel" aria-labelledby="reader-rule">
+        <p class="eyebrow">Reader rule</p>
+        <h2 id="reader-rule">Record first. Assessment second.</h2>
         <p>Professional reading starts by separating what is documented from what is argued, and what is unresolved from what has already been decided.</p>
         <ul>
           <li>Official records are not the same as allegations.</li>
@@ -230,49 +384,95 @@
       </aside>
     </section>
 
+    <section class="section">
+      <div class="start-table-wrap">
+        <table class="start-route-table">
+          <caption>Choose your reading route</caption>
+          <thead>
+            <tr>
+              <th scope="col">Reader</th>
+              <th scope="col">Start with</th>
+              <th scope="col">Why it matters</th>
+              <th scope="col">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td data-label="Reader">Journalist</td>
+              <td data-label="Start with">Press record and source matrix</td>
+              <td data-label="Why it matters">Confirms what is documented, what is attributed, and what still requires official response.</td>
+              <td data-label="Action"><a href="/news/#press-coverage">Open press record</a></td>
+            </tr>
+            <tr>
+              <td data-label="Reader">Researcher</td>
+              <td data-label="Start with">Intelligence archive</td>
+              <td data-label="Why it matters">Shows case files, source trails, court-related records, and public-interest analysis in one route.</td>
+              <td data-label="Action"><a href="/intelligence/">Open case files</a></td>
+            </tr>
+            <tr>
+              <td data-label="Reader">Public authority</td>
+              <td data-label="Start with">Claim-to-source record</td>
+              <td data-label="Why it matters">Separates source documents, petitioner submissions, and unresolved questions requiring documentary clarification.</td>
+              <td data-label="Action"><a href="/fact-check/">Check source matrix</a></td>
+            </tr>
+            <tr>
+              <td data-label="Reader">First-time reader</td>
+              <td data-label="Start with">DISHA and Article 12</td>
+              <td data-label="Why it matters">Explains the archive's civic-intelligence method and the constitutional accountability question behind the records.</td>
+              <td data-label="Action"><a href="/disha/">Read DISHA</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
     <section class="section start-overview">
-      <div class="start-card-stack">
-        <article class="card">
-          <h2>Who Nitish Kumar is</h2>
+      <div class="start-stack">
+        <article class="start-card">
+          <p class="eyebrow">Identity</p>
+          <h2>Who Nitish Kumar is.</h2>
           <p>Nitish Kumar (thenitishkr) is an independent researcher, author, National Cyber Security Scholar and inventor of DISHA. He is the petitioner in W.P.(Crl.) No. 163/2026 and W.P.(Crl.) No. 394/2025 before the Supreme Court of India.</p>
           <p>This archive refers to the researcher-author, not the Bihar politician of the same name. For the full author record, use <a href="/about/">About</a>.</p>
+          <div class="start-verify-links">
+            <a class="button secondary" href="/about/">Open About</a>
+            <a class="button secondary" href="https://orcid.org/0009-0004-6840-4463" target="_blank" aria-label="ORCID 0009-0004-6840-4463 (opens in new tab)" rel="noopener">Open ORCID</a>
+            <a class="button secondary" href="https://www.wikidata.org/wiki/Q140001166" target="_blank" aria-label="Wikidata Q140001166 (opens in new tab)" rel="noopener">Open Wikidata</a>
+          </div>
+          <p class="start-verify-meta">ORCID: 0009-0004-6840-4463. Wikidata: Q140001166. These are identity anchors, not substitutes for the archive's underlying evidence record.</p>
         </article>
-        <article class="card">
-          <h2>What DISHA is</h2>
+        <article class="start-card">
+          <p class="eyebrow">Method</p>
+          <h2>What DISHA is.</h2>
           <p>DISHA (Defence Intelligence Signals Heuristic Architecture) is presented as an evidence-first civic intelligence framework for public records, cyber evidence, citizen protection and constitutional accountability.</p>
           <p>The public record on this site identifies six visible layers: Brain, Digital Soldiers, Security Brain, Yudh Intelligence, Evidence Archive and Public Record Memory. The whitepaper and origin material are available at <a href="/disha/">DISHA</a>.</p>
+          <div class="start-verify-links">
+            <a class="button" href="/disha/">Read DISHA</a>
+            <a class="button secondary" href="/disha/methodology/">Open methodology</a>
+          </div>
         </article>
-        <article class="card">
-          <h2>How to read this archive properly</h2>
+        <article class="start-card">
+          <p class="eyebrow">Reading discipline</p>
+          <h2>How to read this archive properly.</h2>
           <p>Official facts should be traced to court records, government documents, RTI replies, CAG audit material, administrative correspondence or authenticated public records. The archive links each factual claim to its primary source document wherever the record is published.</p>
           <p>Petitions, representations and grievances are documented submissions. They are not final findings unless an authority or court expressly records such a finding. For example, W.P.(Crl.) 163/2026 was disposed on 19 May 2026 with a direction to MeitY; that direction is procedural, not a ruling on the underlying factual claims.</p>
         </article>
-        <article class="card">
-          <h2>What remains unresolved</h2>
-          <p>Unresolved matters include MeitY's examination of the representation on foreign-server data, NDMA utilisation certificate gaps, NITI Aayog certification discrepancies, ODF ground-reality questions, and the procedural burden argument in the SIR case.</p>
-          <p>These are questions requiring response, investigation, adjudication or documentary clarification. The archive marks them as unresolved rather than presenting them as settled outcomes.</p>
-        </article>
       </div>
-      <aside class="start-card-stack">
-        <article class="card">
-          <h2>Documented chronology</h2>
-          <ol class="start-timeline">
-            <li><strong>2012</strong> Initial conception of DISHA Intelligence Architecture, including the 25 April 2012 foundation sketch.</li>
-            <li><strong>2013</strong> Bihar Council of Science &amp; Technology submission linked to real-time explosive detection and early signal-classification work.</li>
-            <li><strong>2022</strong> National Cyber Security Scholar, RRU-ISAC, Certificate ID 00112.</li>
-            <li><strong>2013-2024</strong> Research and architecture development across DISHA layers and evidence methodology.</li>
-            <li><strong>2025-2026</strong> Application to constitutional and data-governance records, including W.P.(Crl.) 394/2025 and W.P.(Crl.) 163/2026.</li>
+      <aside class="start-stack">
+        <article class="start-card">
+          <p class="eyebrow">Documented chronology</p>
+          <h2>Public record milestones.</h2>
+          <ol class="start-fact-list">
+            <li><strong>2012</strong><span>Initial conception of DISHA Intelligence Architecture, including the 25 April 2012 foundation sketch.</span></li>
+            <li><strong>2013</strong><span>Bihar Council of Science &amp; Technology submission linked to real-time explosive detection and early signal-classification work.</span></li>
+            <li><strong>2022</strong><span>National Cyber Security Scholar, RRU-ISAC, Certificate ID 00112.</span></li>
+            <li><strong>2025-26</strong><span>Application to constitutional and data-governance records, including W.P.(Crl.) 394/2025 and W.P.(Crl.) 163/2026.</span></li>
           </ol>
         </article>
-        <article class="card start-verify-card">
-          <h2>Identity and public record verification</h2>
-          <p>Use these public anchors when you need to confirm authorship, identity distinction and the wider researcher record before citing the archive.</p>
-          <div class="start-verify-links">
-            <a class="button secondary" href="https://orcid.org/0009-0004-6840-4463" target="_blank" aria-label="ORCID 0009-0004-6840-4463 (opens in new tab)" rel="noopener">Open ORCID</a>
-            <a class="button secondary" href="https://www.wikidata.org/wiki/Q140001166" target="_blank" aria-label="Wikidata Q140001166 (opens in new tab)" rel="noopener">Open Wikidata</a>
-            <a class="button secondary" href="/about/">Open About</a>
-          </div>
-          <p class="start-verify-meta">ORCID: 0009-0004-6840-4463. Wikidata: Q140001166. These are identity anchors, not substitutes for the archive's underlying evidence record.</p>
+        <article class="start-card">
+          <p class="eyebrow">Unresolved questions</p>
+          <h2>Do not treat these as settled outcomes.</h2>
+          <p>Unresolved matters include MeitY's examination of the representation on foreign-server data, NDMA utilisation certificate gaps, NITI Aayog certification discrepancies, ODF ground-reality questions, and the procedural burden argument in the SIR case.</p>
+          <p>These are questions requiring response, investigation, adjudication or documentary clarification. The archive marks them as unresolved rather than presenting them as settled outcomes.</p>
         </article>
       </aside>
     </section>
@@ -282,18 +482,18 @@
         <div><p class="eyebrow">For researchers</p><h2>How a professional reader should use this page.</h2></div>
         <p>This page should help a first-time reader move quickly from orientation to source verification.</p>
       </div>
-      <div class="start-journey">
-        <article class="start-step reveal">
+      <div class="start-columns">
+        <article class="start-column reveal">
           <span class="label">Step 01</span>
           <h3>Confirm identity and scope</h3>
           <p>Verify the author, distinguish the archive from unrelated names, and understand whether a claim is about DISHA, a case file, a petition, or a constitutional framework.</p>
         </article>
-        <article class="start-step reveal">
+        <article class="start-column reveal">
           <span class="label">Step 02</span>
           <h3>Open the source-linked case page</h3>
           <p>Move from this overview to the relevant case page, then read the source register, court material, government record, or RTI reply before citing the analysis.</p>
         </article>
-        <article class="start-step reveal">
+        <article class="start-column reveal">
           <span class="label">Step 03</span>
           <h3>Cite the document, not only the summary</h3>
           <p>Where a primary source is published, cite the exact document. Where a matter remains unresolved, describe it as unresolved rather than overstating the record.</p>
@@ -305,37 +505,74 @@
       <div class="section-head reveal">
         <div><p class="eyebrow">The core research areas</p><h2>Six areas, one public-interest line.</h2></div>
       </div>
-      <div class="grid-3">
-        <article class="card reveal">
+      <div class="start-columns">
+        <article class="start-column reveal">
           <span class="label">Article 12</span>
           <h3>Digital State power and constitutional accountability</h3>
-          <p>Article 12 of the Constitution defines "the State" for the purpose of fundamental rights enforcement. The research examines whether digital government systems - databases, portals, outsourced infrastructure - exercise state-equivalent power over citizens while remaining outside the traditional Article 12 boundary. When a citizen's identity is in a database but their remedy is not, the constitutional question is structural, not administrative. <a href="/article-12/">Read the research</a>.</p>
+          <p>The research examines whether digital government systems, databases, portals, and outsourced infrastructure exercise state-equivalent power over citizens while remaining outside traditional accountability boundaries. <a href="/article-12/">Read the research</a>.</p>
         </article>
-        <article class="card reveal">
+        <article class="start-column reveal">
           <span class="label">Digital Constitutional Personhood</span>
           <h3>Citizen identity in the digital layer</h3>
-          <p>Digital Constitutional Personhood is a proposed framework arguing that a citizen's legal identity should follow them into digital systems with the same constitutional protections that apply in physical space. A citizen who exists in Aadhaar, NPCI, GSTN, DigiLocker, and CERT-In databases but cannot assert a fundamental right in any of them has a personhood problem, not a technology problem. <a href="/digital-constitutional-personhood/">Read the framework</a>.</p>
+          <p>The framework argues that a citizen's legal identity should carry constitutional protection into digital systems, especially when those systems hold identity but fail to deliver remedy. <a href="/digital-constitutional-personhood/">Read the framework</a>.</p>
         </article>
-        <article class="card reveal">
+        <article class="start-column reveal">
           <span class="label">DISHA Intelligence Architecture</span>
           <h3>Evidence-first civic intelligence</h3>
-          <p>DISHA is the operational backbone of this archive - a six-layer intelligence framework that separates verified records from assessments, raw evidence from analysis, and documentary findings from petitioner contentions. Every case in this archive is structured through DISHA methodology: source-first, evidence-logged, and publicly accountable. <a href="/disha/">Read the whitepaper</a>.</p>
+          <p>DISHA separates verified records from assessments, raw evidence from analysis, and documentary findings from petitioner contentions. <a href="/disha/">Read the whitepaper</a>.</p>
         </article>
-        <article class="card reveal">
+        <article class="start-column reveal">
           <span class="label">Intelligence Archive</span>
           <h3>Case-level evidence records</h3>
-          <p>The intelligence archive documents five public cases with source links, court references, government records, and timeline analysis: NDMA disaster-fund accountability (Case 01), MeitY digital governance and W.P.(Crl.) 163/2026 (Case 02), NITI Aayog certification and funds (Case 03), ODF false justification (Case 04), and the SIR constitutional process question (Case 12). A sixth case, <em>Citizen Not Found</em>, examines the structural gap in Digital India's citizen-centricity. <a href="/intelligence/">Read the archive</a>.</p>
+          <p>The archive groups public cases with source links, court references, government records, and timeline analysis. <a href="/intelligence/">Read the archive</a>.</p>
         </article>
-        <article class="card reveal">
+        <article class="start-column reveal">
           <span class="label">Cyber Evidence</span>
           <h3>Adtech, foreign servers, and data extraction</h3>
-          <p>The archive covers adtech surveillance networks (SilverPush, InMobi, APUS Group), Chinese-linked cyber-fraud infrastructure, data held on foreign servers, and the jurisdictional gap in India's enforcement framework. These are not speculative claims - they are documented with technical records, forensic reports, government filings, and media-verified sources. <a href="/intelligence/meity-digital-governance/">Read the MeitY case</a>.</p>
+          <p>The MeitY case page assembles the foreign-server data, cyber-fraud, and digital-governance record trail now visible in the archive. <a href="/intelligence/meity-digital-governance/">Read the MeitY case</a>.</p>
         </article>
-        <article class="card reveal">
+        <article class="start-column reveal">
           <span class="label">Books and publications</span>
           <h3>Long-form research outputs</h3>
-          <p><em>Era of Stupidity: Citizen Not Found</em> (ISBN 978-9355920126) and <em>Sleeping Guardian: India Lost Justice</em> (ISBN 979-8274694070) are Kindle publications connected to this research line - not standalone products. They are cited in the archive as long-form outputs, not as proof of the underlying allegations. <a href="/books/">View book records</a>.</p>
+          <p>The books are cited as long-form research outputs connected to this archive, not as proof of any underlying allegation. <a href="/books/">View book records</a>.</p>
         </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="start-table-wrap">
+        <table class="start-evidence-table">
+          <caption>Evidence status guide</caption>
+          <thead>
+            <tr>
+              <th scope="col">Record type</th>
+              <th scope="col">How to treat it</th>
+              <th scope="col">Where to verify</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td data-label="Record type">Official record</td>
+              <td data-label="How to treat it">Use as the primary documentary layer when issued by a court, ministry, department, audit body, or public authority.</td>
+              <td data-label="Where to verify"><a href="/intelligence/">Case files</a></td>
+            </tr>
+            <tr>
+              <td data-label="Record type">Petition or representation</td>
+              <td data-label="How to treat it">Treat as a documented submission unless a court or authority independently records the same finding.</td>
+              <td data-label="Where to verify"><a href="/intelligence/documents/">Documents</a></td>
+            </tr>
+            <tr>
+              <td data-label="Record type">DISHA assessment</td>
+              <td data-label="How to treat it">Read as analysis drawn from the cited record trail, not as an official adjudication.</td>
+              <td data-label="Where to verify"><a href="/disha/claim-to-source-system/">Claim-to-source system</a></td>
+            </tr>
+            <tr>
+              <td data-label="Record type">Unresolved question</td>
+              <td data-label="How to treat it">Describe as awaiting response, reconciliation, investigation, adjudication, or documentary clarification.</td>
+              <td data-label="Where to verify"><a href="/fact-check/">Source matrix</a></td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </section>
 
@@ -343,9 +580,9 @@
       <div class="section-head reveal">
         <div><p class="eyebrow">For journalists</p><h2>What this archive is and what it is not.</h2></div>
       </div>
-      <div class="grid-2">
-        <article class="card reveal">
-          <h3>What this archive is</h3>
+      <div class="start-columns">
+        <article class="start-card reveal">
+          <h2>What this archive is</h2>
           <ul>
             <li>A public-interest documentary record maintained by Nitish Kumar (thenitishkr)</li>
             <li>An evidence-first research archive linking claims to primary source documents</li>
@@ -354,30 +591,38 @@
             <li>A media-verified record with coverage from PTI, Economic Times, The Tribune, Deccan Herald, Verdictum, ABP Live, New Indian Express, and LawTrend</li>
           </ul>
         </article>
-        <article class="card reveal">
-          <h3>What this archive is not</h3>
+        <article class="start-card reveal">
+          <h2>What this archive is not</h2>
           <ul>
             <li>Not a court judgment - petitions filed are documented submissions, not adjudicated rulings</li>
             <li>Not a commercial product - non-commercial public-interest project</li>
             <li>Not the Nitish Kumar Bihar politician - distinct researcher-author identity</li>
             <li>Not anonymised - researcher identity is publicly verified via ORCID, Wikidata, and institutional records</li>
-            <li>Not speculative - each factual claim is linked to its source document</li>
+            <li>Not a replacement for primary documents; source records should be checked before publication.</li>
           </ul>
+        </article>
+        <article class="start-card reveal">
+          <h2>Where to cite from</h2>
+          <p>For publication checks, begin with the press record, source matrix, and editorial standards page. For legal or administrative references, cite the case page and the underlying document rather than this orientation page alone.</p>
+          <div class="start-verify-links">
+            <a class="button secondary" href="/news/#press-coverage">Press record</a>
+            <a class="button secondary" href="/fact-check/">Source matrix</a>
+          </div>
         </article>
       </div>
     </section>
 
     <section class="section" id="public-authorities">
-      <div class="section-head">
-        <div><p class="eyebrow">For public authorities</p><h2>Go to the source path you actually need.</h2></div>
-      </div>
-      <div class="start-source-block">
-        <p>Begin with the case files when you need documentary evidence. Use the claim-to-source matrix when you need a fast audit trail. Use the media and verification desk when you are preparing publication. Use editorial standards when you need correction policy and evidence handling rules.</p>
-        <div class="start-source-actions" style="margin-top:20px;">
+      <div class="start-cta-band">
+        <div>
+          <p class="eyebrow">For public authorities</p>
+          <h2>Go directly to the source path you need.</h2>
+          <p>Begin with the case files when you need documentary evidence. Use the claim-to-source matrix for a fast audit trail. Use the media and verification desk for publication context. Use editorial standards when you need correction policy and evidence-handling rules.</p>
+        </div>
+        <div class="start-source-actions" aria-label="Public authority source actions">
           <a class="button" href="/intelligence/">Open case files</a>
           <a class="button secondary" href="/fact-check/">Open source matrix</a>
-          <a class="button secondary" href="/news/#press-coverage">Open press coverage</a>
-          <a class="button secondary" href="/editorial-standards/">Open editorial standards</a>
+          <a class="button secondary" href="/editorial-standards/">Open standards</a>
           <a class="button secondary" href="/EVIDENCE-INVENTORY.md">Open evidence inventory</a>
         </div>
         <p class="start-source-meta">Identity verification: <a href="https://orcid.org/0009-0004-6840-4463" target="_blank" aria-label="ORCID 0009-0004-6840-4463 (opens in new tab)" rel="noopener">ORCID 0009-0004-6840-4463</a> · <a href="https://www.wikidata.org/wiki/Q140001166" target="_blank" aria-label="Wikidata Q140001166 (opens in new tab)" rel="noopener">Wikidata Q140001166</a> · <a href="https://x.com/thenitishkr" target="_blank" aria-label="@thenitishkr (opens in new tab)" rel="noopener">@thenitishkr</a></p>

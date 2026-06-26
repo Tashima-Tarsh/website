@@ -231,6 +231,51 @@
   margin-bottom: 1.25rem;
 }
 
+#what-is-disha {
+  padding-bottom: clamp(3rem, 6vw, 5rem);
+}
+
+#origin {
+  clear: none;
+  margin-top: 0;
+  padding-top: 0;
+  scroll-margin-top: 96px;
+}
+
+.disha-answer-origin {
+  padding-bottom: clamp(3rem, 6vw, 5rem);
+}
+
+.disha-answer-origin-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(1.5rem, 4vw, 3.5rem);
+  align-items: start;
+}
+
+.disha-answer-panel {
+  min-width: 0;
+}
+
+.disha-answer-panel .disha-h2 {
+  max-width: none;
+}
+
+.disha-answer-panel .disha-reading-block {
+  max-width: none;
+}
+
+.disha-answer-panel .disha-reading-block p,
+.disha-answer-panel .disha-reading-block li {
+  text-align: justify;
+  hyphens: auto;
+}
+
+.disha-answer-origin .disha-signal-chain {
+  width: 100%;
+  margin-top: clamp(2rem, 4vw, 3rem);
+}
+
 /* ================================================================ */
 /* HERO SECTION                                                     */
 /* ================================================================ */
@@ -265,12 +310,24 @@
   font-size: clamp(1.45rem, 2.2vw, 2rem);
   line-height: 1.12;
   letter-spacing: -0.03em;
-  max-width: 15ch;
+  max-width: none;
   margin: 0;
   color: var(--disha-charcoal);
   font-family: "Cormorant Garamond", Georgia, serif;
   font-weight: 700;
   text-wrap: balance;
+}
+
+@media (min-width: 980px) {
+  .disha-hero {
+    grid-template-columns: minmax(0, 1.08fr) minmax(0, .92fr);
+  }
+
+  .disha-hero-title {
+    white-space: nowrap;
+    font-size: clamp(1.05rem, 1.28vw, 1.38rem);
+    letter-spacing: 0;
+  }
 }
 
 .disha-hero-lead {
@@ -389,12 +446,14 @@
 /* SIGNAL CHAIN — Horizontal transformation row                     */
 /* ================================================================ */
 .disha-signal-chain {
-  background: linear-gradient(135deg, #0f2746 0%, #18375f 100%);
-  width: 100%;
-  padding: 2rem 24px;
+  background: #efe5d2;
+  width: min(100% - 48px, var(--max));
+  padding: 1.25rem 24px;
   margin: 0;
-  border-top: 1px solid rgba(255,255,255,0.08);
-  border-bottom: 1px solid rgba(255,255,255,0.08);
+  border-top: 1px solid rgba(45,36,24,.16);
+  border-bottom: 1px solid rgba(45,36,24,.16);
+  border-radius: 6px;
+  margin-inline: auto;
 }
 
 .disha-signal-chain-inner {
@@ -404,12 +463,12 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  flex-wrap: nowrap;
-  gap: 0;
+  flex-wrap: wrap;
+  gap: .35rem .5rem;
 }
 
 .disha-chain-step {
-  color: #fff;
+  color: var(--disha-charcoal);
   font-family: "Cormorant Garamond", Georgia, serif;
   font-size: 20px;
   font-weight: 700;
@@ -419,7 +478,7 @@
 }
 
 .disha-chain-arrow {
-  color: var(--disha-accent);
+  color: var(--disha-gold);
   font-size: 24px;
   font-weight: 700;
   padding: 0 1rem;
@@ -562,10 +621,12 @@
 /* FOUNDATION SECTION — Dark background, stat pills                 */
 /* ================================================================ */
 .disha-section-foundation {
-  background: linear-gradient(180deg, #f8fbff 0%, #eef4fb 100%);
+  background: #fffdf7;
   max-width: var(--max);
   margin: 0 auto;
   padding: 68px 24px;
+  border-top: 1px solid rgba(45,36,24,.14);
+  border-bottom: 1px solid rgba(45,36,24,.14);
 }
 
 .disha-section-foundation .disha-eyebrow,
@@ -598,14 +659,15 @@
   flex-wrap: wrap;
   gap: 0;
   width: min(100% - (2 * var(--disha-gutter)), var(--disha-page-max));
-  margin: 2.5rem auto 0;
+  margin: 2rem auto 0;
   padding: 0;
+  border-block: 1px solid rgba(45,36,24,.14);
 }
 
 .disha-foundation-stat {
-  padding: 1rem 1.75rem;
+  padding: .8rem 1.5rem;
   text-align: center;
-  border-right: 1px solid rgba(6, 38, 81, 0.12);
+  border-right: 1px solid rgba(45,36,24,.14);
 }
 
 .disha-foundation-stat:last-child {
@@ -614,7 +676,7 @@
 
 .disha-foundation-stat strong {
   display: block;
-  font-size: 1rem;
+  font-size: .92rem;
   font-weight: 800;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -624,9 +686,29 @@
 
 .disha-foundation-stat span {
   display: block;
-  font-size: 0.8rem;
+  font-size: 0.76rem;
   color: var(--disha-text-muted);
   line-height: 1.4;
+}
+
+.disha-section-foundation > .disha-content-max.disha-reading-block {
+  max-width: var(--disha-page-max);
+  margin-top: 1.45rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid rgba(45, 36, 24, 0.14);
+  column-count: 2;
+  column-gap: clamp(1.5rem, 4vw, 2.75rem);
+  text-align: justify;
+}
+
+.disha-section-foundation > .disha-content-max.disha-reading-block .disha-h3 {
+  column-span: all;
+  margin-bottom: 0.95rem;
+}
+
+.disha-section-foundation > .disha-content-max.disha-reading-block p {
+  break-inside: avoid;
+  margin-bottom: 0.85rem;
 }
 
 /* ================================================================ */
@@ -637,10 +719,10 @@
   margin-inline: auto;
   padding: 0 var(--disha-gutter);
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  gap: 2rem;
-  align-items: stretch;
-  margin-top: 2rem;
+  grid-template-columns: minmax(0, 1.2fr) minmax(220px, .58fr);
+  gap: clamp(1.25rem, 3vw, 2rem);
+  align-items: start;
+  margin-top: 1.4rem;
 }
 
 .disha-institutional-text,
@@ -658,11 +740,11 @@
 
 .disha-institutional-figure {
   margin: 0;
-  padding: 1.25rem;
+  padding: .85rem;
   border: 1px solid var(--disha-border-subtle);
-  border-radius: var(--disha-radius-md);
-  background: #fff;
-  box-shadow: var(--disha-card-shadow);
+  border-radius: var(--disha-radius-sm);
+  background: var(--paper);
+  box-shadow: 0 8px 18px rgba(35,31,26,.045);
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -703,6 +785,40 @@
 .disha-meta-dl dd {
   margin: 0;
   color: var(--disha-ink);
+}
+
+#bihar-council-record {
+  padding-top: clamp(2.75rem, 5vw, 4rem);
+}
+
+#bihar-council-record .disha-document-full {
+  width: min(100%, 245px);
+  max-width: 245px;
+  max-height: 330px;
+}
+
+#bihar-council-record .disha-document-wrapper img {
+  min-height: 0;
+  object-fit: contain;
+}
+
+#bihar-council-record .disha-exhibit-caption {
+  max-width: 100%;
+  margin-top: 0.7rem;
+  font-size: 0.82rem;
+  line-height: 1.45;
+}
+
+#bihar-council-record .disha-exhibit-meta {
+  margin-top: 0.35rem;
+  font-size: 0.74rem;
+  line-height: 1.45;
+}
+
+#bihar-council-record > .disha-content-max:last-child {
+  margin-top: 1.5rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid rgba(45, 36, 24, 0.14);
 }
 
 /* ================================================================ */
@@ -1435,6 +1551,7 @@
   .disha-exhibit-grid {
     grid-template-columns: 1fr;
     gap: 2rem;
+    margin-top: 2rem;
   }
 
   .disha-institutional-layout {
@@ -1712,6 +1829,97 @@
   border-radius: 4px;
 }
 
+@media (min-width: 980px) {
+  .disha-hero-title {
+    max-width: none !important;
+    white-space: nowrap;
+    font-size: clamp(1.05rem, 1.28vw, 1.38rem) !important;
+    line-height: 1.14;
+    letter-spacing: 0;
+  }
+}
+
+@media (max-width: 820px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  .disha-answer-origin-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .disha-answer-panel .disha-reading-block p,
+  .disha-answer-panel .disha-reading-block li {
+    text-align: left;
+  }
+
+  .disha-section-foundation > .disha-content-max.disha-reading-block {
+    column-count: 1;
+    text-align: left;
+  }
+
+  .disha-section-foundation .disha-institutional-layout {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-inline: 0;
+    padding-inline: 0 !important;
+    box-sizing: border-box;
+    grid-template-columns: minmax(0, 1fr) !important;
+    overflow-x: clip;
+  }
+
+  .disha-section-foundation .disha-institutional-layout * {
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  .disha-section-foundation .disha-institutional-text,
+  .disha-section-foundation .disha-institutional-figure,
+  .disha-section-foundation .disha-institutional-text .disha-reading-block,
+  .disha-section-foundation .disha-institutional-text p {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+    overflow-wrap: anywhere;
+  }
+
+  .disha-section-foundation .disha-institutional-figure .disha-document-wrapper,
+  .disha-section-foundation .disha-institutional-figure .disha-document-full {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  #bihar-council-record .disha-institutional-layout {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-inline: 0 !important;
+    padding-inline: 0 !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    overflow-x: clip;
+  }
+
+  #bihar-council-record .disha-institutional-text,
+  #bihar-council-record .disha-institutional-figure,
+  #bihar-council-record .disha-reading-block,
+  #bihar-council-record .disha-reading-block p,
+  #bihar-council-record .disha-document-wrapper,
+  #bihar-council-record .disha-document-full,
+  #bihar-council-record .disha-zoom-link,
+  #bihar-council-record picture,
+  #bihar-council-record img,
+  #bihar-council-record figcaption {
+    display: block;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+    overflow-wrap: anywhere;
+  }
+}
+
 /* ================================================================ */
 /* PRINT STYLES                                                    */
 /* ================================================================ */
@@ -1747,5 +1955,74 @@
 
   .disha-section-alt {
     background: none;
+  }
+}
+
+@media (max-width: 820px) {
+  #what-is-disha,
+  #origin {
+    padding-top: clamp(3rem, 9vw, 4rem);
+    padding-bottom: clamp(3rem, 9vw, 4rem);
+  }
+
+  .disha-content-max {
+    max-width: 100%;
+  }
+
+  .disha-h2 {
+    max-width: 100%;
+  }
+
+  .disha-reading-block p,
+  .disha-reading-block li,
+  .disha-section-foundation .disha-reading-block p {
+    text-align: left;
+  }
+
+  .disha-signal-chain {
+    width: min(100% - 36px, var(--max));
+    padding: 1rem 14px;
+  }
+
+  .disha-signal-chain-inner {
+    justify-content: flex-start;
+  }
+
+  .disha-chain-step {
+    font-size: 15px;
+  }
+
+  .disha-chain-arrow {
+    font-size: 18px;
+    padding: 0 .25rem;
+  }
+
+  .disha-institutional-layout {
+    width: 100%;
+    padding: 0;
+    gap: 1.25rem;
+  }
+
+  .disha-institutional-text,
+  .disha-institutional-figure,
+  .disha-institutional-text .disha-reading-block {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .disha-institutional-figure {
+    padding: 1rem;
+  }
+
+  .disha-institutional-figure .disha-document-wrapper,
+  .disha-institutional-figure .disha-document-full {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .disha-exhibit-caption strong,
+  .disha-exhibit-meta {
+    display: block;
+    max-width: 100%;
   }
 }

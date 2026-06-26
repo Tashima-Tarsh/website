@@ -126,7 +126,7 @@ const feedItems = feedPages.slice(0, 40).map(p => `<item><title>${escapeXml(p.ti
 const feedLastBuild = feedPages.length
   ? new Date(Math.max(...feedPages.map(p => new Date(p.modified).getTime())))
   : buildTime;
-const feed = `<?xml version="1.0" encoding="UTF-8"?>\n<rss version="2.0"><channel><title>thenitishkr.in articles and evidence records</title><link>${SITE}/</link><description>Article 12, DISHA, digital constitutional personhood, and intelligence case records from thenitishkr.in.</description><lastBuildDate>${feedLastBuild.toUTCString()}</lastBuildDate>${feedItems}</channel></rss>\n`;
+const feed = `<?xml version="1.0" encoding="UTF-8"?>\n<rss version="2.0"><channel><title>Nitish Kumar (@thenitishkr), DISHA Intelligence 6.6 and evidence records</title><link>${SITE}/</link><description>Public-interest research by Nitish Kumar (@thenitishkr) on DISHA Intelligence 6.6, DISHA Advanced Intelligence Architecture, India-origin intelligence architecture, cyber defence, and evidence intelligence.</description><lastBuildDate>${feedLastBuild.toUTCString()}</lastBuildDate>${feedItems}</channel></rss>\n`;
 fs.writeFileSync("feed.xml", feed);
 fs.writeFileSync("rss.xml", feed);
 fs.writeFileSync("indexnow-payload.json", JSON.stringify({ host: "thenitishkr.in", key: INDEXNOW_KEY, keyLocation: `${SITE}/${INDEXNOW_KEY}.txt`, urlList: pages.filter(p => p.indexable).map(p => p.url).slice(0, 1000) }, null, 2));

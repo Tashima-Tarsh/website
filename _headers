@@ -7,18 +7,17 @@
   X-Frame-Options: SAMEORIGIN
   Permissions-Policy: camera=(), microphone=(), geolocation=(), interest-cohort=()
   Cache-Control: public, max-age=0, must-revalidate
-
-# Indexable pages — explicitly allow index
-/*
   X-Robots-Tag: index, follow
 
-# Error pages — noindex
+# Indexable pages are explicitly allowed by the global X-Robots-Tag.
+
+# Error pages - noindex
 /404.html
   X-Robots-Tag: noindex
 /410.html
   X-Robots-Tag: noindex
 
-# Retired PDFs — noindex (served 410 Gone by functions/[[path]].js)
+# Retired PDFs - noindex (served 410 Gone by functions/[[path]].js)
 /assets/records/intelligence/*.pdf
   X-Robots-Tag: noindex, nofollow
   Cache-Control: no-store
@@ -26,7 +25,7 @@
 /*.html
   Cache-Control: public, max-age=0, must-revalidate
 
-# Intelligence sub-pages — noindex (evidence pages, not primary content)
+# Intelligence sub-pages - noindex (evidence pages, not primary content)
 /intelligence/rti-missing-answers/*
   X-Robots-Tag: noindex, follow
 
@@ -84,7 +83,7 @@
 /*.pages.dev/*
   X-Robots-Tag: noindex, nofollow
 
-# XML sitemaps — explicit content-type so GSC can fetch them
+# XML sitemaps - explicit content-type so GSC can fetch them
 /sitemap.xml
   Content-Type: application/xml; charset=utf-8
   Cache-Control: public, max-age=900, must-revalidate

@@ -90,10 +90,6 @@ const NEW_FOOTER = `    <footer class="site-footer">
         <a href="https://x.com/thenitishkr" target="_blank">X</a>
         <a href="https://thenitishkr.substack.com" target="_blank">Substack</a>
       </div>
-      <div class="footer-note">
-        <p><strong>Not for sale / non-commercial public-interest project</strong></p>
-        <p class="footer-legal">Independent public-interest research archive documenting constitutional accountability, digital governance, citizen rights, data protection, public administration, legal submissions, public records, research publications, media references, court-related documentation, and government documentary material in India. Content may include verified records, documented allegations, research analysis, opinions, and adjudicated findings, which readers should evaluate within their respective legal, factual, and documentary contexts.</p>
-      </div>
     </div>
   </footer>`;
 

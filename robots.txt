@@ -38,4 +38,3 @@ User-agent: Applebot
 Allow: /
 
 Sitemap: https://thenitishkr.in/sitemap.xml
-Sitemap: https://thenitishkr.in/news-sitemap.xml

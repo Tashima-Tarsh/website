@@ -21,7 +21,9 @@ function read(file) {
 function pathForUrl(url) {
   const parsed = new URL(url);
   if (parsed.pathname === "/") return path.join(root, "index.html");
-  return path.join(root, parsed.pathname.replace(/^\//, ""), "index.html");
+  const localPath = path.join(root, decodeURIComponent(parsed.pathname.replace(/^\//, "")));
+  if (path.extname(localPath)) return localPath;
+  return path.join(localPath, "index.html");
 }
 
 function canonicalFromHtml(html) {
@@ -73,16 +75,18 @@ function validateSitemapUrls(urls) {
       continue;
     }
 
-    const html = read(file);
-    const canonical = canonicalFromHtml(html);
-    if (canonical !== loc) fail(`${path.relative(root, file)}: canonical ${canonical || "missing"} does not match sitemap URL ${loc}`);
-    if (robotsFromHtml(html).includes("noindex")) fail(`${path.relative(root, file)}: sitemap URL is marked noindex`);
+    if (/\.html$/i.test(file) || path.basename(file).toLowerCase() === "index.html") {
+      const html = read(file);
+      const canonical = canonicalFromHtml(html);
+      if (canonical !== loc) fail(`${path.relative(root, file)}: canonical ${canonical || "missing"} does not match sitemap URL ${loc}`);
+      if (robotsFromHtml(html).includes("noindex")) fail(`${path.relative(root, file)}: sitemap URL is marked noindex`);
 
-    for (const href of hrefsFromHtml(html)) {
-      const target = localHrefTarget(file, href);
-      if (!target) continue;
-      if (/\.html(?:[?#]|$)/i.test(href)) fail(`${path.relative(root, file)}: internal link should not use .html URL ${href}`);
-      if (!fs.existsSync(target)) fail(`${path.relative(root, file)}: broken local link ${href}`);
+      for (const href of hrefsFromHtml(html)) {
+        const target = localHrefTarget(file, href);
+        if (!target) continue;
+        if (/\.html(?:[?#]|$)/i.test(href)) fail(`${path.relative(root, file)}: internal link should not use .html URL ${href}`);
+        if (!fs.existsSync(target)) fail(`${path.relative(root, file)}: broken local link ${href}`);
+      }
     }
   }
 }
@@ -111,6 +115,11 @@ async function validateRemote(urls) {
     }
 
     const contentType = response.headers.get("content-type") || "";
+    if (parsed.pathname.endsWith(".pdf")) {
+      if (!contentType.includes("application/pdf")) fail(`${previewUrl}: expected PDF content-type, received ${contentType || "missing"}`);
+      continue;
+    }
+
     if (!contentType.includes("text/html")) fail(`${previewUrl}: expected HTML content-type, received ${contentType || "missing"}`);
 
     const html = await response.text();

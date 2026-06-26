@@ -30,6 +30,9 @@ function titleOf(html, fallback) {
   const title = html.match(/<title>([^<]+)<\/title>/i);
   return (og && og[1]) || (title && title[1].replace(/\s*\|\s*thenitishkr.*$/i, "")) || fallback;
 }
+function descriptionOf(html) {
+  return html.match(/<meta\s+name=["']description["']\s+content=["']([^"']+)["']/i)?.[1] || "";
+}
 function findHtmlPages(dir = ".") {
   return fs.readdirSync(dir, { withFileTypes: true }).flatMap(entry => {
     if (entry.name.startsWith(".") || ["node_modules", "assets", "audit", "dist", "preview-news-desk", "scripts"].includes(entry.name)) return [];
@@ -70,6 +73,7 @@ const pages = findHtmlPages().map(file => {
     file,
     url: canonicalFor(file),
     title: titleOf(html, file.replace(/\.html$/, "")),
+    description: descriptionOf(html),
     published: datePublishedOf(html),
     indexable: isIndexable(file, html),
     modified,
@@ -118,7 +122,7 @@ if (fs.existsSync("robots.txt")) {
     `${robots}${newsPages.length ? "\nSitemap: https://thenitishkr.in/news-sitemap.xml" : ""}\n`
   );
 }
-const feedItems = feedPages.slice(0, 40).map(p => `<item><title>${escapeXml(p.title)}</title><link>${escapeXml(p.url)}</link><guid isPermaLink="true">${escapeXml(p.url)}</guid><pubDate>${new Date(p.published || p.modified).toUTCString()}</pubDate><description>${escapeXml("Public-interest article and evidence record from thenitishkr.in")}</description></item>`).join("\n");
+const feedItems = feedPages.slice(0, 40).map(p => `<item><title>${escapeXml(p.title)}</title><link>${escapeXml(p.url)}</link><guid isPermaLink="true">${escapeXml(p.url)}</guid><pubDate>${new Date(p.published || p.modified).toUTCString()}</pubDate><description>${escapeXml(p.description || "Public-interest article and evidence record from thenitishkr.in")}</description></item>`).join("\n");
 const feedLastBuild = feedPages.length
   ? new Date(Math.max(...feedPages.map(p => new Date(p.modified).getTime())))
   : buildTime;

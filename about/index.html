@@ -152,6 +152,84 @@
     .visual-record-card .vrc-body span { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; color: #8B4513; font-weight: 700; }
     .visual-record-card .vrc-body h3 { margin: 6px 0 8px; font-size: 1rem; color: #2D5016; }
     .visual-record-card .vrc-body p { font-size: 0.85rem; color: #3D3330; margin: 0; }
+    main p:not(.eyebrow):not(.label):not(.cb-label):not(.vi-span):not(.tl-span):not(.fi-num):not(.fi-label) {
+      text-align: justify;
+      text-align-last: left;
+      text-justify: inter-word;
+      hyphens: auto;
+      word-spacing: normal;
+      overflow-wrap: break-word;
+    }
+    .about-disha-record {
+      background: #fffdf7;
+      border-top: 1px solid rgba(45,36,24,.12);
+      border-bottom: 1px solid rgba(45,36,24,.12);
+    }
+    .about-disha-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.18fr) minmax(320px, .82fr);
+      gap: 34px;
+      align-items: start;
+    }
+    .about-disha-copy {
+      display: grid;
+      gap: 16px;
+    }
+    .about-disha-copy h2 {
+      max-width: 760px;
+    }
+    .about-disha-copy .lead {
+      margin-top: 0;
+    }
+    .about-disha-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 8px;
+    }
+    .about-disha-panel {
+      display: grid;
+      gap: 12px;
+      padding: 24px;
+      border: 1px solid rgba(7,26,66,.14);
+      border-top: 4px solid #2D5016;
+      border-radius: 4px;
+      background: #F0EBE3;
+    }
+    .about-disha-panel h3 {
+      margin: 0;
+      font-size: 1.15rem;
+      color: #2D5016;
+    }
+    .about-disha-facts {
+      display: grid;
+      gap: 0;
+      margin: 0;
+    }
+    .about-disha-facts div {
+      display: grid;
+      grid-template-columns: 124px minmax(0, 1fr);
+      gap: 12px;
+      padding: 11px 0;
+      border-top: 1px solid rgba(45,36,24,.14);
+    }
+    .about-disha-facts div:first-child {
+      border-top: 0;
+    }
+    .about-disha-facts dt {
+      color: #8B4513;
+      font-size: .7rem;
+      font-weight: 800;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+    .about-disha-facts dd {
+      margin: 0;
+      color: #2C2420;
+      font-size: .88rem;
+      line-height: 1.55;
+      overflow-wrap: anywhere;
+    }
     .about-story-grid { display: grid; grid-template-columns: 1.6fr 1fr; gap: 40px; align-items: start; }
     .about-story-aside { background: #F0EBE3; border-radius: 4px; padding: 28px; border-top: 3px solid #8B4513; }
     .about-story-aside .label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; color: #8B4513; font-weight: 700; display: block; margin-bottom: 10px; }
@@ -255,6 +333,7 @@
     @media (max-width: 900px) {
       .credential-bar { grid-template-columns: 1fr 1fr; }
       .visual-record-grid { grid-template-columns: 1fr; }
+      .about-disha-grid { grid-template-columns: 1fr; }
       .about-story-grid { grid-template-columns: 1fr; }
       .timeline-grid { grid-template-columns: 1fr; }
       .research-grid { grid-template-columns: 1fr 1fr; }
@@ -266,6 +345,7 @@
     }
     @media (max-width: 600px) {
       .credential-bar { grid-template-columns: 1fr; }
+      .about-disha-facts div { grid-template-columns: 1fr; gap: 4px; }
       .research-grid { grid-template-columns: 1fr; }
       .flow-strip { grid-template-columns: 1fr; }
       .verify-grid { grid-template-columns: 1fr; }
@@ -376,49 +456,32 @@
       </div>
     </section>
 
-    <!-- 2.4 DOCUMENTARY VISUAL RECORD -->
-    <section class="section about-visual-dossier">
-      <div class="reveal" style="margin-bottom:40px;">
-        <p class="eyebrow">Documentary visual record</p>
-        <h2>Profile supported by original records, books, and court-facing evidence.</h2>
-      </div>
-      <div class="visual-record-grid reveal">
-        <article class="visual-record-card">
-          <a href="/disha/" aria-label="DISHA foundation diagram">
-            <figure>
-              <img src="/assets/images/evidence/disha-handmade-foundation-diagram.jpg" alt="DISHA handmade foundation diagram — original architecture sketch by Nitish Kumar (thenitishkr)" loading="lazy" decoding="async" width="800" height="600">
-            </figure>
-          </a>
-          <div class="vrc-body">
-            <span>Original architecture</span>
-            <h3>DISHA foundation diagram</h3>
-            <p>A visible origin record for the intelligence architecture and public-memory method.</p>
+    <!-- 2.4 DISHA 6.6 PUBLIC RECORD -->
+    <section class="section about-disha-record" id="disha-6-6">
+      <div class="about-disha-grid reveal">
+        <div class="about-disha-copy">
+          <p class="eyebrow">DISHA 6.6 public record</p>
+          <h2>A profile is clearer when the work is explained in human terms.</h2>
+          <p class="lead">DISHA is presented on this site as an evidence-first intelligence architecture: a way to preserve records, connect claims to sources, examine public harm, and keep institutional accountability visible when digital systems become difficult to question.</p>
+          <p>The current public version is DISHA 6.6. The live whitepaper record identifies a 19-page document, updated on 23 June 2026, with the file size and SHA-256 checksum kept on the site for verification. A separate June 2026 news record links the DISHA 6.6 filing to PMOPG/E/2026/0086335 and records a stated 20 July 2026 response deadline.</p>
+          <p>This section replaces the earlier visual dossier because the About page should read like a person and research profile, not a collage of exhibits. Readers who want the evidence trail can still open the DISHA page, the whitepaper record, and the related public archive.</p>
+          <div class="about-disha-actions">
+            <a class="button" href="/disha/">Open DISHA</a>
+            <a class="button secondary" href="/intelligence/documents/disha-whitepaper/">Whitepaper record</a>
+            <a class="button secondary" href="/news/modi-vivatech-disha-6-6/">DISHA 6.6 filing note</a>
           </div>
-        </article>
-        <article class="visual-record-card">
-          <a href="/books/" aria-label="Books by Nitish Kumar (thenitishkr)">
-            <figure>
-              <img src="/assets/images/evidence/files-continue-books.png" alt="Era of Stupidity and Sleeping Guardian — books by Nitish Kumar (thenitishkr)" loading="lazy" decoding="async" width="800" height="600">
-            </figure>
-          </a>
-          <div class="vrc-body">
-            <span>Author record</span>
-            <h3>The books continue the archive</h3>
-            <p>Era of Stupidity (ISBN 978-93-5592-012-6) and Sleeping Guardian (ISBN 979-8274694070).</p>
-          </div>
-        </article>
-        <article class="visual-record-card">
-          <a href="/intelligence/meity-digital-governance/" aria-label="Supreme Court public record context">
-            <figure>
-              <img src="/assets/images/evidence/supreme-court-of-india-guardian.webp" alt="Supreme Court of India — public records connect the profile of Nitish Kumar (thenitishkr)" loading="lazy" decoding="async" width="800" height="600">
-            </figure>
-          </a>
-          <div class="vrc-body">
-            <span>Court record context</span>
-            <h3>Public records connect the profile</h3>
-            <p>Legal submissions, public evidence, media references, and case files linked to source paths.</p>
-          </div>
-        </article>
+        </div>
+        <aside class="about-disha-panel">
+          <span class="label">Record details</span>
+          <h3>What the site currently records</h3>
+          <dl class="about-disha-facts">
+            <div><dt>Version</dt><dd>DISHA Intelligence Architecture, Version 6.6</dd></div>
+            <div><dt>Whitepaper</dt><dd>19 pages, 428.1 KB, updated 23 June 2026</dd></div>
+            <div><dt>Checksum</dt><dd>SHA-256 recorded on the whitepaper page</dd></div>
+            <div><dt>Filing</dt><dd>PMOPG/E/2026/0086335, as cited in the June 2026 publication record</dd></div>
+            <div><dt>Deadline</dt><dd>20 July 2026, stated in the related publication record</dd></div>
+          </dl>
+        </aside>
       </div>
     </section>
 

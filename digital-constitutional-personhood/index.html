@@ -68,6 +68,23 @@
       background: #fffdfa;
       box-shadow: var(--shadow);
     }
+    .dcp-page p:not(.eyebrow):not(.hero-line),
+    .dcp-research-cluster p:not(.eyebrow),
+    .share-follow p:not(.eyebrow) {
+      text-align: justify;
+      text-align-last: left;
+      text-justify: inter-word;
+      hyphens: auto;
+      word-spacing: normal;
+      overflow-wrap: break-word;
+    }
+    .dcp-page .hero-actions,
+    .dcp-page .record-code,
+    .dcp-page .dcp-proof-card strong,
+    .dcp-page .dcp-policy-card span,
+    .dcp-page .dcp-article-map span {
+      text-align: left;
+    }
     .dcp-command h1 { max-width: 820px; }
     .dcp-command .lead { max-width: 740px; }
     .dcp-promise {
@@ -105,6 +122,47 @@
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 18px;
+    }
+    .dcp-proof-strip {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      padding-top: 24px;
+      padding-bottom: 24px;
+    }
+    .dcp-proof-card {
+      min-width: 0;
+      padding: 18px;
+      border: 1px solid rgba(7,26,66,.14);
+      border-left: 4px solid var(--dcp-red);
+      border-radius: var(--radius);
+      background: rgba(255,255,255,.96);
+      box-shadow: 0 8px 20px rgba(35,31,26,.045);
+    }
+    .dcp-proof-card span,
+    .dcp-cta-panel span {
+      display: block;
+      color: var(--dcp-red);
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .dcp-proof-card strong {
+      display: block;
+      color: var(--charcoal);
+      font-size: 16px;
+      line-height: 1.25;
+    }
+    .dcp-proof-card p {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.5;
+    }
+    .dcp-research-cluster .related-card {
+      margin-top: 14px;
     }
     .dcp-principle {
       min-height: 220px;
@@ -249,7 +307,7 @@
       box-shadow: 0 10px 24px rgba(52,38,22,.06);
     }
     .dcp-checklist p::before {
-      content: "?";
+      content: "i";
       position: absolute;
       left: 14px;
       top: 13px;
@@ -306,15 +364,42 @@
       font-weight: 700;
       line-height: 1.04;
     }
+    .dcp-cta-panel {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 24px;
+      align-items: center;
+      border: 1px solid rgba(6,38,81,.14);
+      border-top: 5px solid var(--dcp-navy);
+      border-radius: var(--radius);
+      background: #fffdfa;
+      padding: clamp(24px, 4vw, 40px);
+      box-shadow: var(--shadow);
+    }
+    .dcp-cta-panel h2 {
+      font-size: clamp(30px, 4vw, 48px);
+      line-height: 1.03;
+    }
+    .dcp-cta-panel p {
+      max-width: 760px;
+      margin-top: 12px;
+      color: var(--muted);
+    }
+    .dcp-cta-panel .hero-actions {
+      justify-content: flex-end;
+      margin-top: 0;
+    }
     @media (max-width: 900px) {
-      .dcp-principle-grid, .dcp-policy-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .dcp-principle-grid, .dcp-policy-grid, .dcp-proof-strip { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .dcp-foundation { grid-template-columns: 1fr; }
       .dcp-workflow { grid-template-columns: 1fr; }
       .dcp-workflow article { min-height: auto; border-right: 0; border-bottom: 1px solid var(--line); }
       .dcp-workflow article:last-child { border-bottom: 0; }
+      .dcp-cta-panel { grid-template-columns: 1fr; }
+      .dcp-cta-panel .hero-actions { justify-content: flex-start; }
     }
     @media (max-width: 640px) {
-      .dcp-principle-grid, .dcp-policy-grid { grid-template-columns: 1fr; }
+      .dcp-principle-grid, .dcp-policy-grid, .dcp-proof-strip { grid-template-columns: 1fr; }
       .dcp-command .hero-actions { align-items: stretch; }
       .dcp-visual img {
         width: auto;
@@ -348,8 +433,9 @@
         <p class="hero-line">Citizen first. Constitution always. India always.</p>
         <p class="lead">This page explains one core idea in plain language: when the State, a company, or a digital system deals with a citizen through data, biometric identity, AI, records, or automated decisions, the citizen remains a constitutional person. The system may be digital. The dignity, rights, remedy, and accountability remain constitutional.</p>
         <div class="hero-actions">
-          <a class="button" href="#framework-visual">View the Framework</a>
-          <a class="button secondary" href="#how-it-works">How it works</a>
+          <a class="button" href="/digital-constitutional-personhood/model-bill-2026/">Read the Model Bill</a>
+          <a class="button secondary" href="#framework-visual">View the framework</a>
+          <a class="button secondary" href="#research-dimensions">Research dimensions</a>
         </div>
       </div>
       <aside class="card dcp-promise reveal">
@@ -362,6 +448,29 @@
           <li><span aria-hidden="true">HA</span><strong>Human accountability remains above every digital decision.</strong></li>
         </ul>
       </aside>
+    </section>
+
+    <section class="section dcp-proof-strip" aria-label="Page status and reader route">
+      <article class="dcp-proof-card reveal">
+        <span>Status</span>
+        <strong>Research framework</strong>
+        <p>This is a public-interest constitutional research proposal. It is not enacted law or a final judicial finding.</p>
+      </article>
+      <article class="dcp-proof-card reveal">
+        <span>Use</span>
+        <strong>Reader-first hub</strong>
+        <p>Start here for the concept, then move to the model bill, definition, data sovereignty, biometric failure, or human review pages.</p>
+      </article>
+      <article class="dcp-proof-card reveal">
+        <span>Method</span>
+        <strong>Rights, records, remedy</strong>
+        <p>The page connects digital identity, public records, AI decisions, data custody, and constitutional accountability.</p>
+      </article>
+      <article class="dcp-proof-card reveal">
+        <span>Next step</span>
+        <strong>Read the draft bill</strong>
+        <p>The model bill turns the framework into a structured legal proposal with chapter architecture and status limits.</p>
+      </article>
     </section>
 
     <section class="section" id="framework-visual">
@@ -482,7 +591,7 @@
       <div class="reveal">
         <p class="eyebrow">For public institutions</p>
         <h2>What senior officers should take from this page.</h2>
-        <p class="lead">The framework is not anti-technology. It is pro-accountability. It gives a way to govern digital systems without allowing software, vendors, databases, or AI models to dilute constitutional duties.</p>
+        <p class="lead">The framework does not reject technology. It asks that digital governance remain answerable to constitutional duties, human review, traceable records, and enforceable remedy.</p>
         <p>For any public system, the standard should be simple: the record must be traceable, the decision must be explainable, the officer must be accountable, the data must be protected, and the citizen must have a remedy.</p>
       </div>
       <div class="reveal">
@@ -496,6 +605,20 @@
     <section class="section">
       <div class="dcp-declaration reveal">
         <p>India shall not become a Republic where the citizen is visible to databases but invisible to remedy.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="dcp-cta-panel reveal">
+        <div>
+          <span>Primary reading path</span>
+          <h2>Move from framework to draft law.</h2>
+          <p>The model bill is the next structured reading page. It keeps the legal proposal separate from this framework hub, so readers can first understand the principle and then examine the proposed clauses.</p>
+        </div>
+        <div class="hero-actions">
+          <a class="button" href="/digital-constitutional-personhood/model-bill-2026/">Read the model bill</a>
+          <a class="button secondary" href="#research-dimensions">Compare the research pages</a>
+        </div>
       </div>
     </section>
 
@@ -524,38 +647,45 @@
       <div class="reveal">
         <p class="eyebrow">New publication</p>
         <h2>Model Bill 2026</h2>
-        <p class="lead">The framework now has a dedicated child page for the 2026 model bill. It presents the proposal as a structured public-interest legal draft with status limits, direct-answer blocks, chapter architecture and correction discipline.</p>
+        <p class="lead">The framework now has a dedicated child page for the 2026 model bill, presented as a structured public-interest legal draft with clear status limits and chapter architecture.</p>
       </div>
       <div class="reveal">
         <p class="eyebrow">Why this sits separately</p>
-        <p>The main framework hub remains focused on the idea itself. The model bill now has its own reading page so the legal proposal does not overload the hub or disturb the existing header, footer and framework structure.</p>
+        <p>The hub stays focused on the constitutional idea. The bill page carries the legal proposal, so readers can distinguish framework, draft text, and supporting research.</p>
         <div class="hero-actions">
           <a class="button" href="/digital-constitutional-personhood/model-bill-2026/">Read the model bill</a>
         </div>
       </div>
     </section>
-</main>
-  <section class="section dcp-research-cluster" aria-labelledby="dcp-cluster-heading">
+  <section class="section dcp-research-cluster" id="research-dimensions" aria-labelledby="dcp-cluster-heading">
       <div class="section-head reveal">
         <div><p class="eyebrow">Digital Constitutional Personhood research</p><h2 id="dcp-cluster-heading">Four dimensions of digital constitutional personhood.</h2></div>
         <p>Digital Constitutional Personhood is the author's proposed research framework. It is not enacted law or settled judicial doctrine. Each page below examines one dimension of the framework.</p>
       </div>
       <div class="intel-method-grid">
         <article class="intel-method-card reveal">
-          <p class="eyebrow">Definition</p><h3><a href="/digital-constitutional-personhood/definition/">Definition</a></h3>
-          <p>What Digital Constitutional Personhood means as a research framework, and how it connects to Articles 14, 19, and 21 of the Constitution.</p>
+          <p class="eyebrow">Research note</p>
+          <h3><a href="/digital-constitutional-personhood/definition/">Definition and constitutional basis</a></h3>
+          <p>Defines the framework and explains its connection with Articles 14, 19, and 21 of the Constitution.</p>
+          <a class="related-card" href="/digital-constitutional-personhood/definition/"><span>Read next</span><strong>Open definition note</strong></a>
         </article>
         <article class="intel-method-card reveal">
-          <p class="eyebrow">Data Sovereignty</p><h3><a href="/digital-constitutional-personhood/data-sovereignty/">Data Sovereignty</a></h3>
-          <p>How citizen data held on foreign servers, extracted through cyber operations, or processed without consent raises sovereignty questions under the constitutional framework.</p>
+          <p class="eyebrow">Data custody</p>
+          <h3><a href="/digital-constitutional-personhood/data-sovereignty/">Data sovereignty and public power</a></h3>
+          <p>Examines citizen data held on foreign servers, extracted through cyber operations, or processed without meaningful consent.</p>
+          <a class="related-card" href="/digital-constitutional-personhood/data-sovereignty/"><span>Read next</span><strong>Open data sovereignty note</strong></a>
         </article>
         <article class="intel-method-card reveal">
-          <p class="eyebrow">Biometric Failure</p><h3><a href="/digital-constitutional-personhood/biometric-failure/">Biometric Failure</a></h3>
-          <p>What happens when biometric identification systems fail, exclude, or misidentify — and what that means for constitutional personhood.</p>
+          <p class="eyebrow">Identity systems</p>
+          <h3><a href="/digital-constitutional-personhood/biometric-failure/">Biometric failure and exclusion</a></h3>
+          <p>Looks at identification failures, exclusion, misidentification, and the constitutional risk of making dignity depend on a machine match.</p>
+          <a class="related-card" href="/digital-constitutional-personhood/biometric-failure/"><span>Read next</span><strong>Open biometric failure note</strong></a>
         </article>
         <article class="intel-method-card reveal">
-          <p class="eyebrow">Human Review</p><h3><a href="/digital-constitutional-personhood/human-review-remedy/">Human Review and Remedy</a></h3>
-          <p>The constitutional case for human review in automated decisions, and the remedy mechanisms available when digital systems produce incorrect outcomes.</p>
+          <p class="eyebrow">Remedy design</p>
+          <h3><a href="/digital-constitutional-personhood/human-review-remedy/">Human review and remedy</a></h3>
+          <p>Explains why automated decisions need human review, correction, appeal, and accountable remedy.</p>
+          <a class="related-card" href="/digital-constitutional-personhood/human-review-remedy/"><span>Read next</span><strong>Open remedy note</strong></a>
         </article>
       </div>
     </section>
@@ -563,16 +693,17 @@
   <section class="section share-follow" id="archive-links" aria-label="Explore digital rights framework">
     <div>
       <p class="eyebrow">Understand digital rights</p>
-      <h2>Engage with Digital Constitutional Personhood.</h2>
-      <p>This framework extends constitutional protections into the digital realm. Read the analysis, examine cases of digital harm, and develop your understanding of how digital identity, biometric data, and online presence must be protected with the same constitutional gravity as physical and privacy rights.</p>
+      <h2>Continue through the research record.</h2>
+      <p>Use this page as the framework hub. The strongest route is to read the model bill, then compare the definition, data sovereignty, biometric failure, and human-review pages.</p>
     </div>
     <div class="share-actions">
-      <a class="button secondary" data-share-x href="https://x.com/intent/tweet?url=https://thenitishkr.in/" target="_blank" aria-label="Share on X (opens in new tab)" rel="noopener">Share on X</a>
-      <a class="button secondary" data-share-linkedin href="https://www.linkedin.com/sharing/share-offsite/?url=https://thenitishkr.in/" target="_blank" aria-label="Share on LinkedIn (opens in new tab)" rel="noopener">Share on LinkedIn</a>
+      <a class="button secondary" data-share-x href="https://x.com/intent/tweet?url=https://thenitishkr.in/digital-constitutional-personhood/" target="_blank" aria-label="Share on X (opens in new tab)" rel="noopener">Share on X</a>
+      <a class="button secondary" data-share-linkedin href="https://www.linkedin.com/sharing/share-offsite/?url=https://thenitishkr.in/digital-constitutional-personhood/" target="_blank" aria-label="Share on LinkedIn (opens in new tab)" rel="noopener">Share on LinkedIn</a>
       <button class="button secondary" type="button" data-copy-link>Copy link</button>
-      <a class="button" href="https://thenitishkr.substack.com" target="_blank" aria-label="Get record updates (opens in new tab)" rel="noopener">Get record updates</a>
+      <a class="button" href="/digital-constitutional-personhood/model-bill-2026/">Read the model bill</a>
     </div>
   </section>
+</main>
       <footer class="site-footer">
     <div class="section">
       <div>

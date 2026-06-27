@@ -85,14 +85,8 @@ const pages = findHtmlPages().map(file => {
     })()
   };
 }).sort((a,b) => a.url.localeCompare(b.url));
-const docs = fs.existsSync("assets/docs") ? fs.readdirSync("assets/docs").filter(f => /\.pdf$/i.test(f)).map(f => {
-  const file = path.join("assets/docs", f).replace(/\\/g, "/");
-  return {
-    url: `${SITE}/assets/docs/${encodeURIComponent(f)}`,
-    modifiedDate: modifiedFor(file).slice(0, 10)
-  };
-}) : [];
-const sitemapUrls = pages.filter(p => p.indexable).map(p => `  <url><loc>${escapeXml(p.url)}</loc><lastmod>${p.modifiedDate}</lastmod><changefreq>weekly</changefreq><priority>${p.file === "index.html" ? "1.0" : "0.8"}</priority></url>`).concat(docs.map(d => `  <url><loc>${escapeXml(d.url)}</loc><lastmod>${d.modifiedDate}</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>`));
+const docs = fs.existsSync("assets/docs") ? fs.readdirSync("assets/docs").filter(f => /\.pdf$/i.test(f)) : [];
+const sitemapUrls = pages.filter(p => p.indexable).map(p => `  <url><loc>${escapeXml(p.url)}</loc><lastmod>${p.modifiedDate}</lastmod><changefreq>weekly</changefreq><priority>${p.file === "index.html" ? "1.0" : "0.8"}</priority></url>`);
 fs.writeFileSync("sitemap.xml", `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${sitemapUrls.join("\n")}\n</urlset>\n`);
 const contentPath = p => p.url.replace(`${SITE}/`, "").replace(/\/$/, "");
 const feedPages = pages
@@ -130,4 +124,4 @@ const feed = `<?xml version="1.0" encoding="UTF-8"?>\n<rss version="2.0"><channe
 fs.writeFileSync("feed.xml", feed);
 fs.writeFileSync("rss.xml", feed);
 fs.writeFileSync("indexnow-payload.json", JSON.stringify({ host: "thenitishkr.in", key: INDEXNOW_KEY, keyLocation: `${SITE}/${INDEXNOW_KEY}.txt`, urlList: pages.filter(p => p.indexable).map(p => p.url).slice(0, 1000) }, null, 2));
-console.log(`Built ${pages.length} page URLs, ${docs.length} document URLs, feeds${newsPages.length ? ", news sitemap" : ""}, and IndexNow payload at ${now}.`);
+console.log(`Built ${pages.length} page URLs, ${docs.length} document files excluded from sitemap, feeds${newsPages.length ? ", news sitemap" : ""}, and IndexNow payload at ${now}.`);

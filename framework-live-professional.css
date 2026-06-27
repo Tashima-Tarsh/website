@@ -1,0 +1,333 @@
+.a12-page,
+.dcp-page {
+  --framework-navy: #0b2f57;
+  --framework-ink: #050505;
+  --framework-line: #111;
+  --framework-muted-line: #d4d4d4;
+  --framework-paper: #fff;
+  background: var(--framework-paper) !important;
+  color: var(--framework-ink) !important;
+}
+
+body:has(.a12-page),
+body:has(.dcp-page) {
+  background: #fff !important;
+  color: var(--framework-ink) !important;
+}
+
+body:has(.a12-page) .breadcrumb-nav,
+body:has(.dcp-page) .breadcrumb-nav,
+body:has(.a12-page) .share-follow,
+body:has(.dcp-page) .share-follow {
+  background: #fff !important;
+  border-color: var(--framework-line) !important;
+  box-shadow: none !important;
+}
+
+.a12-page *,
+.dcp-page *,
+.a12-page a,
+.dcp-page a {
+  color: var(--framework-ink) !important;
+  text-shadow: none !important;
+}
+
+.a12-page h1,
+.a12-page h2,
+.a12-page h3,
+.dcp-page h1,
+.dcp-page h2,
+.dcp-page h3,
+.a12-page .hero-line,
+.dcp-page .hero-line,
+.flow-strip strong,
+.intel-method-card h3 a {
+  color: var(--framework-navy) !important;
+  letter-spacing: 0 !important;
+}
+
+.a12-hero,
+.dcp-command,
+.dcp-foundation {
+  background: #fff !important;
+  border-bottom: 1px solid var(--framework-line) !important;
+  gap: 18px !important;
+  align-items: stretch !important;
+  padding-top: clamp(22px, 4vw, 42px) !important;
+  padding-bottom: clamp(20px, 4vw, 36px) !important;
+}
+
+.a12-hero-copy,
+.a12-visual,
+.a12-question,
+.a12-infection-card,
+.a12-audit-card,
+.a12-declaration,
+.dcp-command,
+.dcp-promise,
+.dcp-visual,
+.dcp-principle,
+.dcp-foundation-copy,
+.dcp-officer-panel,
+.dcp-workflow,
+.dcp-policy-card,
+.dcp-declaration,
+.dcp-cta-panel,
+.record-meta-strip .card,
+.citation-block,
+.intel-method-card,
+.flow-strip,
+.share-follow {
+  background: #fff !important;
+  border: 1px solid var(--framework-line) !important;
+  border-radius: 8px !important;
+  box-shadow: none !important;
+}
+
+.a12-hero-copy,
+.dcp-command {
+  display: grid !important;
+  gap: 12px !important;
+  align-content: start !important;
+  padding: clamp(18px, 3vw, 30px) !important;
+}
+
+.a12-hero-copy h1,
+.dcp-command h1 {
+  max-width: 100% !important;
+  margin: 0 !important;
+  font-size: clamp(42px, 7vw, 82px) !important;
+  line-height: 0.98 !important;
+}
+
+.a12-hero-copy .lead,
+.dcp-command .lead,
+.a12-page p:not(.eyebrow):not(.hero-line),
+.dcp-page p:not(.eyebrow):not(.hero-line) {
+  max-width: 920px !important;
+  color: var(--framework-ink) !important;
+  text-align: justify !important;
+  text-align-last: left !important;
+  text-justify: inter-word !important;
+  hyphens: auto !important;
+  word-spacing: normal !important;
+  overflow-wrap: break-word !important;
+}
+
+.a12-pattern,
+.a12-infection-grid,
+.a12-audit,
+.dcp-principle-grid,
+.dcp-proof-strip,
+.dcp-policy-grid,
+.intel-method-grid,
+.record-meta-strip {
+  align-items: stretch !important;
+}
+
+.a12-pattern span,
+.a12-infection-card,
+.a12-audit-card,
+.dcp-principle,
+.dcp-proof-card,
+.dcp-policy-card,
+.intel-method-card,
+.record-meta-strip .card,
+.flow-strip div {
+  display: grid !important;
+  align-content: start !important;
+  height: 100% !important;
+  min-height: 132px !important;
+  background: #fff !important;
+  border: 1px solid var(--framework-line) !important;
+  border-radius: 8px !important;
+  box-shadow: none !important;
+}
+
+.a12-pattern span,
+.dcp-article-map span,
+.a12-infection-card span,
+.a12-audit-card span,
+.dcp-policy-card span,
+.dcp-proof-card span,
+.record-code,
+.eyebrow,
+.label {
+  display: inline-flex !important;
+  width: fit-content !important;
+  max-width: 100% !important;
+  background: #fff !important;
+  border: 1px solid var(--framework-line) !important;
+  border-radius: 4px !important;
+  padding: 0.28rem 0.52rem !important;
+  color: var(--framework-ink) !important;
+  font-weight: 800 !important;
+  letter-spacing: 0 !important;
+  text-transform: none !important;
+}
+
+.a12-page .split .card,
+.dcp-page .split .card,
+.citation-block,
+.dcp-officer-panel,
+.dcp-foundation-copy {
+  min-height: 0 !important;
+  height: auto !important;
+  align-self: start !important;
+  padding: clamp(16px, 2.4vw, 24px) !important;
+}
+
+.a12-page .split .card p,
+.dcp-page .split .card p,
+.citation-block p,
+.citation-block pre {
+  margin-top: 0.55rem !important;
+  margin-bottom: 0 !important;
+}
+
+.citation-block {
+  display: grid !important;
+  gap: 10px !important;
+}
+
+.citation-block h2 {
+  margin: 0 !important;
+  font-size: clamp(24px, 3vw, 34px) !important;
+  line-height: 1.08 !important;
+}
+
+.citation-text {
+  margin: 0 !important;
+  padding: 0.85rem !important;
+  border: 1px solid var(--framework-muted-line) !important;
+  border-radius: 6px !important;
+  background: #fff !important;
+  font-size: clamp(13px, 1.5vw, 15px) !important;
+  line-height: 1.45 !important;
+}
+
+.dcp-officer-panel {
+  display: grid !important;
+  gap: 12px !important;
+  align-content: start !important;
+}
+
+.dcp-officer-panel h3,
+.dcp-officer-panel .officer-note {
+  margin-top: 0 !important;
+}
+
+.dcp-checklist {
+  display: grid !important;
+  gap: 8px !important;
+  margin-top: 0 !important;
+}
+
+.dcp-checklist p {
+  display: block !important;
+  width: 100% !important;
+  min-height: 0 !important;
+  margin: 0 !important;
+  padding: 0.72rem 0.82rem 0.72rem 2.55rem !important;
+  border: 1px solid var(--framework-muted-line) !important;
+  border-left: 4px solid var(--framework-navy) !important;
+  border-radius: 6px !important;
+  background: #fff !important;
+  color: var(--framework-ink) !important;
+  font-weight: 700 !important;
+  line-height: 1.45 !important;
+  text-align: justify !important;
+  text-align-last: left !important;
+  box-shadow: none !important;
+}
+
+.dcp-inventor-statement {
+  margin-top: 0 !important;
+  padding: 0.9rem !important;
+}
+
+.a12-page .button,
+.a12-page .button.secondary,
+.dcp-page .button,
+.dcp-page .button.secondary,
+body:has(.a12-page) .share-follow .button,
+body:has(.dcp-page) .share-follow .button {
+  min-height: 44px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: #fff !important;
+  border: 1px solid var(--framework-line) !important;
+  border-radius: 6px !important;
+  color: var(--framework-ink) !important;
+  box-shadow: none !important;
+  padding: 0.74rem 1rem !important;
+  font-weight: 800 !important;
+}
+
+.a12-page .hero-actions .button:first-child,
+.dcp-page .hero-actions .button:first-child,
+body:has(.a12-page) .share-actions .button:not(.secondary),
+body:has(.dcp-page) .share-actions .button:not(.secondary) {
+  background: var(--framework-navy) !important;
+  border-color: var(--framework-navy) !important;
+  color: #fff !important;
+}
+
+.dcp-workflow {
+  overflow: visible !important;
+}
+
+.dcp-workflow article {
+  border: 1px solid var(--framework-line) !important;
+  min-height: 230px !important;
+}
+
+.a12-audit-section,
+.tone-band {
+  background: #fff !important;
+  border-top: 1px solid var(--framework-line) !important;
+  border-bottom: 1px solid var(--framework-line) !important;
+}
+
+.citation-text {
+  white-space: pre-wrap !important;
+  overflow-wrap: anywhere !important;
+  color: var(--framework-ink) !important;
+}
+
+@media (max-width: 1000px) {
+  .a12-hero,
+  .a12-answer,
+  .a12-audit,
+  .dcp-foundation,
+  .dcp-cta-panel {
+    grid-template-columns: 1fr !important;
+  }
+
+  .dcp-workflow,
+  .dcp-policy-grid,
+  .dcp-principle-grid,
+  .dcp-proof-strip,
+  .intel-method-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .a12-pattern,
+  .a12-infection-grid,
+  .dcp-workflow,
+  .dcp-policy-grid,
+  .dcp-principle-grid,
+  .dcp-proof-strip,
+  .intel-method-grid,
+  .flow-strip {
+    grid-template-columns: 1fr !important;
+  }
+
+  .a12-hero-copy h1,
+  .dcp-command h1 {
+    font-size: clamp(40px, 15vw, 62px) !important;
+  }
+}

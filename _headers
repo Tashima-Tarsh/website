@@ -38,7 +38,7 @@
   Cache-Control: public, max-age=31536000, immutable
 
 /
-  Link: </assets/documentary.webp>; rel="preload"; as="image"; type="image/webp"; fetchpriority="high"
+  Link: </assets/documentary-420.webp>; rel="preload"; as="image"; type="image/webp"; fetchpriority="high"; media="(max-width: 900px)", </assets/documentary-760.webp>; rel="preload"; as="image"; type="image/webp"; fetchpriority="high"; media="(min-width: 901px)"
 
 /about/*
   Link: </assets/portrait.webp>; rel="preload"; as="image"; type="image/webp"; fetchpriority="high"

@@ -7,9 +7,8 @@
   X-Frame-Options: SAMEORIGIN
   Permissions-Policy: camera=(), microphone=(), geolocation=(), interest-cohort=()
   Cache-Control: public, max-age=0, must-revalidate
-  X-Robots-Tag: index, follow
 
-# Indexable pages are explicitly allowed by the global X-Robots-Tag.
+# Indexable HTML pages declare robots status in their own meta tags.
 
 # Error pages - noindex
 /404.html
@@ -21,6 +20,24 @@
 /assets/records/intelligence/*.pdf
   X-Robots-Tag: noindex, nofollow
   Cache-Control: no-store
+
+# Scheduled intelligence case pages - preserved routes, not indexed until publication
+/intelligence/rti-missing-answers/*
+  X-Robots-Tag: noindex, follow
+/intelligence/cpgrams-closure-without-relief/*
+  X-Robots-Tag: noindex, follow
+/intelligence/pmo-grievance/*
+  X-Robots-Tag: noindex, follow
+/intelligence/letters-emails/*
+  X-Robots-Tag: noindex, follow
+/intelligence/district-jamui-bihar/*
+  X-Robots-Tag: noindex, follow
+/intelligence/himachal-pradesh-scam/*
+  X-Robots-Tag: noindex, follow
+/intelligence/bihar-minister-constitutional-question/*
+  X-Robots-Tag: noindex, follow
+/intelligence/national-audit-financial-investigation/*
+  X-Robots-Tag: noindex, follow
 
 /*.html
   Cache-Control: public, max-age=0, must-revalidate

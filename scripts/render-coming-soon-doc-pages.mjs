@@ -5,7 +5,9 @@ const root = process.cwd();
 const templatePath = path.join(root, "index.html");
 const template = fs.readFileSync(templatePath, "utf8");
 
-const bodyStart = template.indexOf("<body>");
+const bodyMatch = template.match(/<body\b[^>]*>/i);
+const bodyStart = bodyMatch?.index ?? -1;
+const bodyEnd = bodyStart === -1 ? -1 : bodyStart + bodyMatch[0].length;
 const mainStart = template.indexOf('<main id="main-content">');
 const footerStart = template.indexOf('<footer class="site-footer">');
 const footerEnd = template.indexOf("</footer>", footerStart) + "</footer>".length;
@@ -15,7 +17,7 @@ if (bodyStart === -1 || mainStart === -1 || footerStart === -1 || footerEnd === 
   throw new Error("Could not extract the live HTML shell from index.html");
 }
 
-const bodyShell = template.slice(bodyStart + "<body>".length, mainStart);
+const bodyShell = template.slice(bodyEnd, mainStart);
 const footerShell = template.slice(footerStart, footerEnd);
 const siteScript = scriptMatch[0];
 const launchDateIso = "2026-07-20T00:00:00+05:30";
@@ -27,7 +29,7 @@ const pages = [
     canonical: "https://thenitishkr.in/intelligence/documents/",
     slugLabel: "Documents",
     title: "Document Records",
-    description: "Document archive for key PDFs in the public-interest research record.",
+    description: "Document archive for public-interest research PDFs, court-facing records, technical reports, and scheduled evidence releases.",
     kind: "hub",
   },
   {
@@ -35,42 +37,42 @@ const pages = [
     canonical: "https://thenitishkr.in/intelligence/documents/adtech-surveillance-evidence/",
     slugLabel: "AdTech Surveillance Evidence",
     title: "AdTech Surveillance Evidence",
-    description: "This document page is being prepared for release on 20 July 2026.",
+    description: "Reserved document route for the AdTech surveillance evidence record scheduled for public release on 20 July 2026.",
   },
   {
     dir: path.join(root, "intelligence", "documents", "apus-android-apk-analysis"),
     canonical: "https://thenitishkr.in/intelligence/documents/apus-android-apk-analysis/",
     slugLabel: "APUS APK Behaviour Analysis",
     title: "APUS APK Behaviour Analysis",
-    description: "This document page is being prepared for release on 20 July 2026.",
+    description: "Reserved document route for the APUS Android APK behaviour analysis scheduled for public release on 20 July 2026.",
   },
   {
     dir: path.join(root, "intelligence", "documents", "digital-arrest-root-cause"),
     canonical: "https://thenitishkr.in/intelligence/documents/digital-arrest-root-cause/",
     slugLabel: "Digital Arrest Root Cause",
     title: "Digital Arrest Root Cause",
-    description: "This document page is being prepared for release on 20 July 2026.",
+    description: "Reserved document route for the digital arrest root-cause record scheduled for public release on 20 July 2026.",
   },
   {
     dir: path.join(root, "intelligence", "documents", "digital-dacoit-evidence"),
     canonical: "https://thenitishkr.in/intelligence/documents/digital-dacoit-evidence/",
     slugLabel: "Digital Dacoit Evidence Report",
     title: "Digital Dacoit Evidence Report",
-    description: "This document page is being prepared for release on 20 July 2026.",
+    description: "Reserved document route for the Digital Dacoit evidence report scheduled for public release on 20 July 2026.",
   },
   {
     dir: path.join(root, "intelligence", "documents", "digital-dacoity-national-importance"),
     canonical: "https://thenitishkr.in/intelligence/documents/digital-dacoity-national-importance/",
     slugLabel: "Digital Dacoity and National Importance",
     title: "Digital Dacoity and National Importance",
-    description: "This document page is being prepared for release on 20 July 2026.",
+    description: "Reserved document route for the digital dacoity national-importance record scheduled for public release on 20 July 2026.",
   },
   {
     dir: path.join(root, "intelligence", "documents", "disha-whitepaper"),
     canonical: "https://thenitishkr.in/intelligence/documents/disha-whitepaper/",
     slugLabel: "DISHA Whitepaper",
     title: "DISHA Whitepaper",
-    description: "Updated DISHA whitepaper record with download, checksum, and document details.",
+    description: "Updated DISHA whitepaper record with direct PDF access, checksum details, file metadata, and citation-ready document information.",
     kind: "whitepaper",
   },
   {
@@ -78,28 +80,28 @@ const pages = [
     canonical: "https://thenitishkr.in/intelligence/documents/forensic-intelligence-report/",
     slugLabel: "Forensic Intelligence Report",
     title: "Forensic Intelligence Report",
-    description: "This document page is being prepared for release on 20 July 2026.",
+    description: "Reserved document route for the forensic intelligence report scheduled for public release on 20 July 2026.",
   },
   {
     dir: path.join(root, "intelligence", "documents", "intelligence-report-visual"),
     canonical: "https://thenitishkr.in/intelligence/documents/intelligence-report-visual/",
     slugLabel: "Intelligence Report Visual Record",
     title: "Intelligence Report Visual Record",
-    description: "This document page is being prepared for release on 20 July 2026.",
+    description: "Reserved document route for the intelligence report visual record scheduled for public release on 20 July 2026.",
   },
   {
     dir: path.join(root, "intelligence", "documents", "wp-crl-163-2026"),
     canonical: "https://thenitishkr.in/intelligence/documents/wp-crl-163-2026/",
     slugLabel: "W.P.(Crl.) 163/2026",
     title: "W.P.(Crl.) 163/2026",
-    description: "This document page is being prepared for release on 20 July 2026.",
+    description: "Reserved document route for the W.P.(Crl.) 163/2026 record scheduled for public release on 20 July 2026.",
   },
   {
     dir: path.join(root, "intelligence", "documents", "wp-crl-394-2025"),
     canonical: "https://thenitishkr.in/intelligence/documents/wp-crl-394-2025/",
     slugLabel: "W.P.(Crl.) 394/2025",
     title: "W.P.(Crl.) 394/2025",
-    description: "This document page is being prepared for release on 20 July 2026.",
+    description: "Reserved document route for the W.P.(Crl.) 394/2025 record scheduled for public release on 20 July 2026.",
   },
 ];
 

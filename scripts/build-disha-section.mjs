@@ -231,7 +231,7 @@ const pages = {
     cta: ["Explore the Vyuha formations", "/disha/no-first-use-policy/", "Review the No-First-Use boundary."]
   },
   "/disha/origin/": {
-    title: "The Origin of DISHA",
+    title: "DISHA Origin Record | thenitishkr",
     description: "The DISHA origin record traces the 2012 foundation sketch, 2013 institutional correspondence and Version 6.6 public architecture.",
     h1: "The Origin of DISHA",
     subtitle: "From foundation record to public architecture.",

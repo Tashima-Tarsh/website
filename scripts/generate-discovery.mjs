@@ -89,6 +89,54 @@ function buildSitemap(pages) {
   fs.writeFileSync(path.join(root, "sitemap.xml"), xml);
 }
 
+function pagePathFromCanonical(url) {
+  const parsed = new URL(url);
+  if (parsed.pathname === "/") return path.join(root, "index.html");
+  return path.join(root, parsed.pathname.replace(/^\/|\/$/g, ""), "index.html");
+}
+
+function absoluteImageUrl(src) {
+  const clean = src.split(/[?#]/, 1)[0];
+  if (!clean || clean.startsWith("data:")) return "";
+  if (/^https?:\/\//i.test(clean)) return clean;
+  if (clean.startsWith("/")) return `${site}${clean}`;
+  return "";
+}
+
+function buildImageSitemap(pages) {
+  const imagePages = pages.map((page) => {
+    const file = pagePathFromCanonical(page.url);
+    if (!fs.existsSync(file)) return null;
+    const html = read(file);
+    const images = [...html.matchAll(/<img\b[^>]*\bsrc=["']([^"']+)["'][^>]*>/gi)]
+      .map((match) => ({
+        loc: absoluteImageUrl(match[1]),
+        title: extract(match[0], /\balt=["']([^"']*)["']/i),
+      }))
+      .filter((image) => image.loc && !image.loc.includes("/assets/icons/"))
+      .filter((image, index, list) => list.findIndex((item) => item.loc === image.loc) === index);
+    if (!images.length) return null;
+    return { ...page, images };
+  }).filter(Boolean);
+
+  const file = path.join(root, "image-sitemap.xml");
+  if (!imagePages.length) {
+    if (fs.existsSync(file)) fs.unlinkSync(file);
+    return false;
+  }
+
+  const entries = imagePages.map((page) => `  <url>
+    <loc>${escapeXml(page.url)}</loc>
+${page.images.map((image) => `    <image:image>
+      <image:loc>${escapeXml(image.loc)}</image:loc>${image.title ? `\n      <image:title>${escapeXml(image.title)}</image:title>` : ""}
+    </image:image>`).join("\n")}
+  </url>`).join("\n");
+
+  const xml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"\n        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">\n${entries}\n</urlset>\n`;
+  fs.writeFileSync(file, xml);
+  return true;
+}
+
 function buildNewsSitemap(pages) {
   const cutoff = Date.now() - (48 * 60 * 60 * 1000);
   const newsPages = pages
@@ -119,13 +167,14 @@ function buildNewsSitemap(pages) {
   return true;
 }
 
-function updateRobots(hasNewsSitemap) {
+function updateRobots(hasNewsSitemap, hasImageSitemap) {
   const file = path.join(root, "robots.txt");
   if (!fs.existsSync(file)) return;
   const cleaned = read(file)
     .replace(/(?:\r?\n)?Sitemap: https:\/\/thenitishkr\.in\/news-sitemap\.xml\s*/g, "\n")
+    .replace(/(?:\r?\n)?Sitemap: https:\/\/thenitishkr\.in\/image-sitemap\.xml\s*/g, "\n")
     .trimEnd();
-  const content = `${cleaned}${hasNewsSitemap ? "\nSitemap: https://thenitishkr.in/news-sitemap.xml" : ""}\n`;
+  const content = `${cleaned}${hasImageSitemap ? "\nSitemap: https://thenitishkr.in/image-sitemap.xml" : ""}${hasNewsSitemap ? "\nSitemap: https://thenitishkr.in/news-sitemap.xml" : ""}\n`;
   fs.writeFileSync(file, content);
 }
 
@@ -145,7 +194,8 @@ function buildFeed(pages) {
 const pages = htmlItems();
 const docs = docItems();
 buildSitemap(pages);
+const hasImageSitemap = buildImageSitemap(pages);
 const hasNewsSitemap = buildNewsSitemap(pages);
-updateRobots(hasNewsSitemap);
+updateRobots(hasNewsSitemap, hasImageSitemap);
 buildFeed(pages);
-console.log(`Generated discovery files for ${pages.length} pages, ${docs.length} docs,${hasNewsSitemap ? " active news sitemap," : ""} and feed outputs.`);
+console.log(`Generated discovery files for ${pages.length} pages, ${docs.length} docs,${hasImageSitemap ? " image sitemap," : ""}${hasNewsSitemap ? " active news sitemap," : ""} and feed outputs.`);

@@ -88,6 +88,13 @@
     </image:image>
   </url>
   <url>
+    <loc>https://thenitishkr.in/bibliography/</loc>
+    <image:image>
+      <image:loc>https://thenitishkr.in/assets/brand/thenitishkr-logo.png</image:loc>
+      <image:title>Nitish Kumar thenitishkr monogram</image:title>
+    </image:image>
+  </url>
+  <url>
     <loc>https://thenitishkr.in/books/</loc>
     <image:image>
       <image:loc>https://m.media-amazon.com/images/I/71F7Cz-ZPqL._SL1500_.jpg</image:loc>

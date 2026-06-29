@@ -45,6 +45,11 @@ function findHtmlPages(dir = ".") {
 function datePublishedOf(html) {
   return html.match(/"datePublished"\s*:\s*"([^"]+)"/i)?.[1] || "";
 }
+function newsHeadlineOf(html, fallback) {
+  return html.match(/"headline"\s*:\s*"([^"]+)"/i)?.[1]
+    || html.match(/<h1[^>]*>(.*?)<\/h1>/i)?.[1]?.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim()
+    || fallback;
+}
 const headers = fs.existsSync("_headers") ? read("_headers") : "";
 const noindexRoutes = headers
   .split(/\r?\n(?=\/)/)
@@ -73,6 +78,7 @@ const pages = findHtmlPages().map(file => {
     file,
     url: canonicalFor(file),
     title: titleOf(html, file.replace(/\.html$/, "")),
+    newsTitle: newsHeadlineOf(html, titleOf(html, file.replace(/\.html$/, ""))),
     description: descriptionOf(html),
     published: datePublishedOf(html),
     indexable: isIndexable(file, html),
@@ -103,7 +109,7 @@ const feedPages = pages
 const newsCutoff = buildTime.getTime() - (2 * 24 * 60 * 60 * 1000); // 2 days (48-hour Google News limit)
 const newsPages = pages.filter(p => p.indexable && p.newsEligible && p.published && new Date(p.published).getTime() >= newsCutoff).slice(0, 1000);
 if (newsPages.length) {
-  fs.writeFileSync("news-sitemap.xml", `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">\n${newsPages.map(p => `  <url><loc>${escapeXml(p.url)}</loc><news:news><news:publication><news:name>thenitishkr</news:name><news:language>en</news:language></news:publication><news:publication_date>${p.published}</news:publication_date><news:title>${escapeXml(p.title)}</news:title></news:news></url>`).join("\n")}\n</urlset>\n`);
+  fs.writeFileSync("news-sitemap.xml", `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">\n${newsPages.map(p => `  <url><loc>${escapeXml(p.url)}</loc><news:news><news:publication><news:name>thenitishkr</news:name><news:language>en</news:language></news:publication><news:publication_date>${p.published}</news:publication_date><news:title>${escapeXml(p.newsTitle || p.title)}</news:title></news:news></url>`).join("\n")}\n</urlset>\n`);
 } else if (fs.existsSync("news-sitemap.xml")) {
   fs.unlinkSync("news-sitemap.xml");
 }

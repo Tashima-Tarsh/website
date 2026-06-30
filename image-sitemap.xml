@@ -513,6 +513,10 @@
   <url>
     <loc>https://thenitishkr.in/news/</loc>
     <image:image>
+      <image:loc>https://thenitishkr.in/images/news/disha-6-6-taxpayer-adtech-surveillance-4x3-display.webp</image:loc>
+      <image:title>DISHA 6.6 news image showing taxpayer-money misuse and citizen-data surveillance through adtech SDKs, NBFC/KYC layers and loan-app networks.</image:title>
+    </image:image>
+    <image:image>
       <image:loc>https://thenitishkr.in/images/news/disha-version-6-6-news-4x3-display.webp</image:loc>
       <image:title>DISHA Version 6.6 news image showing an evidence-first public intelligence architecture where signals become evidence, memory, intelligence, and accountability.</image:title>
     </image:image>
@@ -563,6 +567,17 @@
     <image:image>
       <image:loc>https://thenitishkr.in/assets/images/evidence/data-ethics-constitution-india.webp</image:loc>
       <image:title>Data ethics and Constitution of India publication visual</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://thenitishkr.in/assets/brand/thenitishkr-logo.png</image:loc>
+      <image:title>Nitish Kumar thenitishkr monogram</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://thenitishkr.in/news/disha-6-6-taxpayer-money-misuse-adtech-sdk-loan-app-surveillance/</loc>
+    <image:image>
+      <image:loc>https://thenitishkr.in/images/news/disha-6-6-taxpayer-adtech-surveillance-16x9.webp</image:loc>
+      <image:title>DISHA 6.6 news image showing taxpayer-money misuse and citizen-data surveillance through adtech SDKs, NBFC/KYC layers and loan-app networks.</image:title>
     </image:image>
     <image:image>
       <image:loc>https://thenitishkr.in/assets/brand/thenitishkr-logo.png</image:loc>

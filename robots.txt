@@ -39,4 +39,3 @@ Allow: /
 
 Sitemap: https://thenitishkr.in/sitemap.xml
 Sitemap: https://thenitishkr.in/image-sitemap.xml
-Sitemap: https://thenitishkr.in/news-sitemap.xml

@@ -291,6 +291,9 @@ if (case02SourceSchemaText) {
 for (const file of files) {
   const name = relative(file);
   const html = fs.readFileSync(file, "utf8");
+  if (!/G-YJ314E1YHG/.test(html)) {
+    errors.push(`${name}: missing GA4 measurement tag G-YJ314E1YHG`);
+  }
   const visible = visibleMarkup(html);
   if (/Diksha Sharma/i.test(visible)) {
     errors.push(`${name}: successor or co-author name must not appear in visible content`);

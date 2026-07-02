@@ -24,7 +24,7 @@ const NEW_NAV = `<div class="nav-links" data-nav-links>
         <div class="nav-item">
           <a href="/intelligence/">Intelligence</a>
           <div class="nav-dropdown">
-            <a href="/intelligence/">All Case Files<small>13 intelligence case files</small></a>
+            <a href="/intelligence/">All Case Files<small>14 intelligence case files</small></a>
             <a href="/intelligence/meity-digital-governance/">Featured Investigation<small>W.P.(Crl.) No. 163/2026</small></a>
             <a href="/intelligence/#case-files">Case Timeline<small>2013-2026</small></a>
             <a href="/intelligence/#official-record-trail">Supreme Court Records<small>Petition trail</small></a>

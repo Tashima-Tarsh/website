@@ -1,5 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
+import { execFileSync } from "node:child_process";
 
 const root = process.cwd();
 const site = "https://thenitishkr.in";
@@ -45,6 +46,18 @@ function newsHeadline(html) {
     || extract(html, /<h1[^>]*>(.*?)<\/h1>/i).replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim();
 }
 
+function modifiedFor(file) {
+  const relative = path.relative(root, file).replace(/\\/g, "/");
+  try {
+    const value = execFileSync("git", ["log", "-1", "--format=%cI", "--", relative], {
+      encoding: "utf8",
+      stdio: ["ignore", "pipe", "ignore"],
+    }).trim();
+    if (value && !Number.isNaN(Date.parse(value))) return new Date(value);
+  } catch {}
+  return fs.statSync(file).mtime;
+}
+
 function htmlItems() {
   const items = [];
   walk(root, (file) => {
@@ -61,7 +74,7 @@ function htmlItems() {
       description: extract(html, /<meta\s+[^>]*name=["']description["'][^>]*content=["']([^"']+)["']/i),
       published: datePublished(html),
       isNews: /"@type"\s*:\s*(?:"(?:Analysis|Reportage)?NewsArticle"|\[[^\]]*"(?:Analysis|Reportage)?NewsArticle")/i.test(html),
-      mtime: fs.statSync(file).mtime,
+      mtime: modifiedFor(file),
     });
   });
   return items.sort((a, b) => a.url.localeCompare(b.url));
@@ -146,8 +159,9 @@ function buildNewsSitemap(pages) {
 
   const file = path.join(root, "news-sitemap.xml");
   if (!newsPages.length) {
-    if (fs.existsSync(file)) fs.unlinkSync(file);
-    return false;
+    const emptyXml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"\n        xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">\n</urlset>\n`;
+    fs.writeFileSync(file, emptyXml);
+    return true;
   }
 
   const entries = newsPages.map((item) => `  <url>

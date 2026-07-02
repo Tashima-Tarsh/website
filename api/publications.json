@@ -1,15 +1,15 @@
 {
-  "name": "thenitishkr.in — Public Interest Research Archive",
+  "name": "thenitishkr.in - Public Interest Research Archive",
   "description": "Machine-readable index of approved research publications, frameworks, case files, and records from thenitishkr.in.",
   "website": "https://thenitishkr.in",
   "author": {
     "name": "Nitish Kumar",
     "alias": "thenitishkr",
     "orcid": "https://orcid.org/0009-0004-6840-4463",
-    "url": "https://thenitishkr.in/about/"
+    "url": "https://thenitishkr.in/authors/nitish-kumar/"
   },
-  "generated": "2026-06-15",
-  "count": 10,
+  "generated": "2026-07-02",
+  "count": 14,
   "publications": [
     {
       "id": "article-12-digital-governance",
@@ -111,14 +111,14 @@
     },
     {
       "id": "intelligence-archive",
-      "title": "DISHA Intelligence Archive: 13 Case Files and Supreme Court Records",
+      "title": "DISHA Intelligence Archive: 14 Case Files and Supreme Court Records",
       "canonical_url": "https://thenitishkr.in/intelligence/",
       "type": "research-archive",
       "section": "Intelligence Archive",
       "date_published": "2026-06-14",
-      "date_modified": "2026-06-16",
-      "summary": "Thirteen DISHA Intelligence case files: Supreme Court petitions, MeitY, NDMA, NITI Aayog, RTI trails, and Article 12 constitutional evidence in India.",
-      "citation_text": "Nitish Kumar (@thenitishkr). \"DISHA Intelligence Archive: 13 Case Files and Supreme Court Records.\" thenitishkr.in, 2026-06-14. https://thenitishkr.in/intelligence/",
+      "date_modified": "2026-07-02",
+      "summary": "Fourteen DISHA Intelligence case files: Supreme Court petitions, MeitY, NDMA, NITI Aayog, RTI trails, public finance records, citizen-data harm, and Article 12 constitutional evidence in India. Some privacy-review case files remain controlled placeholders and are not indexed until publication-ready.",
+      "citation_text": "Nitish Kumar (@thenitishkr). \"DISHA Intelligence Archive: 14 Case Files and Supreme Court Records.\" thenitishkr.in, 2026-06-14. https://thenitishkr.in/intelligence/",
       "citation_bibtex_url": "https://thenitishkr.in/citations/intelligence-archive.bib",
       "citation_ris_url": "https://thenitishkr.in/citations/intelligence-archive.ris",
       "citation_plain_url": "https://thenitishkr.in/citations/intelligence-archive.txt"
@@ -150,10 +150,57 @@
       "citation_bibtex_url": "https://thenitishkr.in/citations/books.bib",
       "citation_ris_url": "https://thenitishkr.in/citations/books.ris",
       "citation_plain_url": "https://thenitishkr.in/citations/books.txt"
+    },
+    {
+      "id": "bibliography",
+      "title": "Bibliography and Citation Record: Nitish Kumar (thenitishkr)",
+      "canonical_url": "https://thenitishkr.in/bibliography/",
+      "type": "bibliography",
+      "section": "Author and Citation Record",
+      "date_published": "2026-06-29",
+      "date_modified": "2026-06-29",
+      "summary": "Bibliography page connecting books, DISHA, public records, identity references, Supreme Court case records, and research chronology for citation and verification.",
+      "citation_text": "Nitish Kumar (@thenitishkr). \"Bibliography and Citation Record.\" thenitishkr.in, 2026-06-29. https://thenitishkr.in/bibliography/"
+    },
+    {
+      "id": "news-disha-version-6-6-announcement",
+      "title": "DISHA Version 6.6 Announced as an Evidence-First Public Intelligence Architecture",
+      "canonical_url": "https://thenitishkr.in/news/disha-version-6-6-public-intelligence-architecture-announcement/",
+      "type": "news-article",
+      "section": "News / Public Interest / Research",
+      "date_published": "2026-06-29",
+      "date_modified": "2026-06-30",
+      "summary": "NewsArticle record announcing DISHA Version 6.6 as an evidence-first public intelligence architecture, with publisher, author, contact, editorial and corrections transparency.",
+      "citation_text": "Nitish Kumar (@thenitishkr). \"DISHA Version 6.6 Announced as an Evidence-First Public Intelligence Architecture.\" thenitishkr.in, 2026-06-29. https://thenitishkr.in/news/disha-version-6-6-public-intelligence-architecture-announcement/"
+    },
+    {
+      "id": "news-disha-taxpayer-adtech-surveillance",
+      "title": "India Found the Taxpayer, Lost the Citizen: DISHA 6.6 Exposes Money Misuse and Adtech Surveillance",
+      "canonical_url": "https://thenitishkr.in/news/disha-6-6-taxpayer-money-misuse-adtech-sdk-loan-app-surveillance/",
+      "type": "news-article",
+      "section": "News / Public Evidence Report",
+      "date_published": "2026-06-30",
+      "date_modified": "2026-07-02",
+      "summary": "Public evidence report linking DISHA 6.6 analysis of alleged taxpayer-money misuse with adtech SDK, NBFC/KYC, loan-app network, foreign-server and citizen-data surveillance questions. Allegations are labelled as allegations and not presented as final court findings.",
+      "citation_text": "Nitish Kumar (@thenitishkr). \"India Found the Taxpayer, Lost the Citizen: DISHA 6.6 Exposes Money Misuse and Adtech Surveillance.\" thenitishkr.in, 2026-06-30. https://thenitishkr.in/news/disha-6-6-taxpayer-money-misuse-adtech-sdk-loan-app-surveillance/"
+    },
+    {
+      "id": "author-nitish-kumar",
+      "title": "Nitish Kumar Author Profile",
+      "canonical_url": "https://thenitishkr.in/authors/nitish-kumar/",
+      "type": "author-profile",
+      "section": "Publisher Transparency",
+      "date_published": "2026-06-29",
+      "date_modified": "2026-06-29",
+      "summary": "Author profile for Nitish Kumar, creator of DISHA Version 6.6 and publisher of THENITISHKR INDIA.",
+      "citation_text": "Nitish Kumar (@thenitishkr). \"Nitish Kumar Author Profile.\" thenitishkr.in, 2026-06-29. https://thenitishkr.in/authors/nitish-kumar/"
     }
   ],
   "sitemap_url": "https://thenitishkr.in/sitemap.xml",
   "feed_url": "https://thenitishkr.in/feed.xml",
-  "contact": "nitish@thenitishkr.in",
-  "license": "All Rights Reserved"
+  "contact": "https://thenitishkr.in/contact/",
+  "license": "All Rights Reserved",
+  "news_sitemap_url": "https://thenitishkr.in/news-sitemap.xml",
+  "image_sitemap_url": "https://thenitishkr.in/image-sitemap.xml",
+  "license_url": "https://thenitishkr.in/terms/"
 }

@@ -3,6 +3,7 @@ import path from "node:path";
 
 const root = process.cwd();
 const sitemapPath = path.join(root, "sitemap.xml");
+const newsSitemapPath = path.join(root, "news-sitemap.xml");
 const errors = [];
 const warnings = [];
 
@@ -136,6 +137,29 @@ const urls = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map((match) => match[
 if (!urls.length) fail("sitemap.xml has no <loc> entries");
 validateSitemapUrls(urls);
 await validateRemote(urls);
+
+if (fs.existsSync(newsSitemapPath)) {
+  const newsSitemap = read(newsSitemapPath);
+  if (!/<urlset\b/i.test(newsSitemap)) fail("news-sitemap.xml: missing <urlset> root tag");
+  const newsUrls = [...newsSitemap.matchAll(/<url>\s*([\s\S]*?)\s*<\/url>/g)].map((match) => match[1]);
+  if (!newsUrls.length) fail("news-sitemap.xml: missing <url> entries");
+  for (const [index, entry] of newsUrls.entries()) {
+    const position = index + 1;
+    const loc = entry.match(/<loc>([^<]+)<\/loc>/)?.[1]?.trim();
+    const publicationDate = entry.match(/<news:publication_date>([^<]+)<\/news:publication_date>/)?.[1]?.trim();
+    const title = entry.match(/<news:title>([^<]+)<\/news:title>/)?.[1]?.trim();
+    if (!/<news:news>[\s\S]*<\/news:news>/i.test(entry)) fail(`news-sitemap.xml: entry ${position} missing <news:news>`);
+    if (!/<news:publication>[\s\S]*<\/news:publication>/i.test(entry)) fail(`news-sitemap.xml: entry ${position} missing <news:publication>`);
+    if (!/<news:name>[^<]+<\/news:name>/i.test(entry)) fail(`news-sitemap.xml: entry ${position} missing <news:name>`);
+    if (!/<news:language>[^<]+<\/news:language>/i.test(entry)) fail(`news-sitemap.xml: entry ${position} missing <news:language>`);
+    if (!loc) fail(`news-sitemap.xml: entry ${position} missing <loc>`);
+    if (!publicationDate) fail(`news-sitemap.xml: entry ${position} missing <news:publication_date>`);
+    if (publicationDate && Number.isNaN(Date.parse(publicationDate))) {
+      fail(`news-sitemap.xml: entry ${position} has invalid publication date ${publicationDate}`);
+    }
+    if (!title) fail(`news-sitemap.xml: entry ${position} missing <news:title>`);
+  }
+}
 
 for (const warning of warnings) console.warn(`Warning: ${warning}`);
 

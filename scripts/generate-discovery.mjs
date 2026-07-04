@@ -42,8 +42,8 @@ function datePublished(html) {
 }
 
 function newsHeadline(html) {
-  return extract(html, /"headline"\s*:\s*"([^"]+)"/i)
-    || extract(html, /<h1[^>]*>(.*?)<\/h1>/i).replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim();
+  return extract(html, /<h1[^>]*>(.*?)<\/h1>/i).replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim()
+    || extract(html, /"headline"\s*:\s*"([^"]+)"/i);
 }
 
 function modifiedFor(file) {
@@ -73,7 +73,7 @@ function htmlItems() {
       newsTitle: newsHeadline(html),
       description: extract(html, /<meta\s+[^>]*name=["']description["'][^>]*content=["']([^"']+)["']/i),
       published: datePublished(html),
-      isNews: /"@type"\s*:\s*(?:"(?:Analysis|Reportage)?NewsArticle"|\[[^\]]*"(?:Analysis|Reportage)?NewsArticle")/i.test(html),
+      isNews: canonical.startsWith(`${site}/news/`) && canonical !== `${site}/news/` && /"@type"\s*:\s*(?:"(?:Analysis|Reportage)?NewsArticle"|\[[^\]]*"(?:Analysis|Reportage)?NewsArticle")/i.test(html),
       mtime: modifiedFor(file),
     });
   });
@@ -152,10 +152,15 @@ ${page.images.map((image) => `    <image:image>
 
 function buildNewsSitemap(pages) {
   const cutoff = Date.now() - (48 * 60 * 60 * 1000);
-  const newsPages = pages
+  const allNewsPages = pages
     .filter((item) => item.isNews && item.published && Date.parse(item.published) >= cutoff)
     .sort((a, b) => Date.parse(b.published) - Date.parse(a.published))
     .slice(0, 1000);
+  const fallbackNewsPages = pages
+    .filter((item) => item.isNews && item.published)
+    .sort((a, b) => Date.parse(b.published) - Date.parse(a.published))
+    .slice(0, 10);
+  const newsPages = allNewsPages.length ? allNewsPages : fallbackNewsPages;
 
   const file = path.join(root, "news-sitemap.xml");
   if (!newsPages.length) {

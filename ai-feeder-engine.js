@@ -46,8 +46,8 @@ function datePublishedOf(html) {
   return html.match(/"datePublished"\s*:\s*"([^"]+)"/i)?.[1] || "";
 }
 function newsHeadlineOf(html, fallback) {
-  return html.match(/"headline"\s*:\s*"([^"]+)"/i)?.[1]
-    || html.match(/<h1[^>]*>(.*?)<\/h1>/i)?.[1]?.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim()
+  return html.match(/<h1[^>]*>(.*?)<\/h1>/i)?.[1]?.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim()
+    || html.match(/"headline"\s*:\s*"([^"]+)"/i)?.[1]
     || fallback;
 }
 const headers = fs.existsSync("_headers") ? read("_headers") : "";
@@ -86,8 +86,7 @@ const pages = findHtmlPages().map(file => {
     modifiedDate: modified.slice(0, 10),
     newsEligible: (() => {
       const pathName = file.replace(/\\/g, "/").replace(/(?:index)?\.html$/, "").replace(/\/$/, "");
-      const isStaticPage = ["", "about", "media", "disha", "article-12", "books", "editorial-standards", "fact-check", "start-here", "news", "privacy-policy", "terms", "intelligence"].includes(pathName);
-      return !isStaticPage && /"@type"\s*:\s*(?:"(?:Analysis)?NewsArticle"|\[[^\]]*"(?:Analysis)?NewsArticle")/i.test(html);
+      return pathName.startsWith("news/") && /"@type"\s*:\s*(?:"(?:Analysis)?NewsArticle"|\[[^\]]*"(?:Analysis)?NewsArticle")/i.test(html);
     })()
   };
 }).sort((a,b) => a.url.localeCompare(b.url));
@@ -107,12 +106,14 @@ const feedPages = pages
   })
   .sort((a, b) => new Date(b.published || b.modified) - new Date(a.published || a.modified));
 const newsCutoff = buildTime.getTime() - (2 * 24 * 60 * 60 * 1000); // 2 days (48-hour Google News limit)
-const newsPages = pages.filter(p => p.indexable && p.newsEligible && p.published && new Date(p.published).getTime() >= newsCutoff).slice(0, 1000);
-if (newsPages.length) {
-  fs.writeFileSync("news-sitemap.xml", `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">\n${newsPages.map(p => `  <url><loc>${escapeXml(p.url)}</loc><news:news><news:publication><news:name>thenitishkr</news:name><news:language>en</news:language></news:publication><news:publication_date>${p.published}</news:publication_date><news:title>${escapeXml(p.newsTitle || p.title)}</news:title></news:news></url>`).join("\n")}\n</urlset>\n`);
-} else {
-  fs.writeFileSync("news-sitemap.xml", `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">\n</urlset>\n`);
-}
+const allNewsPages = pages
+  .filter(p => p.indexable && p.newsEligible && p.published)
+  .sort((a, b) => new Date(b.published) - new Date(a.published));
+const freshNewsPages = allNewsPages
+  .filter(p => new Date(p.published).getTime() >= newsCutoff)
+  .slice(0, 1000);
+const newsPages = freshNewsPages.length ? freshNewsPages : allNewsPages.slice(0, 10);
+fs.writeFileSync("news-sitemap.xml", `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">\n${newsPages.map(p => `  <url><loc>${escapeXml(p.url)}</loc><news:news><news:publication><news:name>thenitishkr</news:name><news:language>en</news:language></news:publication><news:publication_date>${p.published}</news:publication_date><news:title>${escapeXml(p.newsTitle || p.title)}</news:title></news:news></url>`).join("\n")}\n</urlset>\n`);
 if (fs.existsSync("robots.txt")) {
   const robots = read("robots.txt")
     .replace(/(?:\r?\n)?Sitemap: https:\/\/thenitishkr\.in\/news-sitemap\.xml\s*/g, "\n")

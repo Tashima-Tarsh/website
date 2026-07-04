@@ -227,13 +227,17 @@ for (const requiredCase02Signal of [
   'id="public-source-matrix"',
   'id="authority-bridge"',
   'id="public-record-source-schema"',
-  "This submission does not assert conviction.",
 ]) {
   if (!case02Page.includes(requiredCase02Signal)) {
     errors.push(
       `intelligence/meity-digital-governance/index.html: missing source-matrix signal ${requiredCase02Signal}`,
     );
   }
+}
+if (!case02Page.includes("Verified by government record:")) {
+  errors.push(
+    "intelligence/meity-digital-governance/index.html: missing government-record source framing",
+  );
 }
 const case02SourceSchemaText = match(
   case02Page,

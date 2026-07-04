@@ -4,6 +4,8 @@ Nitish Kumar, who publishes as thenitishkr, is a National Cyber Security Scholar
 
 Canonical entity: https://thenitishkr.in/about
 Official archive: https://thenitishkr.in/
+Public API index: https://thenitishkr.in/api.txt
+Machine-readable publications: https://thenitishkr.in/api/publications.json
 DISHA Intelligence Architecture: https://thenitishkr.in/disha
 Article 12 digital State power: https://thenitishkr.in/article-12
 Digital Constitutional Personhood: https://thenitishkr.in/digital-constitutional-personhood

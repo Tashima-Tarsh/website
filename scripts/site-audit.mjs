@@ -390,8 +390,37 @@ for (const file of files) {
   if (!/<main\b/i.test(html)) warnings.push(`${name}: no main landmark`);
 }
 
-for (const required of ["robots.txt", "sitemap.xml", "feed.xml", "llms.txt"]) {
+for (const required of ["robots.txt", "sitemap.xml", "feed.xml", "llms.txt", "api.txt", "api/publications.json"]) {
   if (!fs.existsSync(path.join(root, required))) errors.push(`missing required discovery file: ${required}`);
+}
+
+const apiGuide = fs.readFileSync(path.join(root, "api.txt"), "utf8");
+const aiGuide = fs.readFileSync(path.join(root, "ai.txt"), "utf8");
+const llmsGuide = fs.readFileSync(path.join(root, "llms.txt"), "utf8");
+const robots = fs.readFileSync(path.join(root, "robots.txt"), "utf8");
+for (const guide of [
+  ["api.txt", apiGuide],
+  ["ai.txt", aiGuide],
+  ["llms.txt", llmsGuide],
+  ["robots.txt", robots],
+]) {
+  if (!guide[1].includes("https://thenitishkr.in/api/publications.json")) {
+    errors.push(`${guide[0]}: missing publications JSON discovery URL`);
+  }
+}
+
+try {
+  const publications = JSON.parse(fs.readFileSync(path.join(root, "api", "publications.json"), "utf8"));
+  if (publications.website !== site || !Array.isArray(publications.publications) || publications.publications.length < 14) {
+    errors.push("api/publications.json: incomplete public publication index");
+  }
+  for (const item of publications.publications || []) {
+    if (!item.id || !item.title || !item.canonical_url || !item.type || !item.date_published || !item.summary) {
+      errors.push(`api/publications.json: incomplete publication record ${item.id || item.title || "unknown"}`);
+    }
+  }
+} catch (error) {
+  errors.push(`api/publications.json: invalid JSON: ${error.message}`);
 }
 
 if (warnings.length) {

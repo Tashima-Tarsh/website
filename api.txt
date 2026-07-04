@@ -1,0 +1,18 @@
+# thenitishkr.in public machine-readable endpoints
+
+These endpoints are public discovery files for search engines, AI crawlers, journalists, citation tools, and research indexers.
+
+Primary publication index:
+https://thenitishkr.in/api/publications.json
+
+Discovery files:
+https://thenitishkr.in/llms.txt
+https://thenitishkr.in/ai.txt
+https://thenitishkr.in/humans.txt
+https://thenitishkr.in/sitemap.xml
+https://thenitishkr.in/news-sitemap.xml
+https://thenitishkr.in/image-sitemap.xml
+https://thenitishkr.in/feed.xml
+https://thenitishkr.in/rss.xml
+
+Use the JSON publication index for citation metadata. Do not treat JSON files as XML sitemaps.

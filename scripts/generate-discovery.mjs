@@ -41,6 +41,11 @@ function datePublished(html) {
     || extract(html, /<meta\s+[^>]*property=["']article:published_time["'][^>]*content=["']([^"']+)["']/i);
 }
 
+function dateModified(html) {
+  return extract(html, /"dateModified"\s*:\s*"([^"]+)"/i)
+    || extract(html, /<meta\s+[^>]*property=["']article:modified_time["'][^>]*content=["']([^"']+)["']/i);
+}
+
 function newsHeadline(html) {
   return extract(html, /<h1[^>]*>(.*?)<\/h1>/i).replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim()
     || extract(html, /"headline"\s*:\s*"([^"]+)"/i);
@@ -73,6 +78,7 @@ function htmlItems() {
       newsTitle: newsHeadline(html),
       description: extract(html, /<meta\s+[^>]*name=["']description["'][^>]*content=["']([^"']+)["']/i),
       published: datePublished(html),
+      modifiedArticle: dateModified(html),
       isNews: canonical.startsWith(`${site}/news/`) && canonical !== `${site}/news/` && /"@type"\s*:\s*(?:"(?:Analysis|Reportage)?NewsArticle"|\[[^\]]*"(?:Analysis|Reportage)?NewsArticle")/i.test(html),
       mtime: modifiedFor(file),
     });
@@ -153,7 +159,7 @@ ${page.images.map((image) => `    <image:image>
 function buildNewsSitemap(pages) {
   const cutoff = Date.now() - (48 * 60 * 60 * 1000);
   const allNewsPages = pages
-    .filter((item) => item.isNews && item.published && Date.parse(item.published) >= cutoff)
+    .filter((item) => item.isNews && item.published && Date.parse(item.modifiedArticle || item.published) >= cutoff)
     .sort((a, b) => Date.parse(b.published) - Date.parse(a.published))
     .slice(0, 1000);
   const newsPages = allNewsPages;
@@ -171,7 +177,7 @@ function buildNewsSitemap(pages) {
         <news:name>thenitishkr</news:name>
         <news:language>en</news:language>
       </news:publication>
-      <news:publication_date>${escapeXml(item.published)}</news:publication_date>
+      <news:publication_date>${escapeXml(item.modifiedArticle || item.published)}</news:publication_date>
       <news:title>${escapeXml(item.newsTitle || item.title)}</news:title>
     </news:news>
   </url>`).join("\n");

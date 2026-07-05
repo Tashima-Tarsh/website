@@ -227,6 +227,7 @@ function pageNode(type, canonical, title, description, html) {
 
 function updateFile(file) {
   let html = fs.readFileSync(file, "utf8");
+  const previous = html;
   html = html
     .replaceAll("https://thenitishkr.in/#nitish-kumar-thenitishkr", `${site}/about/#person`)
     .replaceAll("https://thenitishkr.in/#nitish-kumar", `${site}/about/#person`)
@@ -252,7 +253,6 @@ function updateFile(file) {
     "@graph": graph,
   })}</script>`;
 
-  const previous = html;
   if (/<script\s+id=["']entity-consolidation-schema["'][\s\S]*?<\/script>/i.test(html)) {
     html = html.replace(/  <script\s+id=["']entity-consolidation-schema["'][\s\S]*?<\/script>/i, block);
   } else {

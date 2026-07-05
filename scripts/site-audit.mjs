@@ -138,7 +138,7 @@ if (
   architectureEntity?.subjectOf?.["@type"] !== "Report" ||
   architectureEntity.subjectOf.url !==
     "https://thenitishkr.in/assets/docs/disha-whitepaper-what-it-can-what-it-did-v66.pdf" ||
-  architectureEntity.subjectOf.author?.["@id"] !== "https://thenitishkr.in/#person"
+  architectureEntity.subjectOf.author?.["@id"] !== "https://thenitishkr.in/about/#person"
 ) {
   errors.push("disha/index.html: DISHA architecture must identify its authored whitepaper report");
 }
@@ -204,7 +204,7 @@ if (!booksAuthoritySchemaText) {
         book?.["@type"] !== "Book" ||
         book.name !== expected.name ||
         book.isbn !== expected.isbn ||
-        book.author?.["@id"] !== "https://thenitishkr.in/#person" ||
+        book.author?.["@id"] !== "https://thenitishkr.in/about/#person" ||
         !book.sameAs?.includes(expected.wikidata) ||
         !book.sameAs?.includes(expected.amazon)
       ) {

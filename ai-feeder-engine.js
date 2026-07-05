@@ -45,6 +45,11 @@ function findHtmlPages(dir = ".") {
 function datePublishedOf(html) {
   return html.match(/"datePublished"\s*:\s*"([^"]+)"/i)?.[1] || "";
 }
+function dateModifiedOf(html) {
+  return html.match(/"dateModified"\s*:\s*"([^"]+)"/i)?.[1]
+    || html.match(/<meta\s+property=["']article:modified_time["']\s+content=["']([^"']+)["']/i)?.[1]
+    || "";
+}
 function newsHeadlineOf(html, fallback) {
   return html.match(/<h1[^>]*>(.*?)<\/h1>/i)?.[1]?.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim()
     || html.match(/"headline"\s*:\s*"([^"]+)"/i)?.[1]
@@ -81,6 +86,7 @@ const pages = findHtmlPages().map(file => {
     newsTitle: newsHeadlineOf(html, titleOf(html, file.replace(/\.html$/, ""))),
     description: descriptionOf(html),
     published: datePublishedOf(html),
+    modifiedArticle: dateModifiedOf(html),
     indexable: isIndexable(file, html),
     modified,
     modifiedDate: modified.slice(0, 10),
@@ -110,10 +116,10 @@ const allNewsPages = pages
   .filter(p => p.indexable && p.newsEligible && p.published)
   .sort((a, b) => new Date(b.published) - new Date(a.published));
 const freshNewsPages = allNewsPages
-  .filter(p => new Date(p.published).getTime() >= newsCutoff)
+  .filter(p => new Date(p.modifiedArticle || p.published).getTime() >= newsCutoff)
   .slice(0, 1000);
 const newsPages = freshNewsPages;
-fs.writeFileSync("news-sitemap.xml", `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">\n${newsPages.map(p => `  <url><loc>${escapeXml(p.url)}</loc><news:news><news:publication><news:name>thenitishkr</news:name><news:language>en</news:language></news:publication><news:publication_date>${p.published}</news:publication_date><news:title>${escapeXml(p.newsTitle || p.title)}</news:title></news:news></url>`).join("\n")}\n</urlset>\n`);
+fs.writeFileSync("news-sitemap.xml", `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">\n${newsPages.map(p => `  <url><loc>${escapeXml(p.url)}</loc><news:news><news:publication><news:name>thenitishkr</news:name><news:language>en</news:language></news:publication><news:publication_date>${p.modifiedArticle || p.published}</news:publication_date><news:title>${escapeXml(p.newsTitle || p.title)}</news:title></news:news></url>`).join("\n")}\n</urlset>\n`);
 if (fs.existsSync("robots.txt")) {
   const robots = read("robots.txt")
     .replace(/(?:\r?\n)?Sitemap: https:\/\/thenitishkr\.in\/news-sitemap\.xml\s*/g, "\n")

@@ -7,7 +7,7 @@ const ignoredDirs = new Set([".git", ".github", "audit", "dist", "node_modules",
 
 const person = {
   "@type": "Person",
-  "@id": `${site}/#person`,
+  "@id": `${site}/about/#person`,
   name: "Nitish Kumar",
   alternateName: ["thenitishkr", "Nitish Kumar (thenitishkr)"],
   url: `${site}/about/`,
@@ -70,7 +70,7 @@ const website = {
   alternateName: ["thenitishkr", "DISHA Intelligence", "DISHA Intelligence 6.6"],
   url: `${site}/`,
   inLanguage: "en-IN",
-  publisher: { "@id": `${site}/#person` },
+  publisher: { "@id": `${site}/about/#person` },
   potentialAction: {
     "@type": "SearchAction",
     target: `${site}/sitemap/?q={search_term_string}`,
@@ -208,8 +208,8 @@ function pageNode(type, canonical, title, description, html) {
     inLanguage: "en-IN",
     isPartOf: { "@id": `${site}/#website` },
     mainEntityOfPage: canonical,
-    author: { "@id": `${site}/#person` },
-    publisher: { "@id": `${site}/#person` },
+    author: { "@id": `${site}/about/#person` },
+    publisher: { "@id": `${site}/about/#person` },
     breadcrumb: { "@id": `${canonical}#breadcrumb` },
     isAccessibleForFree: true,
   };
@@ -228,8 +228,9 @@ function pageNode(type, canonical, title, description, html) {
 function updateFile(file) {
   let html = fs.readFileSync(file, "utf8");
   html = html
-    .replaceAll("https://thenitishkr.in/#nitish-kumar-thenitishkr", `${site}/#person`)
-    .replaceAll("https://thenitishkr.in/#nitish-kumar", `${site}/#person`);
+    .replaceAll("https://thenitishkr.in/#nitish-kumar-thenitishkr", `${site}/about/#person`)
+    .replaceAll("https://thenitishkr.in/#nitish-kumar", `${site}/about/#person`)
+    .replaceAll("https://thenitishkr.in/#person", `${site}/about/#person`);
 
   const canonical =
     match(html, /<link\s+rel=["']canonical["']\s+href=["']([^"']+)["'][^>]*>/i) ||

@@ -142,7 +142,6 @@ if (fs.existsSync(newsSitemapPath)) {
   const newsSitemap = read(newsSitemapPath);
   if (!/<urlset\b/i.test(newsSitemap)) fail("news-sitemap.xml: missing <urlset> root tag");
   const newsUrls = [...newsSitemap.matchAll(/<url>\s*([\s\S]*?)\s*<\/url>/g)].map((match) => match[1]);
-  if (!newsUrls.length) fail("news-sitemap.xml: missing <url> entries");
   for (const [index, entry] of newsUrls.entries()) {
     const position = index + 1;
     const loc = entry.match(/<loc>([^<]+)<\/loc>/)?.[1]?.trim();

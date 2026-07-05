@@ -2395,6 +2395,36 @@ figcaption {
   line-height: 1.62;
 }
 
+.identity-map {
+  background: #fff;
+  border-top: 1px solid rgba(23, 36, 60, .1);
+  border-bottom: 1px solid rgba(23, 36, 60, .1);
+}
+
+.identity-map .reveal {
+  max-width: 980px;
+}
+
+.identity-map ul {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  padding: 0;
+  margin: 24px 0 0;
+  list-style: none;
+}
+
+.identity-map a {
+  display: block;
+  padding: 12px 14px;
+  border: 1px solid rgba(23, 36, 60, .14);
+  border-radius: 4px;
+  color: var(--navy);
+  background: var(--paper);
+  font-weight: 800;
+  text-decoration: none;
+}
+
 .site-footer {
   border-top: 2px solid rgba(23,36,60,.86);
   background: #f4ecdc;
@@ -2410,6 +2440,10 @@ figcaption {
   }
 
   .card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .identity-map ul {
     grid-template-columns: 1fr;
   }
 }

@@ -156,11 +156,7 @@ function buildNewsSitemap(pages) {
     .filter((item) => item.isNews && item.published && Date.parse(item.published) >= cutoff)
     .sort((a, b) => Date.parse(b.published) - Date.parse(a.published))
     .slice(0, 1000);
-  const fallbackNewsPages = pages
-    .filter((item) => item.isNews && item.published)
-    .sort((a, b) => Date.parse(b.published) - Date.parse(a.published))
-    .slice(0, 10);
-  const newsPages = allNewsPages.length ? allNewsPages : fallbackNewsPages;
+  const newsPages = allNewsPages;
 
   const file = path.join(root, "news-sitemap.xml");
   if (!newsPages.length) {

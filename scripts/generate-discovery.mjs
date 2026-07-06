@@ -164,11 +164,15 @@ ${page.images.map((image) => `    <image:image>
 
 function buildNewsSitemap(pages) {
   const cutoff = Date.now() - (48 * 60 * 60 * 1000);
-  const allNewsPages = pages
+  const freshNewsPages = pages
     .filter((item) => item.isNews && item.published && Date.parse(item.modifiedArticle || item.published) >= cutoff)
     .sort((a, b) => Date.parse(b.published) - Date.parse(a.published))
     .slice(0, 1000);
-  const newsPages = allNewsPages;
+  const fallbackNewsPages = pages
+    .filter((item) => item.isNews && item.published)
+    .sort((a, b) => Date.parse(b.modifiedArticle || b.published) - Date.parse(a.modifiedArticle || a.published))
+    .slice(0, 10);
+  const newsPages = freshNewsPages.length ? freshNewsPages : fallbackNewsPages;
 
   const file = path.join(root, "news-sitemap.xml");
   if (!newsPages.length) {

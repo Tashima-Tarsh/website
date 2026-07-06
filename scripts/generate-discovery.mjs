@@ -6,6 +6,11 @@ const root = process.cwd();
 const site = "https://thenitishkr.in";
 const excludedDirs = new Set([".git", ".github", "node_modules", "dist", "audit", "scripts"]);
 const excludedDocNames = new Set(["disha-whitepaper-what-it-can-what-it-did.pdf"]);
+const indexedDocNames = new Set([
+  "cert-in-reply-to-shri-nitish-kumar-2026-07-06.pdf",
+  "cert-in-letter-to-meity-regarding-shri-nitish-kumar.pdf",
+  "letter-reply-2026.pdf",
+]);
 
 function walk(dir, visit) {
   for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
@@ -102,6 +107,7 @@ function docItems() {
 function buildSitemap(pages) {
   const entries = [
     ...pages.map((item) => `  <url><loc>${escapeXml(item.url)}</loc><lastmod>${item.mtime.toISOString().slice(0, 10)}</lastmod><changefreq>weekly</changefreq><priority>${item.url === `${site}/` ? "1.0" : "0.8"}</priority></url>`),
+    ...docItems().filter((item) => indexedDocNames.has(path.basename(decodeURIComponent(new URL(item.url).pathname)))).map((item) => `  <url><loc>${escapeXml(item.url)}</loc><lastmod>${item.mtime.toISOString().slice(0, 10)}</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>`),
   ];
 
   const xml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${entries.join("\n")}\n</urlset>\n`;

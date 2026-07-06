@@ -96,8 +96,20 @@ const pages = findHtmlPages().map(file => {
     })()
   };
 }).sort((a,b) => a.url.localeCompare(b.url));
+const indexedDocs = [
+  "assets/docs/cert-in-reply-to-shri-nitish-kumar-2026-07-06.pdf",
+  "assets/docs/cert-in-letter-to-meity-regarding-shri-nitish-kumar.pdf",
+  "assets/docs/letter-reply-2026.pdf",
+].filter(file => fs.existsSync(file)).map(file => ({
+  file,
+  url: `${SITE}/${file.replace(/\\/g, "/").split("/").map((part) => encodeURIComponent(part)).join("/")}`,
+  modifiedDate: modifiedFor(file).slice(0, 10),
+}));
 const docs = fs.existsSync("assets/docs") ? fs.readdirSync("assets/docs").filter(f => /\.pdf$/i.test(f)) : [];
-const sitemapUrls = pages.filter(p => p.indexable).map(p => `  <url><loc>${escapeXml(p.url)}</loc><lastmod>${p.modifiedDate}</lastmod><changefreq>weekly</changefreq><priority>${p.file === "index.html" ? "1.0" : "0.8"}</priority></url>`);
+const sitemapUrls = [
+  ...pages.filter(p => p.indexable).map(p => `  <url><loc>${escapeXml(p.url)}</loc><lastmod>${p.modifiedDate}</lastmod><changefreq>weekly</changefreq><priority>${p.file === "index.html" ? "1.0" : "0.8"}</priority></url>`),
+  ...indexedDocs.map(doc => `  <url><loc>${escapeXml(doc.url)}</loc><lastmod>${doc.modifiedDate}</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>`),
+];
 fs.writeFileSync("sitemap.xml", `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${sitemapUrls.join("\n")}\n</urlset>\n`);
 const contentPath = p => p.url.replace(`${SITE}/`, "").replace(/\/$/, "");
 const feedPages = pages
@@ -136,5 +148,5 @@ const feedLastBuild = feedPages.length
 const feed = `<?xml version="1.0" encoding="UTF-8"?>\n<rss version="2.0"><channel><title>Nitish Kumar (@thenitishkr), DISHA Intelligence 6.6 and evidence records</title><link>${SITE}/</link><description>Public-interest research by Nitish Kumar (@thenitishkr) on DISHA Intelligence 6.6, DISHA Advanced Intelligence Architecture, India-origin intelligence architecture, cyber defence, and evidence intelligence.</description><lastBuildDate>${feedLastBuild.toUTCString()}</lastBuildDate>${feedItems}</channel></rss>\n`;
 fs.writeFileSync("feed.xml", feed);
 fs.writeFileSync("rss.xml", feed);
-fs.writeFileSync("indexnow-payload.json", JSON.stringify({ host: "thenitishkr.in", key: INDEXNOW_KEY, keyLocation: `${SITE}/${INDEXNOW_KEY}.txt`, urlList: pages.filter(p => p.indexable).map(p => p.url).slice(0, 1000) }, null, 2));
-console.log(`Built ${pages.length} page URLs, ${docs.length} document files excluded from sitemap, feeds${newsPages.length ? ", news sitemap" : ""}, and IndexNow payload at ${now}.`);
+fs.writeFileSync("indexnow-payload.json", JSON.stringify({ host: "thenitishkr.in", key: INDEXNOW_KEY, keyLocation: `${SITE}/${INDEXNOW_KEY}.txt`, urlList: [...pages.filter(p => p.indexable).map(p => p.url), ...indexedDocs.map(doc => doc.url)].slice(0, 1000) }, null, 2));
+console.log(`Built ${pages.length} page URLs, ${indexedDocs.length} indexed document URLs, ${docs.length - indexedDocs.length} document files excluded from sitemap, feeds${newsPages.length ? ", news sitemap" : ""}, and IndexNow payload at ${now}.`);

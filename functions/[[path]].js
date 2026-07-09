@@ -23,6 +23,8 @@ const GONE_PATHS = new Set([
   "/media/",
   "/media/index.html",
   "/media.html",
+  "/disha/release-notes/",
+  "/disha/release-notes/index.html",
   "/assets/records/intelligence/mity2.pdf",
   "/assets/records/intelligence/pil-annexure-book-evidence-traced-final.pdf",
   "/assets/records/intelligence/master-forensic-jamtara-digital-arrest-record-2012-2026.pdf",

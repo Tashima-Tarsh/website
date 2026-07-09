@@ -1,4 +1,4 @@
-# DISHA 6.6 SEO, Entity, Content and Outreach Package
+﻿# DISHA 6.6 SEO, Entity, Content and Outreach Package
 
 Prepared for: Nitish Kumar (thenitishkr)  
 Domain: https://thenitishkr.in  
@@ -203,7 +203,7 @@ For entity verification, use the public links below and cite the canonical websi
 
 ### Meta Title
 
-DISHA 6.6 Release Notes | Nitish Kumar (thenitishkr)
+DISHA 6.6 Backend Entity Notes | Nitish Kumar (thenitishkr)
 
 ### Meta Description
 
@@ -211,13 +211,13 @@ DISHA 6.6 release notes by Nitish Kumar (thenitishkr): architecture, identity so
 
 ### Draft Page
 
-# DISHA 6.6 Release Notes by Nitish Kumar (thenitishkr)
+# DISHA 6.6 Backend Entity Notes by Nitish Kumar (thenitishkr)
 
-Nitish Kumar (thenitishkr) publishes DISHA 6.6 as the current public release record for the DISHA Intelligence Architecture. This page explains the architecture, public modules, source discipline, identity-sovereignty concept, constitutional guards, citation route and implementation boundaries for readers, researchers, journalists and developers.
+Nitish Kumar (thenitishkr) publishes DISHA 6.6 as the current public architecture record for the DISHA Intelligence Architecture. This page explains the architecture, public modules, source discipline, identity-sovereignty concept, constitutional guards, citation route and implementation boundaries for readers, researchers, journalists and developers.
 
 Publication status: Public release notes  
 Author: Nitish Kumar (thenitishkr)  
-Canonical URL: https://thenitishkr.in/disha/release-notes/ [VERIFY REQUIRED - create page before using]  
+Canonical URL: https://thenitishkr.in/disha/ [VERIFY REQUIRED - create page before using]  
 Primary architecture page: https://thenitishkr.in/disha/  
 Whitepaper record: https://thenitishkr.in/intelligence/documents/disha-whitepaper/  
 Monthly update: benchmarks, citations, source links, code examples.
@@ -418,16 +418,16 @@ PDF path: /assets/docs/disha-66-release-notes.pdf [VERIFY REQUIRED - create file
 
 Recommended citation:
 
-Nitish Kumar (thenitishkr). "DISHA 6.6 Release Notes." thenitishkr.in, 2026. https://thenitishkr.in/disha/release-notes/
+Nitish Kumar (thenitishkr). "DISHA 6.6 Backend Entity Notes." thenitishkr.in, 2026. https://thenitishkr.in/disha/
 
 BibTeX:
 
 ```bibtex
 @misc{thenitishkr_disha66_release_2026,
   author = {Nitish Kumar (thenitishkr)},
-  title = {DISHA 6.6 Release Notes},
+  title = {DISHA 6.6 Backend Entity Notes},
   year = {2026},
-  url = {https://thenitishkr.in/disha/release-notes/},
+  url = {https://thenitishkr.in/disha/},
   note = {Evidence-first intelligence architecture release notes}
 }
 ```
@@ -436,7 +436,7 @@ BibTeX:
 
 ```csv
 Week,URL Slug,Title,Meta Title,Meta Description,Target Keyword,Word Count,Internal Link Target,Publish Priority
-1,/disha/release-notes/,"DISHA 6.6 Release Notes by Nitish Kumar (thenitishkr)","DISHA 6.6 Release Notes | thenitishkr","Architecture, modules, source discipline and citation route for DISHA 6.6 by Nitish Kumar (thenitishkr).","DISHA 6.6",2500,/disha/,High
+1,/disha/,"DISHA 6.6 Backend Entity Notes by Nitish Kumar (thenitishkr)","DISHA 6.6 Backend Entity Notes | thenitishkr","Architecture, modules, source discipline and citation route for DISHA 6.6 by Nitish Kumar (thenitishkr).","DISHA 6.6",2500,/disha/,High
 1,/disha/agi-research-position/,"What DISHA AGI Means in the DISHA 6.6 Research Context","DISHA AGI Research Context","Plain-English explanation of DISHA AGI as a research and safety-positioning term, not an unsupported product claim.","DISHA AGI",1600,/disha/,High
 2,/disha/architecture-map/,"DISHA Architecture Map: Signals, Evidence, Memory and Accountability","DISHA Architecture Map","A structured guide to the DISHA architecture and how records move from signal to accountable reasoning.","DISHA architecture",1800,/disha/claim-to-source-system/,High
 2,/disha/identity-sovereignty-module/,"Identity Sovereignty in DISHA 6.6","Identity Sovereignty in DISHA 6.6","How DISHA 6.6 frames identity sovereignty, citizen records, data custody and human review.","identity sovereignty",1800,/digital-constitutional-personhood/definition/,High
@@ -752,10 +752,10 @@ Week 4: Publish journalist briefing, review GSC queries, update FAQs based on im
 {
   "@context": "https://schema.org",
   "@type": "TechArticle",
-  "@id": "https://thenitishkr.in/disha/release-notes/#article",
-  "headline": "DISHA 6.6 Release Notes by Nitish Kumar (thenitishkr)",
+  "@id": "https://thenitishkr.in/disha/#article",
+  "headline": "DISHA 6.6 Backend Entity Notes by Nitish Kumar (thenitishkr)",
   "description": "Technical release notes for DISHA 6.6, covering architecture, identity sovereignty, source discipline, constitutional guards, migration and citation.",
-  "url": "https://thenitishkr.in/disha/release-notes/",
+  "url": "https://thenitishkr.in/disha/",
   "datePublished": "2026-07-10",
   "dateModified": "2026-07-10",
   "author": {
@@ -768,7 +768,7 @@ Week 4: Publish journalist briefing, review GSC queries, update FAQs based on im
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://thenitishkr.in/disha/release-notes/"
+    "@id": "https://thenitishkr.in/disha/"
   },
   "isAccessibleForFree": true,
   "keywords": [
@@ -842,4 +842,3 @@ Week 4: Publish journalist briefing, review GSC queries, update FAQs based on im
 - Source register updates.
 - DISHA release notes changelog.
 - GSC ranking table.
-

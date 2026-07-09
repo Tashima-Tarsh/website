@@ -133,9 +133,19 @@ const freshNewsPages = allNewsPages
 const newsPages = freshNewsPages.length ? freshNewsPages : allNewsPages.slice(0, 10);
 fs.writeFileSync("news-sitemap.xml", `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">\n${newsPages.map(p => `  <url><loc>${escapeXml(p.url)}</loc><news:news><news:publication><news:name>thenitishkr</news:name><news:language>en</news:language></news:publication><news:publication_date>${p.modifiedArticle || p.published}</news:publication_date><news:title>${escapeXml(p.newsTitle || p.title)}</news:title></news:news></url>`).join("\n")}\n</urlset>\n`);
 if (fs.existsSync("robots.txt")) {
-  const robots = read("robots.txt")
+  let robots = read("robots.txt")
     .replace(/(?:\r?\n)?Sitemap: https:\/\/thenitishkr\.in\/news-sitemap\.xml\s*/g, "\n")
     .trimEnd();
+  const crawlerBlocks = [
+    ["Perplexity-User", "PerplexityBot"],
+    ["Applebot-Extended", "Applebot"],
+  ];
+  for (const [agent, afterAgent] of crawlerBlocks) {
+    if (new RegExp(`User-agent:\\s*${agent}\\b`, "i").test(robots)) continue;
+    const block = `\n\nUser-agent: ${agent}\nAllow: /`;
+    const after = new RegExp(`(User-agent:\\s*${afterAgent}\\s*\\r?\\nAllow:\\s*/)(?![\\s\\S]*User-agent:\\s*${agent}\\b)`, "i");
+    robots = after.test(robots) ? robots.replace(after, `$1${block}`) : `${robots}${block}`;
+  }
   fs.writeFileSync(
     "robots.txt",
     `${robots}\nSitemap: https://thenitishkr.in/news-sitemap.xml\n`

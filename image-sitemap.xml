@@ -308,6 +308,17 @@
     </image:image>
   </url>
   <url>
+    <loc>https://thenitishkr.in/disha/release-notes/</loc>
+    <image:image>
+      <image:loc>https://thenitishkr.in/assets/images/disha-version-4.webp</image:loc>
+      <image:title>DISHA Version 6.6 public architecture showing signals transformed into evidence, memory, intelligence and accountability.</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://thenitishkr.in/assets/brand/thenitishkr-logo.png</image:loc>
+      <image:title>Nitish Kumar thenitishkr monogram</image:title>
+    </image:image>
+  </url>
+  <url>
     <loc>https://thenitishkr.in/disha/research-lineage/</loc>
     <image:image>
       <image:loc>https://thenitishkr.in/assets/images/disha/disha-research-lineage.webp</image:loc>
@@ -512,6 +523,10 @@
   </url>
   <url>
     <loc>https://thenitishkr.in/news/</loc>
+    <image:image>
+      <image:loc>https://thenitishkr.in/images/news/national-security-disclosure-disha-6-6-ghost.webp</image:loc>
+      <image:title>DISHA 6.6 national security disclosure visual reading Fifteen Years, Fifty Days, No Justice</image:title>
+    </image:image>
     <image:image>
       <image:loc>https://thenitishkr.in/images/news/disha-6-6-taxpayer-adtech-surveillance-4x3-display.webp</image:loc>
       <image:title>DISHA 6.6 news image showing taxpayer-money misuse and citizen-data surveillance through adtech SDKs, NBFC/KYC layers and loan-app networks.</image:title>

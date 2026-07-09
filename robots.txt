@@ -44,8 +44,8 @@ User-agent: Applebot-Extended
 Allow: /
 
 Sitemap: https://thenitishkr.in/sitemap.xml
-Sitemap: https://thenitishkr.in/image-sitemap.xml
 # Machine-readable public metadata
 # API guide: https://thenitishkr.in/api.txt
 # Publication index: https://thenitishkr.in/api/publications.json
+Sitemap: https://thenitishkr.in/image-sitemap.xml
 Sitemap: https://thenitishkr.in/news-sitemap.xml

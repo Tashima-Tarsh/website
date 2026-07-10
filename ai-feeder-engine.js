@@ -26,12 +26,16 @@ function canonicalFor(file) {
   return `${SITE}/${file.replace(/\.html$/, "")}`;
 }
 function titleOf(html, fallback) {
-  const og = html.match(/<meta\s+property=["']og:title["']\s+content=["']([^"']+)["']/i);
+  const og = metaContent(html, "property", "og:title");
   const title = html.match(/<title>([^<]+)<\/title>/i);
-  return (og && og[1]) || (title && title[1].replace(/\s*\|\s*thenitishkr.*$/i, "")) || fallback;
+  return og || (title && title[1].replace(/\s*\|\s*thenitishkr.*$/i, "")) || fallback;
 }
 function descriptionOf(html) {
-  return html.match(/<meta\s+name=["']description["']\s+content=["']([^"']+)["']/i)?.[1] || "";
+  return metaContent(html, "name", "description");
+}
+function metaContent(html, attr, value) {
+  const tag = html.match(new RegExp(`<meta\\s+[^>]*\\b${attr}=["']${value}["'][^>]*>`, "i"))?.[0] || "";
+  return tag.match(/\bcontent=(["'])(.*?)\1/i)?.[2] || "";
 }
 function findHtmlPages(dir = ".") {
   return fs.readdirSync(dir, { withFileTypes: true }).flatMap(entry => {

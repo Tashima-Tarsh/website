@@ -4,14 +4,22 @@ import path from "node:path";
 const root = process.cwd();
 const output = path.join(root, "dist");
 const excludedNames = new Set([
+  "$null",
   ".git",
   ".github",
+  ".lighthouseci",
+  "_astro",
   "audit",
+  "cloudflare-audit.mjs",
+  "cloudflare-dns-audit.mjs",
   "dist",
+  "final-push.bat",
+  "indexnow-key.txt",
   "node_modules",
   "scripts",
   "SITE-AUDIT-2026-PREVIEW.md",
   "ai-feeder-engine.js",
+  "package-lock.json",
   "lighthouserc.json",
   "package.json",
 ]);
@@ -23,7 +31,7 @@ function copy(directory, destination) {
   for (const entry of fs.readdirSync(directory, { withFileTypes: true })) {
     if (
       excludedNames.has(entry.name) ||
-      (entry.name.endsWith(".md") && entry.name !== "EVIDENCE-INVENTORY.md")
+      entry.name.endsWith(".md")
     ) {
       continue;
     }

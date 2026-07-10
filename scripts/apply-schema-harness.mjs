@@ -238,6 +238,18 @@ function updateFile(file) {
     canonicalFor(file);
   if (isNoindex(html)) return { changed: false, skipped: true };
 
+  const hasHarness = /<script\s+id=["']entity-consolidation-schema["'][\s\S]*?<\/script>/i.test(html);
+  const hasPageSpecificArticleSchema =
+    /"@type"\s*:\s*(?:"(?:NewsArticle|Article|ScholarlyArticle|TechArticle|Report|DigitalDocument)"|\[[^\]]*"(?:NewsArticle|Article|ScholarlyArticle|TechArticle|Report|DigitalDocument)")/i.test(html);
+
+  if (!hasHarness && hasPageSpecificArticleSchema) {
+    if (html !== previous) {
+      fs.writeFileSync(file, html);
+      return { changed: true, skipped: false };
+    }
+    return { changed: false, skipped: false };
+  }
+
   const title = titleFor(html, file);
   const description = descriptionFor(html);
   const type = pageType(canonical, html);
@@ -253,7 +265,7 @@ function updateFile(file) {
     "@graph": graph,
   })}</script>`;
 
-  if (/<script\s+id=["']entity-consolidation-schema["'][\s\S]*?<\/script>/i.test(html)) {
+  if (hasHarness) {
     html = html.replace(/  <script\s+id=["']entity-consolidation-schema["'][\s\S]*?<\/script>/i, block);
   } else {
     html = html.replace(/<\/head>/i, `${block}\n</head>`);

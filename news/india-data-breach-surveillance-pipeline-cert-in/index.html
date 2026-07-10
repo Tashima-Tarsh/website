@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="en-IN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="/favicon.ico?v=tnk-20260610" sizes="any">
+  <link rel="icon" href="/assets/brand/favicon-64.png?v=tnk-20260610" type="image/png" sizes="64x64">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png?v=tnk-20260610" sizes="180x180">
+  <title>India Data Breach Pipeline: CERT-In, Aadhaar, CoWIN and ICMR</title>
+  <meta name="description" content="Investigation brief on India data-breach records, CERT-In accountability, Aadhaar, CoWIN, ICMR and bank-record exposure.">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <link rel="canonical" href="https://thenitishkr.in/news/india-data-breach-surveillance-pipeline-cert-in/">
+  <link rel="alternate" hreflang="en-IN" href="https://thenitishkr.in/news/india-data-breach-surveillance-pipeline-cert-in/">
+  <link rel="alternate" hreflang="x-default" href="https://thenitishkr.in/news/india-data-breach-surveillance-pipeline-cert-in/">
+  <link rel="alternate" type="application/rss+xml" title="thenitishkr research and evidence feed" href="https://thenitishkr.in/feed.xml">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="THENITISHKR INDIA">
+  <meta property="og:url" content="https://thenitishkr.in/news/india-data-breach-surveillance-pipeline-cert-in/">
+  <meta property="og:title" content="India's Regulator Slept. Your Data Was Sold.">
+  <meta property="og:description" content="A public-interest investigation brief on Aadhaar, CoWIN, ICMR, bank-record and SDK surveillance records between 2012 and 2026.">
+  <meta property="og:image" content="https://thenitishkr.in/images/news/india-data-breach-surveillance-pipeline-cert-in.webp">
+  <meta property="og:image:width" content="1600">
+  <meta property="og:image:height" content="878">
+  <meta property="article:published_time" content="2026-07-10T00:00:00+05:30">
+  <meta property="article:modified_time" content="2026-07-10T00:00:00+05:30">
+  <meta property="article:author" content="https://thenitishkr.in/about/">
+  <meta property="article:section" content="Public Interest Investigation">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@thenitishkr">
+  <meta name="twitter:creator" content="@thenitishkr">
+  <meta name="twitter:title" content="India's Regulator Slept. Your Data Was Sold.">
+  <meta name="twitter:description" content="A 14-year public-interest investigation brief on breach, surveillance and CERT-In accountability records.">
+  <meta name="twitter:image" content="https://thenitishkr.in/images/news/india-data-breach-surveillance-pipeline-cert-in.webp">
+  <link rel="preload" as="image" href="/images/news/india-data-breach-surveillance-pipeline-cert-in.webp" fetchpriority="high">
+  <link rel="stylesheet" href="/styles.css?v=20260626">
+  <link rel="stylesheet" href="/editorial-preview.css?v=20260610">
+  <style>
+    .data-news-page { background:#fff; color:#111; }
+    .data-shell { width:min(1080px, calc(100% - 40px)); margin:0 auto; }
+    .data-hero { padding:46px 0 28px; border-bottom:1px solid rgba(6,38,81,.14); background:#fff; }
+    .data-label { color:#8b1111; font-size:.76rem; font-weight:900; letter-spacing:.14em; text-transform:uppercase; }
+    .data-hero h1 { max-width:1000px; margin:12px 0 0; color:#062651; font-family:"Playfair Display", Georgia, serif; font-size:clamp(2.25rem,5.4vw,4.7rem); line-height:1.02; letter-spacing:0; }
+    .data-deck { max-width:910px; color:#282828; font-family:Georgia,"Times New Roman",serif; font-size:clamp(1.14rem,2.2vw,1.52rem); line-height:1.42; }
+    .data-meta { display:flex; flex-wrap:wrap; gap:10px 18px; margin-top:20px; color:#4a4a4a; font-size:.9rem; font-weight:800; }
+    .data-actions { display:flex; flex-wrap:wrap; gap:10px; margin:24px 0 0; }
+    .data-actions a { display:inline-flex; align-items:center; min-height:42px; padding:10px 14px; border:1px solid #062651; background:#062651; color:#fff; text-decoration:none; font-family:"Libre Franklin", Arial, sans-serif; font-size:.86rem; font-weight:900; }
+    .data-actions a.secondary { background:#fff; color:#062651; }
+    .data-image { margin:28px 0 0; border:1px solid rgba(6,38,81,.14); background:#fff; }
+    .data-image img { display:block; width:100%; height:auto; }
+    .data-image figcaption { padding:10px 14px; color:#555; font-size:.84rem; line-height:1.45; }
+    .data-layout { display:grid; grid-template-columns:minmax(0, 1fr) 300px; gap:44px; padding:40px 0; align-items:start; }
+    .data-article { font-family:Georgia,"Times New Roman",serif; font-size:1.08rem; line-height:1.82; }
+    .data-article p { margin:0 0 18px; text-align:justify; text-justify:inter-word; }
+    .data-article h2 { margin:42px 0 14px; padding-top:18px; border-top:1px solid rgba(6,38,81,.14); color:#062651; font-family:"Playfair Display", Georgia, serif; font-size:clamp(1.65rem,3.6vw,2.55rem); line-height:1.12; }
+    .data-article h3 { margin:26px 0 8px; color:#062651; font-size:1rem; font-family:"Libre Franklin", Arial, sans-serif; text-transform:uppercase; letter-spacing:.07em; }
+    .data-article ul, .data-article ol { margin:0 0 20px; padding-left:22px; }
+    .data-article li { margin:7px 0; }
+    .data-article blockquote { margin:28px 0; padding:22px 24px; border-left:5px solid #8b1111; background:#fff8f4; color:#062651; font-family:"Playfair Display", Georgia, serif; font-size:clamp(1.25rem,2.7vw,1.75rem); line-height:1.3; }
+    .brief-box, .rail-card, .timeline-item, .finding-card { border:1px solid rgba(6,38,81,.14); border-top:4px solid #062651; padding:18px; background:#fffdf7; }
+    .brief-box { margin:22px 0; }
+    .brief-box span, .rail-card span, .timeline-item span, .finding-card span { display:block; color:#8b1111; font-size:.72rem; font-weight:900; letter-spacing:.11em; text-transform:uppercase; }
+    .brief-box p, .rail-card p, .timeline-item p, .finding-card p { margin:8px 0 0; color:#333; font-size:.92rem; line-height:1.56; text-align:left; }
+    .metric-grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:12px; margin:22px 0; }
+    .metric { border:1px solid rgba(6,38,81,.14); padding:18px; background:#fff; }
+    .metric strong { display:block; color:#062651; font-family:"Playfair Display", Georgia, serif; font-size:2rem; line-height:1; }
+    .metric span { display:block; margin-top:6px; color:#555; font-size:.75rem; font-weight:800; text-transform:uppercase; letter-spacing:.06em; }
+    .timeline, .finding-grid { display:grid; gap:12px; margin:18px 0 28px; }
+    .finding-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+    .record-links { display:grid; gap:10px; margin:18px 0 26px; }
+    .record-links a { display:block; padding:12px 14px; border:1px solid rgba(6,38,81,.16); color:#062651; text-decoration:none; font-family:"Libre Franklin", Arial, sans-serif; font-weight:900; }
+    .source-table { width:100%; border-collapse:collapse; margin:16px 0 24px; font-family:"Libre Franklin", Arial, sans-serif; font-size:.88rem; line-height:1.45; }
+    .source-table th, .source-table td { padding:10px; border:1px solid rgba(6,38,81,.14); text-align:left; vertical-align:top; }
+    .source-table th { background:#f7f4ee; color:#062651; }
+    .rail { position:sticky; top:92px; display:grid; gap:14px; }
+    .rail-card strong { display:block; margin-top:6px; color:#062651; font-family:"Playfair Display", Georgia, serif; font-size:1.35rem; line-height:1.1; }
+    .status-pill { display:inline-block; margin-top:10px; padding:6px 9px; background:#f3f6fb; color:#062651; border:1px solid rgba(6,38,81,.16); font-size:.72rem; font-weight:900; letter-spacing:.08em; text-transform:uppercase; }
+    .copy-block { white-space:pre-wrap; border:1px solid rgba(6,38,81,.14); padding:16px; background:#fff; font-family:"Libre Franklin", Arial, sans-serif; font-size:.9rem; line-height:1.55; }
+    @media (max-width:920px){ .data-layout{grid-template-columns:1fr;} .rail{position:static;} .metric-grid,.finding-grid{grid-template-columns:1fr 1fr;} }
+    @media (max-width:620px){ .data-shell{width:min(100% - 28px,1080px);} .data-hero h1{font-size:clamp(2.05rem,10vw,3.2rem); line-height:1.04;} .data-deck{font-size:1.14rem;} .data-article p{text-align:left;} .metric-grid,.finding-grid{grid-template-columns:1fr;} }
+  </style>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"NewsArticle","@id":"https://thenitishkr.in/news/india-data-breach-surveillance-pipeline-cert-in/#article","mainEntityOfPage":{"@type":"WebPage","@id":"https://thenitishkr.in/news/india-data-breach-surveillance-pipeline-cert-in/"},"headline":"India's Regulator Slept. Your Data Was Sold. A 14-Year Surveillance Pipeline Exposed.","alternativeHeadline":"India's Regulator Is Fast Asleep. Your Data Has Been Sold.","description":"Public-interest investigation brief on India's 14-year data-breach and surveillance pipeline record, CERT-In accountability, Aadhaar, CoWIN, ICMR and bank-record exposure.","datePublished":"2026-07-10T00:00:00+05:30","dateModified":"2026-07-10T00:00:00+05:30","author":{"@id":"https://thenitishkr.in/about/#person"},"publisher":{"@type":"Organization","name":"THENITISHKR INDIA","url":"https://thenitishkr.in/","logo":{"@type":"ImageObject","url":"https://thenitishkr.in/assets/brand/thenitishkr-logo.png"}},"image":{"@type":"ImageObject","url":"https://thenitishkr.in/images/news/india-data-breach-surveillance-pipeline-cert-in.webp","width":1600,"height":878,"creator":{"@id":"https://thenitishkr.in/about/#person"},"license":"https://thenitishkr.in/terms/","creditText":"THENITISHKR INDIA"},"articleSection":"Public Interest Investigation","keywords":["CERT-In accountability","Aadhaar breach","CoWIN data leak","ICMR breach","NPCI NACH leak","SilverPush","InMobi","digital arrest scams","data protection board India","citizen data harm"],"isAccessibleForFree":true,"inLanguage":"en-IN"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does this investigation brief record?","acceptedAnswer":{"@type":"Answer","text":"It records a 14-year pattern in which citizen data exposure, SDK surveillance, Aadhaar-related access, CoWIN lookup records, ICMR breach records and bank-record exposure were followed by inadequate public notification and accountability."}},{"@type":"Question","name":"What is the public question?","acceptedAnswer":{"@type":"Answer","text":"The public question is whether Indian citizens were notified, protected and given remedy after repeated exposure of identity, health, financial and behavioural data."}},{"@type":"Question","name":"What should a reader do first?","acceptedAnswer":{"@type":"Answer","text":"Readers should open the full investigation route, preserve breach evidence, and use official reporting channels where their own data appears affected."}}]}</script>
+  <meta name="IndexNow-Verification" content="a0151dcfc802e79c4c6818a68dfd9fef">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YJ314E1YHG"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-YJ314E1YHG');
+  </script>
+</head>
+<body class="data-news-page">
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <header class="site-header">
+    <nav class="nav" aria-label="Primary navigation">
+      <a class="brand" href="/">THENITISHKR<span>INDIA | RESEARCH - EVIDENCE - INTELLIGENCE</span></a>
+      <button class="menu-button" type="button" aria-label="Open menu" aria-expanded="false" data-menu-toggle><span></span><span></span><span></span></button>
+      <div class="nav-links" data-nav-links><a href="/start-here/">Start Here</a><a href="/intelligence/">Intelligence</a><a href="/disha/">DISHA</a><a href="/article-12/">Article 12</a><a href="/digital-constitutional-personhood/">Digital Personhood</a><a href="/news/">News</a><a href="/about/">About</a></div>
+      <a class="nav-cta" href="/intelligence/">Read the Archive</a>
+    </nav>
+  </header>
+  <main id="main-content">
+    <section class="data-hero">
+      <div class="data-shell">
+        <p class="data-label">Public Interest Investigation</p>
+        <h1>India's Regulator Slept. Your Data Was Sold.</h1>
+        <p class="data-deck">A 14-year surveillance pipeline runs through Aadhaar, biometrics, passport records, bank records, health data, mobile SDKs and daily behaviour trails while CERT-In's public citizen-notification record remains unresolved.</p>
+        <div class="data-meta">
+          <span>By <a href="/about/" rel="author">Nitish Kumar (thenitishkr)</a></span>
+          <span>Filed: <time datetime="2026-07-10">10 July 2026</time></span>
+          <span>Section: Public Interest Investigation</span>
+          <span>Status: Verified record brief</span>
+        </div>
+        <div class="data-actions" aria-label="Article actions">
+          <a href="/intelligence/meity-digital-governance/">Full Investigation</a>
+          <a class="secondary" href="/digital-arrest-data-harm/">Digital Arrest Scam Guide</a>
+          <a class="secondary" href="/contact/">Report a Breach</a>
+        </div>
+        <figure class="data-image">
+          <img src="/images/news/india-data-breach-surveillance-pipeline-cert-in.webp" alt="Public-interest news visual on India data breach, citizen identity risk and surveillance accountability" width="1600" height="878" loading="eager" fetchpriority="high">
+          <figcaption>Investigation visual for the public-interest data-breach and surveillance record.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <div class="data-shell data-layout">
+      <article class="data-article">
+        <div class="brief-box">
+          <span>Record answer</span>
+          <p>This investigation brief records that India's citizen-data failures were not isolated leaks but a pipeline: surveillance SDKs, identity databases, health records, bank-transfer data and scam networks repeatedly exposed citizens while public notification and institutional accountability remained incomplete.</p>
+        </div>
+        <div class="brief-box">
+          <span>Record basis</span>
+          <p>This article is based on the supplied verified investigation record and the connected thenitishkr.in evidence route. It is written as a public-interest investigation brief, not as promotional copy.</p>
+        </div>
+
+        <p>India's digital infrastructure has been breached repeatedly: from ultrasonic beacons listening inside homes, to Aadhaar API access sold through informal channels, to 815 million identity records traded for 80,000 US dollars. The record shows that each major breach was followed by a familiar pattern: limited public explanation, weak citizen notification and no clear accountability report visible to the ordinary person whose data was exposed.</p>
+        <p>The central question is not technical. It is constitutional. If a citizen's Aadhaar, biometrics, passport details, bank records, health identifiers and daily routines can move through exposed systems, mobile SDKs, leaked databases and fraud networks, what does the State owe that citizen after the harm is known?</p>
+
+        <div class="metric-grid" aria-label="Investigation figures">
+          <div class="metric"><strong>14</strong><span>Years in the pipeline</span></div>
+          <div class="metric"><strong>815M</strong><span>ICMR records recorded</span></div>
+          <div class="metric"><strong>26</strong><span>Months of S3WaaS exposure recorded</span></div>
+          <div class="metric"><strong>2026</strong><span>CERT-In reply cited by brief</span></div>
+        </div>
+
+        <h2>The Pipeline of Surveillance</h2>
+        <p>The record describes seven public-risk episodes. Together they show how data exposure moved from advertising surveillance to identity databases, health systems, bank-transfer records and fraud networks.</p>
+        <div class="timeline" id="timeline">
+          <div class="timeline-item"><span>2012</span><p><strong><a href="https://www.ftc.gov/news-events/news/press-releases/2016/03/ftc-issues-warning-letters-app-developers-using-silverpush-code" target="_blank" rel="noopener">SilverPush</a>.</strong> Ultrasonic audio-beacon profiling marks the beginning of the surveillance-SDK question.</p></div>
+          <div class="timeline-item"><span>2016</span><p><strong><a href="https://www.ftc.gov/news-events/news/press-releases/2016/06/mobile-advertising-network-inmobi-settles-ftc-charges-it-tracked-hundreds-millions-consumers" target="_blank" rel="noopener">InMobi</a>.</strong> The record connects location tracking and child-privacy findings to mobile-adtech accountability.</p></div>
+          <div class="timeline-item"><span>2018</span><p><strong><a href="https://uidai.gov.in/en/" target="_blank" rel="noopener">Aadhaar</a> API sale.</strong> Full identity access was sold for Rs 500.</p></div>
+          <div class="timeline-item"><span>2022-2024</span><p><strong>S3WaaS exposure.</strong> Government cloud exposure continued for 26 months.</p></div>
+          <div class="timeline-item"><span>2023</span><p><strong>CoWIN and <a href="https://www.icmr.gov.in/" target="_blank" rel="noopener">ICMR</a>.</strong> Telegram lookup records and the 815 million-record ICMR sale sit in the same identity-exposure timeline.</p></div>
+          <div class="timeline-item"><span>2024</span><p><strong><a href="https://www.npci.org.in/" target="_blank" rel="noopener">NPCI</a> NACH.</strong> Bank-transfer records were publicly accessible.</p></div>
+          <div class="timeline-item"><span>2025-2026</span><p><strong>Fraud impact and official response.</strong> The record links data exposure to digital-arrest scams and cites the <a href="/assets/docs/cert-in-reply-to-shri-nitish-kumar-2026-07-06.pdf" target="_blank" rel="noopener">CERT-In reply to Shri Nitish Kumar dated 6 July 2026</a>.</p></div>
+        </div>
+
+        <h2>The Result</h2>
+        <p>The record links digital arrest scams, investment fraud, identity theft and financial loss to stolen government and quasi-government data. It cites Rs 22,495 crore lost in 2025 and a 900% surge in digital arrest scams.</p>
+        <blockquote>If the State can collect identity at scale, it must also notify, repair and account for identity harm at scale.</blockquote>
+
+        <h2>Why This Matters</h2>
+        <p>If a person has Aadhaar, CoWIN registration, a bank account, a phone number, a SIM connection, a digital loan record or a smartphone, the risk described by the brief is not abstract. The question is whether that person's data appeared in one or more compromised systems, whether they were ever notified, and whether any public authority recorded a remedy.</p>
+        <p>This is where the article connects to the wider thenitishkr.in archive. The MeitY digital-governance record asks what happens to stolen Indian citizen data on foreign servers. The Digital Arrest Scam Guide explains how identity, fear and official-looking scripts are weaponised. The Digital Constitutional Personhood framework asks whether a citizen's digital record must be treated as part of constitutional personhood rather than disposable database residue.</p>
+
+        <div class="record-links" aria-label="Internal evidence links">
+          <a href="/intelligence/meity-digital-governance/">Full Investigation: MeitY, stolen data and W.P.(Crl.) No. 163/2026</a>
+          <a href="/digital-arrest-data-harm/">Digital Arrest Scam Guide</a>
+          <a href="/digital-constitutional-personhood/">Digital Constitutional Personhood</a>
+          <a href="/disha/claim-to-source-system/">DISHA source record system</a>
+          <a href="/research-datasets/">Research Source Register</a>
+        </div>
+
+        <h2>Press-Ready Brief</h2>
+        <div class="brief-box">
+          <span>Press brief</span>
+          <p><strong>India's 14-year data-collapse record.</strong> Between 2012 and 2026, government systems, health databases, cloud platforms and mobile SDKs exposed biometric, financial and behavioural data of Indian citizens. The record calls for citizen notification, Data Protection Board activation, forensic investigation and public action-taken reports.</p>
+        </div>
+        <div class="finding-grid" id="findings">
+          <div class="finding-card"><span>Finding 1</span><p>815 million ICMR records were sold in 2023.</p></div>
+          <div class="finding-card"><span>Finding 2</span><p>Aadhaar API access was sold for Rs 500 in 2018.</p></div>
+          <div class="finding-card"><span>Finding 3</span><p>CoWIN lookup records appeared through a Telegram bot in 2023.</p></div>
+          <div class="finding-card"><span>Finding 4</span><p>Government cloud exposure continued for 26 months.</p></div>
+          <div class="finding-card"><span>Finding 5</span><p>NPCI NACH bank records were publicly accessible in 2024.</p></div>
+          <div class="finding-card"><span>Finding 6</span><p>CERT-In public citizen notifications for the cited major breaches are absent from the record.</p></div>
+        </div>
+
+        <h2>CERT-In Complaint Draft</h2>
+        <p>The following complaint draft is included as a working public-interest template. It should be checked by the complainant before filing, and attachments should be limited to lawful, non-private, redacted evidence.</p>
+        <div class="copy-block">CERT-In Incident Report - Draft
+
+Reporter: Nitish Kumar (thenitishkr), Kharar, Punjab
+Incident type: Multi-year national-scale data compromise
+Affected data: Aadhaar, biometrics, passport details, PAN, voter ID, CoWIN records, ICMR test data, bank-account details and behavioural telemetry
+
+Summary:
+Between 2012 and 2026, multiple public systems, health databases, cloud services and mobile SDK ecosystems exposed sensitive citizen data. The incident chain cited in the investigation brief includes SilverPush ultrasonic tracking, InMobi location tracking, Aadhaar API sale, S3WaaS cloud exposure, CoWIN API lookup records, ICMR mega-breach and NPCI NACH leak.
+
+Action requested:
+1. Assign CERT-In tracking number.
+2. Initiate forensic investigation.
+3. Coordinate with UIDAI, NIC, NPCI, MoHFW, ICMR and relevant agencies.
+4. Issue citizen notifications where exposure is confirmed.
+5. Publish action-taken report.
+
+Attachments to prepare:
+Timeline, evidence list, screenshots, lawful API logs, hashes of leaked datasets, source URLs and redaction note.</div>
+
+        <h2>Source and Record Route</h2>
+        <table class="source-table">
+          <thead><tr><th>Record area</th><th>Status on this page</th><th>Reader route</th></tr></thead>
+          <tbody>
+            <tr><td>SilverPush and InMobi</td><td>Public regulatory/adtech record</td><td><a href="/assets/docs/silverpush-silveredge-technologies-inmobi.pdf" target="_blank" rel="noopener">Archive PDF</a> and <a href="https://www.ftc.gov/news-events/news/press-releases/2016/06/mobile-advertising-network-inmobi-settles-ftc-charges-it-tracked-hundreds-millions-consumers" target="_blank" rel="noopener">FTC InMobi record</a></td></tr>
+            <tr><td>Aadhaar API sale</td><td>Identity-access record</td><td><a href="https://uidai.gov.in/en/" target="_blank" rel="noopener">UIDAI</a> and <a href="/intelligence/meity-digital-governance/">MeitY digital-governance case file</a></td></tr>
+            <tr><td>S3WaaS exposure</td><td>Government cloud exposure record</td><td><a href="/intelligence/meity-digital-governance/">Follow the Data record</a></td></tr>
+            <tr><td>CoWIN Telegram bot</td><td>Health-identity lookup record</td><td><a href="/intelligence/meity-digital-governance/">Follow the Data record</a></td></tr>
+            <tr><td>ICMR mega-breach</td><td>Health database exposure record</td><td><a href="https://www.icmr.gov.in/" target="_blank" rel="noopener">ICMR</a> and the connected case file</td></tr>
+            <tr><td>NPCI NACH leak</td><td>Bank-transfer exposure record</td><td><a href="https://www.npci.org.in/" target="_blank" rel="noopener">NPCI</a> and the connected case file</td></tr>
+            <tr><td>CERT-In response</td><td>Official correspondence record</td><td><a href="/assets/docs/cert-in-reply-to-shri-nitish-kumar-2026-07-06.pdf" target="_blank" rel="noopener">CERT-In reply</a> and <a href="/assets/docs/cert-in-letter-to-meity-regarding-shri-nitish-kumar.pdf" target="_blank" rel="noopener">CERT-In letter to MeitY</a></td></tr>
+          </tbody>
+        </table>
+
+        <h2>Continue Reading</h2>
+        <p>These records carry the article into the investigation file, remedy guidance and constitutional frame.</p>
+        <div class="record-links">
+          <a href="/digital-arrest-data-harm/">Digital Arrest Scams</a>
+          <a href="/intelligence/meity-digital-governance/">Aadhaar and Stolen Data Analysis</a>
+          <a href="/news/disha-6-6-taxpayer-money-misuse-adtech-sdk-loan-app-surveillance/">Surveillance SDKs and Loan-App Networks</a>
+          <a href="/contact/">CERT-In Accountability and Breach Reporting Route</a>
+          <a href="/article-12/">India Cybersecurity Crisis and Article 12 Accountability</a>
+        </div>
+      </article>
+
+      <aside class="rail" aria-label="Article context">
+        <div class="rail-card">
+          <span>Article status</span>
+          <strong>Verified record brief</strong>
+          <p>Uses the supplied investigation record and linked internal evidence route.</p>
+          <span class="status-pill">Public-interest record</span>
+        </div>
+        <div class="rail-card">
+          <span>Public question</span>
+          <strong>Who notified the citizen?</strong>
+        <p>The article asks whether official response matched the scale of identity harm recorded in the investigation file.</p>
+        </div>
+        <div class="rail-card">
+          <span>Primary CTA</span>
+          <strong>Follow the data trail</strong>
+          <p><a href="/intelligence/meity-digital-governance/">Open the full investigation route</a>.</p>
+        </div>
+      </aside>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="section">
+      <div>
+        <img class="footer-brand-mark" src="/assets/brand/thenitishkr-logo.png" alt="Nitish Kumar thenitishkr monogram" width="74" height="74" loading="lazy"><div class="footer-logo">THENITISHKR</div>
+        <p class="footer-kicker">INDIA | RESEARCH - EVIDENCE - INTELLIGENCE</p>
+        <p class="muted" style="margin-top:18px">&copy; 2026 Nitish Kumar (thenitishkr). All Rights Reserved.</p>
+      </div>
+      <div class="footer-links" aria-label="Footer navigation">
+        <a href="/article-12/">Article 12</a>
+        <a href="/digital-constitutional-personhood/">Digital Constitutional Personhood</a>
+        <a href="/disha/">DISHA</a>
+        <a href="/intelligence/">Intelligence</a><a href="/news/">News & Analysis</a>
+        <a href="/books/">Books</a>
+        <a href="/about/">About</a>
+        <a href="/feed.xml">RSS Feed</a>
+        <a href="/sitemap/">Research Index</a>
+        <a href="/terms/">T&C</a>
+        <a href="/privacy-policy/">Privacy</a>
+        <a href="/editorial-standards/">Editorial Standards</a>
+      </div>
+      <div class="social-links" aria-label="Social links">
+        <a class="social-icon social-x" href="https://x.com/thenitishkr" aria-label="X / Twitter" title="X / Twitter"><span aria-hidden="true">X</span></a>
+        <a class="social-icon social-linkedin" href="https://www.linkedin.com/in/thenitishkr" aria-label="LinkedIn" title="LinkedIn"><span aria-hidden="true">in</span></a>
+        <a class="social-icon social-substack" href="https://thenitishkr.substack.com" aria-label="Substack" title="Substack"><span aria-hidden="true">S</span></a>
+        <a class="social-icon social-medium" href="https://medium.com/@thenitishkr" aria-label="Medium" title="Medium"><span aria-hidden="true">M</span></a>
+        <a class="social-icon social-github" href="https://github.com/Tashima-Tarsh" aria-label="GitHub" title="GitHub"><span aria-hidden="true">GH</span></a>
+        <a class="social-icon social-instagram" href="https://www.instagram.com/thenitishkr" aria-label="Instagram" title="Instagram"><span aria-hidden="true">IG</span></a>
+        <a class="social-icon social-facebook" href="https://www.facebook.com/thenitishkr" aria-label="Facebook" title="Facebook"><span aria-hidden="true">f</span></a>
+        <a class="social-icon social-reddit" href="https://www.reddit.com/user/Ok-File-6559/" aria-label="Reddit" title="Reddit"><span aria-hidden="true">R</span></a>
+        <a class="social-icon social-quora" href="https://www.quora.com/profile/Nitish-Kumar-11545" aria-label="Quora" title="Quora"><span aria-hidden="true">Q</span></a>
+        <a class="social-icon social-whatsapp" href="https://wa.me/919142197135" aria-label="WhatsApp Business" title="WhatsApp Business"><span aria-hidden="true">WA</span></a>
+        <a class="social-icon social-orcid" href="https://orcid.org/0009-0004-6840-4463" aria-label="ORCID" title="ORCID"><span aria-hidden="true">iD</span></a>
+        <a class="social-icon social-wikidata" href="https://www.wikidata.org/wiki/Q140001166" aria-label="Wikidata" title="Wikidata" rel="me"><span aria-hidden="true">WD</span></a>
+        <a class="social-icon social-amazon" href="https://www.amazon.com/author/nikukr" aria-label="Amazon Author" title="Amazon Author" rel="me"><span aria-hidden="true">A</span></a>
+      </div>
+    </div>
+  </footer>
+  <script src="/script.js?v=20260621" defer></script>
+</body>
+</html>

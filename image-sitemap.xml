@@ -513,6 +513,10 @@
   <url>
     <loc>https://thenitishkr.in/news/</loc>
     <image:image>
+      <image:loc>https://thenitishkr.in/images/news/india-data-breach-surveillance-pipeline-cert-in.webp</image:loc>
+      <image:title>Public-interest news visual on India data breach, citizen identity risk and surveillance accountability</image:title>
+    </image:image>
+    <image:image>
       <image:loc>https://thenitishkr.in/images/news/national-security-disclosure-disha-6-6-ghost.webp</image:loc>
       <image:title>DISHA 6.6 national security disclosure visual reading Fifteen Years, Fifty Days, No Justice</image:title>
     </image:image>
@@ -601,6 +605,17 @@
   </url>
   <url>
     <loc>https://thenitishkr.in/news/governance-monitor/</loc>
+    <image:image>
+      <image:loc>https://thenitishkr.in/assets/brand/thenitishkr-logo.png</image:loc>
+      <image:title>Nitish Kumar thenitishkr monogram</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://thenitishkr.in/news/india-data-breach-surveillance-pipeline-cert-in/</loc>
+    <image:image>
+      <image:loc>https://thenitishkr.in/images/news/india-data-breach-surveillance-pipeline-cert-in.webp</image:loc>
+      <image:title>Public-interest news visual on India data breach, citizen identity risk and surveillance accountability</image:title>
+    </image:image>
     <image:image>
       <image:loc>https://thenitishkr.in/assets/brand/thenitishkr-logo.png</image:loc>
       <image:title>Nitish Kumar thenitishkr monogram</image:title>

@@ -108,14 +108,19 @@ function match(html, pattern) {
 
 function titleFor(html, file) {
   return text(
-    match(html, /<meta\s+property=["']og:title["']\s+content=["']([^"']+)["']/i) ||
+    metaContent(html, "property", "og:title") ||
       match(html, /<title>([\s\S]*?)<\/title>/i) ||
       path.basename(path.dirname(file)),
   );
 }
 
 function descriptionFor(html) {
-  return text(match(html, /<meta\s+name=["']description["']\s+content=["']([^"']*)["']/i));
+  return text(metaContent(html, "name", "description"));
+}
+
+function metaContent(html, attr, value) {
+  const tag = html.match(new RegExp(`<meta\\s+[^>]*\\b${attr}=["']${value}["'][^>]*>`, "i"))?.[0] || "";
+  return tag.match(/\bcontent=(["'])(.*?)\1/i)?.[2] || "";
 }
 
 function h1For(html) {
@@ -241,6 +246,12 @@ function updateFile(file) {
   const hasHarness = /<script\s+id=["']entity-consolidation-schema["'][\s\S]*?<\/script>/i.test(html);
   const hasPageSpecificArticleSchema =
     /"@type"\s*:\s*(?:"(?:NewsArticle|Article|ScholarlyArticle|TechArticle|Report|DigitalDocument)"|\[[^\]]*"(?:NewsArticle|Article|ScholarlyArticle|TechArticle|Report|DigitalDocument)")/i.test(html);
+
+  if (hasHarness && hasPageSpecificArticleSchema) {
+    html = html.replace(/\s*<script\s+id=["']entity-consolidation-schema["'][\s\S]*?<\/script>/i, "");
+    fs.writeFileSync(file, html);
+    return { changed: html !== previous, skipped: false };
+  }
 
   if (!hasHarness && hasPageSpecificArticleSchema) {
     if (html !== previous) {

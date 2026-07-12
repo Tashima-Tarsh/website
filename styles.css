@@ -2250,9 +2250,9 @@ h3 {
 
 /* traffic funnel: high-intent public record cards */
 .traffic-shelf {
-  background: rgba(255,255,255,.72);
-  border-top: 1px solid rgba(23,36,60,.1);
-  border-bottom: 1px solid rgba(23,36,60,.1);
+  background: #fff9ed;
+  border-top: 1px solid rgba(76,68,45,.12);
+  border-bottom: 1px solid rgba(76,68,45,.12);
 }
 
 .traffic-shelf .section-head {
@@ -2266,21 +2266,52 @@ h3 {
 }
 
 .traffic-card {
+  position: relative;
   min-width: 0;
   min-height: 248px;
   display: flex;
   flex-direction: column;
   gap: 12px;
   padding: 20px;
-  border: 1px solid rgba(23,36,60,.14);
-  border-top: 4px solid var(--navy);
+  border: 1px solid rgba(54,45,31,.16);
+  border-top: 4px solid #8b502c;
   border-radius: 6px;
-  background: #fffdf8;
-  box-shadow: 0 8px 20px rgba(35,31,26,.045);
+  background: #fffefa;
+  box-shadow: 0 8px 18px rgba(35,31,26,.04);
 }
 
-.traffic-card:nth-child(2n) { border-top-color: var(--red); }
-.traffic-card:nth-child(3n) { border-top-color: var(--gold); }
+.traffic-card::before {
+  width: 32px;
+  height: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(139,80,44,.28);
+  border-radius: 50%;
+  color: #8b502c;
+  background: #f8efe1;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 13px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.traffic-card:nth-child(1)::before { content: "I"; }
+.traffic-card:nth-child(2)::before { content: "II"; }
+.traffic-card:nth-child(3)::before { content: "III"; }
+.traffic-card:nth-child(4)::before { content: "IV"; }
+.traffic-card:nth-child(2n) { border-top-color: #4f5b35; }
+.traffic-card:nth-child(2n)::before {
+  border-color: rgba(79,91,53,.28);
+  color: #4f5b35;
+  background: #eff1e6;
+}
+.traffic-card:nth-child(3n) { border-top-color: #b58a37; }
+.traffic-card:nth-child(3n)::before {
+  border-color: rgba(181,138,55,.3);
+  color: #74591f;
+  background: #f8f0d7;
+}
 
 .traffic-card__meta {
   display: flex;
@@ -2297,8 +2328,8 @@ h3 {
   padding: 4px 7px;
   border: 1px solid rgba(23,36,60,.14);
   border-radius: 3px;
-  color: var(--red);
-  background: #fff;
+  color: #7e4327;
+  background: #fffaf0;
   font-size: 10px;
   font-weight: 900;
   letter-spacing: .08em;
@@ -2307,7 +2338,7 @@ h3 {
 }
 
 .traffic-card h3 {
-  color: var(--navy);
+  color: #20242b;
   font-family: "Libre Franklin", Arial, sans-serif;
   font-size: 18px;
   line-height: 1.22;
@@ -2329,7 +2360,7 @@ h3 {
 
 .traffic-card__action {
   margin-top: auto;
-  color: var(--navy);
+  color: #31401f;
   font-size: 11px;
   font-weight: 900;
   letter-spacing: .08em;
@@ -2339,7 +2370,7 @@ h3 {
 }
 
 .traffic-card:hover {
-  border-color: rgba(23,36,60,.34);
+  border-color: rgba(54,45,31,.32);
   box-shadow: 0 12px 28px rgba(35,31,26,.07);
 }
 
@@ -2383,7 +2414,7 @@ h3 {
 
 /* institutional cleanup: June 2026 */
 body {
-  background: linear-gradient(180deg, #fffdf7 0%, #fbf7ed 52%, #f3ead8 100%);
+  background: #fffdf7;
 }
 
 .site-header,

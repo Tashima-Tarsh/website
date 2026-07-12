@@ -639,6 +639,9 @@ document.querySelectorAll('[data-copy-link], [data-copy-citation]').forEach((but
 });
 
 function installSwg() {
+  const enabled = document.querySelector('meta[name="swg-enabled"][content="true"]');
+  if (!enabled || window.location.hostname === "127.0.0.1" || window.location.hostname === "localhost") return;
+
   const ldJsonScripts = document.querySelectorAll('script[type="application/ld+json"]');
   let isNewsArticle = false;
   for (const script of ldJsonScripts) {

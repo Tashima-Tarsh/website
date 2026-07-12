@@ -37,13 +37,40 @@
     .coming-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 26px; }
     @media (max-width: 860px) { .coming-hero { grid-template-columns: 1fr; padding-top: 24px; } }
   </style>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YJ314E1YHG"></script>
+  <!-- Google tag queued after first paint -->
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+      analytics_storage: 'granted'
+    });
+    gtag('set', 'ads_data_redaction', true);
     gtag('js', new Date());
-    gtag('config', 'G-YJ314E1YHG');
+    gtag('config', 'G-YJ314E1YHG', {
+      allow_google_signals: false,
+      allow_ad_personalization_signals: false
+    });
+    (function loadAnalyticsAfterFirstPaint(){
+      const load = () => {
+        if (document.querySelector('script[data-analytics-loader="ga4"]')) return;
+        const script = document.createElement('script');
+        script.async = true;
+        script.src = 'https://www.googletagmanager.com/gtag/js?id=G-YJ314E1YHG';
+        script.setAttribute('data-analytics-loader', 'ga4');
+        document.head.appendChild(script);
+      };
+      ['pointerdown', 'keydown', 'scroll', 'touchstart'].forEach((eventName) => {
+        window.addEventListener(eventName, load, { once: true, passive: true });
+      });
+      if ('requestIdleCallback' in window) {
+        requestIdleCallback(load, { timeout: 20000 });
+      } else {
+        window.addEventListener('load', () => setTimeout(load, 20000), { once: true });
+      }
+    })();
   </script>
 </head>
 <body class="coming-shell">

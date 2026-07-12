@@ -6,8 +6,36 @@
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+      analytics_storage: 'granted'
+    });
+    gtag('set', 'ads_data_redaction', true);
     gtag('js', new Date());
-    gtag('config', 'G-YJ314E1YHG');
+    gtag('config', 'G-YJ314E1YHG', {
+      allow_google_signals: false,
+      allow_ad_personalization_signals: false
+    });
+    (function loadAnalyticsAfterFirstPaint(){
+      const load = () => {
+        if (document.querySelector('script[data-analytics-loader="ga4"]')) return;
+        const script = document.createElement('script');
+        script.async = true;
+        script.src = 'https://www.googletagmanager.com/gtag/js?id=G-YJ314E1YHG';
+        script.setAttribute('data-analytics-loader', 'ga4');
+        document.head.appendChild(script);
+      };
+      ['pointerdown', 'keydown', 'scroll', 'touchstart'].forEach((eventName) => {
+        window.addEventListener(eventName, load, { once: true, passive: true });
+      });
+      if ('requestIdleCallback' in window) {
+        requestIdleCallback(load, { timeout: 20000 });
+      } else {
+        window.addEventListener('load', () => setTimeout(load, 20000), { once: true });
+      }
+    })();
   </script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -222,7 +250,6 @@
   </style>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Forensic Intelligence Report | thenitishkr","url":"https://thenitishkr.in/intelligence/documents/forensic-intelligence-report/","description":"Reserved document route for the forensic intelligence report scheduled for public release on 20 July 2026.","inLanguage":"en-IN","dateModified":"2026-06-23T00:00:00+05:30"}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://thenitishkr.in/"},{"@type":"ListItem","position":2,"name":"Intelligence","item":"https://thenitishkr.in/intelligence/"},{"@type":"ListItem","position":3,"name":"Documents","item":"https://thenitishkr.in/intelligence/documents/"},{"@type":"ListItem","position":4,"name":"Forensic Intelligence Report","item":"https://thenitishkr.in/intelligence/documents/forensic-intelligence-report/"}]}</script>
-  <script id="entity-consolidation-schema" type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://thenitishkr.in/#website","name":"thenitishkr.in","alternateName":["thenitishkr","DISHA Intelligence","DISHA Intelligence 6.6"],"url":"https://thenitishkr.in/","inLanguage":"en-IN","publisher":{"@id":"https://thenitishkr.in/about/#person"},"potentialAction":{"@type":"SearchAction","target":"https://thenitishkr.in/sitemap/?q={search_term_string}","query-input":"required name=search_term_string"}},{"@type":"Person","@id":"https://thenitishkr.in/about/#person","name":"Nitish Kumar","alternateName":["thenitishkr","Nitish Kumar (thenitishkr)"],"url":"https://thenitishkr.in/about/","image":"https://thenitishkr.in/assets/images/nitish-kumar-thenitishkr.jpg","jobTitle":["Independent Public-Interest Researcher","Author","National Cyber Security Scholar","Inventor of DISHA Intelligence 6.6"],"nationality":{"@type":"Country","name":"India"},"identifier":[{"@type":"PropertyValue","propertyID":"ORCID","value":"0009-0004-6840-4463","url":"https://orcid.org/0009-0004-6840-4463"},{"@type":"PropertyValue","propertyID":"Wikidata","value":"Q140001166","url":"https://www.wikidata.org/wiki/Q140001166"}],"sameAs":["https://orcid.org/0009-0004-6840-4463","https://www.wikidata.org/wiki/Q140001166","https://x.com/thenitishkr","https://www.linkedin.com/in/thenitishkr","https://in.linkedin.com/in/thenitishkr","https://thenitishkr.substack.com","https://medium.com/@thenitishkr","https://github.com/Tashima-Tarsh","https://www.instagram.com/thenitishkr","https://www.facebook.com/thenitishkr","https://www.reddit.com/user/Ok-File-6559/","https://www.quora.com/profile/Nitish-Kumar-11545","https://www.amazon.com/author/nikukr"],"disambiguatingDescription":"Nitish Kumar (thenitishkr), independent public-interest researcher, author, National Cyber Security Scholar, and inventor of DISHA Intelligence 6.6; distinct from Nitish Kumar the Bihar politician.","knowsAbout":["DISHA Intelligence 6.6","DISHA Intelligence Architecture","Article 12 constitutional accountability","Digital Constitutional Personhood","Digital governance","Citizen-data harm","Public records","Evidence intelligence","Cyber defence"]},{"@type":"DigitalDocument","@id":"https://thenitishkr.in/intelligence/documents/forensic-intelligence-report/#schema-harness-page","url":"https://thenitishkr.in/intelligence/documents/forensic-intelligence-report/","name":"Forensic Intelligence Report | thenitishkr","headline":"Coming Soon","description":"Reserved document route for the forensic intelligence report scheduled for public release on 20 July 2026.","inLanguage":"en-IN","isPartOf":{"@id":"https://thenitishkr.in/#website"},"mainEntityOfPage":"https://thenitishkr.in/intelligence/documents/forensic-intelligence-report/","author":{"@id":"https://thenitishkr.in/about/#person"},"publisher":{"@id":"https://thenitishkr.in/about/#person"},"breadcrumb":{"@id":"https://thenitishkr.in/intelligence/documents/forensic-intelligence-report/#breadcrumb"},"isAccessibleForFree":true,"dateModified":"2026-06-23T00:00:00+05:30","image":"https://thenitishkr.in/assets/images/og/intelligence.png?v=20260608engagement","encodingFormat":"text/html"},{"@type":"BreadcrumbList","@id":"https://thenitishkr.in/intelligence/documents/forensic-intelligence-report/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://thenitishkr.in/"},{"@type":"ListItem","position":2,"name":"Intelligence","item":"https://thenitishkr.in/intelligence/"},{"@type":"ListItem","position":3,"name":"Documents","item":"https://thenitishkr.in/intelligence/documents/"},{"@type":"ListItem","position":4,"name":"Forensic Intelligence Report | thenitishkr","item":"https://thenitishkr.in/intelligence/documents/forensic-intelligence-report/"}]}]}</script>
 </head>
 <body>
   <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -318,14 +345,14 @@
         <a class="social-icon social-linkedin" href="https://www.linkedin.com/in/thenitishkr" aria-label="LinkedIn" title="LinkedIn"><span aria-hidden="true">in</span></a>
         <a class="social-icon social-substack" href="https://thenitishkr.substack.com" aria-label="Substack" title="Substack"><span aria-hidden="true">S</span></a>
         <a class="social-icon social-medium" href="https://medium.com/@thenitishkr" aria-label="Medium" title="Medium"><span aria-hidden="true">M</span></a>
-        <a class="social-icon social-github" href="https://github.com/Tashima-Tarsh" aria-label="GitHub" title="GitHub"><span aria-hidden="true">GH</span></a>
-        <a class="social-icon social-instagram" href="https://www.instagram.com/thenitishkr" aria-label="Instagram" title="Instagram"><span aria-hidden="true">IG</span></a>
+        <a class="social-icon social-github" href="https://github.com/Tashima-Tarsh" aria-label="GH GitHub" title="GitHub"><span aria-hidden="true">GH</span></a>
+        <a class="social-icon social-instagram" href="https://www.instagram.com/thenitishkr" aria-label="IG Instagram" title="Instagram"><span aria-hidden="true">IG</span></a>
         <a class="social-icon social-facebook" href="https://www.facebook.com/thenitishkr" aria-label="Facebook" title="Facebook"><span aria-hidden="true">f</span></a>
         <a class="social-icon social-reddit" href="https://www.reddit.com/user/Ok-File-6559/" aria-label="Reddit" title="Reddit"><span aria-hidden="true">R</span></a>
         <a class="social-icon social-quora" href="https://www.quora.com/profile/Nitish-Kumar-11545" aria-label="Quora" title="Quora"><span aria-hidden="true">Q</span></a>
-        <a class="social-icon social-whatsapp" href="https://wa.me/919142197135" aria-label="WhatsApp Business" title="WhatsApp Business"><span aria-hidden="true">WA</span></a>
+        <a class="social-icon social-whatsapp" href="https://wa.me/919142197135" aria-label="WA WhatsApp Business" title="WhatsApp Business"><span aria-hidden="true">WA</span></a>
         <a class="social-icon social-orcid" href="https://orcid.org/0009-0004-6840-4463" aria-label="ORCID" title="ORCID"><span aria-hidden="true">iD</span></a>
-        <a class="social-icon social-wikidata" href="https://www.wikidata.org/wiki/Q140001166" aria-label="Wikidata" title="Wikidata" rel="me"><span aria-hidden="true">WD</span></a>
+        <a class="social-icon social-wikidata" href="https://www.wikidata.org/wiki/Q140001166" aria-label="WD Wikidata" title="Wikidata" rel="me"><span aria-hidden="true">WD</span></a>
         <a class="social-icon social-amazon" href="https://www.amazon.com/author/nikukr" aria-label="Amazon Author" title="Amazon Author" rel="me"><span aria-hidden="true">A</span></a>
       </div>
     </div>

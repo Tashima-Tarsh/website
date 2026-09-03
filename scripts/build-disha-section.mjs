@@ -550,7 +550,7 @@ const claimRows = [
   ["CTS-13", "DISHA accuracy is self-assessed at 97% against source-linked government records, court materials, audit records and RTI trails.", "DISHA whitepaper Version 6.6", "/assets/docs/disha-whitepaper-what-it-can-what-it-did-v66.pdf", "DISHA validation", "/disha/validation/", "disha", "2026-06-19"],
   ["CTS-14", "DISHA architecture comprises six layers: DISHA Brain, Digital Soldiers, Security Brain, Yudh, Evidence Archive and Public Record Memory.", "DISHA whitepaper Version 6.6", "/assets/docs/disha-whitepaper-what-it-can-what-it-did-v66.pdf", "DISHA overview", "/disha/", "disha", "2026-06-19"],
   ["CTS-15", "DISHA operates under a No-First-Use doctrine: no adversarial action is initiated without a predicate evidence record.", "DISHA whitepaper Version 6.6", "/assets/docs/disha-whitepaper-what-it-can-what-it-did-v66.pdf", "No-First-Use", "/disha/no-first-use-policy/", "disha", "2026-06-19"],
-  ["CTS-16", "The DISHA archive holds 6,000+ evidence items: RTI replies, PDFs, emails, court records and audit trails.", "Evidence inventory", "/EVIDENCE-INVENTORY.md", "DISHA overview", "/disha/", "disha", "2026-06-19"],
+  ["CTS-16", "The DISHA archive holds 6,000+ evidence items: RTI replies, PDFs, emails, court records and audit trails.", "Public source register", "/research-datasets/", "DISHA overview", "/disha/", "disha", "2026-06-19"],
   ["CTS-17", "National media coverage includes PTI, Economic Times, The Tribune, Deccan Herald, New Indian Express, ABP Live, LawTrend and Verdictum.", "Press coverage section", "/news/#press-coverage", "Media coverage", "/news/#press-coverage", "corroborated", "2026-06-19"],
   ["CTS-18", "Nitish Kumar (@thenitishkr) published Era of Stupidity: Citizen Not Found, ISBN 978-9355920126.", "Amazon author page", "https://www.amazon.com/author/nikukr", "Books", "/books/", "corroborated", "2026-06-19"],
   ["CTS-19", "Nitish Kumar (@thenitishkr) published Sleeping Guardian: India Lost Justice, ISBN 979-8274694070.", "Amazon author page", "https://www.amazon.com/author/nikukr", "Books", "/books/", "corroborated", "2026-06-19"],
@@ -561,7 +561,7 @@ const claimRows = [
   ["CTS-24", "Migrant populations in Bihar were not adequately accounted for during SIR 2025, risking disenfranchisement.", "Case 12 source record", "/intelligence/sir-constitutional-scam/", "Case 12 - SIR", "/intelligence/sir-constitutional-scam/", "unresolved", "2026-06-19"],
   ["CTS-25", "Bihar's pending UC volume, Rs 70,877.61 crore, is the highest among states audited in the CAG 2024 report.", "CAG Report 2024 state table", "https://cag.gov.in", "Case 01 - NDMA", "/intelligence/ndma-disaster-governance/", "official", "2026-06-19"],
   ["CTS-26", "The DISHA whitepaper is publicly available at /assets/docs/disha-whitepaper-what-it-can-what-it-did-v66.pdf.", "DISHA whitepaper Version 6.6", "/assets/docs/disha-whitepaper-what-it-can-what-it-did-v66.pdf", "DISHA overview", "/disha/", "disha", "2026-06-19"],
-  ["CTS-27", "RTI replies obtained under the Right to Information Act 2005 form part of the evidence base across multiple case files.", "Evidence inventory", "/EVIDENCE-INVENTORY.md", "Intelligence archive", "/intelligence/", "official", "2026-06-19"]
+  ["CTS-27", "RTI replies obtained under the Right to Information Act 2005 form part of the evidence base across multiple case files.", "Public source register", "/research-datasets/", "Intelligence archive", "/intelligence/", "official", "2026-06-19"]
 ];
 
 function badge(label) {

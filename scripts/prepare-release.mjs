@@ -31,7 +31,7 @@ function copy(directory, destination) {
   for (const entry of fs.readdirSync(directory, { withFileTypes: true })) {
     if (
       excludedNames.has(entry.name) ||
-      (entry.name.endsWith(".md") && entry.name !== "EVIDENCE-INVENTORY.md")
+      entry.name.endsWith(".md")
     ) {
       continue;
     }
@@ -48,10 +48,4 @@ function copy(directory, destination) {
 }
 
 copy(root, output);
-
-const publicEvidenceInventory = path.join(output, "EVIDENCE-INVENTORY.md");
-if (!fs.existsSync(publicEvidenceInventory)) {
-  throw new Error("Public evidence inventory is missing from the release artifact.");
-}
-
 console.log(`Prepared Cloudflare release in ${output}.`);

@@ -48,6 +48,12 @@ export async function onRequest(context) {
   const url = new URL(context.request.url);
   const path = url.pathname;
 
+  if (url.hostname === "www.thenitishkr.in") {
+    url.hostname = "thenitishkr.in";
+    url.protocol = "https:";
+    return Response.redirect(url.toString(), 301);
+  }
+
   if (GONE_PATHS.has(path)) {
     return new Response(GONE_HTML, {
       status: 410,

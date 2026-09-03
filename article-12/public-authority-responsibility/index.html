@@ -29,11 +29,7 @@
       ['pointerdown', 'keydown', 'scroll', 'touchstart'].forEach((eventName) => {
         window.addEventListener(eventName, load, { once: true, passive: true });
       });
-      if ('requestIdleCallback' in window) {
-        requestIdleCallback(load, { timeout: 20000 });
-      } else {
-        window.addEventListener('load', () => setTimeout(load, 20000), { once: true });
-      }
+      load();
     })();
   </script>
 </head><body>

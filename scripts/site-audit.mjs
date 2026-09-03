@@ -298,6 +298,9 @@ for (const file of files) {
   if (!/G-YJ314E1YHG/.test(html)) {
     errors.push(`${name}: missing GA4 measurement tag G-YJ314E1YHG`);
   }
+  if (/loadAnalyticsAfterFirstPaint/.test(html) && !/^[ \t]*load\(\);[ \t]*$/m.test(html)) {
+    errors.push(`${name}: GA4 loader must start asynchronously without a delayed fallback`);
+  }
   const visible = visibleMarkup(html);
   if (/Diksha Sharma/i.test(visible)) {
     errors.push(`${name}: successor or co-author name must not appear in visible content`);

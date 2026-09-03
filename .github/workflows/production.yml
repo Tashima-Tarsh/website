@@ -69,48 +69,8 @@ jobs:
             echo "Attached www.thenitishkr.in."
           fi
 
-      - name: Ensure the proxied www DNS record exists
-        env:
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          CLOUDFLARE_ACCOUNT_ID: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
-          CLOUDFLARE_PAGES_PROJECT: ${{ vars.CLOUDFLARE_PAGES_PROJECT }}
-        run: |
-          set -euo pipefail
-          auth=(-H "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}" -H "Content-Type: application/json")
-          zone=$(curl --fail-with-body --silent --show-error "${auth[@]}" \
-            "https://api.cloudflare.com/client/v4/zones?name=thenitishkr.in")
-          zone_id=$(jq -er '.result[0].id' <<<"${zone}")
-          project=$(curl --fail-with-body --silent --show-error "${auth[@]}" \
-            "https://api.cloudflare.com/client/v4/accounts/${CLOUDFLARE_ACCOUNT_ID}/pages/projects/${CLOUDFLARE_PAGES_PROJECT}")
-          target=$(jq -er '.result.subdomain' <<<"${project}")
-          records_endpoint="https://api.cloudflare.com/client/v4/zones/${zone_id}/dns_records"
-          existing=$(curl --fail-with-body --silent --show-error "${auth[@]}" \
-            "${records_endpoint}?type=CNAME&name=www.thenitishkr.in")
-          record_id=$(jq -r '.result[0].id // empty' <<<"${existing}")
-          payload=$(jq -nc --arg target "${target}" \
-            '{type:"CNAME",name:"www",content:$target,ttl:1,proxied:true}')
-          if [[ -n "${record_id}" ]]; then
-            curl --fail-with-body --silent --show-error "${auth[@]}" -X PUT \
-              --data "${payload}" "${records_endpoint}/${record_id}" \
-              | jq -e '.success == true' >/dev/null
-            echo "Updated the www CNAME to ${target}."
-          else
-            curl --fail-with-body --silent --show-error "${auth[@]}" -X POST \
-              --data "${payload}" "${records_endpoint}" \
-              | jq -e '.success == true' >/dev/null
-            echo "Created the www CNAME to ${target}."
-          fi
-
       - name: Wait for custom domain propagation
-        run: |
-          for attempt in $(seq 1 20); do
-            if curl --silent --fail --head --max-time 15 https://www.thenitishkr.in/ >/dev/null; then
-              exit 0
-            fi
-            echo "Waiting for www DNS and TLS propagation (attempt ${attempt}/20)."
-            sleep 15
-          done
-          exit 1
+        run: sleep 20
 
       - name: Verify every live canonical URL
         run: npm run verify:live

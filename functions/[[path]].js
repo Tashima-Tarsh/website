@@ -20,6 +20,7 @@ const GONE_HTML = `<!doctype html>
 </html>`;
 
 const GONE_PATHS = new Set([
+  "/EVIDENCE-INVENTORY.md",
   "/media/",
   "/media/index.html",
   "/media.html",

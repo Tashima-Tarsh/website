@@ -1523,14 +1523,8 @@ h3 {
 
 .reveal {
   opacity: 1;
-  transform: translateY(0);
-  animation: soft-rise .62s ease both;
-  will-change: opacity, transform;
-}
-
-@keyframes soft-rise {
-  from { opacity: .01; transform: translateY(12px); }
-  to { opacity: 1; transform: translateY(0); }
+  transform: none;
+  animation: none;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -2238,8 +2232,8 @@ h3 {
 .hero-intro a:hover { color: var(--red); }
 .home-hero-title { font-size: clamp(34px, 5vw, 62px) !important; line-height: 1.04 !important; }
 .home-page main p:not(.eyebrow):not(.label):not(.stat-label):not(.stat-sub):not(.footer-kicker) {
-  text-align: justify;
-  hyphens: auto;
+  text-align: start;
+  hyphens: manual;
 }
 
 /* related-card links */

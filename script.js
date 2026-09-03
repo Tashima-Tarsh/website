@@ -135,6 +135,17 @@ function canonicalPublicationUrl(url) {
   }
 }
 
+function isApprovedPublicationUrl(url) {
+  try {
+    const parsed = new URL(url);
+    const hostname = parsed.hostname.toLowerCase();
+    if (hostname === "thenitishkr.substack.com") return parsed.pathname.startsWith("/p/");
+    return ALLOWED_PUBLICATION_URLS.has(canonicalPublicationUrl(url));
+  } catch (_) {
+    return false;
+  }
+}
+
 function updateItemListSchema(id, name, items, mapper) {
   const element = document.getElementById(id);
   if (!element) return;
@@ -183,12 +194,15 @@ async function fetchWithTimeout(url, timeout = 9000) {
 
 async function loadFeed(feed) {
   const freshFeedUrl = feed.url + (feed.url.includes("?") ? "&" : "?") + "t=" + Date.now();
-  const jsonResponse = await fetchWithTimeout("https://api.rss2json.com/v1/api.json?rss_url=" + encodeURIComponent(freshFeedUrl), 12000);
-  if (jsonResponse.ok) {
-    const data = await jsonResponse.json();
-    const items = (data.items || []).map((item) => normalizeItem(item, feed.source));
-    if (items.length) return items;
-  }
+  let bestItems = [];
+  try {
+    const jsonResponse = await fetchWithTimeout("https://api.rss2json.com/v1/api.json?rss_url=" + encodeURIComponent(freshFeedUrl), 12000);
+    if (jsonResponse.ok) {
+      const data = await jsonResponse.json();
+      const items = (data.items || []).map((item) => normalizeItem(item, feed.source));
+      if (items.length) bestItems = items;
+    }
+  } catch (_) {}
 
   const rawUrls = [
     "https://api.allorigins.win/raw?url=" + encodeURIComponent(freshFeedUrl),
@@ -196,13 +210,15 @@ async function loadFeed(feed) {
   ];
 
   for (const url of rawUrls) {
-    const response = await fetchWithTimeout(url, 9000);
-    if (!response.ok) continue;
-    const items = parseRss(await response.text(), feed.source);
-    if (items.length) return items;
+    try {
+      const response = await fetchWithTimeout(url, 9000);
+      if (!response.ok) continue;
+      const items = parseRss(await response.text(), feed.source);
+      if (items.length > bestItems.length) bestItems = items;
+    } catch (_) {}
   }
 
-  return [];
+  return bestItems;
 }
 
 function renderPagedArchive(container, items, renderCard, options = {}) {
@@ -285,6 +301,14 @@ function renderPublications(items) {
     perPage: 4
   });
   publicationGrid.classList.add("is-loaded");
+
+  const status = document.querySelector("[data-publication-sync-status]");
+  if (status) {
+    const substackCount = items.filter((item) => item.source === "Substack").length;
+    const newest = items.find((item) => item.date && !Number.isNaN(item.date.valueOf()));
+    const newestLabel = newest ? newest.date.toLocaleDateString("en-IN", { day: "numeric", month: "long", year: "numeric" }) : "latest available date";
+    status.textContent = `${substackCount} Substack post${substackCount === 1 ? "" : "s"} synced · newest publication ${newestLabel}`;
+  }
 
   updateItemListSchema("publication-schema", "thenitishkr Substack and Medium publications", items, (item) => ({
     "@type": "Article",
@@ -401,13 +425,13 @@ async function loadPublications() {
     const items = results
       .filter((result) => result.status === "fulfilled")
       .flatMap((result) => result.value)
-      .filter((item) => ALLOWED_PUBLICATION_URLS.has(canonicalPublicationUrl(item.link)))
+      .filter((item) => isApprovedPublicationUrl(item.link))
       .sort((a, b) => (b.date || 0) - (a.date || 0));
 
     const approved = new Map();
     [...items, ...TRUSTED_PUBLICATIONS].forEach((item) => {
       const key = canonicalPublicationUrl(item.link);
-      if (!ALLOWED_PUBLICATION_URLS.has(key) || approved.has(key)) return;
+      if (!isApprovedPublicationUrl(key) || approved.has(key)) return;
       approved.set(key, { ...item, image: optimizeImageUrl(item.image) });
     });
 
@@ -438,6 +462,7 @@ function loadWhenNearViewport(element, callback) {
 }
 
 loadPublications();
+if (publicationGrid) window.setInterval(loadPublications, 30 * 60 * 1000);
 loadWhenNearViewport(mediaGrid, loadMediaCoverage);
 
 const RELATED_RECORDS = {
@@ -518,6 +543,19 @@ function installReadingProgress() {
   window.addEventListener("resize", update);
 }
 
+function installCaseJourneyTracking() {
+  const journey = document.querySelector("[data-case-journey]");
+  if (!journey || !("IntersectionObserver" in window)) return;
+  const links = Array.from(journey.querySelectorAll('a[href^="#"]'));
+  const targets = links.map((link) => document.querySelector(link.getAttribute("href"))).filter(Boolean);
+  const observer = new IntersectionObserver((entries) => {
+    const visible = entries.filter((entry) => entry.isIntersecting).sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+    if (!visible) return;
+    links.forEach((link) => link.toggleAttribute("aria-current", link.getAttribute("href") === `#${visible.target.id}`));
+  }, { rootMargin: "-18% 0px -68%", threshold: [0, .15, .5] });
+  targets.forEach((target) => observer.observe(target));
+}
+
 function installRecordToolkit() {
   const main = document.querySelector("main");
   if (!main || document.querySelector(".record-toolkit")) return;
@@ -559,7 +597,7 @@ function installRecordToolkit() {
         <span>Research analysis</span>
         <span>Public commentary</span>
       </div>
-      ${sourceTarget ? `<a class="source-jump" href="#${sourceTarget.id}">Jump to source file</a>` : ""}
+      ${sourceTarget ? `<a class="source-jump" href="#${sourceTarget.id}">Read source documents on this page</a>` : ""}
     </div>`;
   main.insertBefore(toolkit, main.children[1] || main.firstChild);
 }
@@ -614,6 +652,7 @@ function installTrustCitation() {
 }
 
 installRecordToolkit();
+installCaseJourneyTracking();
 installRelatedRecords();
 installTrustCitation();
 
@@ -695,3 +734,38 @@ function installSwg() {
 }
 installSwg();
 
+/* DISHA product journey: one consistent route across every architecture page. */
+function installDishaProductJourney() {
+  if (!document.body.classList.contains("disha-architecture-page")) return;
+  const main = document.querySelector("main#main-content");
+  if (!main || main.querySelector(".disha-product-nav")) return;
+
+  const routes = [
+    ["/disha/", "Overview"],
+    ["/disha/origin/", "Origin"],
+    ["/disha/methodology/", "Method"],
+    ["/disha/claim-to-source-system/", "Sources"],
+    ["/disha/cognitive-engine/", "Decision cycle"],
+    ["/disha/validation/", "Validation"],
+    ["/disha/nyaya/", "NYAYA"],
+    ["/disha/glossary/", "Glossary"]
+  ];
+  const current = window.location.pathname.endsWith("/") ? window.location.pathname : `${window.location.pathname}/`;
+  const nav = document.createElement("nav");
+  nav.className = "disha-product-nav";
+  nav.setAttribute("aria-label", "DISHA product navigation");
+  nav.innerHTML = `<div class="disha-product-nav__inner"><a class="disha-product-nav__brand" href="/disha/"><strong>DISHA 6.6</strong><span>Public architecture</span></a><div class="disha-product-nav__links">${routes.map(([href, label]) => `<a href="${href}"${current === href ? ' aria-current="page"' : ""}>${label}</a>`).join("")}</div><a class="disha-product-nav__action" href="/assets/docs/disha-whitepaper-what-it-can-what-it-did-v66.pdf">Read whitepaper</a></div>`;
+  main.prepend(nav);
+
+  if (current === "/disha/") return;
+  const currentIndex = routes.findIndex(([href]) => href === current);
+  const next = currentIndex >= 0 && currentIndex < routes.length - 1 ? routes[currentIndex + 1] : routes[0];
+  const journey = document.createElement("aside");
+  journey.className = "disha-reading-actions";
+  journey.setAttribute("aria-label", "Continue reading DISHA");
+  journey.innerHTML = `<div><span>DISHA reading path</span><strong>Keep the architecture in view.</strong></div><div class="disha-reading-actions__links"><a href="/disha/">Return to overview</a><a class="is-primary" href="${next[0]}">Next: ${next[1]}</a></div>`;
+  const hero = main.querySelector(".disha-hero");
+  if (hero) hero.after(journey);
+}
+
+installDishaProductJourney();

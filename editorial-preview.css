@@ -21,6 +21,8 @@
   --ink: #1a1a1a;
   --muted: #536173;
   --line: #e8edf5;
+  --navy: #062651;
+  --blue: #12437a;
   --red: #062651;
   --red-2: #12437a;
   --gold: #c89451;
@@ -943,4 +945,67 @@ figure figcaption,
   .external-press-records__inner {
     padding: 24px;
   }
+}
+
+/* Homepage: keep the navy editorial palette, not leftover cream/brown */
+.traffic-shelf {
+  background: #f7f9fc;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.traffic-card {
+  border: 1px solid var(--line);
+  border-top: 4px solid var(--red);
+  background: #ffffff;
+  box-shadow: var(--shadow);
+}
+
+.traffic-card::before {
+  border-color: var(--line);
+  color: var(--red);
+  background: #f7f9fc;
+}
+
+.traffic-card:nth-child(2n) { border-top-color: var(--red-2); }
+.traffic-card:nth-child(2n)::before {
+  border-color: var(--line);
+  color: var(--red-2);
+  background: #f7f9fc;
+}
+
+.traffic-card:nth-child(3n) { border-top-color: var(--gold); }
+.traffic-card:nth-child(3n)::before {
+  border-color: rgba(200, 148, 81, .35);
+  color: #8c5308;
+  background: #f7f9fc;
+}
+
+.traffic-card__meta span,
+.traffic-card__meta time {
+  border-color: var(--line);
+  color: var(--red-2);
+  background: #f7f9fc;
+}
+
+.traffic-card h3 {
+  color: var(--red);
+}
+
+.traffic-card__question {
+  color: var(--ink) !important;
+}
+
+.traffic-card__action {
+  color: var(--red-2);
+}
+
+.traffic-card:hover {
+  border-color: rgba(6, 38, 81, .22);
+  box-shadow: var(--shadow);
+}
+
+.traffic-route {
+  border-color: var(--line);
+  background: #ffffff;
 }

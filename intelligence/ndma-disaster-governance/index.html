@@ -517,6 +517,10 @@
     }
   </style>
   <script id="faq-schema" type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","@id":"https://thenitishkr.in/intelligence/ndma-disaster-governance/#faq","mainEntity":[{"@type":"Question","name":"What is W.P.(Crl.) No. 394/2025?","acceptedAnswer":{"@type":"Answer","text":"W.P.(Crl.) No. 394/2025 is a Supreme Court petition concerning disaster governance accountability, specifically the roles of the NDMA and NITI Aayog in public disaster fund management and governance failures."}},{"@type":"Question","name":"What does the NDMA case file document?","acceptedAnswer":{"@type":"Answer","text":"The NDMA Disaster-Fund Accountability case documents public-interest research into the gap between reported disaster fund allocation and on-ground disaster response outcomes, using public records and DISHA Intelligence Architecture analysis."}},{"@type":"Question","name":"Who filed the NDMA accountability petition?","acceptedAnswer":{"@type":"Answer","text":"Nitish Kumar (thenitishkr), independent researcher and inventor of DISHA Intelligence Architecture, is the petitioner-in-person in the Supreme Court petition concerning NDMA and disaster governance accountability."}}]}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles/case-premium-shared.css?v=20260903">
   <!-- Google tag queued after first paint -->
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -583,6 +587,7 @@
   </div>
 </section>
 
+<nav class="ndma-journey" aria-label="Follow this case" data-case-journey><div><span>Follow this case</span><a href="#question">Core question</a><a href="#states">State evidence</a><a href="#ledger">Evidence ledger</a><a href="#timeline">Timeline</a><a href="#law">Legal framework</a><a href="#prayers">Reliefs</a><a class="ndma-journey-cta" href="#source">Read source extracts</a></div></nav>
 <section id="question">
  <div class="archive-container">
   <div class="panel">
@@ -608,10 +613,12 @@
 <section id="ledger">
  <div class="archive-container">
   <div class="section-title">
-    <div><h2>Evidence ledger</h2><p class="sub">A searchable audit-style index with state, category, finding, legal relevance, source pages, and publication status.</p></div>
+    <div><span class="ledger-kicker">Searchable public record</span><h2>Evidence ledger</h2><p class="sub">A searchable audit-style index with state, category, finding, legal relevance, source pages, and publication status.</p></div>
   </div>
-  <div class="filters"><input id="ledgerSearch" placeholder="Search ledger…"></div>
+  <div class="ledger-guide"><div><strong>Find a record</strong><p>Search by state, authority, audit issue, legal provision, fund trail, or source reference.</p></div><nav aria-label="Evidence ledger actions"><a href="#states">Review state evidence</a><a href="#source">Read source extracts</a><a href="#timeline">Continue to chronology</a></nav></div>
+  <div class="filters ledger-search"><label for="ledgerSearch">Search this ledger</label><input id="ledgerSearch" placeholder="Search the evidence ledger"><span id="ledgerCount" aria-live="polite"></span></div>
   <div class="table-wrap"><table id="ledgerTable"><thead><tr><th>ID</th><th>State</th><th>Category</th><th>Finding</th><th>Legal relevance</th><th>Source</th><th>Status</th></tr></thead><tbody></tbody></table></div>
+  <aside class="ledger-next"><div><span>Continue the evidence path</span><strong>See when the recorded failures occurred and how the petition connects them.</strong></div><a href="#timeline">Read the chronology <span aria-hidden="true">&#8595;</span></a></aside>
  </div>
 </section>
 
@@ -619,6 +626,7 @@
  <div class="archive-container">
   <div class="section-title"><div><h2>Disaster-linked chronology</h2><p class="sub">The pleaded timeline converts scattered events into a structured constitutional-breach sequence.</p></div></div>
   <div id="timelineList" class="timeline"></div>
+  <aside class="timeline-next"><div><span>Follow the record</span><strong>Compare this chronology with the indexed findings and preserved source extracts.</strong></div><nav aria-label="Chronology actions"><a href="#ledger">Check the evidence ledger</a><a href="#source">Verify source extracts</a></nav></aside>
  </div>
 </section>
 
@@ -741,15 +749,26 @@ function setupFilters(){
 function renderLedger(){
  const q = $('ledgerSearch').value.toLowerCase();
  const tbody = document.querySelector('#ledgerTable tbody');
- tbody.innerHTML = DATA.evidence.filter(e=>Object.values(e).join(' ').toLowerCase().includes(q)).map(e=>`
+ const matches = DATA.evidence.filter(e=>Object.values(e).join(' ').toLowerCase().includes(q));
+ const count = $('ledgerCount');
+ if(count) count.textContent = `${matches.length} record${matches.length === 1 ? '' : 's'} shown`;
+ tbody.innerHTML = matches.map(e=>`
  <tr><td><b>${esc(e.id)}</b></td><td>${esc(e.state)}</td><td>${esc(e.category)}</td><td>${esc(e.finding)}</td><td>${esc(e.legal)}</td><td>${esc(e.source)}</td><td>${esc(e.status)}</td></tr>`).join('');
 }
 function renderTimeline(){
- $('timelineList').innerHTML = DATA.timeline.map(t=>`
-   <div class="titem"><div class="year">${esc(t.year)}</div><div class="tbox"><b>${esc(t.event)}</b><p>${esc(t.breach)}</p><p class="small">${esc(t.impact)}</p></div></div>`).join('');
+ $('timelineList').innerHTML = DATA.timeline.map((t,i)=>`
+   <article class="titem">
+     <time class="year">${esc(t.year)}</time>
+     <div class="tbox">
+       <span class="timeline-index">Record ${String(i + 1).padStart(2, '0')}</span>
+       <h3>${esc(t.event)}</h3>
+       <div class="timeline-finding"><b>Governance issue</b><p>${esc(t.breach)}</p></div>
+       <div class="timeline-impact"><b>Pleaded impact</b><p>${esc(t.impact)}</p></div>
+     </div>
+   </article>`).join('');
 }
 function renderLaw(){
- $('lawGrid').innerHTML = DATA.legal.map(l=>`<div class="card law"><h3>${esc(l.title)}</h3><p>${esc(l.desc)}</p><div class="kv"><b>Use:</b> ${esc(l.use)}</div></div>`).join('');
+ $('lawGrid').innerHTML = DATA.legal.map(l=>`<article class="card law"><span class="law-label">Legal framework</span><h3>${esc(l.title)}</h3><p>${esc(l.desc)}</p><div class="law-purpose"><b>Why it matters</b><span>${esc(l.use)}</span></div><nav class="law-actions" aria-label="Actions for ${esc(l.title)}"><a href="#prayers">See requested reliefs</a><a href="#source">Verify source extracts</a></nav></article>`).join('');
 }
 function renderPrayers(){
  $('prayerList').innerHTML = DATA.prayers.map(p=>`<li>${esc(p)}</li>`).join('');

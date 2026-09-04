@@ -46,7 +46,7 @@
   <link rel="me" href="https://www.wikidata.org/wiki/Q140001166">
   <link rel="me" href="https://www.amazon.com/author/nikukr">
   <script id="about-canonical-person-schema" type="application/ld+json">{"@context":"https://schema.org","@type":"Person","@id":"https://thenitishkr.in/about/#person","name":"Nitish Kumar","alternateName":["thenitishkr","Nitish Kumar (thenitishkr)"],"url":"https://thenitishkr.in/about/","mainEntityOfPage":"https://thenitishkr.in/about/","description":"Independent public-interest researcher, author, DISHA inventor, and National Cyber Security Scholar working on cyber evidence, constitutional accountability, digital governance, and public records in India.","sameAs":["https://thenitishkr.in/","https://thenitishkr.substack.com/","https://thenitishkr.medium.com/","https://medium.com/@thenitishkr","https://www.linkedin.com/in/thenitishkr","https://x.com/thenitishkr","https://github.com/Tashima-Tarsh","https://www.instagram.com/thenitishkr","https://www.facebook.com/thenitishkr","https://www.quora.com/profile/Nitish-Kumar-11545","https://orcid.org/0009-0004-6840-4463","https://www.wikidata.org/wiki/Q140001166","https://www.credly.com/users/nitish-kumar.57fd1000/badges"],"knowsAbout":["Cybersecurity","Digital governance","Constitutional accountability","Article 12 of the Constitution of India","DISHA Intelligence Architecture","Public-interest research","Adtech surveillance"]}</script>
-  <link rel="stylesheet" href="/styles.css?v=20260626">
+  <link rel="stylesheet" href="/styles.css?v=20260904-about-profile">
   <link rel="stylesheet" href="/editorial-preview.css?v=preview-20260610">
   <meta name="IndexNow-Verification" content="a0151dcfc802e79c4c6818a68dfd9fef">
 
@@ -116,15 +116,6 @@
     }
     .about-hero .hero-portrait img { width: 100%; height: auto; display: block; border-radius: 0; }
     .about-speakable-intro { font-size: 1.05rem; line-height: 1.75; }
-    .about-disambiguation {
-      border-left: 3px solid #8B4513;
-      padding: 12px 16px;
-      background: #f5efe6;
-      color: #3D3330;
-      font-size: 0.9rem;
-      margin-top: 20px;
-      border-radius: 0 4px 4px 0;
-    }
     .credential-bar { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
     .credential-bar-item { padding: 24px; background: #F0EBE3; border-radius: 4px; border-top: 3px solid #2D5016; }
     .credential-bar-item .cb-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.12em; color: #8B4513; font-weight: 700; margin-bottom: 8px; }
@@ -150,23 +141,20 @@
       word-spacing: normal;
       overflow-wrap: break-word;
     }
-    .about-disha-record {
-      background: #fffdf7;
-      border-top: 1px solid rgba(45,36,24,.12);
-      border-bottom: 1px solid rgba(45,36,24,.12);
-    }
+    .about-disha-record { padding-top: 34px; padding-bottom: 34px; background: #fffdf7; border-top: 1px solid rgba(45,36,24,.12); border-bottom: 1px solid rgba(45,36,24,.12); }
     .about-disha-grid {
       display: grid;
-      grid-template-columns: minmax(0, 1.18fr) minmax(320px, .82fr);
-      gap: 34px;
-      align-items: start;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 32px;
+      align-items: center;
     }
     .about-disha-copy {
       display: grid;
-      gap: 16px;
+      gap: 10px;
     }
     .about-disha-copy h2 {
-      max-width: 760px;
+      max-width: 900px;
+      margin-bottom: 0;
     }
     .about-disha-copy .lead {
       margin-top: 0;
@@ -175,50 +163,7 @@
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
-      margin-top: 8px;
-    }
-    .about-disha-panel {
-      display: grid;
-      gap: 12px;
-      padding: 24px;
-      border: 1px solid rgba(7,26,66,.14);
-      border-top: 4px solid #2D5016;
-      border-radius: 4px;
-      background: #F0EBE3;
-    }
-    .about-disha-panel h3 {
-      margin: 0;
-      font-size: 1.15rem;
-      color: #2D5016;
-    }
-    .about-disha-facts {
-      display: grid;
-      gap: 0;
-      margin: 0;
-    }
-    .about-disha-facts div {
-      display: grid;
-      grid-template-columns: 124px minmax(0, 1fr);
-      gap: 12px;
-      padding: 11px 0;
-      border-top: 1px solid rgba(45,36,24,.14);
-    }
-    .about-disha-facts div:first-child {
-      border-top: 0;
-    }
-    .about-disha-facts dt {
-      color: #8B4513;
-      font-size: .7rem;
-      font-weight: 800;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-    }
-    .about-disha-facts dd {
-      margin: 0;
-      color: #2C2420;
-      font-size: .88rem;
-      line-height: 1.55;
-      overflow-wrap: anywhere;
+      margin-top: 0;
     }
     .about-story-grid { display: grid; grid-template-columns: 1.6fr 1fr; gap: 40px; align-items: start; }
     .about-story-aside { background: #F0EBE3; border-radius: 4px; padding: 28px; border-top: 3px solid #8B4513; }
@@ -335,7 +280,6 @@
     }
     @media (max-width: 600px) {
       .credential-bar { grid-template-columns: 1fr; }
-      .about-disha-facts div { grid-template-columns: 1fr; gap: 4px; }
       .research-grid { grid-template-columns: 1fr; }
       .flow-strip { grid-template-columns: 1fr; }
       .verify-grid { grid-template-columns: 1fr; }
@@ -408,9 +352,6 @@
         <p class="lead" style="margin-bottom:20px;">Inventor of DISHA 6.6 and independent public-interest researcher working on cyber evidence, constitutional accountability, digital governance, and institutional failure in India.</p>
         <p class="about-speakable-intro">Nitish Kumar (thenitishkr) is the inventor of DISHA and lead architect of DISHA 6.6. His public-interest research examines what happens after harm: whether digital systems, public institutions, and constitutional mechanisms can still identify the citizen, preserve the record, and produce accountable response. He is the author of <em>Era of Stupidity: Citizen Not Found</em> (<span class="mono">ISBN 978-93-5592-012-6</span>) and <em>Sleeping Guardian: India Lost Justice</em> (<span class="mono">ISBN 979-8274694070</span>), and holds ORCID <span class="mono"><a href="https://orcid.org/0009-0004-6840-4463" target="_blank" aria-label="0009-0004-6840-4463 (opens in new tab)" rel="noopener" style="color:#2D5016">0009-0004-6840-4463</a></span> and Wikidata <span class="mono"><a href="https://www.wikidata.org/wiki/Q140001166" target="_blank" aria-label="Q140001166 (opens in new tab)" rel="noopener" style="color:#2D5016">Q140001166</a></span>.</p>
         <p style="margin-top:16px; color:#2C2420; line-height:1.7;">Professionally, he builds and governs large-scale technology and digital-transformation systems. Independently, he applies the same discipline of evidence, traceability, validation, and accountable decision-making to public records, legal questions, and documentary research.</p>
-        <div class="about-disambiguation">
-          This page refers to Nitish Kumar (thenitishkr) — inventor of DISHA 6.6, independent public-interest researcher, author and National Cyber Security Scholar. He is not the Bihar politician of the same name.
-        </div>
         <div class="hero-actions" style="margin-top:28px;">
           <a class="button" href="/disha/">View DISHA</a>
           <a class="button secondary" href="/intelligence/">Read the Archive</a>
@@ -424,10 +365,11 @@
     </section>
 
     <section class="section identity-map" aria-labelledby="identity-map-title">
-      <div class="reveal">
-        <p class="eyebrow">Identity hub</p>
-        <h2 id="identity-map-title">Official identity map</h2>
-        <p class="lead">Nitish Kumar publishes under the public handle thenitishkr. This website, thenitishkr.in, is the canonical archive for DISHA, public-interest research, constitutional accountability records, books, source trails, and correction routes.</p>
+      <div class="identity-map-cta reveal">
+        <div class="identity-map-heading">
+          <p class="eyebrow">Official identity map</p>
+          <h2 id="identity-map-title">Verify the official profiles.</h2>
+        </div>
         <ul>
           <li><a href="https://thenitishkr.in/" rel="me">Official website</a></li>
           <li><a href="https://thenitishkr.substack.com/" rel="me">Substack</a></li>
@@ -467,64 +409,76 @@
       </div>
     </section>
 
-    <!-- 2.3 PROFILE SUMMARY -->
-    <section class="section split disha-product" id="profile">
-      <div class="reveal">
-        <p class="eyebrow">Profile</p>
-        <h2>Independent researcher, DISHA inventor, and public-interest author.</h2>
-        <p class="lead">Nitish Kumar's work developed from questions about records, institutions, accountability, and the consequences of digital silence. His research combines constitutional law, cyber forensics, public policy, AI governance, cybersecurity, disaster management, and digital infrastructure, drawing from court records, RTI disclosures, parliamentary proceedings, CAG audit reports, and publicly available evidence.</p>
-        <p>Professionally, he builds and governs large technology systems. Independently, he applies the same discipline to questions of data, surveillance, public records, and constitutional accountability in India.</p>
-      </div>
-      <div class="reveal" style="display:grid; gap:16px; grid-template-columns:1fr 1fr; align-content:start;">
-        <div class="card">
-          <span class="label">01</span>
-          <h3>Research</h3>
-          <p>Constitutional law, cyber forensics, adtech surveillance, public records, AI governance</p>
+    <!-- 2.3 ABOUT AND RESEARCH PATHS -->
+    <section class="section about-profile" id="profile" aria-labelledby="about-profile-title">
+      <div class="about-profile-grid">
+        <div class="about-profile-intro reveal">
+          <p class="eyebrow">About</p>
+          <h2 id="about-profile-title">The record comes first.</h2>
+          <p class="lead">Nitish Kumar is an independent researcher, inventor of DISHA and public-interest author.</p>
+          <p class="about-profile-question">His work begins with a simple question: <strong>what does the record actually show?</strong></p>
+          <p>From there, the inquiry moves deeper. Who knew? Who had responsibility? What action followed? Where did the system fail? And when technology changes the scale of harm, where does constitutional accountability begin?</p>
+          <p>His research examines these questions across constitutional law, cyber forensics, digital surveillance, AI governance, cybersecurity, disaster governance and public systems in India.</p>
         </div>
-        <div class="card">
-          <span class="label">02</span>
-          <h3>Architecture</h3>
-          <p>DISHA — an evidence-first intelligence architecture for defensive public-interest use</p>
-        </div>
-        <div class="card">
-          <span class="label">03</span>
-          <h3>Writing</h3>
-          <p>Two published books, essays, research records, legal submissions, public commentary</p>
-        </div>
-        <div class="card">
-          <span class="label">04</span>
-          <h3>Record</h3>
-          <p>Documents, source paths, media references, and institutional context kept separate from opinion</p>
+
+        <div class="about-profile-method reveal">
+          <p class="eyebrow">Evidence-first method</p>
+          <h3>The method is evidence-first.</h3>
+          <p>Court records are read against government records. RTI disclosures are tested against official claims. Parliamentary material is connected with audit findings. Technical systems are examined alongside the institutions responsible for governing them.</p>
+          <p>The purpose is not to make the evidence fit a conclusion.</p>
+          <p class="about-profile-method-line">It is to follow the evidence until the institutional question becomes visible.</p>
+          <p>Professionally, Nitish works with large technology systems and their governance. Independently, he applies that systems thinking to public-interest research. This includes data infrastructure, surveillance, institutional responsibility and the constitutional relationship between the citizen and the State.</p>
         </div>
       </div>
+
+      <nav class="about-profile-paths reveal" aria-label="Explore Nitish Kumar's work">
+        <a class="about-profile-path" href="/intelligence/">
+          <span class="about-profile-number">01</span>
+          <span class="about-profile-path-copy">
+            <strong>Research</strong>
+            <span>Evidence-led investigation into constitutional accountability, cyber systems, surveillance, AI governance and public institutions.</span>
+            <span class="about-profile-link">Explore research <span aria-hidden="true">→</span></span>
+          </span>
+        </a>
+        <a class="about-profile-path" href="/disha/">
+          <span class="about-profile-number">02</span>
+          <span class="about-profile-path-copy">
+            <strong>DISHA</strong>
+            <span>An evidence-first intelligence architecture developed for defensive public-interest research and institutional analysis.</span>
+            <span class="about-profile-link">Open DISHA <span aria-hidden="true">→</span></span>
+          </span>
+        </a>
+        <a class="about-profile-path" href="/books/">
+          <span class="about-profile-number">03</span>
+          <span class="about-profile-path-copy">
+            <strong>Writing</strong>
+            <span>Two published books alongside research essays, case records, legal submissions and public commentary.</span>
+            <span class="about-profile-link">View books and writing <span aria-hidden="true">→</span></span>
+          </span>
+        </a>
+        <a class="about-profile-path" href="/editorial-standards/">
+          <span class="about-profile-number">04</span>
+          <span class="about-profile-path-copy">
+            <strong>The Record</strong>
+            <span>Documents remain documents. Evidence remains traceable. Analysis is identified as analysis. The distinction matters.</span>
+            <span class="about-profile-link">Read the standards <span aria-hidden="true">→</span></span>
+          </span>
+        </a>
+      </nav>
     </section>
 
-    <!-- 2.4 DISHA 6.6 PUBLIC RECORD -->
+    <!-- 2.4 DISHA 6.6 READING PATH -->
     <section class="section about-disha-record" id="disha-6-6">
       <div class="about-disha-grid reveal">
         <div class="about-disha-copy">
           <p class="eyebrow">DISHA 6.6 public record</p>
-          <h2>A profile is clearer when the work is explained in human terms.</h2>
-          <p class="lead">DISHA is presented on this site as an evidence-first intelligence architecture: a way to preserve records, connect claims to sources, examine public harm, and keep institutional accountability visible when digital systems become difficult to question.</p>
-          <p>The current public version is DISHA 6.6. The live whitepaper record identifies a 19-page document, updated on 23 June 2026, with the file size and SHA-256 checksum kept on the site for verification. A separate June 2026 news record links the DISHA 6.6 filing to PMOPG/E/2026/0086335 and records a stated 20 July 2026 response deadline.</p>
-          <p>This section replaces the earlier visual dossier because the About page should read like a person and research profile, not a collage of exhibits. Readers who want the evidence trail can still open the DISHA page, the whitepaper record, and the related public archive.</p>
-          <div class="about-disha-actions">
-            <a class="button" href="/disha/">Open DISHA</a>
-            <a class="button secondary" href="/intelligence/documents/disha-whitepaper/">Whitepaper record</a>
-            <a class="button secondary" href="/news/modi-vivatech-disha-6-6/">DISHA 6.6 filing note</a>
-          </div>
+          <h2>Follow the architecture from method to documented record.</h2>
+          <p class="lead">DISHA is an evidence-first intelligence architecture for preserving records, connecting claims to sources, examining public harm and keeping institutional accountability visible.</p>
         </div>
-        <aside class="about-disha-panel">
-          <span class="label">Record details</span>
-          <h3>What the site currently records</h3>
-          <dl class="about-disha-facts">
-            <div><dt>Version</dt><dd>DISHA Intelligence Architecture, Version 6.6</dd></div>
-            <div><dt>Whitepaper</dt><dd>19 pages, 428.1 KB, updated 23 June 2026</dd></div>
-            <div><dt>Checksum</dt><dd>SHA-256 recorded on the whitepaper page</dd></div>
-            <div><dt>Filing</dt><dd>PMOPG/E/2026/0086335, as cited in the June 2026 publication record</dd></div>
-            <div><dt>Deadline</dt><dd>20 July 2026, stated in the related publication record</dd></div>
-          </dl>
-        </aside>
+        <div class="about-disha-actions">
+          <a class="button" href="/disha/">Explore DISHA 6.6</a>
+          <a class="button secondary" href="/intelligence/documents/disha-whitepaper/">View the documentary record</a>
+        </div>
       </div>
     </section>
 
@@ -644,29 +598,7 @@
       </div>
     </section>
 
-    <!-- 2.9 AUTHORITY BAND -->
-    <section class="tone-band">
-      <div class="section split">
-        <div class="reveal">
-          <p class="eyebrow">Authority dossier</p>
-          <h2>Researcher · Author · National Cyber Security Scholar · DISHA Inventor</h2>
-        </div>
-        <div class="reveal" style="display:grid; gap:16px;">
-          <div class="card">
-            <span class="label">Non-commercial record</span>
-            <h3>Public-interest research</h3>
-            <p>Documentation, public accountability, and research continuity. Non-commercial. Independent from any employer or organisation.</p>
-          </div>
-          <div class="card">
-            <span class="label">Verification</span>
-            <h3>Entity clarity</h3>
-            <p>ORCID <span class="mono">0009-0004-6840-4463</span> · Wikidata <span class="mono">Q140001166</span> · Publications 2013–2017 · Media records 2026 · Archive thenitishkr.in</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 2.10 CREDENTIALS GRID -->
+    <!-- 2.9 CREDENTIALS GRID -->
     <section class="section" id="credentials">
       <div class="section-head reveal">
         <div>

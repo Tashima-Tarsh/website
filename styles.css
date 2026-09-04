@@ -2557,30 +2557,172 @@ figcaption {
   background: #fff;
   border-top: 1px solid rgba(23, 36, 60, .1);
   border-bottom: 1px solid rgba(23, 36, 60, .1);
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
 
-.identity-map .reveal {
-  max-width: 980px;
+.identity-map .identity-map-cta {
+  display: grid;
+  grid-template-columns: minmax(220px, .42fr) minmax(0, 1.58fr);
+  gap: 28px;
+  align-items: center;
+  max-width: none;
+  padding: 22px;
+  border: 1px solid rgba(23, 36, 60, .24);
+  border-left: 5px solid var(--navy);
+  background: #fffdf7;
+}
+
+/* About: editorial profile and compact reading paths */
+.about-profile {
+  background: #fff;
+}
+
+.about-profile-grid {
+  display: grid;
+  grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
+  gap: clamp(28px, 5vw, 72px);
+  align-items: start;
+}
+
+.about-profile-intro h2 {
+  max-width: 700px;
+  margin: 8px 0 20px;
+  font-size: clamp(42px, 5.2vw, 72px);
+  line-height: .98;
+}
+
+.about-profile-intro > p:last-child,
+.about-profile-method > p:last-child {
+  margin-bottom: 0;
+}
+
+.about-profile-question {
+  margin: 24px 0;
+  padding: 16px 0 16px 20px;
+  border-left: 4px solid var(--gold);
+  color: var(--navy);
+  font-family: var(--serif);
+  font-size: clamp(22px, 2.2vw, 31px);
+  line-height: 1.22;
+}
+
+.about-profile-method {
+  padding: clamp(24px, 3vw, 38px);
+  border: 1px solid rgba(23, 36, 60, .22);
+  border-top: 5px solid var(--navy);
+  background: #fffdf7;
+}
+
+.about-profile-method h3 {
+  margin: 7px 0 18px;
+  font-size: clamp(29px, 3vw, 42px);
+  line-height: 1.06;
+}
+
+.about-profile-method-line {
+  color: var(--navy);
+  font-family: var(--serif);
+  font-size: clamp(21px, 2vw, 28px);
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.about-profile-paths {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: clamp(30px, 5vw, 56px);
+}
+
+.about-profile-path {
+  display: grid;
+  grid-template-columns: 44px minmax(0, 1fr);
+  gap: 14px;
+  min-height: 220px;
+  padding: 24px;
+  border: 1px solid rgba(23, 36, 60, .22);
+  border-top: 3px solid var(--navy);
+  background: #fff;
+  color: var(--ink);
+  text-decoration: none;
+  transition: border-color .18s ease, background-color .18s ease, transform .18s ease;
+}
+
+.about-profile-path:hover,
+.about-profile-path:focus-visible {
+  border-color: var(--navy);
+  background: #fffaf0;
+  transform: translateY(-2px);
+}
+
+.about-profile-number {
+  color: var(--blue);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: .12em;
+}
+
+.about-profile-path-copy {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.about-profile-path-copy > strong {
+  margin-bottom: 10px;
+  color: var(--navy);
+  font-family: var(--serif);
+  font-size: clamp(27px, 2.5vw, 36px);
+  line-height: 1;
+}
+
+.about-profile-path-copy > span:not(.about-profile-link) {
+  line-height: 1.55;
+}
+
+.about-profile-link {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  margin-top: auto;
+  padding-top: 22px;
+  color: var(--blue);
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: .02em;
+}
+
+.identity-map-heading h2 {
+  margin: 4px 0 0;
+  font-size: clamp(25px, 2.5vw, 36px);
+  line-height: 1.08;
 }
 
 .identity-map ul {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 7px;
   padding: 0;
-  margin: 24px 0 0;
+  margin: 0;
   list-style: none;
 }
 
 .identity-map a {
   display: block;
-  padding: 12px 14px;
+  padding: 8px 11px;
   border: 1px solid rgba(23, 36, 60, .14);
-  border-radius: 4px;
+  border-radius: 2px;
   color: var(--navy);
-  background: var(--paper);
+  background: #fff;
+  font-size: 12px;
   font-weight: 800;
   text-decoration: none;
+}
+
+.identity-map a:hover {
+  border-color: var(--navy);
 }
 
 .site-footer {
@@ -2601,7 +2743,32 @@ figcaption {
     grid-template-columns: 1fr;
   }
 
-  .identity-map ul {
+  .about-profile-grid {
     grid-template-columns: 1fr;
+  }
+
+  .identity-map ul {
+    justify-content: flex-start;
+  }
+
+  .identity-map .identity-map-cta { grid-template-columns: 1fr; gap: 16px; padding: 18px; }
+}
+
+@media (max-width: 640px) {
+  .about-profile-intro h2 {
+    font-size: clamp(40px, 13vw, 56px);
+  }
+
+  .about-profile-method {
+    padding: 22px 18px;
+  }
+
+  .about-profile-paths {
+    grid-template-columns: 1fr;
+  }
+
+  .about-profile-path {
+    min-height: 0;
+    padding: 20px 18px;
   }
 }

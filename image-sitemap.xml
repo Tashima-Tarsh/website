@@ -8,6 +8,10 @@
       <image:title>Documentary archive visual representing public governance records and evidence files</image:title>
     </image:image>
     <image:image>
+      <image:loc>https://thenitishkr.in/assets/images/portrait-1.png</image:loc>
+      <image:title>Nitish Kumar, known publicly as thenitishkr</image:title>
+    </image:image>
+    <image:image>
       <image:loc>https://thenitishkr.in/assets/brand/thenitishkr-logo.png</image:loc>
       <image:title>Nitish Kumar thenitishkr monogram</image:title>
     </image:image>
@@ -210,7 +214,7 @@
   <url>
     <loc>https://thenitishkr.in/disha/</loc>
     <image:image>
-      <image:loc>https://thenitishkr.in/assets/images/disha-version-4.webp</image:loc>
+      <image:loc>https://thenitishkr.in/assets/images/disha/disha-version-6-6-architecture-1200.webp</image:loc>
       <image:title>DISHA Version 6.6 architecture diagram showing signals transformed into evidence, memory, intelligence, and accountability across six public layers.</image:title>
     </image:image>
     <image:image>
@@ -375,6 +379,10 @@
   <url>
     <loc>https://thenitishkr.in/intelligence/</loc>
     <image:image>
+      <image:loc>https://thenitishkr.in/assets/images/intelligence-feed.png</image:loc>
+      <image:title>A visual record from the DISHA Intelligence Archive</image:title>
+    </image:image>
+    <image:image>
       <image:loc>https://thenitishkr.in/assets/brand/thenitishkr-logo.png</image:loc>
       <image:title>Nitish Kumar thenitishkr monogram</image:title>
     </image:image>
@@ -478,6 +486,10 @@
   <url>
     <loc>https://thenitishkr.in/intelligence/meity-digital-governance/</loc>
     <image:image>
+      <image:loc>https://thenitishkr.in/assets/images/supreme-court-meity-order.png</image:loc>
+      <image:title>Supreme Court of India order forwarded to MeitY in W.P. (Crl.) No. 163/2026</image:title>
+    </image:image>
+    <image:image>
       <image:loc>https://thenitishkr.in/assets/brand/thenitishkr-logo.png</image:loc>
       <image:title>Nitish Kumar thenitishkr monogram</image:title>
     </image:image>
@@ -521,11 +533,11 @@
       <image:title>DISHA 6.6 national security disclosure visual reading Fifteen Years, Fifty Days, No Justice</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://thenitishkr.in/images/news/disha-6-6-taxpayer-adtech-surveillance-4x3-display.webp</image:loc>
+      <image:loc>https://thenitishkr.in/images/news/disha-6-6-taxpayer-adtech-surveillance-16x9.webp</image:loc>
       <image:title>DISHA 6.6 news image showing taxpayer-money misuse and citizen-data surveillance through adtech SDKs, NBFC/KYC layers and loan-app networks.</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://thenitishkr.in/images/news/disha-version-6-6-news-4x3-display.webp</image:loc>
+      <image:loc>https://thenitishkr.in/images/news/disha-version-6-6-news-16x9.webp</image:loc>
       <image:title>DISHA Version 6.6 news image showing an evidence-first public intelligence architecture where signals become evidence, memory, intelligence, and accountability.</image:title>
     </image:image>
     <image:image>
@@ -563,6 +575,10 @@
     <image:image>
       <image:loc>https://thenitishkr.in/assets/images/supreme-court-meity-order.png</image:loc>
       <image:title>PTI coverage of Supreme Court direction to MeitY on stolen citizen data</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://substackcdn.com/image/fetch/$s_!KRG9!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fb1b00ccb-0c70-495d-86c0-5dee26507c28_1677x938.png</image:loc>
+      <image:title>Cover image for India Calls Them Natural Disasters. The Files May Tell Another Story.</image:title>
     </image:image>
     <image:image>
       <image:loc>https://thenitishkr.in/assets/images/evidence/files-continue-books.webp</image:loc>

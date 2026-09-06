@@ -66,8 +66,8 @@ const person = {
 const website = {
   "@type": "WebSite",
   "@id": `${site}/#website`,
-  name: "thenitishkr.in",
-  alternateName: ["thenitishkr", "DISHA Intelligence", "DISHA Intelligence 6.6"],
+  name: "thenitishkr",
+  alternateName: ["Nitish Kumar", "thenitishkr.in", "DISHA Intelligence 6.6"],
   url: `${site}/`,
   inLanguage: "en-IN",
   publisher: { "@id": `${site}/about/#person` },

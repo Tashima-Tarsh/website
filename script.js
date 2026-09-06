@@ -193,6 +193,14 @@ async function fetchWithTimeout(url, timeout = 9000) {
 }
 
 async function loadFeed(feed) {
+  if (feed.source === "Substack") {
+    const response = await fetchWithTimeout("/rss-proxy?feed=substack", 12000);
+    if (!response.ok) throw new Error(`Substack feed HTTP ${response.status}`);
+    const data = await response.json();
+    if (!data.ok) throw new Error(data.error || "Substack feed unavailable");
+    return (data.items || []).map((item) => normalizeItem(item, feed.source));
+  }
+
   const freshFeedUrl = feed.url + (feed.url.includes("?") ? "&" : "?") + "t=" + Date.now();
   let bestItems = [];
   try {

@@ -1,9 +1,10 @@
 // Cloudflare Pages Function — server-side RSS proxy
-// Route: /rss-proxy?feed=site|policy|legal
+// Route: /rss-proxy?feed=site|substack|policy|legal
 // site feed: no cache (always fresh). External feeds: 15-min edge cache.
 
 const FEEDS = {
   site:   'https://thenitishkr.in/feed.xml',                          // own archive — always fresh
+  substack: 'https://thenitishkr.substack.com/feed',                  // official author feed
   policy: 'https://www.thehindu.com/news/national/feeder/default.rss', // The Hindu national
   legal:  'https://feeds.feedburner.com/livelaw/llsc',                 // Live Law Supreme Court
 };
@@ -42,7 +43,7 @@ export async function onRequest(context) {
   const key  = url.searchParams.get('feed');
 
   if (!key || !FEEDS[key]) {
-    return new Response(JSON.stringify({ error: 'Invalid feed key. Use: site, policy, legal' }), {
+    return new Response(JSON.stringify({ error: 'Invalid feed key. Use: site, substack, policy, legal' }), {
       status: 400, headers: { 'Content-Type': 'application/json' },
     });
   }

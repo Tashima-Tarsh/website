@@ -21,6 +21,11 @@ document.querySelectorAll(".reveal").forEach((element) => observer.observe(eleme
 
 const publicationGrid = document.querySelector("[data-publication-grid]");
 const mediaGrid = document.querySelector("[data-media-grid]");
+const publicationSection = publicationGrid?.closest("#news-publications");
+const latestRecordsSection = document.querySelector("#current-records");
+if (publicationSection && latestRecordsSection) {
+  latestRecordsSection.parentNode.insertBefore(publicationSection, latestRecordsSection);
+}
 const ALLOWED_PUBLICATION_URLS = new Set([
   "https://thenitishkr.substack.com/p/we-record-everything-we-remember",
   "https://thenitishkr.substack.com/p/india-arrested-the-operators-but",
@@ -421,29 +426,11 @@ async function loadMediaCoverage() {
 async function loadPublications() {
   if (!publicationGrid) return;
   if (publicationGrid.dataset.staticPublications === "true") return;
-  const feeds = [
-    { source: "Substack", url: "https://thenitishkr.substack.com/feed" },
-    { source: "Medium", url: "https://medium.com/feed/@thenitishkr" }
-  ];
   try {
-    const results = await Promise.allSettled(feeds.map(async (feed) => {
-      return loadFeed(feed);
-    }));
-
-    const items = results
-      .filter((result) => result.status === "fulfilled")
-      .flatMap((result) => result.value)
+    const items = (await loadFeed({ source: "Substack", url: "https://thenitishkr.substack.com/feed" }))
       .filter((item) => isApprovedPublicationUrl(item.link))
       .sort((a, b) => (b.date || 0) - (a.date || 0));
-
-    const approved = new Map();
-    [...items, ...TRUSTED_PUBLICATIONS].forEach((item) => {
-      const key = canonicalPublicationUrl(item.link);
-      if (!isApprovedPublicationUrl(key) || approved.has(key)) return;
-      approved.set(key, { ...item, image: optimizeImageUrl(item.image) });
-    });
-
-    renderPublications([...approved.values()].sort((a, b) => (b.date || 0) - (a.date || 0)));
+    renderPublications(items);
   } catch (_) {
     renderPublications(TRUSTED_PUBLICATIONS.map((item) => ({ ...item, image: optimizeImageUrl(item.image) })));
   }

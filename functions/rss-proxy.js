@@ -59,7 +59,7 @@ export async function onRequest(context) {
   // For external feeds only — try edge cache first
   if (!isSite) {
     const cache    = caches.default;
-    const cacheKey = new Request(`https://rss-cache.internal/v2/${key}`);
+    const cacheKey = new Request(`https://rss-cache.internal/v3/${key}`);
     const cached   = await cache.match(cacheKey);
     if (cached) return cached;
 
@@ -70,7 +70,7 @@ export async function onRequest(context) {
       });
       if (!res.ok) throw new Error(`Upstream HTTP ${res.status}`);
       const xml   = await res.text();
-      const items = parseItems(xml, 8);
+      const items = parseItems(xml, key === 'substack' ? 20 : 8);
       const body  = JSON.stringify({ ok: true, feed: key, items });
       const response = new Response(body, {
         headers: {

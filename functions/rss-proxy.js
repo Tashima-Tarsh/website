@@ -23,7 +23,13 @@ function parseItems(xmlText, max) {
     };
     const title   = get('title');
     const pubDate = get('pubDate');
-    const description = get('description').replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim().slice(0, 200);
+    const rawDescription = get('description');
+    const encodedContent = get('content:encoded');
+    const description = rawDescription.replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim().slice(0, 200);
+    const enclosure = block.match(/<enclosure[^>]+url=["']([^"']+)["']/i);
+    const media = block.match(/<media:(?:content|thumbnail)[^>]+url=["']([^"']+)["']/i);
+    const embeddedImage = (encodedContent || rawDescription).match(/<img[^>]+src=["']([^"']+)["']/i);
+    const thumbnail = enclosure?.[1] || media?.[1] || embeddedImage?.[1] || '';
     // link: handle both <link>url</link> and atom <link href="url"/>
     let link = get('link');
     if (!link) {
@@ -31,7 +37,7 @@ function parseItems(xmlText, max) {
       if (lm) link = lm[1];
     }
     if (title && link && link.startsWith('http')) {
-      items.push({ title, link, pubDate, description });
+      items.push({ title, link, pubDate, description, thumbnail });
     }
   }
   return items;
@@ -53,7 +59,7 @@ export async function onRequest(context) {
   // For external feeds only — try edge cache first
   if (!isSite) {
     const cache    = caches.default;
-    const cacheKey = new Request(`https://rss-cache.internal/${key}`);
+    const cacheKey = new Request(`https://rss-cache.internal/v2/${key}`);
     const cached   = await cache.match(cacheKey);
     if (cached) return cached;
 

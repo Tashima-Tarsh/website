@@ -45,189 +45,8 @@
   <link rel="me" href="https://www.amazon.com/author/nikukr">
   <link rel="stylesheet" href="/styles.css?v=20260613">
   <link rel="stylesheet" href="/editorial-preview.css?v=preview-20260610">
+  <link rel="stylesheet" href="/research-datasets/research-register.css?v=20260907">
   <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"CollectionPage","name":"Research Source Register and Evidence Inventory","url":"https://thenitishkr.in/research-datasets/","isPartOf":{"@id":"https://thenitishkr.in/#website"},"dateModified":"2026-06-22","inLanguage":"en-IN"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://thenitishkr.in/"},{"@type":"ListItem","position":2,"name":"Research Source Register","item":"https://thenitishkr.in/research-datasets/"}]}]}</script>
-  <style>
-    .register-hero {
-      align-items: start;
-      gap: 40px;
-    }
-    .register-hero .lead {
-      max-width: 66ch;
-      font-size: 1.02rem;
-      line-height: 1.78;
-      color: #3b3a37;
-    }
-    .register-hero-panel {
-      display: grid;
-      gap: 14px;
-    }
-    .register-hero-panel ul {
-      margin: 0;
-      padding-left: 18px;
-      line-height: 1.75;
-    }
-    .register-metrics {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 18px;
-    }
-    .register-metric {
-      padding: 24px 22px;
-      border: 1px solid rgba(7,26,66,.12);
-      border-top: 4px solid var(--navy);
-      border-radius: var(--radius);
-      background: #fff;
-      box-shadow: var(--shadow);
-    }
-    .register-metric:nth-child(2) { border-top-color: #8b6a28; }
-    .register-metric:nth-child(3) { border-top-color: #2d6a4f; }
-    .register-metric:nth-child(4) { border-top-color: #5f6f85; }
-    .register-metric .label {
-      margin-bottom: 8px;
-    }
-    .register-metric strong {
-      display: block;
-      font-family: 'Libre Franklin', sans-serif;
-      font-size: clamp(30px, 3vw, 42px);
-      line-height: 1;
-      color: var(--navy);
-      margin-bottom: 8px;
-    }
-    .register-overview {
-      display: grid;
-      grid-template-columns: minmax(0, 1.15fr) minmax(280px, .85fr);
-      gap: 22px;
-      align-items: start;
-    }
-    .register-card-stack {
-      display: grid;
-      gap: 22px;
-    }
-    .register-table-wrap {
-      overflow-x: auto;
-      border: 1px solid rgba(7,26,66,.12);
-      border-radius: var(--radius);
-      background: #fff;
-      box-shadow: var(--shadow);
-    }
-    .register-filter {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) auto;
-      gap: 12px;
-      align-items: end;
-      margin: 0 0 14px;
-    }
-    .register-filter label {
-      display: grid;
-      gap: 7px;
-      color: var(--navy);
-      font-size: 12px;
-      font-weight: 800;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-    }
-    .register-filter input {
-      width: 100%;
-      min-height: 46px;
-      border: 1px solid rgba(7,26,66,.18);
-      border-radius: 6px;
-      padding: 10px 12px;
-      color: #20242b;
-      background: #fffdf8;
-      font: 500 1rem/1.35 "Libre Franklin", Arial, sans-serif;
-      letter-spacing: 0;
-      text-transform: none;
-    }
-    .register-filter input:focus {
-      outline: 3px solid rgba(139,80,44,.18);
-      border-color: rgba(139,80,44,.45);
-    }
-    .register-filter__count {
-      min-height: 46px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 10px 12px;
-      border: 1px solid rgba(7,26,66,.14);
-      border-radius: 6px;
-      color: #4a5432;
-      background: #f7f2e6;
-      font-size: 12px;
-      font-weight: 900;
-      white-space: nowrap;
-    }
-    .register-table {
-      width: 100%;
-      border-collapse: collapse;
-      min-width: 920px;
-    }
-    .register-table th {
-      padding: 14px 16px;
-      text-align: left;
-      font-size: 11px;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-      color: var(--muted);
-      background: #f5f1e8;
-      border-bottom: 1px solid rgba(7,26,66,.12);
-    }
-    .register-table td {
-      padding: 14px 16px;
-      border-bottom: 1px solid rgba(7,26,66,.08);
-      vertical-align: top;
-      font-size: .95rem;
-      line-height: 1.6;
-      color: #2f3440;
-    }
-    .register-table tr:last-child td {
-      border-bottom: 0;
-    }
-    .register-table tr:hover td {
-      background: #fcfaf5;
-    }
-    .record-badge {
-      display: inline-flex;
-      align-items: center;
-      padding: 4px 8px;
-      border-radius: 999px;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: .04em;
-      white-space: nowrap;
-    }
-    .record-badge.official {
-      background: #e7f0ea;
-      color: #21563b;
-    }
-    .record-badge.author {
-      background: #f5ead8;
-      color: #875217;
-    }
-    .record-badge.corroborated {
-      background: #e7eef7;
-      color: #204d80;
-    }
-    .register-links {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 18px;
-    }
-    .register-links .card ul {
-      margin: 14px 0 0;
-      padding-left: 18px;
-      line-height: 1.75;
-    }
-    @media (max-width: 1040px) {
-      .register-metrics,
-      .register-links,
-      .register-overview {
-        grid-template-columns: 1fr;
-      }
-      .register-filter {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
   <!-- Google tag queued after first paint -->
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -280,8 +99,8 @@
         <h1>Research Source Register and Evidence Inventory</h1>
         <p class="lead">This page is the public source register for evidence files, court records, audit material, published documents and identity anchors used across the archive. It is structured for manual verification, not for bulk data export or SEO display.</p>
         <div class="hero-actions">
-          <a class="button" href="/disha/claim-to-source-system/">Open claim-to-source register</a>
-          <a class="button secondary" href="/disha/claim-to-source-system/">Open claim ledger</a>
+          <a class="button" href="#source-register">Browse the source register</a>
+          <a class="button secondary" href="/disha/claim-to-source-system/">Trace claims to sources</a>
         </div>
       </div>
       <aside class="hero-panel register-hero-panel">
@@ -350,7 +169,7 @@
       </aside>
     </section>
 
-    <section class="section">
+    <section class="section" id="source-register">
       <div class="section-head">
         <div><p class="eyebrow">Public register</p><h2>Current source list.</h2></div>
         <p>The table below is designed for human verification and source tracing.</p>

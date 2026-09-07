@@ -21,6 +21,9 @@ jobs:
       - name: Check sitemap URLs, canonical redirect and headers
         run: npm run verify:live
 
+      - name: Check external article and evidence sources
+        run: npm run check:external-links
+
       - name: Create an issue when production fails
         if: failure()
         uses: actions/github-script@v7

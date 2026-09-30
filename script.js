@@ -764,3 +764,15 @@ function installDishaProductJourney() {
 }
 
 installDishaProductJourney();
+
+
+/* Premium motion preview loader */
+(function(){
+  if (document.querySelector('link[data-premium-motion]')) return;
+  var link = document.createElement("link");
+  link.rel = "stylesheet";
+  link.href = "/premium-motion.css?v=20260930a";
+  link.setAttribute("data-premium-motion","true");
+  document.head.appendChild(link);
+  import("/premium-motion.js?v=20260930a").catch(function(){});
+})();
